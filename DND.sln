@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DND", "DND\DND.csproj", "{05CB65E6-989A-4763-B0D7-EE9B79C01277}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DragonDB", "DataNDragons\DragonDB.sqlproj", "{9B671C27-12E3-443E-8D3F-17368CBA22D0}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DragonDB", "DragonDB\DragonDB.sqlproj", "{9B671C27-12E3-443E-8D3F-17368CBA22D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
