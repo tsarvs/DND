@@ -23,7 +23,11 @@ namespace DND.Controllers
             _view = view;
         }
 
-        internal void PopulateControls(int characterId = 0)
+        #endregion
+
+        #region Methods
+
+        public void PopulateControls(int characterId = 0)
         {
             using (var db = new DragonDBModel())
             {
@@ -56,7 +60,8 @@ namespace DND.Controllers
             using (var db = new DragonDBModel())
             {
                 //Todo: fix this
-                var featId = Convert.ToInt32(_view.FeatsListBox.SelectedValue.ToString());
+                //var featId = Convert.ToInt32(_view.FeatsListBox.SelectedValue.ToString());
+                var featId = 0;
 
                 var featQuery =
                     (from f in db.FEATS.ToList()
@@ -65,7 +70,13 @@ namespace DND.Controllers
                     {
                         Source = f.f_source,
                         Description = f.f_description
-                    }).First();
+                    }).FirstOrDefault();
+
+                featQuery = featQuery ?? new
+                {
+                    Source = "",
+                    Description = ""
+                };
 
                 _view.FeatSource.Text = featQuery.Source;
                 _view.FeatDescription.Text = featQuery.Description;
