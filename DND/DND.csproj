@@ -60,93 +60,6 @@
     <Compile Include="Controllers\AddCampaignController.cs" />
     <Compile Include="Controllers\CharacterSheetController.cs" />
     <Compile Include="Controllers\FeatManagerController.cs" />
-    <Compile Include="DBMap\BACKGROUND.cs">
-      <DependentUpon>DragonDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBMap\CAMPAIGN.cs">
-      <DependentUpon>DragonDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBMap\CAMPAIGN_PLAYER_CHARACTERS.cs">
-      <DependentUpon>DragonDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBMap\CHARACTER.cs">
-      <DependentUpon>DragonDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBMap\CHARACTER_ABILITY.cs">
-      <DependentUpon>DragonDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBMap\CHARACTER_CLASS.cs">
-      <DependentUpon>DragonDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBMap\CHARACTER_INVENTORY.cs">
-      <DependentUpon>DragonDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBMap\CLASS.cs">
-      <DependentUpon>DragonDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBMap\DragonDBModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DragonDBModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBMap\DragonDBModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DragonDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBMap\DragonDBModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DragonDBModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="DBMap\EFFECT.cs">
-      <DependentUpon>DragonDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBMap\EFFECT_PROCEDURE.cs">
-      <DependentUpon>DragonDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBMap\ENCOUNTER.cs">
-      <DependentUpon>DragonDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBMap\EPISODE.cs">
-      <DependentUpon>DragonDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBMap\EVENT_OCCURRED.cs">
-      <DependentUpon>DragonDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBMap\EVENT_TYPE.cs">
-      <DependentUpon>DragonDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBMap\FEATS.cs">
-      <DependentUpon>DragonDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBMap\ITEM.cs">
-      <DependentUpon>DragonDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBMap\LOCATION.cs">
-      <DependentUpon>DragonDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBMap\PROFICIENCY.cs">
-      <DependentUpon>DragonDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBMap\QUEST.cs">
-      <DependentUpon>DragonDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBMap\QUESTLINE.cs">
-      <DependentUpon>DragonDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBMap\RACE.cs">
-      <DependentUpon>DragonDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBMap\SKILL.cs">
-      <DependentUpon>DragonDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBMap\SPELLS.cs">
-      <DependentUpon>DragonDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBMap\SPELLS_SLOTS.cs">
-      <DependentUpon>DragonDBModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\BACKGROUND.cs" />
     <Compile Include="Models\CAMPAIGN.cs" />
     <Compile Include="Models\CAMPAIGN_PLAYER_CHARACTERS.cs" />
@@ -247,13 +160,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EntityDeploy Include="DBMap\DragonDBModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DragonDBModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="DBMap\DragonDBModel.edmx.diagram">
-      <DependentUpon>DragonDBModel.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\DND.Models.CHARACTER.datasource" />
     <None Include="Properties\DataSources\DND.Models.RACE.datasource" />
@@ -272,18 +178,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pixel.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DBMap\DragonDBModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DragonDBModel.edmx</DependentUpon>
-      <LastGenOutput>DragonDBModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="DBMap\DragonDBModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DragonDBModel.edmx</DependentUpon>
-      <LastGenOutput>DragonDBModel.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
