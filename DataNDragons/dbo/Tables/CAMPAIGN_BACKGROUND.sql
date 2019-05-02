@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[CAMPAIGN_BACKGROUND] (
+    [cmpb_cmpid] INT NOT NULL,
+    [cmpb_bid]   INT NOT NULL,
+    PRIMARY KEY CLUSTERED ([cmpb_bid] ASC, [cmpb_cmpid] ASC),
+    CONSTRAINT [FK_CAMPAIGN_BACKGROUND_ToBACKGROUND] FOREIGN KEY ([cmpb_bid]) REFERENCES [dbo].[BACKGROUND] ([b_id]),
+    CONSTRAINT [FK_CAMPAIGN_BACKGROUND_ToCAMPAIGN] FOREIGN KEY ([cmpb_cmpid]) REFERENCES [dbo].[CAMPAIGN] ([cmp_id])
+);
+
