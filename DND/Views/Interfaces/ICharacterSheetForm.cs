@@ -90,6 +90,8 @@ namespace DND.Views.Interfaces
 
         void UpdateFeatGrid();
 
+        void UpdateClassControls();
+
         void SetController(CharacterSheetController controller);
 
         #endregion

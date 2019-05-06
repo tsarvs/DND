@@ -264,6 +264,14 @@ namespace DND.Views.Forms
             _controller.UpdateFeatGrid();
         }
 
+        public void UpdateClassControls()
+        {
+            if (_controller == null)
+                return;
+
+            _controller.UpdateCharacterClasses();
+        }
+
         public void LoadCharacter(int characterId)
         {
             CharacterSheetMode = FormMode.EditForm;
@@ -271,7 +279,9 @@ namespace DND.Views.Forms
             _characterId = characterId;
 
             _controller.BindData(_characterId);
-            _controller.LoadCharacterSheet(characterId);
+            _controller.LoadCharacterSheet();
+
+            UpdateFeatGrid();
         }
 
         private void btnSave_Click(object sender, EventArgs e)

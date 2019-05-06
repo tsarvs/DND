@@ -67,6 +67,7 @@ namespace DND.Views.Forms
             InitializeComponent();
 
             _characterId = 0;
+            _parentView = null;
         }
 
         public FeatManagerForm(int characterId, ICharacterSheetForm parentView)
@@ -85,7 +86,6 @@ namespace DND.Views.Forms
         {
             _controller = controller;
         }
-        #endregion
 
         private void FeatManagerForm_Shown(object sender, EventArgs e)
         {
@@ -135,5 +135,8 @@ namespace DND.Views.Forms
         {
             _parentView.UpdateFeatGrid();
         }
+
+        #endregion
+
     }
 }

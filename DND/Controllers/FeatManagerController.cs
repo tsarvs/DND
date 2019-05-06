@@ -66,11 +66,9 @@ namespace DND.Controllers
         {
             using (var db = new DragonDBModel())
             {
-                //Todo: fix this, make it query by id and not name. For now it gets the job done tho...
                 int featId;
                 FEATS feat;
-
-
+                
                 if (selectedFeat)
                 {
                     feat = (FEATS)_view.FeatsListBox.SelectedItem;

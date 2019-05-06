@@ -37,23 +37,21 @@ namespace DND.Controllers
 
         public void BindData(int characterId)
         {
+            _characterId = characterId;
+
             using (var db = new DragonDBModel())
             {
                 _view.RaceComboBox.DataSource = db.RACE.ToList();
                 _view.RaceComboBox.ValueMember = "r_id";
                 _view.RaceComboBox.DisplayMember = "r_name";
                 _view.RaceComboBox.SelectedText = null;
-                
-                _view.ClassComboBox.DataSource =
-                    (from c in db.CHARACTER_CLASS.ToList()
-                        where (c.cc_cid == characterId)
-                        select c.CLASS).ToList();
 
                 _view.ClassComboBox.ValueMember = "cl_id";
-                _view.ClassComboBox.DisplayMember = "cl_name";
-
-                UpdateFeatGrid();
+                _view.ClassComboBox.DisplayMember = "cl_name";   
             }
+
+            UpdateFeatGrid();
+            UpdateCharacterClasses();
         }
 
         public void SaveCharacter()
@@ -70,15 +68,13 @@ namespace DND.Controllers
             }
         }
 
-        public void LoadCharacterSheet(int characterId = 0)
+        public void LoadCharacterSheet()
         {
-            _characterId = characterId;
-
             using (var db = new DragonDBModel())
             {
                 var characterLoad = 
                     (from c in db.CHARACTER.ToList()
-                     where (c.c_id == characterId)
+                     where (c.c_id == _characterId)
                      select new
                      {
                         ID = c.c_id,
@@ -96,10 +92,9 @@ namespace DND.Controllers
                         INT = c.CHARACTER_ABILITY.ca_INT,
                         STR = c.CHARACTER_ABILITY.ca_STR,
                         WIS = c.CHARACTER_ABILITY.ca_WIS,
-                        Skills = c.SKILL.First()
-                     }).First();
-
-
+                        Skills = c.SKILL.FirstOrDefault()
+                     }).FirstOrDefault();
+                
                 _view.CharacterName = characterLoad.Name;
                 _view.Race = characterLoad.Race;
                 _view.Alignment = characterLoad.Alignment;
@@ -135,9 +130,17 @@ namespace DND.Controllers
                         (from cc in db.CHARACTER_CLASS
                             where (cc.CHARACTER.c_id == _characterId)
                             select cc).ToList();
-                
-                _view.ClassComboBox.SelectedItem = classLoad.Max(x => x.cc_level);
-                _view.Level = classLoad.Max(x => x.cc_level).GetValueOrDefault(1);
+
+                if (_view.ClassComboBox.Items.Count == 0)
+                {
+                    _view.ClassComboBox.SelectedItem = null;
+                    _view.Level = null;
+                }
+                else
+                {
+                    _view.ClassComboBox.SelectedIndex  = 0;
+                    _view.Level = classLoad.First().cc_level;
+                }
             }
             
         }
@@ -178,15 +181,23 @@ namespace DND.Controllers
 
         public void AddClass()
         {
+            ClassManagerForm form = new ClassManagerForm(_characterId, _view);
 
+            form.SetController(new ClassManagerController(form));
+
+            form.Show();
         }
         
         public void UpdateLevel()
         {
             var selectedClass = (CLASS)_view.ClassComboBox.SelectedItem;
 
+            if (selectedClass == null)
+                return;
+
             var selectedClassId = selectedClass.cl_id;
 
+            //todo: try to make the application query the db less
             using (var db = new DragonDBModel())
             {
                 _view.Level =
@@ -211,6 +222,17 @@ namespace DND.Controllers
                     };
 
                 _view.FeatGridView.DataSource = featsGridContent.ToList();
+            }
+        }
+
+        public void UpdateCharacterClasses()
+        {
+            using (var db = new DragonDBModel())
+            {
+                _view.ClassComboBox.DataSource =
+                    (from c in db.CHARACTER_CLASS.ToList()
+                        where (c.cc_cid == _characterId)
+                        select c.CLASS).ToList();
             }
         }
 
