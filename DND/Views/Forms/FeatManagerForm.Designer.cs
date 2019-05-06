@@ -113,6 +113,7 @@
             this.btnNewFeat.TabIndex = 6;
             this.btnNewFeat.Text = "Add/Edit Feat";
             this.btnNewFeat.UseVisualStyleBackColor = true;
+            this.btnNewFeat.Click += new System.EventHandler(this.btnNewFeat_Click);
             // 
             // btnSave
             // 

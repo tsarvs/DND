@@ -82,6 +82,11 @@ namespace DND.Views.Forms
 
         #region Methods
 
+        public void Reload()
+        {
+            _controller.ReloadFeatList();
+        }
+
         public void SetController(FeatManagerController controller)
         {
             _controller = controller;
@@ -136,7 +141,12 @@ namespace DND.Views.Forms
             _parentView.UpdateFeatGrid();
         }
 
-        #endregion
+        private void btnNewFeat_Click(object sender, EventArgs e)
+        {
+            _controller.NewFeat();
+        }
 
+        #endregion
+        
     }
 }
