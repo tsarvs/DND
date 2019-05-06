@@ -7,6 +7,10 @@ namespace DND.Views.Interfaces
     {
         #region Properties
 
+        Button AddFeatToCharacterButton { get; set; }
+
+        Button RemoveFeatFromCharacterButton { get; set; }
+
         Label FeatSource { get; set; }
 
         Label FeatDescription { get; set; }

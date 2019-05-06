@@ -33,13 +33,7 @@ namespace DND.Views.Forms
             get { return this.cmbRace.Text; }
             set { this.cmbRace.Text = value; }
         }
-
-        public string Class
-        {
-            get { return this.cmbClass.Text; }
-            set { this.cmbClass.Text = value; }
-        }
-
+        
         public int? Level
         {
             get { return Convert.ToInt32(this.txtLevel.Text); }
@@ -237,13 +231,7 @@ namespace DND.Views.Forms
             get { return this.lblFeatDescription; }
             set { this.lblFeatDescription = value; }
         }
-
-        public Panel FeatDescriptionPanel
-        {
-            get { return this.pnlFeatDescription; }
-            set { this.pnlFeatDescription = value; }
-        }
-
+        
         private CharacterSheetController _controller;
 
         private int _characterId;
@@ -268,12 +256,21 @@ namespace DND.Views.Forms
             _controller = controller;
         }
 
+        public void UpdateFeatGrid()
+        {
+            if (_controller == null)
+                return;
+
+            _controller.UpdateFeatGrid();
+        }
+
         public void LoadCharacter(int characterId)
         {
             CharacterSheetMode = FormMode.EditForm;
 
             _characterId = characterId;
 
+            _controller.BindData(_characterId);
             _controller.LoadCharacterSheet(characterId);
         }
 
@@ -281,23 +278,28 @@ namespace DND.Views.Forms
         {
             _controller.SaveCharacter();
         }
-
-
-        #endregion
-
-        private void CharacterSheetForm_Shown(object sender, EventArgs e)
-        {
-            _controller.BindData(_characterId);
-        }
-
+        
         private void dgvFeats_SelectionChanged(object sender, EventArgs e)
         {
-            _controller.UpdateFeatDescription();
+            _controller.UpdateFeatControls();
         }
 
         private void btnManageFeats_Click(object sender, EventArgs e)
         {
             _controller.ManageFeats();
         }
+
+        private void cmbClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _controller.UpdateLevel();
+        }
+
+        private void btnAddClass_Click(object sender, EventArgs e)
+        {
+            _controller.AddClass();
+        }
+
+        #endregion
+
     }
 }

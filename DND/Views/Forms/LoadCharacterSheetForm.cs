@@ -38,9 +38,7 @@ namespace DND.Views.Forms
         }
 
         private void btnLoadCharacterSheet_Click(object sender, EventArgs e)
-        {
-            this.Close();
-
+        { 
             _controller.LoadCharacter();
         }
     }

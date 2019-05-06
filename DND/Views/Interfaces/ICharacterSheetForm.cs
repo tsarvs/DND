@@ -13,9 +13,7 @@ namespace DND.Views.Interfaces
         string CharacterName { get; set; }
 
         string Race { get; set; }
-
-        string Class { get; set; }
-
+        
         int? Level { get; set; }
 
         string Alignment { get; set; }
@@ -83,14 +81,14 @@ namespace DND.Views.Interfaces
         ComboBox ClassComboBox { get; set; }
 
         Label FeatDescription { get; set; }
-
-        Panel FeatDescriptionPanel { get; set; }
-
+        
         #endregion
 
         #endregion
 
         #region Methods
+
+        void UpdateFeatGrid();
 
         void SetController(CharacterSheetController controller);
 

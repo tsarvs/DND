@@ -35,34 +35,24 @@ namespace DND.Controllers
 
         #region Methods
 
-        public void BindData(int characterId = 0)
+        public void BindData(int characterId)
         {
             using (var db = new DragonDBModel())
             {
-                //cmbRace
                 _view.RaceComboBox.DataSource = db.RACE.ToList();
                 _view.RaceComboBox.ValueMember = "r_id";
                 _view.RaceComboBox.DisplayMember = "r_name";
-                _view.RaceComboBox.SelectedItem = null;
+                _view.RaceComboBox.SelectedText = null;
+                
+                _view.ClassComboBox.DataSource =
+                    (from c in db.CHARACTER_CLASS.ToList()
+                        where (c.cc_cid == characterId)
+                        select c.CLASS).ToList();
 
-                //cmbClass
-                _view.ClassComboBox.DataSource = db.CLASS.ToList();
                 _view.ClassComboBox.ValueMember = "cl_id";
                 _view.ClassComboBox.DisplayMember = "cl_name";
-                _view.ClassComboBox.SelectedItem = null;
 
-                //dgvFeats
-                var featsGridContent =
-                    from f in db.FEATS.ToList()
-                    where (f.CHARACTER.Any(x => x.c_id == characterId))
-                    select new
-                    {
-                        Feat = f.f_name,
-                        Source = f.f_source
-                    };
-
-                _view.FeatGridView.DataSource = featsGridContent.ToList();
-                
+                UpdateFeatGrid();
             }
         }
 
@@ -80,7 +70,7 @@ namespace DND.Controllers
             }
         }
 
-        public void LoadCharacterSheet(int characterId)
+        public void LoadCharacterSheet(int characterId = 0)
         {
             _characterId = characterId;
 
@@ -109,14 +99,6 @@ namespace DND.Controllers
                         Skills = c.SKILL.First()
                      }).First();
 
-                var classLoad =
-                    (from cl in db.CHARACTER_CLASS
-                    where (cl.CHARACTER.c_id == characterLoad.ID)
-                    select new
-                    {
-                        CharacterClass = cl.CLASS.cl_name,
-                        Level = cl.cc_level
-                    }).First();
 
                 _view.CharacterName = characterLoad.Name;
                 _view.Race = characterLoad.Race;
@@ -149,32 +131,87 @@ namespace DND.Controllers
                 _view.Stealth = characterLoad.Skills.s_stealth;
                 _view.Survival = characterLoad.Skills.s_survival;
 
-                _view.Class = classLoad.CharacterClass;
-                _view.Level = classLoad.Level;
+                    var classLoad =
+                        (from cc in db.CHARACTER_CLASS
+                            where (cc.CHARACTER.c_id == _characterId)
+                            select cc).ToList();
+                
+                _view.ClassComboBox.SelectedItem = classLoad.Max(x => x.cc_level);
+                _view.Level = classLoad.Max(x => x.cc_level).GetValueOrDefault(1);
             }
+            
         }
 
-        public void UpdateFeatDescription()
+        public void UpdateFeatControls()
         {
             using (var db = new DragonDBModel())
             {
-                var featDescription =
-                    (from f in db.FEATS.ToList()
-                        where (f.f_name == _view.FeatGridView.SelectedRows[0].Cells[0].Value.ToString())
-                        where (f.f_source == _view.FeatGridView.SelectedRows[0].Cells[1].Value.ToString())
-                        select f.f_description).First();
+                string featDescription;
 
+                if (_view.FeatGridView.SelectedRows.Count == 0)
+                {
+                    featDescription = "";
+                }
+                else
+                {
+                    featDescription =
+                        (from f in db.FEATS.ToList()
+                            where (f.f_name == _view.FeatGridView.SelectedRows[0].Cells[0].Value.ToString())
+                            where (f.f_source == _view.FeatGridView.SelectedRows[0].Cells[1].Value.ToString())
+                            select f.f_description).FirstOrDefault();
+                }
+                
                 _view.FeatDescription.Text = featDescription;
             }
         }
 
         public void ManageFeats()
         {
-            FeatManagerForm form = new FeatManagerForm(_characterId);
+            FeatManagerForm form = new FeatManagerForm(_characterId, this._view);
 
             form.SetController(new FeatManagerController(form));
 
             form.Show();
+
+
+        }
+
+        public void AddClass()
+        {
+
+        }
+        
+        public void UpdateLevel()
+        {
+            var selectedClass = (CLASS)_view.ClassComboBox.SelectedItem;
+
+            var selectedClassId = selectedClass.cl_id;
+
+            using (var db = new DragonDBModel())
+            {
+                _view.Level =
+                    (from cc in db.CHARACTER_CLASS.ToList()
+                    where (cc.cc_cid == _characterId)
+                    where (cc.cc_clid == selectedClassId)
+                    select cc.cc_level).FirstOrDefault();
+            }  
+        }
+
+        public void UpdateFeatGrid()
+        {
+            using (var db = new DragonDBModel())
+            {
+                var featsGridContent =
+                    from f in db.FEATS.ToList()
+                    where (f.CHARACTER.Any(x => x.c_id == _characterId))
+                    select new
+                    {
+                        Feat = f.f_name,
+                        Source = f.f_source
+                    };
+
+                _view.FeatGridView.DataSource = featsGridContent.ToList();
+            }
         }
 
         private void AddCharacter()
@@ -183,13 +220,13 @@ namespace DND.Controllers
             {
                 var characterRace =
                     (from r in db.RACE.ToList()
-                        where (r.r_name == _view.Race)
-                        select r).First();
+                     where (r.r_name == _view.Race)
+                     select r).First();
 
                 var primaryClass =
                     (from cl in db.CLASS.ToList()
-                        where (cl.cl_name == _view.Class)
-                        select cl).First();
+                     where (cl.cl_name == _view.ClassComboBox.SelectedText)
+                     select cl).First();
 
                 var characterClass = new List<CHARACTER_CLASS>
                 {
@@ -253,10 +290,10 @@ namespace DND.Controllers
                 db.SaveChanges();
             }
         }
-        
+
         private void UpdateCharacter()
         {
-
+            throw new NotImplementedException();
         }
 
         #endregion

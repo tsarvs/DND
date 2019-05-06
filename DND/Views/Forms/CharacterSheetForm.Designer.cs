@@ -41,7 +41,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtHPtemp = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnMulticlass = new System.Windows.Forms.Button();
+            this.btnAddClass = new System.Windows.Forms.Button();
             this.chkNPC = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.chkInspiration = new System.Windows.Forms.CheckBox();
@@ -49,6 +49,7 @@
             this.cmbClass = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.lblSurvival = new System.Windows.Forms.Label();
             this.txtSurvival = new System.Windows.Forms.TextBox();
             this.lblStealth = new System.Windows.Forms.Label();
@@ -82,6 +83,7 @@
             this.txtIntimidation = new System.Windows.Forms.TextBox();
             this.txtMedicine = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.lblWisdom = new System.Windows.Forms.Label();
             this.txtCharisma = new System.Windows.Forms.TextBox();
             this.txtDexterity = new System.Windows.Forms.TextBox();
@@ -99,15 +101,11 @@
             this.lblFeatDescription = new System.Windows.Forms.Label();
             this.btnAddFeat = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.pnlFeatDescription = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFeats)).BeginInit();
             this.panel2.SuspendLayout();
-            this.pnlFeatDescription.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtName
@@ -156,7 +154,7 @@
             // lblHP
             // 
             this.lblHP.AutoSize = true;
-            this.lblHP.Location = new System.Drawing.Point(345, 17);
+            this.lblHP.Location = new System.Drawing.Point(305, 13);
             this.lblHP.Name = "lblHP";
             this.lblHP.Size = new System.Drawing.Size(27, 17);
             this.lblHP.TabIndex = 9;
@@ -164,7 +162,7 @@
             // 
             // txtHPcurrent
             // 
-            this.txtHPcurrent.Location = new System.Drawing.Point(378, 7);
+            this.txtHPcurrent.Location = new System.Drawing.Point(338, 3);
             this.txtHPcurrent.Name = "txtHPcurrent";
             this.txtHPcurrent.Size = new System.Drawing.Size(45, 22);
             this.txtHPcurrent.TabIndex = 5;
@@ -199,7 +197,7 @@
             // 
             // txtHPmax
             // 
-            this.txtHPmax.Location = new System.Drawing.Point(378, 28);
+            this.txtHPmax.Location = new System.Drawing.Point(338, 24);
             this.txtHPmax.Name = "txtHPmax";
             this.txtHPmax.Size = new System.Drawing.Size(45, 22);
             this.txtHPmax.TabIndex = 6;
@@ -209,7 +207,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(305, 59);
+            this.label1.Location = new System.Drawing.Point(389, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 17);
             this.label1.TabIndex = 20;
@@ -217,7 +215,7 @@
             // 
             // txtHPtemp
             // 
-            this.txtHPtemp.Location = new System.Drawing.Point(378, 56);
+            this.txtHPtemp.Location = new System.Drawing.Point(462, 10);
             this.txtHPtemp.Name = "txtHPtemp";
             this.txtHPtemp.Size = new System.Drawing.Size(45, 22);
             this.txtHPtemp.TabIndex = 7;
@@ -230,7 +228,7 @@
             this.panel1.Controls.Add(this.lblHP);
             this.panel1.Controls.Add(this.txtHPtemp);
             this.panel1.Controls.Add(this.txtHPcurrent);
-            this.panel1.Controls.Add(this.btnMulticlass);
+            this.panel1.Controls.Add(this.btnAddClass);
             this.panel1.Controls.Add(this.chkNPC);
             this.panel1.Controls.Add(this.txtHPmax);
             this.panel1.Controls.Add(this.label2);
@@ -246,23 +244,23 @@
             this.panel1.Controls.Add(this.cmbRace);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(436, 147);
+            this.panel1.Size = new System.Drawing.Size(536, 147);
             this.panel1.TabIndex = 21;
             // 
-            // btnMulticlass
+            // btnAddClass
             // 
-            this.btnMulticlass.Enabled = false;
-            this.btnMulticlass.Location = new System.Drawing.Point(207, 119);
-            this.btnMulticlass.Name = "btnMulticlass";
-            this.btnMulticlass.Size = new System.Drawing.Size(92, 26);
-            this.btnMulticlass.TabIndex = 26;
-            this.btnMulticlass.Text = "Multiclass";
-            this.btnMulticlass.UseVisualStyleBackColor = true;
+            this.btnAddClass.Location = new System.Drawing.Point(207, 119);
+            this.btnAddClass.Name = "btnAddClass";
+            this.btnAddClass.Size = new System.Drawing.Size(92, 26);
+            this.btnAddClass.TabIndex = 26;
+            this.btnAddClass.Text = "Add Class";
+            this.btnAddClass.UseVisualStyleBackColor = true;
+            this.btnAddClass.Click += new System.EventHandler(this.btnAddClass_Click);
             // 
             // chkNPC
             // 
             this.chkNPC.AutoSize = true;
-            this.chkNPC.Location = new System.Drawing.Point(308, 111);
+            this.chkNPC.Location = new System.Drawing.Point(305, 79);
             this.chkNPC.Name = "chkNPC";
             this.chkNPC.Size = new System.Drawing.Size(58, 21);
             this.chkNPC.TabIndex = 9;
@@ -281,7 +279,7 @@
             // chkInspiration
             // 
             this.chkInspiration.AutoSize = true;
-            this.chkInspiration.Location = new System.Drawing.Point(308, 84);
+            this.chkInspiration.Location = new System.Drawing.Point(305, 52);
             this.chkInspiration.Name = "chkInspiration";
             this.chkInspiration.Size = new System.Drawing.Size(95, 21);
             this.chkInspiration.TabIndex = 8;
@@ -302,10 +300,11 @@
             this.cmbClass.Name = "cmbClass";
             this.cmbClass.Size = new System.Drawing.Size(108, 24);
             this.cmbClass.TabIndex = 3;
+            this.cmbClass.SelectedIndexChanged += new System.EventHandler(this.cmbClass_SelectedIndexChanged);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(297, 674);
+            this.btnSave.Location = new System.Drawing.Point(397, 604);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(151, 26);
             this.btnSave.TabIndex = 32;
@@ -348,10 +347,19 @@
             this.panel4.Controls.Add(this.txtNature);
             this.panel4.Controls.Add(this.txtIntimidation);
             this.panel4.Controls.Add(this.txtMedicine);
-            this.panel4.Location = new System.Drawing.Point(281, 163);
+            this.panel4.Location = new System.Drawing.Point(110, 165);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(167, 465);
             this.panel4.TabIndex = 26;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 17);
+            this.label5.TabIndex = 36;
+            this.label5.Text = "Skills";
             // 
             // lblSurvival
             // 
@@ -661,6 +669,15 @@
             this.panel3.Size = new System.Drawing.Size(92, 185);
             this.panel3.TabIndex = 25;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 17);
+            this.label6.TabIndex = 36;
+            this.label6.Text = "Abilities";
+            // 
             // lblWisdom
             // 
             this.lblWisdom.AutoSize = true;
@@ -785,27 +802,28 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.pnlFeatDescription);
+            this.panel2.Controls.Add(this.lblFeatDescription);
             this.panel2.Controls.Add(this.btnAddFeat);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.dgvFeats);
-            this.panel2.Location = new System.Drawing.Point(10, 356);
+            this.panel2.Location = new System.Drawing.Point(283, 165);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(265, 313);
+            this.panel2.Size = new System.Drawing.Size(265, 305);
             this.panel2.TabIndex = 34;
             // 
             // lblFeatDescription
             // 
             this.lblFeatDescription.AutoSize = true;
-            this.lblFeatDescription.Location = new System.Drawing.Point(3, 0);
-            this.lblFeatDescription.MaximumSize = new System.Drawing.Size(252, 96);
+            this.lblFeatDescription.Location = new System.Drawing.Point(6, 173);
+            this.lblFeatDescription.MaximumSize = new System.Drawing.Size(252, 95);
+            this.lblFeatDescription.MinimumSize = new System.Drawing.Size(252, 95);
             this.lblFeatDescription.Name = "lblFeatDescription";
-            this.lblFeatDescription.Size = new System.Drawing.Size(0, 17);
+            this.lblFeatDescription.Size = new System.Drawing.Size(252, 95);
             this.lblFeatDescription.TabIndex = 36;
             // 
             // btnAddFeat
             // 
-            this.btnAddFeat.Location = new System.Drawing.Point(144, 278);
+            this.btnAddFeat.Location = new System.Drawing.Point(144, 271);
             this.btnAddFeat.Name = "btnAddFeat";
             this.btnAddFeat.Size = new System.Drawing.Size(114, 26);
             this.btnAddFeat.TabIndex = 37;
@@ -822,39 +840,11 @@
             this.label3.TabIndex = 35;
             this.label3.Text = "Feats";
             // 
-            // pnlFeatDescription
-            // 
-            this.pnlFeatDescription.AutoScroll = true;
-            this.pnlFeatDescription.AutoScrollMinSize = new System.Drawing.Size(0, 95);
-            this.pnlFeatDescription.Controls.Add(this.lblFeatDescription);
-            this.pnlFeatDescription.Location = new System.Drawing.Point(4, 177);
-            this.pnlFeatDescription.Name = "pnlFeatDescription";
-            this.pnlFeatDescription.Size = new System.Drawing.Size(258, 95);
-            this.pnlFeatDescription.TabIndex = 38;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 17);
-            this.label5.TabIndex = 36;
-            this.label5.Text = "Skills";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 17);
-            this.label6.TabIndex = 36;
-            this.label6.Text = "Abilities";
-            // 
             // CharacterSheetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(461, 712);
+            this.ClientSize = new System.Drawing.Size(559, 640);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel4);
@@ -863,7 +853,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CharacterSheetForm";
             this.Text = "Character Sheet";
-            this.Shown += new System.EventHandler(this.CharacterSheetForm_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -873,8 +862,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvFeats)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.pnlFeatDescription.ResumeLayout(false);
-            this.pnlFeatDescription.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -910,7 +897,7 @@
         private System.Windows.Forms.Label lblCharisma;
         private System.Windows.Forms.Label lblIntelligence;
         private System.Windows.Forms.Label lblDexterity;
-        private System.Windows.Forms.Button btnMulticlass;
+        private System.Windows.Forms.Button btnAddClass;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtLevel;
         private System.Windows.Forms.ComboBox cmbClass;
@@ -952,7 +939,6 @@
         private System.Windows.Forms.Label lblFeatDescription;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAddFeat;
-        private System.Windows.Forms.Panel pnlFeatDescription;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
     }

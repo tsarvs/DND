@@ -37,9 +37,9 @@
             this.btnNewFeat = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblFeatSource = new System.Windows.Forms.Label();
             this.lblFeatDescription = new System.Windows.Forms.Label();
+            this.lblFeatSource = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,8 +49,10 @@
             this.lbFeats.ItemHeight = 16;
             this.lbFeats.Location = new System.Drawing.Point(15, 29);
             this.lbFeats.Name = "lbFeats";
+            this.lbFeats.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.lbFeats.Size = new System.Drawing.Size(243, 356);
             this.lbFeats.TabIndex = 0;
+            this.lbFeats.Click += new System.EventHandler(this.lbFeats_Click);
             this.lbFeats.SelectedIndexChanged += new System.EventHandler(this.lbFeats_SelectedIndexChanged);
             // 
             // lbCharacterFeats
@@ -59,8 +61,11 @@
             this.lbCharacterFeats.ItemHeight = 16;
             this.lbCharacterFeats.Location = new System.Drawing.Point(345, 29);
             this.lbCharacterFeats.Name = "lbCharacterFeats";
+            this.lbCharacterFeats.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.lbCharacterFeats.Size = new System.Drawing.Size(243, 356);
             this.lbCharacterFeats.TabIndex = 1;
+            this.lbCharacterFeats.Click += new System.EventHandler(this.lbCharacterFeats_Click);
+            this.lbCharacterFeats.SelectedIndexChanged += new System.EventHandler(this.lbCharacterFeats_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -88,6 +93,7 @@
             this.btnAddFeatToCharacter.TabIndex = 4;
             this.btnAddFeatToCharacter.Text = "->";
             this.btnAddFeatToCharacter.UseVisualStyleBackColor = true;
+            this.btnAddFeatToCharacter.Click += new System.EventHandler(this.btnAddFeatToCharacter_Click);
             // 
             // btnRemoveFeatFromCharacter
             // 
@@ -97,24 +103,26 @@
             this.btnRemoveFeatFromCharacter.TabIndex = 5;
             this.btnRemoveFeatFromCharacter.Text = "<-";
             this.btnRemoveFeatFromCharacter.UseVisualStyleBackColor = true;
+            this.btnRemoveFeatFromCharacter.Click += new System.EventHandler(this.btnRemoveFeatFromCharacter_Click);
             // 
             // btnNewFeat
             // 
-            this.btnNewFeat.Location = new System.Drawing.Point(414, 560);
+            this.btnNewFeat.Location = new System.Drawing.Point(356, 560);
             this.btnNewFeat.Name = "btnNewFeat";
-            this.btnNewFeat.Size = new System.Drawing.Size(84, 23);
+            this.btnNewFeat.Size = new System.Drawing.Size(113, 23);
             this.btnNewFeat.TabIndex = 6;
-            this.btnNewFeat.Text = "New Feat";
+            this.btnNewFeat.Text = "Add/Edit Feat";
             this.btnNewFeat.UseVisualStyleBackColor = true;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(504, 560);
+            this.btnSave.Location = new System.Drawing.Point(475, 560);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(84, 23);
+            this.btnSave.Size = new System.Drawing.Size(113, 23);
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // panel1
             // 
@@ -126,30 +134,32 @@
             this.panel1.Size = new System.Drawing.Size(577, 163);
             this.panel1.TabIndex = 8;
             // 
+            // lblFeatDescription
+            // 
+            this.lblFeatDescription.AutoSize = true;
+            this.lblFeatDescription.Location = new System.Drawing.Point(3, 23);
+            this.lblFeatDescription.MaximumSize = new System.Drawing.Size(571, 126);
+            this.lblFeatDescription.MinimumSize = new System.Drawing.Size(571, 126);
+            this.lblFeatDescription.Name = "lblFeatDescription";
+            this.lblFeatDescription.Size = new System.Drawing.Size(571, 126);
+            this.lblFeatDescription.TabIndex = 3;
+            // 
+            // lblFeatSource
+            // 
+            this.lblFeatSource.AutoSize = true;
+            this.lblFeatSource.Location = new System.Drawing.Point(60, 0);
+            this.lblFeatSource.Name = "lblFeatSource";
+            this.lblFeatSource.Size = new System.Drawing.Size(0, 17);
+            this.lblFeatSource.TabIndex = 1;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 17);
+            this.label3.Size = new System.Drawing.Size(57, 17);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Source: ";
-            // 
-            // lblFeatSource
-            // 
-            this.lblFeatSource.AutoSize = true;
-            this.lblFeatSource.Location = new System.Drawing.Point(70, 0);
-            this.lblFeatSource.Name = "lblFeatSource";
-            this.lblFeatSource.Size = new System.Drawing.Size(0, 17);
-            this.lblFeatSource.TabIndex = 1;
-            // 
-            // lblFeatDescription
-            // 
-            this.lblFeatDescription.AutoSize = true;
-            this.lblFeatDescription.Location = new System.Drawing.Point(3, 34);
-            this.lblFeatDescription.Name = "lblFeatDescription";
-            this.lblFeatDescription.Size = new System.Drawing.Size(0, 17);
-            this.lblFeatDescription.TabIndex = 3;
+            this.label3.Text = "Source:";
             // 
             // FeatManagerForm
             // 
@@ -167,6 +177,7 @@
             this.Controls.Add(this.lbFeats);
             this.Name = "FeatManagerForm";
             this.Text = "Feat Manager";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FeatManagerForm_FormClosed);
             this.Shown += new System.EventHandler(this.FeatManagerForm_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
