@@ -7,6 +7,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using DND.Models;
+using DND.Views.Forms;
 using DND.Views.Interfaces;
 
 namespace DND.Controllers
@@ -62,6 +63,16 @@ namespace DND.Controllers
             }
         }
 
+        public void ReloadFeatList()
+        {
+            var currentCharacterFeats = 
+               (from f in _view.CharacterFeatsListBox.Items.Cast<FEATS>()
+                where (f.CHARACTER.Any(x => x.c_id == _characterId))
+                select f).ToList();
+
+            UpdateListsContents(currentCharacterFeats);
+        }
+
         public void UpdateFeatDisplay(bool selectedFeat)
         {
             using (var db = new DragonDBModel())
@@ -104,7 +115,7 @@ namespace DND.Controllers
 
             }
         }
-
+        
         public void AddFeatToCharacter()
         {
             var addFeat = _view.FeatsListBox.SelectedItems.Cast<FEATS>();
@@ -153,7 +164,15 @@ namespace DND.Controllers
 
                 db.SaveChanges();
             }
-            
+        }
+
+        public void NewFeat()
+        {
+            NewFeatForm form = new NewFeatForm();
+
+            form.SetController(new NewFeatController(form, _view));
+
+            form.Show();
         }
 
         public void RemoveFeatFromCharacter()

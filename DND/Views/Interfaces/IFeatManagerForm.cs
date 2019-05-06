@@ -24,6 +24,7 @@ namespace DND.Views.Interfaces
         #region Methods
 
         void SetController(FeatManagerController controller);
+        void Reload();
 
         #endregion
     }
