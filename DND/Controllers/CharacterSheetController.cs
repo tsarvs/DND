@@ -22,6 +22,8 @@ namespace DND.Controllers
 
         private ICharacterSheetForm _view;
 
+        private List<CHARACTER_CLASS> _loadedCharacterClasses;
+
         #endregion
 
         #region Constructors
@@ -29,25 +31,27 @@ namespace DND.Controllers
         public CharacterSheetController(ICharacterSheetForm view)
         {
             _view = view;
+            _loadedCharacterClasses = new List<CHARACTER_CLASS>();
         }
 
         #endregion
 
         #region Methods
 
-        public void BindData(int characterId)
+        public void InitializeData(int characterId)
         {
             _characterId = characterId;
-
+            
             using (var db = new DragonDBModel())
             {
                 _view.RaceComboBox.DataSource = db.RACE.ToList();
                 _view.RaceComboBox.ValueMember = "r_id";
                 _view.RaceComboBox.DisplayMember = "r_name";
-                _view.RaceComboBox.SelectedText = null;
+                _view.RaceComboBox.SelectedItem = null;
 
                 _view.ClassComboBox.ValueMember = "cl_id";
-                _view.ClassComboBox.DisplayMember = "cl_name";   
+                _view.ClassComboBox.DisplayMember = "cl_name";
+                _view.ClassComboBox.SelectedItem = null;
             }
 
             UpdateFeatGrid();
@@ -70,78 +74,7 @@ namespace DND.Controllers
 
         public void LoadCharacterSheet()
         {
-            using (var db = new DragonDBModel())
-            {
-                var characterLoad = 
-                    (from c in db.CHARACTER.ToList()
-                     where (c.c_id == _characterId)
-                     select new
-                     {
-                        ID = c.c_id,
-                        Name = c.c_name,
-                        Race = c.RACE.r_name,
-                        Alignment = c.c_alignment,
-                        HPcurrent = c.c_hpcurrent,
-                        HPmax = c.c_hpmax,
-                        HPtemp = c.c_hptemp,
-                        isNPC = c.c_isNPC,
-                        Inspiration = c.c_inspiration,
-                        CHA = c.CHARACTER_ABILITY.ca_CHA,
-                        CON = c.CHARACTER_ABILITY.ca_CON,
-                        DEX = c.CHARACTER_ABILITY.ca_DEX,
-                        INT = c.CHARACTER_ABILITY.ca_INT,
-                        STR = c.CHARACTER_ABILITY.ca_STR,
-                        WIS = c.CHARACTER_ABILITY.ca_WIS,
-                        Skills = c.SKILL.FirstOrDefault()
-                     }).FirstOrDefault();
-                
-                _view.CharacterName = characterLoad.Name;
-                _view.Race = characterLoad.Race;
-                _view.Alignment = characterLoad.Alignment;
-                _view.HPcurrent = characterLoad.HPcurrent;
-                _view.HPmax = characterLoad.HPmax;
-                _view.HPtemp = characterLoad.HPtemp;
-                _view.IsNPC = characterLoad.isNPC;
-                _view.HasInspiration = characterLoad.Inspiration;
-                _view.CHA = characterLoad.CHA;
-                _view.CON = characterLoad.CON;
-                _view.DEX = characterLoad.DEX;
-                _view.INT = characterLoad.INT;
-                _view.STR = characterLoad.STR;
-                _view.WIS = characterLoad.WIS;
-                _view.AnimalHandling = characterLoad.Skills.s_animalhandling;
-                _view.Arcana = characterLoad.Skills.s_arcana;
-                _view.Athletics = characterLoad.Skills.s_athletics;
-                _view.Deception = characterLoad.Skills.s_deception;
-                _view.History = characterLoad.Skills.s_history;
-                _view.Insight = characterLoad.Skills.s_insight;
-                _view.Intimidation = characterLoad.Skills.s_intimidation;
-                _view.Medicine = characterLoad.Skills.s_medicine;
-                _view.Nature = characterLoad.Skills.s_nature;
-                _view.Perception = characterLoad.Skills.s_perception;
-                _view.Performance = characterLoad.Skills.s_performance;
-                _view.Persuasion = characterLoad.Skills.s_persuasion;
-                _view.Religion = characterLoad.Skills.s_religion;
-                _view.SleightOfHand = characterLoad.Skills.s_sleightofhand;
-                _view.Stealth = characterLoad.Skills.s_stealth;
-                _view.Survival = characterLoad.Skills.s_survival;
 
-                    var classLoad =
-                        (from cc in db.CHARACTER_CLASS
-                            where (cc.CHARACTER.c_id == _characterId)
-                            select cc).ToList();
-
-                if (_view.ClassComboBox.Items.Count == 0)
-                {
-                    _view.ClassComboBox.SelectedItem = null;
-                    _view.Level = null;
-                }
-                else
-                {
-                    _view.ClassComboBox.SelectedIndex  = 0;
-                    _view.Level = classLoad.First().cc_level;
-                }
-            }
             
         }
 
@@ -164,7 +97,7 @@ namespace DND.Controllers
                             select f.f_description).FirstOrDefault();
                 }
                 
-                _view.FeatDescription.Text = featDescription;
+                _view.FeatDescription = featDescription;
             }
         }
 
@@ -181,31 +114,37 @@ namespace DND.Controllers
 
         public void AddClass()
         {
-            ClassManagerForm form = new ClassManagerForm(_characterId, _view);
+            ClassManagerForm form = new ClassManagerForm(_characterId, _loadedCharacterClasses);
 
-            form.SetController(new ClassManagerController(form));
+            form.SetController(new ClassManagerController(form, this._view));
 
             form.Show();
         }
-        
+
+        public void LoadCharacterClasses(List<CHARACTER_CLASS> characterClassList)
+        {
+            _loadedCharacterClasses = characterClassList;
+
+            _view.ClassComboBox.DataSource =
+                (from cc in _loadedCharacterClasses
+                    select cc.CLASS).ToList();
+            
+        }
+
+
         public void UpdateLevel()
         {
-            var selectedClass = (CLASS)_view.ClassComboBox.SelectedItem;
+            var selectedClass = (CLASS) _view.ClassComboBox.SelectedItem;
 
             if (selectedClass == null)
                 return;
 
             var selectedClassId = selectedClass.cl_id;
 
-            //todo: try to make the application query the db less
-            using (var db = new DragonDBModel())
-            {
-                _view.Level =
-                    (from cc in db.CHARACTER_CLASS.ToList()
-                    where (cc.cc_cid == _characterId)
-                    where (cc.cc_clid == selectedClassId)
-                    select cc.cc_level).FirstOrDefault();
-            }  
+            _view.Level =
+                (from cc in _loadedCharacterClasses
+                    where cc.cc_clid == selectedClassId
+                    select cc.cc_level).FirstOrDefault().GetValueOrDefault(1);
         }
 
         public void UpdateFeatGrid()
@@ -242,7 +181,7 @@ namespace DND.Controllers
             {
                 var characterRace =
                     (from r in db.RACE.ToList()
-                     where (r.r_name == _view.Race)
+                     where (r.r_name == _view.RaceComboBox.SelectedText)
                      select r).First();
 
                 var primaryClass =
@@ -297,11 +236,11 @@ namespace DND.Controllers
                 {
                     c_name = _view.CharacterName,
                     c_alignment = _view.Alignment,
-                    c_hpcurrent = _view.HPcurrent,
-                    c_hpmax = _view.HPmax,
-                    c_hptemp = _view.HPtemp,
+                    c_hpcurrent = _view.HpCurrent,
+                    c_hpmax = _view.HpMax,
+                    c_hptemp = _view.HpTemp,
                     c_inspiration = _view.HasInspiration,
-                    c_isNPC = _view.IsNPC,
+                    c_isNPC = _view.IsNpc,
                     CHARACTER_ABILITY = characterAbilities,
                     RACE = characterRace,
                     CHARACTER_CLASS = characterClass,
@@ -316,6 +255,15 @@ namespace DND.Controllers
         private void UpdateCharacter()
         {
             throw new NotImplementedException();
+        }
+
+        public void UpdateClassLevel()
+        {
+            var selectedClass = (CLASS) _view.ClassComboBox.SelectedItem;
+            var newLevel = _view.Level;
+
+            _loadedCharacterClasses.Find(x => x.cc_clid == selectedClass.cl_id).cc_level = newLevel;
+
         }
 
         #endregion

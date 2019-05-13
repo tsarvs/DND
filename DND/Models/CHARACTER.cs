@@ -13,6 +13,7 @@ namespace DND.Models
         public CHARACTER()
         {
             CAMPAIGN_PLAYER_CHARACTERS = new HashSet<CAMPAIGN_PLAYER_CHARACTERS>();
+            CHARACTER_ATTACK = new HashSet<CHARACTER_ATTACK>();
             CHARACTER_CLASS = new HashSet<CHARACTER_CLASS>();
             CHARACTER_INVENTORY = new HashSet<CHARACTER_INVENTORY>();
             BACKGROUND = new HashSet<BACKGROUND>();
@@ -50,10 +51,21 @@ namespace DND.Models
 
         public bool? c_isNPC { get; set; }
 
+        public int? c_armorclass { get; set; }
+
+        public int? c_initiative { get; set; }
+
+        public int? c_speed { get; set; }
+
+        public int? c_experience { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CAMPAIGN_PLAYER_CHARACTERS> CAMPAIGN_PLAYER_CHARACTERS { get; set; }
 
         public virtual CHARACTER_ABILITY CHARACTER_ABILITY { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CHARACTER_ATTACK> CHARACTER_ATTACK { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHARACTER_CLASS> CHARACTER_CLASS { get; set; }

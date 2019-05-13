@@ -17,6 +17,7 @@ namespace DND.Models
         public virtual DbSet<CAMPAIGN_PLAYER_CHARACTERS> CAMPAIGN_PLAYER_CHARACTERS { get; set; }
         public virtual DbSet<CHARACTER> CHARACTER { get; set; }
         public virtual DbSet<CHARACTER_ABILITY> CHARACTER_ABILITY { get; set; }
+        public virtual DbSet<CHARACTER_ATTACK> CHARACTER_ATTACK { get; set; }
         public virtual DbSet<CHARACTER_CLASS> CHARACTER_CLASS { get; set; }
         public virtual DbSet<CHARACTER_INVENTORY> CHARACTER_INVENTORY { get; set; }
         public virtual DbSet<CLASS> CLASS { get; set; }
@@ -28,6 +29,7 @@ namespace DND.Models
         public virtual DbSet<EVENT_TYPE> EVENT_TYPE { get; set; }
         public virtual DbSet<FEATS> FEATS { get; set; }
         public virtual DbSet<ITEM> ITEM { get; set; }
+        public virtual DbSet<ITEM_BACKGROUND> ITEM_BACKGROUND { get; set; }
         public virtual DbSet<LOCATION> LOCATION { get; set; }
         public virtual DbSet<PROFICIENCY> PROFICIENCY { get; set; }
         public virtual DbSet<QUEST> QUEST { get; set; }
@@ -44,6 +46,12 @@ namespace DND.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<BACKGROUND>()
+                .HasMany(e => e.ITEM_BACKGROUND)
+                .WithRequired(e => e.BACKGROUND)
+                .HasForeignKey(e => e.ib_bid)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<BACKGROUND>()
                 .HasMany(e => e.CAMPAIGN)
                 .WithMany(e => e.BACKGROUND)
                 .Map(m => m.ToTable("CAMPAIGN_BACKGROUND").MapLeftKey("cmpb_bid").MapRightKey("cmpb_cmpid"));
@@ -52,11 +60,6 @@ namespace DND.Models
                 .HasMany(e => e.CHARACTER)
                 .WithMany(e => e.BACKGROUND)
                 .Map(m => m.ToTable("CHARACTER_BACKGROUND").MapLeftKey("cb_bid").MapRightKey("cb_cid"));
-
-            modelBuilder.Entity<BACKGROUND>()
-                .HasMany(e => e.ITEM)
-                .WithMany(e => e.BACKGROUND)
-                .Map(m => m.ToTable("ITEM_BACKGROUND").MapLeftKey("ib_bid").MapRightKey("ib_iid"));
 
             modelBuilder.Entity<BACKGROUND>()
                 .HasMany(e => e.LOCATION)
@@ -129,6 +132,11 @@ namespace DND.Models
                 .WithRequired(e => e.CHARACTER);
 
             modelBuilder.Entity<CHARACTER>()
+                .HasMany(e => e.CHARACTER_ATTACK)
+                .WithOptional(e => e.CHARACTER)
+                .HasForeignKey(e => e.a_cid);
+
+            modelBuilder.Entity<CHARACTER>()
                 .HasMany(e => e.CHARACTER_CLASS)
                 .WithRequired(e => e.CHARACTER)
                 .HasForeignKey(e => e.cc_cid)
@@ -159,6 +167,22 @@ namespace DND.Models
                 .HasMany(e => e.SPELLS)
                 .WithMany(e => e.CHARACTER)
                 .Map(m => m.ToTable("CHARACTER_SPELLBOOK").MapLeftKey("cs_cid").MapRightKey("cs_sid"));
+
+            modelBuilder.Entity<CHARACTER_ATTACK>()
+                .Property(e => e.a_range)
+                .IsFixedLength();
+
+            modelBuilder.Entity<CHARACTER_ATTACK>()
+                .Property(e => e.a_damage1)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<CHARACTER_ATTACK>()
+                .Property(e => e.a_damage2)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<CHARACTER_ATTACK>()
+                .Property(e => e.a_itemdescription)
+                .IsUnicode(false);
 
             modelBuilder.Entity<CLASS>()
                 .Property(e => e.cl_name)
@@ -238,6 +262,10 @@ namespace DND.Models
             modelBuilder.Entity<ITEM>()
                 .Property(e => e.i_gp)
                 .HasPrecision(18, 0);
+
+            modelBuilder.Entity<ITEM>()
+                .Property(e => e.i_description)
+                .IsUnicode(false);
 
             modelBuilder.Entity<ITEM>()
                 .HasMany(e => e.CHARACTER_INVENTORY)

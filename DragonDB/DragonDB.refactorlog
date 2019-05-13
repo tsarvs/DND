@@ -14,4 +14,25 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="cl_id" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="387b30dd-6b5d-4c55-bc0e-758df5316e79" ChangeDateTime="05/13/2019 23:20:32">
+    <Property Name="ElementName" Value="[dbo].[CHARACTER_ATTACK].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[CHARACTER_ATTACK]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="a_id" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="40d9dfb3-6ad3-4f37-994c-9990d0832bea" ChangeDateTime="05/13/2019 23:26:32">
+    <Property Name="ElementName" Value="[dbo].[CHARACTER_ATTACK].[a_damage]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[CHARACTER_ATTACK]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="a_damage1" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="9dd993be-beb6-4d4c-9da1-32c6829ccbc3" ChangeDateTime="05/13/2019 23:29:28">
+    <Property Name="ElementName" Value="[dbo].[CHARACTER_ATTACK].[a_attack]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[CHARACTER_ATTACK]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="a_attackability" />
+  </Operation>
 </Operations>

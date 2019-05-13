@@ -34,10 +34,10 @@ namespace DND.Views.Forms
             set { this.lblFeatSource = value; }
         }
 
-        public Label FeatDescription
+        public TextBox FeatDescription
         {
-            get { return this.lblFeatDescription; }
-            set { this.lblFeatDescription = value; }
+            get { return this.txtFeatDescription; }
+            set { this.txtFeatDescription = value; }
         }
 
         public ListBox FeatsListBox

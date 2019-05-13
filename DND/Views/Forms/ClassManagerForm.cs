@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DND.Controllers;
+using DND.Models;
 using DND.Views.Interfaces;
 
 namespace DND.Views.Forms
@@ -51,18 +52,19 @@ namespace DND.Views.Forms
 
         private readonly int _characterId;
 
-        private ICharacterSheetForm _parentView;
+        private List<CHARACTER_CLASS> _loadedCharacterClasses;
 
         #endregion
 
         #region Constructor
 
-        public ClassManagerForm(int characterId, ICharacterSheetForm parentView)
+        public ClassManagerForm(int characterId, List<CHARACTER_CLASS> loadedCharacterClasses)
         {
             InitializeComponent();
 
             _characterId = characterId;
-            _parentView = parentView;
+
+            _loadedCharacterClasses = loadedCharacterClasses;
         }
 
         #endregion
@@ -76,7 +78,7 @@ namespace DND.Views.Forms
 
         private void ClassManagerForm_Load(object sender, EventArgs e)
         {
-            _controller.PopulateControls(_characterId);
+            _controller.PopulateControls(_characterId, _loadedCharacterClasses);
         }
 
         private void btnAddClassToCharacter_Click(object sender, EventArgs e)
@@ -101,16 +103,11 @@ namespace DND.Views.Forms
             _controller.UpdateLevel();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
-            _controller.Save();
+            _controller.UpdateParentView();
 
             this.Close();
-        }
-
-        private void ClassManagerForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            _parentView.UpdateClassControls();
         }
 
         #endregion

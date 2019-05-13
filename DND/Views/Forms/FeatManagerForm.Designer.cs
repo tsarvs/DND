@@ -37,9 +37,9 @@
             this.btnNewFeat = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblFeatDescription = new System.Windows.Forms.Label();
             this.lblFeatSource = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtFeatDescription = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -127,23 +127,13 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.lblFeatDescription);
+            this.panel1.Controls.Add(this.txtFeatDescription);
             this.panel1.Controls.Add(this.lblFeatSource);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(12, 391);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(577, 163);
             this.panel1.TabIndex = 8;
-            // 
-            // lblFeatDescription
-            // 
-            this.lblFeatDescription.AutoSize = true;
-            this.lblFeatDescription.Location = new System.Drawing.Point(3, 23);
-            this.lblFeatDescription.MaximumSize = new System.Drawing.Size(571, 126);
-            this.lblFeatDescription.MinimumSize = new System.Drawing.Size(571, 126);
-            this.lblFeatDescription.Name = "lblFeatDescription";
-            this.lblFeatDescription.Size = new System.Drawing.Size(571, 126);
-            this.lblFeatDescription.TabIndex = 3;
             // 
             // lblFeatSource
             // 
@@ -161,6 +151,17 @@
             this.label3.Size = new System.Drawing.Size(57, 17);
             this.label3.TabIndex = 0;
             this.label3.Text = "Source:";
+            // 
+            // txtFeatDescription
+            // 
+            this.txtFeatDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFeatDescription.Location = new System.Drawing.Point(3, 20);
+            this.txtFeatDescription.Multiline = true;
+            this.txtFeatDescription.Name = "txtFeatDescription";
+            this.txtFeatDescription.ReadOnly = true;
+            this.txtFeatDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtFeatDescription.Size = new System.Drawing.Size(571, 140);
+            this.txtFeatDescription.TabIndex = 4;
             // 
             // FeatManagerForm
             // 
@@ -198,8 +199,8 @@
         private System.Windows.Forms.Button btnNewFeat;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblFeatDescription;
         private System.Windows.Forms.Label lblFeatSource;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtFeatDescription;
     }
 }

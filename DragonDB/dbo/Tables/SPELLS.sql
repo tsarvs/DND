@@ -1,8 +1,7 @@
 ﻿CREATE TABLE [dbo].[SPELLS] (
-    [s_id]                 INT           NOT NULL,
+    [s_id]                 INT IDENTITY(1,1) NOT NULL,
     [s_name]               VARCHAR (250) NULL,
     [s_school]             VARCHAR (100) NULL,
-    [s_isritual]           BIT           DEFAULT ((0)) NULL,
     [s_castingtimeminutes] INT           NULL,
     [s_range]              VARCHAR (10)  NULL,
     [s_target]             VARCHAR (100) NULL,

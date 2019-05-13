@@ -13,7 +13,7 @@ namespace DND.Views.Interfaces
 
         Label FeatSource { get; set; }
 
-        Label FeatDescription { get; set; }
+        TextBox FeatDescription { get; set; }
 
         ListBox FeatsListBox { get; set; }
 
