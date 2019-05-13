@@ -54,6 +54,8 @@ namespace DND.Views.Forms
 
             form.SetController(new CharacterSheetController(form));
 
+            form.LoadCharacter(_campaignID);
+
             form.ShowDialog();
         }
 

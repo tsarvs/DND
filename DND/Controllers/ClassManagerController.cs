@@ -14,6 +14,8 @@ namespace DND.Controllers
 
         private bool _madeChanges;
 
+        private ICharacterSheetForm _parentView;
+
         private IClassManagerForm _view;
 
         private int _characterId;
@@ -24,9 +26,10 @@ namespace DND.Controllers
 
         #region Constructors
 
-        public ClassManagerController(IClassManagerForm view)
+        public ClassManagerController(IClassManagerForm view, ICharacterSheetForm parentView)
         {
             _view = view;
+            _parentView = parentView;
             _madeChanges = false;
             _characterId = 0;
             _characterClassesToSave = new List<CHARACTER_CLASS>();
@@ -36,34 +39,34 @@ namespace DND.Controllers
 
         #region Methods
 
-        public void PopulateControls(int characterId)
+        public void PopulateControls(int characterId, List<CHARACTER_CLASS> loadedCharacterClasses)
         {
             _characterId = characterId;
 
-            using (var db = new DragonDBModel())
+            _characterClassesToSave = loadedCharacterClasses;
+            
+            _view.ClassListBox.DisplayMember = "cl_name";
+            _view.ClassListBox.ValueMember = "cl_id";
+            _view.ClassListBox.SelectedItem = null;
+
+            _view.CharacterClassListBox.DisplayMember = "cl_name";
+            _view.CharacterClassListBox.ValueMember = "cl_id";
+            _view.CharacterClassListBox.SelectedItem = null;
+
+            List<CLASS> characterClasses;
+
+            if (_characterClassesToSave == null)
             {
-                var characterClassQuery =
-                    (from cc in db.CHARACTER_CLASS.ToList()
-                        where (cc.CHARACTER.c_id == _characterId)
-                        select cc).ToList();
-
-                _characterClassesToSave = characterClassQuery;
-                
-                var classQuery =
-                    (from cc in db.CHARACTER_CLASS.ToList()
-                        where (cc.CHARACTER.c_id == _characterId)
-                        select cc.CLASS).ToList();
-
-                _view.ClassListBox.DisplayMember = "cl_name";
-                _view.ClassListBox.ValueMember = "cl_id";
-                _view.ClassListBox.SelectedItem = null;
-
-                _view.CharacterClassListBox.DisplayMember = "cl_name";
-                _view.CharacterClassListBox.ValueMember = "cl_id";
-                _view.CharacterClassListBox.SelectedItem = null;
-                
-                UpdateListsContents(classQuery);
+                characterClasses = new List<CLASS>();
             }
+            else
+            {
+                characterClasses =
+                    (from cc in loadedCharacterClasses
+                        select cc.CLASS).ToList();
+            }
+            
+            UpdateListsContents(characterClasses);
         }
 
         public void AddClassToCharacter()
@@ -73,8 +76,10 @@ namespace DND.Controllers
             var currentCharacterClasses = _view.CharacterClassListBox.Items.Cast<CLASS>();
 
             var updatedCharacterClasses = currentCharacterClasses.Concat(addClass).ToList();
-
+            
             CheckChanges(updatedCharacterClasses);
+
+            UpdateCharacterClassesToSave(updatedCharacterClasses);
 
             UpdateListsContents(updatedCharacterClasses);
         }
@@ -89,8 +94,15 @@ namespace DND.Controllers
 
             CheckChanges(updatedCharacterClasses);
 
+            UpdateCharacterClassesToSave(updatedCharacterClasses);
+
             UpdateListsContents(updatedCharacterClasses);
 
+        }
+
+        public void UpdateParentView()
+        {
+            _parentView.LoadCharacterClasses(_characterClassesToSave);
         }
 
         public void RefreshLevel()
@@ -102,36 +114,21 @@ namespace DND.Controllers
                 where (cc.cc_clid == selectedClass.cl_id)
                 select cc.cc_level).FirstOrDefault();
             
-            _view.ClassLevel.Text = selectedClassLevel.GetValueOrDefault(1).ToString();
+            _view.ClassLevel.Value = selectedClassLevel.GetValueOrDefault(1);
         }
 
         public void UpdateLevel()
         {
             var selectedClass = (CLASS)_view.CharacterClassListBox.SelectedItem;
 
-            var newLevel = Convert.ToInt32(_view.ClassLevel.Value);
+            var characterClassQuery = _characterClassesToSave.Find(x => x.cc_clid == selectedClass.cl_id);
 
-            _characterClassesToSave.Find(x => x.cc_clid == selectedClass.cl_id).cc_level = newLevel;
-        }
-
-        public void Save()
-        {
-            if (!_madeChanges)
+            if (characterClassQuery == null)
                 return;
 
-            using (var db = new DragonDBModel())
-            {
-                var inDbCharacter = db.CHARACTER.Single(x => x.c_id == _characterId);
-
-                inDbCharacter.CHARACTER_CLASS.Clear();
-
-                foreach (var characterClass in _characterClassesToSave)
-                {
-                    inDbCharacter.CHARACTER_CLASS.Add(characterClass);
-                }
-
-                db.SaveChanges();
-            }
+            var newLevel = (int) _view.ClassLevel.Value;
+ 
+            characterClassQuery.cc_level = newLevel;
         }
 
         private void UpdateListsContents(List<CLASS> characterClasses)
@@ -162,36 +159,30 @@ namespace DND.Controllers
 
         private void UpdateCharacterClassesToSave(List<CLASS> characterClasses)
         {
+            var characterClassQuery =
+                (from cc in _characterClassesToSave.ToList()
+                    select cc).ToList();
+
             _characterClassesToSave.Clear();
-            
-            //todo: see if possible to update character classes to save without db connection
-            using (var db = new DragonDBModel())
+
+            foreach (var characterClass in characterClasses)
             {
-                var characterClassQuery =
-                    (from cc in db.CHARACTER_CLASS.ToList()
-                        where (cc.cc_cid == _characterId)
-                        select cc).ToList();
+                var classQuery = characterClassQuery.Find(x => x.cc_clid == characterClass.cl_id);
 
-                foreach (var characterClass in characterClasses)
+                var classLevel = 1;
+                
+                if (classQuery != null)
                 {
-                    var classQuery = characterClassQuery.Find(x => x.cc_clid == characterClass.cl_id);
-
-                    var classLevel = 1;
-
-                    if (classQuery != null)
-                    {
-                        classLevel = classQuery.cc_level.GetValueOrDefault(1);
-                    }
-                    
-                    _characterClassesToSave.Add(new CHARACTER_CLASS
-                    {
-                        cc_cid = _characterId,
-                        cc_clid = characterClass.cl_id,
-                        cc_level = classLevel
-
-                    });
+                    classLevel = classQuery.cc_level.GetValueOrDefault(1); 
                 }
 
+                _characterClassesToSave.Add(new CHARACTER_CLASS
+                {
+                    cc_cid = _characterId,
+                    cc_clid = characterClass.cl_id,
+                    cc_level = classLevel,
+                    CLASS = characterClass
+                });
             }
         }
 

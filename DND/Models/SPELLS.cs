@@ -16,7 +16,6 @@ namespace DND.Models
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int s_id { get; set; }
 
         [StringLength(250)]
@@ -24,8 +23,6 @@ namespace DND.Models
 
         [StringLength(100)]
         public string s_school { get; set; }
-
-        public bool? s_isritual { get; set; }
 
         public int? s_castingtimeminutes { get; set; }
 

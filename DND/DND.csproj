@@ -67,6 +67,7 @@
     <Compile Include="Models\CAMPAIGN_PLAYER_CHARACTERS.cs" />
     <Compile Include="Models\CHARACTER.cs" />
     <Compile Include="Models\CHARACTER_ABILITY.cs" />
+    <Compile Include="Models\CHARACTER_ATTACK.cs" />
     <Compile Include="Models\CHARACTER_CLASS.cs" />
     <Compile Include="Models\CHARACTER_INVENTORY.cs" />
     <Compile Include="Models\CLASS.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Models\EVENT_TYPE.cs" />
     <Compile Include="Models\FEATS.cs" />
     <Compile Include="Models\ITEM.cs" />
+    <Compile Include="Models\ITEM_BACKGROUND.cs" />
     <Compile Include="Models\LOCATION.cs" />
     <Compile Include="Models\PROFICIENCY.cs" />
     <Compile Include="Models\QUEST.cs" />

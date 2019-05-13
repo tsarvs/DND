@@ -12,9 +12,9 @@ namespace DND.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public BACKGROUND()
         {
+            ITEM_BACKGROUND = new HashSet<ITEM_BACKGROUND>();
             CAMPAIGN = new HashSet<CAMPAIGN>();
             CHARACTER = new HashSet<CHARACTER>();
-            ITEM = new HashSet<ITEM>();
             LOCATION = new HashSet<LOCATION>();
             QUEST = new HashSet<QUEST>();
             QUESTLINE = new HashSet<QUESTLINE>();
@@ -27,13 +27,13 @@ namespace DND.Models
         public string b_desc { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ITEM_BACKGROUND> ITEM_BACKGROUND { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CAMPAIGN> CAMPAIGN { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHARACTER> CHARACTER { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ITEM> ITEM { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LOCATION> LOCATION { get; set; }

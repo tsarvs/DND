@@ -35,7 +35,7 @@
             this.lbCharacterClasses = new System.Windows.Forms.ListBox();
             this.lbClasses = new System.Windows.Forms.ListBox();
             this.lblLevel = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.btnAddToCharacter = new System.Windows.Forms.Button();
             this.txtLevel = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.txtLevel)).BeginInit();
             this.SuspendLayout();
@@ -102,25 +102,25 @@
             // lblLevel
             // 
             this.lblLevel.AutoSize = true;
-            this.lblLevel.Location = new System.Drawing.Point(346, 394);
+            this.lblLevel.Location = new System.Drawing.Point(494, 393);
             this.lblLevel.Name = "lblLevel";
             this.lblLevel.Size = new System.Drawing.Size(46, 17);
             this.lblLevel.TabIndex = 13;
             this.lblLevel.Text = "Level:";
             // 
-            // btnSave
+            // btnAddToCharacter
             // 
-            this.btnSave.Location = new System.Drawing.Point(475, 420);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(113, 23);
-            this.btnSave.TabIndex = 12;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnAddToCharacter.Location = new System.Drawing.Point(456, 419);
+            this.btnAddToCharacter.Name = "btnAddToCharacter";
+            this.btnAddToCharacter.Size = new System.Drawing.Size(132, 23);
+            this.btnAddToCharacter.TabIndex = 12;
+            this.btnAddToCharacter.Text = "Add to Character";
+            this.btnAddToCharacter.UseVisualStyleBackColor = true;
+            this.btnAddToCharacter.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // txtLevel
             // 
-            this.txtLevel.Location = new System.Drawing.Point(398, 392);
+            this.txtLevel.Location = new System.Drawing.Point(546, 391);
             this.txtLevel.Name = "txtLevel";
             this.txtLevel.Size = new System.Drawing.Size(42, 22);
             this.txtLevel.TabIndex = 15;
@@ -130,10 +130,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(601, 455);
+            this.ClientSize = new System.Drawing.Size(601, 453);
             this.Controls.Add(this.txtLevel);
             this.Controls.Add(this.lblLevel);
-            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnAddToCharacter);
             this.Controls.Add(this.btnRemoveClassFromCharacter);
             this.Controls.Add(this.btnAddClassToCharacter);
             this.Controls.Add(this.label2);
@@ -141,8 +141,7 @@
             this.Controls.Add(this.lbCharacterClasses);
             this.Controls.Add(this.lbClasses);
             this.Name = "ClassManagerForm";
-            this.Text = "ClassManagerForm";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ClassManagerForm_FormClosed);
+            this.Text = "Class Manager";
             this.Load += new System.EventHandler(this.ClassManagerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtLevel)).EndInit();
             this.ResumeLayout(false);
@@ -159,7 +158,7 @@
         private System.Windows.Forms.ListBox lbCharacterClasses;
         private System.Windows.Forms.ListBox lbClasses;
         private System.Windows.Forms.Label lblLevel;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnAddToCharacter;
         private System.Windows.Forms.NumericUpDown txtLevel;
     }
 }

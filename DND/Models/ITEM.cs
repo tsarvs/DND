@@ -13,23 +13,20 @@ namespace DND.Models
         public ITEM()
         {
             CHARACTER_INVENTORY = new HashSet<CHARACTER_INVENTORY>();
-            BACKGROUND = new HashSet<BACKGROUND>();
             EFFECT = new HashSet<EFFECT>();
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int i_id { get; set; }
 
         public decimal? i_weight { get; set; }
 
         public decimal? i_gp { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CHARACTER_INVENTORY> CHARACTER_INVENTORY { get; set; }
+        public string i_description { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BACKGROUND> BACKGROUND { get; set; }
+        public virtual ICollection<CHARACTER_INVENTORY> CHARACTER_INVENTORY { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EFFECT> EFFECT { get; set; }
