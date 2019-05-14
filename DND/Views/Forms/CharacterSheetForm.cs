@@ -687,6 +687,17 @@ namespace DND.Views.Forms
             _controller.UpdateClassLevel();
         }
 
+        private void btnAddAttack_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeleteAttack_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
         #endregion
 
 

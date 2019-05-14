@@ -108,7 +108,7 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabAttack = new System.Windows.Forms.TabPage();
             this.txtAttackDescription = new System.Windows.Forms.TextBox();
-            this.btnManageAttacks = new System.Windows.Forms.Button();
+            this.btnAddAttack = new System.Windows.Forms.Button();
             this.dgvAttack = new System.Windows.Forms.DataGridView();
             this.tabSpellbook = new System.Windows.Forms.TabPage();
             this.lblDuration = new System.Windows.Forms.Label();
@@ -217,6 +217,7 @@
             this.txtConstitution = new System.Windows.Forms.NumericUpDown();
             this.txtCharisma = new System.Windows.Forms.NumericUpDown();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnDeleteAttack = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtExperience)).BeginInit();
@@ -1065,8 +1066,9 @@
             // 
             // tabAttack
             // 
+            this.tabAttack.Controls.Add(this.btnDeleteAttack);
             this.tabAttack.Controls.Add(this.txtAttackDescription);
-            this.tabAttack.Controls.Add(this.btnManageAttacks);
+            this.tabAttack.Controls.Add(this.btnAddAttack);
             this.tabAttack.Controls.Add(this.dgvAttack);
             this.tabAttack.Location = new System.Drawing.Point(4, 25);
             this.tabAttack.Name = "tabAttack";
@@ -1086,14 +1088,15 @@
             this.txtAttackDescription.Size = new System.Drawing.Size(429, 159);
             this.txtAttackDescription.TabIndex = 39;
             // 
-            // btnManageAttacks
+            // btnAddAttack
             // 
-            this.btnManageAttacks.Location = new System.Drawing.Point(264, 331);
-            this.btnManageAttacks.Name = "btnManageAttacks";
-            this.btnManageAttacks.Size = new System.Drawing.Size(171, 26);
-            this.btnManageAttacks.TabIndex = 38;
-            this.btnManageAttacks.Text = "Manage Attacks";
-            this.btnManageAttacks.UseVisualStyleBackColor = true;
+            this.btnAddAttack.Location = new System.Drawing.Point(324, 331);
+            this.btnAddAttack.Name = "btnAddAttack";
+            this.btnAddAttack.Size = new System.Drawing.Size(111, 26);
+            this.btnAddAttack.TabIndex = 38;
+            this.btnAddAttack.Text = "Add Attack";
+            this.btnAddAttack.UseVisualStyleBackColor = true;
+            this.btnAddAttack.Click += new System.EventHandler(this.btnAddAttack_Click);
             // 
             // dgvAttack
             // 
@@ -2140,6 +2143,16 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnDeleteAttack
+            // 
+            this.btnDeleteAttack.Location = new System.Drawing.Point(207, 331);
+            this.btnDeleteAttack.Name = "btnDeleteAttack";
+            this.btnDeleteAttack.Size = new System.Drawing.Size(111, 26);
+            this.btnDeleteAttack.TabIndex = 40;
+            this.btnDeleteAttack.Text = "Delete Attack";
+            this.btnDeleteAttack.UseVisualStyleBackColor = true;
+            this.btnDeleteAttack.Click += new System.EventHandler(this.btnDeleteAttack_Click);
+            // 
             // CharacterSheetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2303,7 +2316,7 @@
         private System.Windows.Forms.Label lblLore;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabAttack;
-        private System.Windows.Forms.Button btnManageAttacks;
+        private System.Windows.Forms.Button btnAddAttack;
         private System.Windows.Forms.DataGridView dgvAttack;
         private System.Windows.Forms.TabPage tabSpellbook;
         private System.Windows.Forms.NumericUpDown txtSpellSlot_Level8_Max;
@@ -2436,5 +2449,6 @@
         private System.Windows.Forms.Label lblWeight;
         private System.Windows.Forms.NumericUpDown txtLevel;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDeleteAttack;
     }
 }
