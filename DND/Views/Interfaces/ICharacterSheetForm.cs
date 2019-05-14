@@ -50,7 +50,7 @@ namespace DND.Views.Interfaces
         int HitDiceCurrent { get; set; }
 
         int HitDiceMax { get; set; }
-
+        
         #endregion
 
         #region Abilities
@@ -234,11 +234,15 @@ namespace DND.Views.Interfaces
 
         #region Methods
 
+        void UpdateAttacks(CHARACTER_ATTACK attack);
+
         void UpdateFeatGrid();
         
         void LoadCharacterClasses(List<CHARACTER_CLASS> characterClassList);
 
         void SetController(CharacterSheetController controller);
+        
+        void AddAttack(CHARACTER_ATTACK attack);
 
         #endregion
     }

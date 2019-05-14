@@ -133,8 +133,9 @@ namespace DND.Models
 
             modelBuilder.Entity<CHARACTER>()
                 .HasMany(e => e.CHARACTER_ATTACK)
-                .WithOptional(e => e.CHARACTER)
-                .HasForeignKey(e => e.a_cid);
+                .WithRequired(e => e.CHARACTER)
+                .HasForeignKey(e => e.a_cid)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<CHARACTER>()
                 .HasMany(e => e.CHARACTER_CLASS)
@@ -169,8 +170,12 @@ namespace DND.Models
                 .Map(m => m.ToTable("CHARACTER_SPELLBOOK").MapLeftKey("cs_cid").MapRightKey("cs_sid"));
 
             modelBuilder.Entity<CHARACTER_ATTACK>()
+                .Property(e => e.a_attackability)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<CHARACTER_ATTACK>()
                 .Property(e => e.a_range)
-                .IsFixedLength();
+                .IsUnicode(false);
 
             modelBuilder.Entity<CHARACTER_ATTACK>()
                 .Property(e => e.a_damage1)
@@ -181,7 +186,7 @@ namespace DND.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<CHARACTER_ATTACK>()
-                .Property(e => e.a_itemdescription)
+                .Property(e => e.a_description)
                 .IsUnicode(false);
 
             modelBuilder.Entity<CLASS>()

@@ -627,9 +627,22 @@ namespace DND.Views.Forms
             _controller = controller;
         }
 
+        public void AddAttack(CHARACTER_ATTACK attack)
+        {
+            _controller.AddAttackToGrid(attack);
+        }
+
         public void LoadCharacterClasses(List<CHARACTER_CLASS> characterClassList)
         {
             _controller.LoadCharacterClasses(characterClassList);
+        }
+
+        public void UpdateAttacks(CHARACTER_ATTACK attack)
+        {
+            if (_controller == null)
+                return;
+
+            _controller.UpdateAttackGrid(attack);
         }
 
         public void UpdateFeatGrid()
@@ -689,14 +702,23 @@ namespace DND.Views.Forms
 
         private void btnAddAttack_Click(object sender, EventArgs e)
         {
-
+            _controller.AddAttack();
         }
 
         private void btnDeleteAttack_Click(object sender, EventArgs e)
         {
-
+            _controller.DeleteSelectedAttack();
         }
 
+        private void dgvAttack_SelectionChanged(object sender, EventArgs e)
+        {
+            _controller.UpdateAttackControls();
+        }
+
+        private void btnEditAttack_Click(object sender, EventArgs e)
+        {
+            _controller.EditAttack();
+        }
 
         #endregion
 

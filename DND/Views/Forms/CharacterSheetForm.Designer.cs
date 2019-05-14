@@ -83,30 +83,38 @@
             this.lblHistory = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
             this.dgvFeats = new System.Windows.Forms.DataGridView();
-            this.btnAddFeat = new System.Windows.Forms.Button();
             this.txtFeatDescription = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnManageInventory = new System.Windows.Forms.Button();
             this.txtItemDescription = new System.Windows.Forms.TextBox();
             this.dgvInventory = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabInventory = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.lblGold = new System.Windows.Forms.Label();
             this.lblWeight = new System.Windows.Forms.Label();
             this.tabFeats = new System.Windows.Forms.TabPage();
+            this.btnAddFeat = new System.Windows.Forms.Button();
             this.tabProficiencies = new System.Windows.Forms.TabPage();
-            this.btnManageProficiencies = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.txtProficiencyBonus = new System.Windows.Forms.NumericUpDown();
             this.lblProficiencyBonus = new System.Windows.Forms.Label();
             this.dgvProficiencies = new System.Windows.Forms.DataGridView();
             this.tabBackground = new System.Windows.Forms.TabPage();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
             this.cmbLore = new System.Windows.Forms.ComboBox();
             this.txtLoreDescription = new System.Windows.Forms.TextBox();
-            this.btnManageLore = new System.Windows.Forms.Button();
             this.lblLore = new System.Windows.Forms.Label();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabAttack = new System.Windows.Forms.TabPage();
+            this.btnEditAttack = new System.Windows.Forms.Button();
+            this.btnDeleteAttack = new System.Windows.Forms.Button();
             this.txtAttackDescription = new System.Windows.Forms.TextBox();
             this.btnAddAttack = new System.Windows.Forms.Button();
             this.dgvAttack = new System.Windows.Forms.DataGridView();
@@ -217,7 +225,6 @@
             this.txtConstitution = new System.Windows.Forms.NumericUpDown();
             this.txtCharisma = new System.Windows.Forms.NumericUpDown();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnDeleteAttack = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtExperience)).BeginInit();
@@ -826,16 +833,6 @@
             this.dgvFeats.TabIndex = 33;
             this.dgvFeats.SelectionChanged += new System.EventHandler(this.dgvFeats_SelectionChanged);
             // 
-            // btnAddFeat
-            // 
-            this.btnAddFeat.Location = new System.Drawing.Point(257, 302);
-            this.btnAddFeat.Name = "btnAddFeat";
-            this.btnAddFeat.Size = new System.Drawing.Size(171, 26);
-            this.btnAddFeat.TabIndex = 37;
-            this.btnAddFeat.Text = "Manage Feats";
-            this.btnAddFeat.UseVisualStyleBackColor = true;
-            this.btnAddFeat.Click += new System.EventHandler(this.btnManageFeats_Click);
-            // 
             // txtFeatDescription
             // 
             this.txtFeatDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -864,15 +861,6 @@
             this.label8.Size = new System.Drawing.Size(92, 17);
             this.label8.TabIndex = 39;
             this.label8.Text = "Total Weight:";
-            // 
-            // btnManageInventory
-            // 
-            this.btnManageInventory.Location = new System.Drawing.Point(259, 305);
-            this.btnManageInventory.Name = "btnManageInventory";
-            this.btnManageInventory.Size = new System.Drawing.Size(171, 26);
-            this.btnManageInventory.TabIndex = 37;
-            this.btnManageInventory.Text = "Manage Inventory";
-            this.btnManageInventory.UseVisualStyleBackColor = true;
             // 
             // txtItemDescription
             // 
@@ -912,9 +900,11 @@
             // 
             // tabInventory
             // 
+            this.tabInventory.Controls.Add(this.button3);
+            this.tabInventory.Controls.Add(this.button4);
+            this.tabInventory.Controls.Add(this.button5);
             this.tabInventory.Controls.Add(this.lblGold);
             this.tabInventory.Controls.Add(this.lblWeight);
-            this.tabInventory.Controls.Add(this.btnManageInventory);
             this.tabInventory.Controls.Add(this.label9);
             this.tabInventory.Controls.Add(this.dgvInventory);
             this.tabInventory.Controls.Add(this.label8);
@@ -925,6 +915,33 @@
             this.tabInventory.TabIndex = 0;
             this.tabInventory.Text = "Inventory";
             this.tabInventory.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(267, 305);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(79, 26);
+            this.button3.TabIndex = 63;
+            this.button3.Text = "Edit";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(182, 305);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(79, 26);
+            this.button4.TabIndex = 62;
+            this.button4.Text = "Delete";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(352, 305);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(79, 26);
+            this.button5.TabIndex = 61;
+            this.button5.Text = "Add";
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // lblGold
             // 
@@ -957,9 +974,21 @@
             this.tabFeats.Text = "Feats";
             this.tabFeats.UseVisualStyleBackColor = true;
             // 
+            // btnAddFeat
+            // 
+            this.btnAddFeat.Location = new System.Drawing.Point(257, 302);
+            this.btnAddFeat.Name = "btnAddFeat";
+            this.btnAddFeat.Size = new System.Drawing.Size(171, 26);
+            this.btnAddFeat.TabIndex = 37;
+            this.btnAddFeat.Text = "Manage Feats";
+            this.btnAddFeat.UseVisualStyleBackColor = true;
+            this.btnAddFeat.Click += new System.EventHandler(this.btnManageFeats_Click);
+            // 
             // tabProficiencies
             // 
-            this.tabProficiencies.Controls.Add(this.btnManageProficiencies);
+            this.tabProficiencies.Controls.Add(this.button6);
+            this.tabProficiencies.Controls.Add(this.button7);
+            this.tabProficiencies.Controls.Add(this.button8);
             this.tabProficiencies.Controls.Add(this.txtProficiencyBonus);
             this.tabProficiencies.Controls.Add(this.lblProficiencyBonus);
             this.tabProficiencies.Controls.Add(this.dgvProficiencies);
@@ -970,14 +999,32 @@
             this.tabProficiencies.Text = "Proficiencies";
             this.tabProficiencies.UseVisualStyleBackColor = true;
             // 
-            // btnManageProficiencies
+            // button6
             // 
-            this.btnManageProficiencies.Location = new System.Drawing.Point(259, 305);
-            this.btnManageProficiencies.Name = "btnManageProficiencies";
-            this.btnManageProficiencies.Size = new System.Drawing.Size(171, 26);
-            this.btnManageProficiencies.TabIndex = 41;
-            this.btnManageProficiencies.Text = "Manage Proficiencies";
-            this.btnManageProficiencies.UseVisualStyleBackColor = true;
+            this.button6.Location = new System.Drawing.Point(266, 305);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(79, 26);
+            this.button6.TabIndex = 63;
+            this.button6.Text = "Edit";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(181, 305);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(79, 26);
+            this.button7.TabIndex = 62;
+            this.button7.Text = "Delete";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(351, 305);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(79, 26);
+            this.button8.TabIndex = 61;
+            this.button8.Text = "Add";
+            this.button8.UseVisualStyleBackColor = true;
             // 
             // txtProficiencyBonus
             // 
@@ -1006,9 +1053,11 @@
             // 
             // tabBackground
             // 
+            this.tabBackground.Controls.Add(this.button9);
+            this.tabBackground.Controls.Add(this.button10);
+            this.tabBackground.Controls.Add(this.button11);
             this.tabBackground.Controls.Add(this.cmbLore);
             this.tabBackground.Controls.Add(this.txtLoreDescription);
-            this.tabBackground.Controls.Add(this.btnManageLore);
             this.tabBackground.Controls.Add(this.lblLore);
             this.tabBackground.Location = new System.Drawing.Point(4, 25);
             this.tabBackground.Name = "tabBackground";
@@ -1016,6 +1065,33 @@
             this.tabBackground.TabIndex = 3;
             this.tabBackground.Text = "Background";
             this.tabBackground.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(271, 305);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(79, 26);
+            this.button9.TabIndex = 63;
+            this.button9.Text = "Edit";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(186, 305);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(79, 26);
+            this.button10.TabIndex = 62;
+            this.button10.Text = "Delete";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(356, 305);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(79, 26);
+            this.button11.TabIndex = 61;
+            this.button11.Text = "Add";
+            this.button11.UseVisualStyleBackColor = true;
             // 
             // cmbLore
             // 
@@ -1035,15 +1111,6 @@
             this.txtLoreDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtLoreDescription.Size = new System.Drawing.Size(427, 266);
             this.txtLoreDescription.TabIndex = 43;
-            // 
-            // btnManageLore
-            // 
-            this.btnManageLore.Location = new System.Drawing.Point(259, 305);
-            this.btnManageLore.Name = "btnManageLore";
-            this.btnManageLore.Size = new System.Drawing.Size(171, 26);
-            this.btnManageLore.TabIndex = 42;
-            this.btnManageLore.Text = "Manage Lore";
-            this.btnManageLore.UseVisualStyleBackColor = true;
             // 
             // lblLore
             // 
@@ -1066,6 +1133,7 @@
             // 
             // tabAttack
             // 
+            this.tabAttack.Controls.Add(this.btnEditAttack);
             this.tabAttack.Controls.Add(this.btnDeleteAttack);
             this.tabAttack.Controls.Add(this.txtAttackDescription);
             this.tabAttack.Controls.Add(this.btnAddAttack);
@@ -1077,24 +1145,44 @@
             this.tabAttack.Text = "Attack";
             this.tabAttack.UseVisualStyleBackColor = true;
             // 
+            // btnEditAttack
+            // 
+            this.btnEditAttack.Location = new System.Drawing.Point(271, 331);
+            this.btnEditAttack.Name = "btnEditAttack";
+            this.btnEditAttack.Size = new System.Drawing.Size(79, 26);
+            this.btnEditAttack.TabIndex = 60;
+            this.btnEditAttack.Text = "Edit";
+            this.btnEditAttack.UseVisualStyleBackColor = true;
+            this.btnEditAttack.Click += new System.EventHandler(this.btnEditAttack_Click);
+            // 
+            // btnDeleteAttack
+            // 
+            this.btnDeleteAttack.Location = new System.Drawing.Point(186, 331);
+            this.btnDeleteAttack.Name = "btnDeleteAttack";
+            this.btnDeleteAttack.Size = new System.Drawing.Size(79, 26);
+            this.btnDeleteAttack.TabIndex = 40;
+            this.btnDeleteAttack.Text = "Delete";
+            this.btnDeleteAttack.UseVisualStyleBackColor = true;
+            this.btnDeleteAttack.Click += new System.EventHandler(this.btnDeleteAttack_Click);
+            // 
             // txtAttackDescription
             // 
             this.txtAttackDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAttackDescription.Location = new System.Drawing.Point(6, 166);
+            this.txtAttackDescription.Location = new System.Drawing.Point(6, 149);
             this.txtAttackDescription.Multiline = true;
             this.txtAttackDescription.Name = "txtAttackDescription";
             this.txtAttackDescription.ReadOnly = true;
             this.txtAttackDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtAttackDescription.Size = new System.Drawing.Size(429, 159);
+            this.txtAttackDescription.Size = new System.Drawing.Size(429, 176);
             this.txtAttackDescription.TabIndex = 39;
             // 
             // btnAddAttack
             // 
-            this.btnAddAttack.Location = new System.Drawing.Point(324, 331);
+            this.btnAddAttack.Location = new System.Drawing.Point(356, 331);
             this.btnAddAttack.Name = "btnAddAttack";
-            this.btnAddAttack.Size = new System.Drawing.Size(111, 26);
+            this.btnAddAttack.Size = new System.Drawing.Size(79, 26);
             this.btnAddAttack.TabIndex = 38;
-            this.btnAddAttack.Text = "Add Attack";
+            this.btnAddAttack.Text = "Add";
             this.btnAddAttack.UseVisualStyleBackColor = true;
             this.btnAddAttack.Click += new System.EventHandler(this.btnAddAttack_Click);
             // 
@@ -1104,12 +1192,15 @@
             this.dgvAttack.AllowUserToResizeRows = false;
             this.dgvAttack.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAttack.Location = new System.Drawing.Point(3, 3);
+            this.dgvAttack.MultiSelect = false;
             this.dgvAttack.Name = "dgvAttack";
             this.dgvAttack.RowHeadersVisible = false;
             this.dgvAttack.RowTemplate.Height = 24;
+            this.dgvAttack.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvAttack.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAttack.Size = new System.Drawing.Size(432, 159);
+            this.dgvAttack.Size = new System.Drawing.Size(432, 140);
             this.dgvAttack.TabIndex = 34;
+            this.dgvAttack.SelectionChanged += new System.EventHandler(this.dgvAttack_SelectionChanged);
             // 
             // tabSpellbook
             // 
@@ -2143,16 +2234,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnDeleteAttack
-            // 
-            this.btnDeleteAttack.Location = new System.Drawing.Point(207, 331);
-            this.btnDeleteAttack.Name = "btnDeleteAttack";
-            this.btnDeleteAttack.Size = new System.Drawing.Size(111, 26);
-            this.btnDeleteAttack.TabIndex = 40;
-            this.btnDeleteAttack.Text = "Delete Attack";
-            this.btnDeleteAttack.UseVisualStyleBackColor = true;
-            this.btnDeleteAttack.Click += new System.EventHandler(this.btnDeleteAttack_Click);
-            // 
             // CharacterSheetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2294,11 +2375,9 @@
         private System.Windows.Forms.Label lblArcana;
         private System.Windows.Forms.Label lblAnimalHandling;
         private System.Windows.Forms.DataGridView dgvFeats;
-        private System.Windows.Forms.Button btnAddFeat;
         private System.Windows.Forms.TextBox txtFeatDescription;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnManageInventory;
         private System.Windows.Forms.TextBox txtItemDescription;
         private System.Windows.Forms.DataGridView dgvInventory;
         private System.Windows.Forms.TabControl tabControl1;
@@ -2306,13 +2385,11 @@
         private System.Windows.Forms.TabPage tabFeats;
         private System.Windows.Forms.TabPage tabProficiencies;
         private System.Windows.Forms.TabPage tabBackground;
-        private System.Windows.Forms.Button btnManageProficiencies;
         private System.Windows.Forms.NumericUpDown txtProficiencyBonus;
         private System.Windows.Forms.Label lblProficiencyBonus;
         private System.Windows.Forms.DataGridView dgvProficiencies;
         private System.Windows.Forms.ComboBox cmbLore;
         private System.Windows.Forms.TextBox txtLoreDescription;
-        private System.Windows.Forms.Button btnManageLore;
         private System.Windows.Forms.Label lblLore;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabAttack;
@@ -2450,5 +2527,16 @@
         private System.Windows.Forms.NumericUpDown txtLevel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnDeleteAttack;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnAddFeat;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button btnEditAttack;
     }
 }
