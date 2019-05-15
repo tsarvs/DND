@@ -157,11 +157,11 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(246, 365);
+            this.btnAdd.Location = new System.Drawing.Point(205, 365);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(74, 23);
+            this.btnAdd.Size = new System.Drawing.Size(115, 28);
             this.btnAdd.TabIndex = 26;
-            this.btnAdd.Text = "Add";
+            this.btnAdd.Text = "Update Attacks";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -194,7 +194,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 400);
+            this.ClientSize = new System.Drawing.Size(334, 406);
             this.Controls.Add(this.cmbAttackAbility);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnAdd);
@@ -214,7 +214,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "AddEditAttackForm";
-            this.Text = "Add Attack";
+            this.Text = "Add/Edit Attack";
             ((System.ComponentModel.ISupportInitialize)(this.txtAttackBonus)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

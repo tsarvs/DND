@@ -20,6 +20,8 @@ namespace DND.Controllers
 
         private readonly List<CHARACTER_ATTACK> _loadedCharacterAttacks;
 
+        private List<ITEM> _loadedCharacterItems;
+
         #endregion
 
         #region Constructors
@@ -29,11 +31,225 @@ namespace DND.Controllers
             _view = view;
             _loadedCharacterClasses = new List<CHARACTER_CLASS>();
             _loadedCharacterAttacks = new List<CHARACTER_ATTACK>();
+            _loadedCharacterItems = new List<ITEM>();
         }
 
         #endregion
 
         #region Methods
+
+        #region Attack
+
+        public void AddAttack()
+        {
+            var form = new AddEditAttackForm();
+
+            form.SetController(new AddAttackController(form, _view));
+
+            form.Show();
+        }
+
+        public void AddAttackToGrid(CHARACTER_ATTACK attack)
+        {
+            _loadedCharacterAttacks.Add(attack);
+
+            RefreshAttackDataSource();
+
+            _view.AttackGridView.Columns[0].Visible = false;
+        }
+
+        public void UpdateAttackControls()
+        {
+            var selectedRow = _view.AttackGridView.SelectedRows;
+
+            if (selectedRow.Count == 0)
+            {
+                _view.AttackDescription = "";
+                return;
+            }
+            
+            var selectedAttack =
+                _loadedCharacterAttacks.Find(x => x.a_id == (int) selectedRow[0].Cells[0].Value);
+
+            if (!selectedAttack.a_damage1.Equals("") || !selectedAttack.a_damage2.Equals(""))
+            {
+                _view.AttackDescription = "Damage:";
+
+                if (!selectedAttack.a_damage1.Equals(""))
+                    _view.AttackDescription += "\r\n\t" + selectedAttack.a_damage1;
+
+                if (!selectedAttack.a_damage2.Equals(""))
+                    _view.AttackDescription += "\r\n\t" + selectedAttack.a_damage2;
+            }
+
+            _view.AttackDescription += "\r\n\r\n" + selectedAttack.a_description;
+        }
+
+        public void EditAttack()
+        {
+            var selectedRows = _view.AttackGridView.SelectedRows;
+
+            if (selectedRows.Count == 0)
+                return;
+
+            var selectedId = (int)selectedRows[0].Cells[0].Value;
+
+            var selectedAttack = _loadedCharacterAttacks.Find(x => x.a_id == selectedId);
+
+            var form = new AddEditAttackForm(selectedAttack);
+
+            form.SetController(new AddAttackController(form, _view));
+
+            form.Show();
+        }
+
+        public void UpdateAttackGrid(CHARACTER_ATTACK attack)
+        {
+            var attackToUpdate = _loadedCharacterAttacks.Find(x => x.a_id == attack.a_id);
+
+            attackToUpdate.a_name = attack.a_name;
+            attackToUpdate.a_attackability = attack.a_attackability;
+            attackToUpdate.a_attackbonus = attack.a_attackbonus;
+            attackToUpdate.a_isproficient = attack.a_isproficient;
+            attackToUpdate.a_range = attack.a_range;
+            attackToUpdate.a_damage1 = attack.a_damage1;
+            attackToUpdate.a_damage2 = attack.a_damage2;
+            attackToUpdate.a_description = attack.a_description;
+
+            RefreshAttackDataSource();
+        }
+
+        public void UpdateInventoryGrid(ITEM item)
+        {
+            var itemToUpdate = _loadedCharacterItems.Find(x => x.i_id == item.i_id);
+
+            itemToUpdate.i_name = item.i_name;
+            itemToUpdate.i_quantity = item.i_quantity;
+            itemToUpdate.i_weight = item.i_weight;
+            itemToUpdate.i_description = item.i_description;
+
+            RefreshInventory();
+        }
+
+        public void DeleteSelectedAttack()
+        {
+            if (_view.AttackGridView.SelectedRows.Count == 0)
+                return;
+            
+
+            var selectedAttackId = (int)_view.AttackGridView.SelectedRows[0].Cells[0].Value;
+
+            _loadedCharacterAttacks.Remove(_loadedCharacterAttacks.Find(x => x.a_id == selectedAttackId));
+
+            RefreshAttackDataSource();
+   
+        }
+        
+        private void RefreshAttackDataSource()
+        {
+            _view.AttackGridView.DataSource =
+                (from ca in _loadedCharacterAttacks
+                    select new
+                    {
+                        ID = ca.a_id,
+                        Name = ca.a_name,
+                        Attack = ca.a_attackability + " + " + ca.a_attackbonus,
+                        Range = ca.a_range
+                    }).ToList();
+
+            _view.AttackGridView.Columns[0].Visible = false;
+        }
+
+        #endregion
+
+        #region Inventory
+        public void AddItemToGrid(ITEM item)
+        {
+            _loadedCharacterItems.Add(item);
+
+            RefreshInventory();
+        }
+
+        private void RefreshInventory()
+        {
+            _view.InventoryGridView.DataSource =
+                (from ci in _loadedCharacterItems
+                    select new
+                    {
+                        ID = ci.i_id,
+                        Name = ci.i_name,
+                        Quantity = ci.i_quantity
+                    }).ToList();
+
+            _view.InventoryGridView.Columns[0].Visible = false;
+
+            UpdateWeight();
+        }
+
+        public void LoadAddEditItemForm(FormMode itemFormMode)
+        {
+            AddEditItemForm form;
+
+            if (itemFormMode == FormMode.NewForm)
+            {
+                form = new AddEditItemForm();
+            }
+            else
+            {
+                if (_view.InventoryGridView.SelectedRows.Count <= 0)
+                    return;
+
+                var selectedItem = _view.InventoryGridView.SelectedRows[0];
+
+                var loadedItem = _loadedCharacterItems.Find(x => x.i_id == (int)selectedItem.Cells[0].Value);
+
+                form = new AddEditItemForm(loadedItem);
+            }
+
+
+
+            form.SetController(new AddEditItemController(form, _view));
+
+            form.Show();
+        }
+
+        public void DeleteItem()
+        {
+            var selectedItem = _loadedCharacterItems.Find(x =>
+                x.i_id == (int)_view.InventoryGridView.SelectedRows[0].Cells[0].Value);
+
+            _loadedCharacterItems.Remove(selectedItem);
+
+            RefreshInventory();
+        }
+
+        private void UpdateWeight()
+        {
+            decimal totalWeight = 0;
+
+            foreach (var item in _loadedCharacterItems)
+            {
+                totalWeight += (item.i_quantity.GetValueOrDefault(0) * item.i_weight.GetValueOrDefault(0));
+            }
+
+            _view.InventoryWeight = (double) totalWeight;
+        }
+
+        public void UpdateItemDescription()
+        {
+            if (_view.InventoryGridView.SelectedRows.Count == 0)
+            {
+                _view.ItemDescription = "";
+                return;
+            }
+
+            var selectedItem =
+                _loadedCharacterItems.Find(x => x.i_id == (int) _view.InventoryGridView.SelectedRows[0].Cells[0].Value);
+
+            _view.ItemDescription = selectedItem.i_description;
+        }
+
+        #endregion
 
         public void InitializeData(int characterId)
         {
@@ -164,106 +380,7 @@ namespace DND.Controllers
 
             _loadedCharacterClasses.Find(x => x.cc_clid == selectedClass.cl_id).cc_level = newLevel;
         }
-
-        public void AddAttack()
-        {
-            var form = new AddEditAttackForm();
-
-            form.SetController(new AddAttackController(form, _view));
-
-            form.Show();
-        }
-
-        public void AddAttackToGrid(CHARACTER_ATTACK attack)
-        {
-            _loadedCharacterAttacks.Add(attack);
-
-            RefreshAttackDataSource();
-
-            _view.AttackGridView.Columns[0].Visible = false;
-        }
-
-        public void UpdateAttackControls()
-        {
-            var selectedRow = _view.AttackGridView.SelectedRows;
-
-            if (selectedRow.Count == 0)
-                return;
-
-            var selectedAttack =
-                _loadedCharacterAttacks.FirstOrDefault(x => x.a_id == (int) selectedRow[0].Cells[0].Value);
-
-            if (selectedAttack == null)
-            {
-                _view.AttackDescription = "";
-            }
-            else
-            {
-                if (!selectedAttack.a_damage1.Equals("") || !selectedAttack.a_damage2.Equals(""))
-                {
-                    _view.AttackDescription = "Damage:";
-
-                    if (!selectedAttack.a_damage1.Equals(""))
-                        _view.AttackDescription += "\r\n\t" + selectedAttack.a_damage1;
-
-                    if (!selectedAttack.a_damage2.Equals(""))
-                        _view.AttackDescription += "\r\n\t" + selectedAttack.a_damage2;
-                }
-
-                _view.AttackDescription += "\r\n\r\n" + selectedAttack.a_description;
-            }
-        }
-
-        public void EditAttack()
-        {
-            var selectedRows = _view.AttackGridView.SelectedRows;
-
-            if (selectedRows.Count == 0)
-                return;
-
-            var selectedId = (int) selectedRows[0].Cells[0].Value;
-
-            var selectedAttack = _loadedCharacterAttacks.Find(x => x.a_id == selectedId);
-
-            var form = new AddEditAttackForm(selectedAttack);
-
-            form.SetController(new AddAttackController(form, _view));
-
-            form.Show();
-        }
-
-        public void UpdateAttackGrid(CHARACTER_ATTACK attack)
-        {
-            var attackToUpdate = _loadedCharacterAttacks.Find(x => x.a_id == attack.a_id);
-
-            attackToUpdate.a_name = attack.a_name;
-            attackToUpdate.a_attackability = attack.a_attackability;
-            attackToUpdate.a_attackbonus = attack.a_attackbonus;
-            attackToUpdate.a_isproficient = attack.a_isproficient;
-            attackToUpdate.a_range = attack.a_range;
-            attackToUpdate.a_damage1 = attack.a_damage1;
-            attackToUpdate.a_damage2 = attack.a_damage2;
-            attackToUpdate.a_description = attack.a_description;
-
-            RefreshAttackDataSource();
-        }
         
-        public void DeleteSelectedAttack()
-        {
-            var selectedAttack = _view.AttackGridView.SelectedRows[0];
-
-            if (selectedAttack == null)
-                return;
-
-            var selectedAttackId = (int) selectedAttack.Cells[0].Value;
-
-            _loadedCharacterAttacks.Remove(_loadedCharacterAttacks.Find(x => x.a_id == selectedAttackId));
-
-            RefreshAttackDataSource();
-
-            _view.AttackDescription = "";
-        }
-
         private void AddCharacter()
         {
             using (var db = new DragonDBModel())
@@ -346,18 +463,9 @@ namespace DND.Controllers
             throw new NotImplementedException();
         }
 
-        private void RefreshAttackDataSource()
-        {
-            _view.AttackGridView.DataSource =
-                (from ca in _loadedCharacterAttacks
-                    select new
-                    {
-                        ID = ca.a_id,
-                        Name = ca.a_name,
-                        Attack = ca.a_attackability + " + " + ca.a_attackbonus,
-                        Range = ca.a_range
-                    }).ToList();
-        }
+
+
+
 
         #endregion
     }

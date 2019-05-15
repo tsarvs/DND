@@ -21,7 +21,5 @@ namespace DND.Models
         public int? ci_itemquantity { get; set; }
 
         public virtual CHARACTER CHARACTER { get; set; }
-
-        public virtual ITEM ITEM { get; set; }
     }
 }

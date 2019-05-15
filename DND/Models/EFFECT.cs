@@ -13,7 +13,7 @@ namespace DND.Models
         public EFFECT()
         {
             EFFECT_PROCEDURE = new HashSet<EFFECT_PROCEDURE>();
-            ITEM = new HashSet<ITEM>();
+            ITEM_EFFECT = new HashSet<ITEM_EFFECT>();
             SPELLS = new HashSet<SPELLS>();
         }
 
@@ -32,7 +32,7 @@ namespace DND.Models
         public virtual ICollection<EFFECT_PROCEDURE> EFFECT_PROCEDURE { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ITEM> ITEM { get; set; }
+        public virtual ICollection<ITEM_EFFECT> ITEM_EFFECT { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SPELLS> SPELLS { get; set; }

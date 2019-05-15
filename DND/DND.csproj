@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AddAttackController.cs" />
     <Compile Include="Controllers\AddCampaignController.cs" />
+    <Compile Include="Controllers\AddEditItemController.cs" />
     <Compile Include="Controllers\CharacterSheetController.cs" />
     <Compile Include="Controllers\ClassManagerController.cs" />
     <Compile Include="Controllers\FeatManagerController.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Models\FEATS.cs" />
     <Compile Include="Models\ITEM.cs" />
     <Compile Include="Models\ITEM_BACKGROUND.cs" />
+    <Compile Include="Models\ITEM_EFFECT.cs" />
     <Compile Include="Models\LOCATION.cs" />
     <Compile Include="Models\PROFICIENCY.cs" />
     <Compile Include="Models\QUEST.cs" />
@@ -104,6 +106,12 @@
     </Compile>
     <Compile Include="Views\Forms\AddCampaignForm.Designer.cs">
       <DependentUpon>AddCampaignForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\AddEditItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\AddEditItemForm.Designer.cs">
+      <DependentUpon>AddEditItemForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Forms\CharacterSheetForm.cs">
       <SubType>Form</SubType>
@@ -143,6 +151,7 @@
     </Compile>
     <Compile Include="Views\Interfaces\IAddEditAttackForm.cs" />
     <Compile Include="Views\Interfaces\IAddCampaignForm.cs" />
+    <Compile Include="Views\Interfaces\IAddEditItemForm.cs" />
     <Compile Include="Views\Interfaces\ICharacterSheetForm.cs" />
     <Compile Include="Views\Interfaces\IClassManagerForm.cs" />
     <Compile Include="Views\Interfaces\IFeatManagerForm.cs" />
@@ -163,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\AddCampaignForm.resx">
       <DependentUpon>AddCampaignForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\AddEditItemForm.resx">
+      <DependentUpon>AddEditItemForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\CharacterSheetForm.resx">
       <DependentUpon>CharacterSheetForm.cs</DependentUpon>

@@ -90,10 +90,10 @@
             this.dgvInventory = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabInventory = new System.Windows.Forms.TabPage();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.lblGold = new System.Windows.Forms.Label();
+            this.txtGold = new System.Windows.Forms.NumericUpDown();
+            this.btnEditItem = new System.Windows.Forms.Button();
+            this.btnDeleteItem = new System.Windows.Forms.Button();
+            this.btnAddItem = new System.Windows.Forms.Button();
             this.lblWeight = new System.Windows.Forms.Label();
             this.tabFeats = new System.Windows.Forms.TabPage();
             this.btnAddFeat = new System.Windows.Forms.Button();
@@ -250,6 +250,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabInventory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGold)).BeginInit();
             this.tabFeats.SuspendLayout();
             this.tabProficiencies.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtProficiencyBonus)).BeginInit();
@@ -413,6 +414,7 @@
             this.txtLevel.Name = "txtLevel";
             this.txtLevel.Size = new System.Drawing.Size(54, 22);
             this.txtLevel.TabIndex = 49;
+            this.txtLevel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtLevel.ValueChanged += new System.EventHandler(this.txtLevel_ValueChanged);
             // 
             // txtExperience
@@ -847,7 +849,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 189);
+            this.label9.Location = new System.Drawing.Point(282, 166);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(42, 17);
             this.label9.TabIndex = 40;
@@ -856,7 +858,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 173);
+            this.label8.Location = new System.Drawing.Point(3, 166);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(92, 17);
             this.label8.TabIndex = 39;
@@ -865,12 +867,12 @@
             // txtItemDescription
             // 
             this.txtItemDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtItemDescription.Location = new System.Drawing.Point(6, 209);
+            this.txtItemDescription.Location = new System.Drawing.Point(3, 192);
             this.txtItemDescription.Multiline = true;
             this.txtItemDescription.Name = "txtItemDescription";
             this.txtItemDescription.ReadOnly = true;
             this.txtItemDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtItemDescription.Size = new System.Drawing.Size(424, 90);
+            this.txtItemDescription.Size = new System.Drawing.Size(427, 107);
             this.txtItemDescription.TabIndex = 35;
             // 
             // dgvInventory
@@ -879,12 +881,14 @@
             this.dgvInventory.AllowUserToResizeRows = false;
             this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventory.Location = new System.Drawing.Point(3, 3);
+            this.dgvInventory.MultiSelect = false;
             this.dgvInventory.Name = "dgvInventory";
             this.dgvInventory.RowHeadersVisible = false;
             this.dgvInventory.RowTemplate.Height = 24;
             this.dgvInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInventory.Size = new System.Drawing.Size(427, 167);
+            this.dgvInventory.Size = new System.Drawing.Size(427, 155);
             this.dgvInventory.TabIndex = 33;
+            this.dgvInventory.SelectionChanged += new System.EventHandler(this.dgvInventory_SelectionChanged);
             // 
             // tabControl1
             // 
@@ -900,10 +904,10 @@
             // 
             // tabInventory
             // 
-            this.tabInventory.Controls.Add(this.button3);
-            this.tabInventory.Controls.Add(this.button4);
-            this.tabInventory.Controls.Add(this.button5);
-            this.tabInventory.Controls.Add(this.lblGold);
+            this.tabInventory.Controls.Add(this.txtGold);
+            this.tabInventory.Controls.Add(this.btnEditItem);
+            this.tabInventory.Controls.Add(this.btnDeleteItem);
+            this.tabInventory.Controls.Add(this.btnAddItem);
             this.tabInventory.Controls.Add(this.lblWeight);
             this.tabInventory.Controls.Add(this.label9);
             this.tabInventory.Controls.Add(this.dgvInventory);
@@ -916,46 +920,48 @@
             this.tabInventory.Text = "Inventory";
             this.tabInventory.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // txtGold
             // 
-            this.button3.Location = new System.Drawing.Point(267, 305);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(79, 26);
-            this.button3.TabIndex = 63;
-            this.button3.Text = "Edit";
-            this.button3.UseVisualStyleBackColor = true;
+            this.txtGold.Location = new System.Drawing.Point(330, 164);
+            this.txtGold.Name = "txtGold";
+            this.txtGold.Size = new System.Drawing.Size(101, 22);
+            this.txtGold.TabIndex = 64;
+            this.txtGold.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button4
+            // btnEditItem
             // 
-            this.button4.Location = new System.Drawing.Point(182, 305);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(79, 26);
-            this.button4.TabIndex = 62;
-            this.button4.Text = "Delete";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnEditItem.Location = new System.Drawing.Point(267, 305);
+            this.btnEditItem.Name = "btnEditItem";
+            this.btnEditItem.Size = new System.Drawing.Size(79, 26);
+            this.btnEditItem.TabIndex = 63;
+            this.btnEditItem.Text = "Edit";
+            this.btnEditItem.UseVisualStyleBackColor = true;
+            this.btnEditItem.Click += new System.EventHandler(this.btnEditItem_Click);
             // 
-            // button5
+            // btnDeleteItem
             // 
-            this.button5.Location = new System.Drawing.Point(352, 305);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(79, 26);
-            this.button5.TabIndex = 61;
-            this.button5.Text = "Add";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnDeleteItem.Location = new System.Drawing.Point(182, 305);
+            this.btnDeleteItem.Name = "btnDeleteItem";
+            this.btnDeleteItem.Size = new System.Drawing.Size(79, 26);
+            this.btnDeleteItem.TabIndex = 62;
+            this.btnDeleteItem.Text = "Delete";
+            this.btnDeleteItem.UseVisualStyleBackColor = true;
+            this.btnDeleteItem.Click += new System.EventHandler(this.btnDeleteItem_Click);
             // 
-            // lblGold
+            // btnAddItem
             // 
-            this.lblGold.AutoSize = true;
-            this.lblGold.Location = new System.Drawing.Point(51, 189);
-            this.lblGold.Name = "lblGold";
-            this.lblGold.Size = new System.Drawing.Size(28, 17);
-            this.lblGold.TabIndex = 56;
-            this.lblGold.Text = "0.0";
+            this.btnAddItem.Location = new System.Drawing.Point(352, 305);
+            this.btnAddItem.Name = "btnAddItem";
+            this.btnAddItem.Size = new System.Drawing.Size(79, 26);
+            this.btnAddItem.TabIndex = 61;
+            this.btnAddItem.Text = "Add";
+            this.btnAddItem.UseVisualStyleBackColor = true;
+            this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
             // 
             // lblWeight
             // 
             this.lblWeight.AutoSize = true;
-            this.lblWeight.Location = new System.Drawing.Point(101, 173);
+            this.lblWeight.Location = new System.Drawing.Point(101, 166);
             this.lblWeight.Name = "lblWeight";
             this.lblWeight.Size = new System.Drawing.Size(28, 17);
             this.lblWeight.TabIndex = 55;
@@ -1772,6 +1778,7 @@
             this.txtHitDiceMax.Name = "txtHitDiceMax";
             this.txtHitDiceMax.Size = new System.Drawing.Size(65, 22);
             this.txtHitDiceMax.TabIndex = 53;
+            this.txtHitDiceMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtHitDiceCurrent
             // 
@@ -1779,6 +1786,7 @@
             this.txtHitDiceCurrent.Name = "txtHitDiceCurrent";
             this.txtHitDiceCurrent.Size = new System.Drawing.Size(65, 22);
             this.txtHitDiceCurrent.TabIndex = 52;
+            this.txtHitDiceCurrent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label22
             // 
@@ -1813,6 +1821,7 @@
             this.txtHPtemp.Name = "txtHPtemp";
             this.txtHPtemp.Size = new System.Drawing.Size(79, 22);
             this.txtHPtemp.TabIndex = 47;
+            this.txtHPtemp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtSpeed
             // 
@@ -1820,6 +1829,7 @@
             this.txtSpeed.Name = "txtSpeed";
             this.txtSpeed.Size = new System.Drawing.Size(64, 22);
             this.txtSpeed.TabIndex = 46;
+            this.txtSpeed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtInitiative
             // 
@@ -1827,6 +1837,7 @@
             this.txtInitiative.Name = "txtInitiative";
             this.txtInitiative.Size = new System.Drawing.Size(64, 22);
             this.txtInitiative.TabIndex = 44;
+            this.txtInitiative.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtAC
             // 
@@ -1834,6 +1845,7 @@
             this.txtAC.Name = "txtAC";
             this.txtAC.Size = new System.Drawing.Size(64, 22);
             this.txtAC.TabIndex = 45;
+            this.txtAC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtHPmax
             // 
@@ -1841,6 +1853,7 @@
             this.txtHPmax.Name = "txtHPmax";
             this.txtHPmax.Size = new System.Drawing.Size(79, 22);
             this.txtHPmax.TabIndex = 43;
+            this.txtHPmax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtHPcurrent
             // 
@@ -1848,6 +1861,7 @@
             this.txtHPcurrent.Name = "txtHPcurrent";
             this.txtHPcurrent.Size = new System.Drawing.Size(79, 22);
             this.txtHPcurrent.TabIndex = 42;
+            this.txtHPcurrent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
@@ -2280,6 +2294,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabInventory.ResumeLayout(false);
             this.tabInventory.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGold)).EndInit();
             this.tabFeats.ResumeLayout(false);
             this.tabFeats.PerformLayout();
             this.tabProficiencies.ResumeLayout(false);
@@ -2522,14 +2537,13 @@
         private System.Windows.Forms.Label lblDuration;
         private System.Windows.Forms.Label lblRange;
         private System.Windows.Forms.Label lblCastingTime;
-        private System.Windows.Forms.Label lblGold;
         private System.Windows.Forms.Label lblWeight;
         private System.Windows.Forms.NumericUpDown txtLevel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnDeleteAttack;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnEditItem;
+        private System.Windows.Forms.Button btnDeleteItem;
+        private System.Windows.Forms.Button btnAddItem;
         private System.Windows.Forms.Button btnAddFeat;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
@@ -2538,5 +2552,6 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button btnEditAttack;
+        private System.Windows.Forms.NumericUpDown txtGold;
     }
 }

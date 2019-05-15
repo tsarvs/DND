@@ -6,25 +6,18 @@ namespace DND.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("ITEM")]
-    public partial class ITEM
+    public partial class ITEM_EFFECT
     {
         [Key]
         [Column(Order = 0)]
-        public int i_id { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int ie_iid { get; set; }
 
         [Key]
         [Column(Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int i_cid { get; set; }
+        public int if_efid { get; set; }
 
-        [StringLength(250)]
-        public string i_name { get; set; }
-
-        public int? i_quantity { get; set; }
-
-        public decimal? i_weight { get; set; }
-
-        public string i_description { get; set; }
+        public virtual EFFECT EFFECT { get; set; }
     }
 }

@@ -30,6 +30,7 @@ namespace DND.Models
         public virtual DbSet<FEATS> FEATS { get; set; }
         public virtual DbSet<ITEM> ITEM { get; set; }
         public virtual DbSet<ITEM_BACKGROUND> ITEM_BACKGROUND { get; set; }
+        public virtual DbSet<ITEM_EFFECT> ITEM_EFFECT { get; set; }
         public virtual DbSet<LOCATION> LOCATION { get; set; }
         public virtual DbSet<PROFICIENCY> PROFICIENCY { get; set; }
         public virtual DbSet<QUEST> QUEST { get; set; }
@@ -170,6 +171,10 @@ namespace DND.Models
                 .Map(m => m.ToTable("CHARACTER_SPELLBOOK").MapLeftKey("cs_cid").MapRightKey("cs_sid"));
 
             modelBuilder.Entity<CHARACTER_ATTACK>()
+                .Property(e => e.a_name)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<CHARACTER_ATTACK>()
                 .Property(e => e.a_attackability)
                 .IsUnicode(false);
 
@@ -214,9 +219,10 @@ namespace DND.Models
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<EFFECT>()
-                .HasMany(e => e.ITEM)
-                .WithMany(e => e.EFFECT)
-                .Map(m => m.ToTable("ITEM_EFFECT").MapLeftKey("if_efid").MapRightKey("ie_iid"));
+                .HasMany(e => e.ITEM_EFFECT)
+                .WithRequired(e => e.EFFECT)
+                .HasForeignKey(e => e.if_efid)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<EFFECT>()
                 .HasMany(e => e.SPELLS)
@@ -261,22 +267,16 @@ namespace DND.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<ITEM>()
-                .Property(e => e.i_weight)
-                .HasPrecision(18, 0);
+                .Property(e => e.i_name)
+                .IsUnicode(false);
 
             modelBuilder.Entity<ITEM>()
-                .Property(e => e.i_gp)
+                .Property(e => e.i_weight)
                 .HasPrecision(18, 0);
 
             modelBuilder.Entity<ITEM>()
                 .Property(e => e.i_description)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<ITEM>()
-                .HasMany(e => e.CHARACTER_INVENTORY)
-                .WithRequired(e => e.ITEM)
-                .HasForeignKey(e => e.ci_iid)
-                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<LOCATION>()
                 .Property(e => e.l_name)

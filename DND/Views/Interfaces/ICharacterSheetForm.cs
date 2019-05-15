@@ -233,9 +233,7 @@ namespace DND.Views.Interfaces
         #endregion
 
         #region Methods
-
-        void UpdateAttacks(CHARACTER_ATTACK attack);
-
+        
         void UpdateFeatGrid();
         
         void LoadCharacterClasses(List<CHARACTER_CLASS> characterClassList);
@@ -243,6 +241,12 @@ namespace DND.Views.Interfaces
         void SetController(CharacterSheetController controller);
         
         void AddAttack(CHARACTER_ATTACK attack);
+
+        void UpdateAttacks(CHARACTER_ATTACK attack);
+
+        void AddItem(ITEM item);
+
+        void UpdateInventory(ITEM item);
 
         #endregion
     }
