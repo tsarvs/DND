@@ -671,7 +671,7 @@ namespace DND.Views.Forms
             _characterId = characterId;
 
             _controller.InitializeData(_characterId);
-            _controller.LoadCharacterSheet();
+            _controller.LoadCharacter();
 
             UpdateFeatGrid();
         }

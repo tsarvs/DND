@@ -5,6 +5,7 @@
 	[i_quantity] INT NULL,
     [i_weight] DECIMAL (18) NULL,
     [i_description] VARCHAR(MAX) NULL, 
-    PRIMARY KEY CLUSTERED ([i_cid], [i_id])
+    PRIMARY KEY CLUSTERED ([i_cid], [i_id]), 
+    CONSTRAINT [FK_ITEM_ToCHARACTER] FOREIGN KEY ([i_cid]) REFERENCES [CHARACTER]([c_id])
 );
 

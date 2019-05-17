@@ -12,7 +12,6 @@ namespace DND.Models
         public SPELLS()
         {
             CHARACTER = new HashSet<CHARACTER>();
-            EFFECT = new HashSet<EFFECT>();
         }
 
         [Key]
@@ -45,8 +44,5 @@ namespace DND.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHARACTER> CHARACTER { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EFFECT> EFFECT { get; set; }
     }
 }

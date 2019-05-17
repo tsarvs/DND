@@ -410,7 +410,7 @@
             // 
             // txtLevel
             // 
-            this.txtLevel.Location = new System.Drawing.Point(385, 95);
+            this.txtLevel.Location = new System.Drawing.Point(385, 91);
             this.txtLevel.Name = "txtLevel";
             this.txtLevel.Size = new System.Drawing.Size(54, 22);
             this.txtLevel.TabIndex = 49;
@@ -436,7 +436,7 @@
             // 
             // btnAddClass
             // 
-            this.btnAddClass.Location = new System.Drawing.Point(350, 123);
+            this.btnAddClass.Location = new System.Drawing.Point(347, 118);
             this.btnAddClass.Name = "btnAddClass";
             this.btnAddClass.Size = new System.Drawing.Size(92, 26);
             this.btnAddClass.TabIndex = 26;
@@ -457,7 +457,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(337, 97);
+            this.label2.Location = new System.Drawing.Point(337, 93);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 17);
             this.label2.TabIndex = 20;
@@ -982,9 +982,9 @@
             // 
             // btnAddFeat
             // 
-            this.btnAddFeat.Location = new System.Drawing.Point(257, 302);
+            this.btnAddFeat.Location = new System.Drawing.Point(301, 302);
             this.btnAddFeat.Name = "btnAddFeat";
-            this.btnAddFeat.Size = new System.Drawing.Size(171, 26);
+            this.btnAddFeat.Size = new System.Drawing.Size(127, 26);
             this.btnAddFeat.TabIndex = 37;
             this.btnAddFeat.Text = "Manage Feats";
             this.btnAddFeat.UseVisualStyleBackColor = true;
@@ -1341,6 +1341,7 @@
             // 
             this.cmbSpellcastingAbility.FormattingEnabled = true;
             this.cmbSpellcastingAbility.Items.AddRange(new object[] {
+            "None",
             "Charisma",
             "Constitution",
             "Dexterity",
@@ -1363,9 +1364,9 @@
             // 
             // btnManageSpells
             // 
-            this.btnManageSpells.Location = new System.Drawing.Point(261, 329);
+            this.btnManageSpells.Location = new System.Drawing.Point(305, 329);
             this.btnManageSpells.Name = "btnManageSpells";
-            this.btnManageSpells.Size = new System.Drawing.Size(171, 26);
+            this.btnManageSpells.Size = new System.Drawing.Size(127, 26);
             this.btnManageSpells.TabIndex = 74;
             this.btnManageSpells.Text = "Manage Spells";
             this.btnManageSpells.UseVisualStyleBackColor = true;

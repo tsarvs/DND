@@ -17,6 +17,7 @@ namespace DND.Views.Forms
     public partial class MainForm : Form, IMainForm
     {
         private int _campaignID;
+
         public MainForm()
         {
             _campaignID = 0;

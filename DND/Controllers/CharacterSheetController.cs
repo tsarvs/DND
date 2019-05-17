@@ -16,11 +16,7 @@ namespace DND.Controllers
 
         private readonly ICharacterSheetForm _view;
 
-        private List<CHARACTER_CLASS> _loadedCharacterClasses;
-
-        private readonly List<CHARACTER_ATTACK> _loadedCharacterAttacks;
-
-        private List<ITEM> _loadedCharacterItems;
+        private CHARACTER _loadedCharacter;
 
         #endregion
 
@@ -29,9 +25,7 @@ namespace DND.Controllers
         public CharacterSheetController(ICharacterSheetForm view)
         {
             _view = view;
-            _loadedCharacterClasses = new List<CHARACTER_CLASS>();
-            _loadedCharacterAttacks = new List<CHARACTER_ATTACK>();
-            _loadedCharacterItems = new List<ITEM>();
+            _loadedCharacter = new CHARACTER();
         }
 
         #endregion
@@ -51,7 +45,7 @@ namespace DND.Controllers
 
         public void AddAttackToGrid(CHARACTER_ATTACK attack)
         {
-            _loadedCharacterAttacks.Add(attack);
+            _loadedCharacter.CHARACTER_ATTACK.Add(attack);
 
             RefreshAttackDataSource();
 
@@ -67,9 +61,9 @@ namespace DND.Controllers
                 _view.AttackDescription = "";
                 return;
             }
-            
+
             var selectedAttack =
-                _loadedCharacterAttacks.Find(x => x.a_id == (int) selectedRow[0].Cells[0].Value);
+                _loadedCharacter.CHARACTER_ATTACK.ToList().Find(x => x.a_id == (int) selectedRow[0].Cells[0].Value);
 
             if (!selectedAttack.a_damage1.Equals("") || !selectedAttack.a_damage2.Equals(""))
             {
@@ -92,9 +86,9 @@ namespace DND.Controllers
             if (selectedRows.Count == 0)
                 return;
 
-            var selectedId = (int)selectedRows[0].Cells[0].Value;
+            var selectedId = (int) selectedRows[0].Cells[0].Value;
 
-            var selectedAttack = _loadedCharacterAttacks.Find(x => x.a_id == selectedId);
+            var selectedAttack = _loadedCharacter.CHARACTER_ATTACK.ToList().Find(x => x.a_id == selectedId);
 
             var form = new AddEditAttackForm(selectedAttack);
 
@@ -105,7 +99,7 @@ namespace DND.Controllers
 
         public void UpdateAttackGrid(CHARACTER_ATTACK attack)
         {
-            var attackToUpdate = _loadedCharacterAttacks.Find(x => x.a_id == attack.a_id);
+            var attackToUpdate = _loadedCharacter.CHARACTER_ATTACK.ToList().Find(x => x.a_id == attack.a_id);
 
             attackToUpdate.a_name = attack.a_name;
             attackToUpdate.a_attackability = attack.a_attackability;
@@ -119,36 +113,24 @@ namespace DND.Controllers
             RefreshAttackDataSource();
         }
 
-        public void UpdateInventoryGrid(ITEM item)
-        {
-            var itemToUpdate = _loadedCharacterItems.Find(x => x.i_id == item.i_id);
-
-            itemToUpdate.i_name = item.i_name;
-            itemToUpdate.i_quantity = item.i_quantity;
-            itemToUpdate.i_weight = item.i_weight;
-            itemToUpdate.i_description = item.i_description;
-
-            RefreshInventory();
-        }
-
         public void DeleteSelectedAttack()
         {
             if (_view.AttackGridView.SelectedRows.Count == 0)
                 return;
-            
 
-            var selectedAttackId = (int)_view.AttackGridView.SelectedRows[0].Cells[0].Value;
 
-            _loadedCharacterAttacks.Remove(_loadedCharacterAttacks.Find(x => x.a_id == selectedAttackId));
+            var selectedAttackId = (int) _view.AttackGridView.SelectedRows[0].Cells[0].Value;
+
+            _loadedCharacter.CHARACTER_ATTACK
+                .Remove(_loadedCharacter.CHARACTER_ATTACK.ToList().Find(x => x.a_id == selectedAttackId));
 
             RefreshAttackDataSource();
-   
         }
-        
+
         private void RefreshAttackDataSource()
         {
             _view.AttackGridView.DataSource =
-                (from ca in _loadedCharacterAttacks
+                (from ca in _loadedCharacter.CHARACTER_ATTACK.ToList()
                     select new
                     {
                         ID = ca.a_id,
@@ -163,9 +145,10 @@ namespace DND.Controllers
         #endregion
 
         #region Inventory
+
         public void AddItemToGrid(ITEM item)
         {
-            _loadedCharacterItems.Add(item);
+            _loadedCharacter.ITEM.Add(item);
 
             RefreshInventory();
         }
@@ -173,7 +156,7 @@ namespace DND.Controllers
         private void RefreshInventory()
         {
             _view.InventoryGridView.DataSource =
-                (from ci in _loadedCharacterItems
+                (from ci in _loadedCharacter.ITEM.ToList()
                     select new
                     {
                         ID = ci.i_id,
@@ -201,11 +184,10 @@ namespace DND.Controllers
 
                 var selectedItem = _view.InventoryGridView.SelectedRows[0];
 
-                var loadedItem = _loadedCharacterItems.Find(x => x.i_id == (int)selectedItem.Cells[0].Value);
+                var loadedItem = _loadedCharacter.ITEM.ToList().Find(x => x.i_id == (int) selectedItem.Cells[0].Value);
 
                 form = new AddEditItemForm(loadedItem);
             }
-
 
 
             form.SetController(new AddEditItemController(form, _view));
@@ -215,10 +197,10 @@ namespace DND.Controllers
 
         public void DeleteItem()
         {
-            var selectedItem = _loadedCharacterItems.Find(x =>
-                x.i_id == (int)_view.InventoryGridView.SelectedRows[0].Cells[0].Value);
+            var selectedItem = _loadedCharacter.ITEM.ToList().Find(x =>
+                x.i_id == (int) _view.InventoryGridView.SelectedRows[0].Cells[0].Value);
 
-            _loadedCharacterItems.Remove(selectedItem);
+            _loadedCharacter.ITEM.Remove(selectedItem);
 
             RefreshInventory();
         }
@@ -227,10 +209,8 @@ namespace DND.Controllers
         {
             decimal totalWeight = 0;
 
-            foreach (var item in _loadedCharacterItems)
-            {
-                totalWeight += (item.i_quantity.GetValueOrDefault(0) * item.i_weight.GetValueOrDefault(0));
-            }
+            foreach (var item in _loadedCharacter.ITEM.ToList())
+                totalWeight += item.i_quantity.GetValueOrDefault(0) * item.i_weight.GetValueOrDefault(0);
 
             _view.InventoryWeight = (double) totalWeight;
         }
@@ -244,9 +224,22 @@ namespace DND.Controllers
             }
 
             var selectedItem =
-                _loadedCharacterItems.Find(x => x.i_id == (int) _view.InventoryGridView.SelectedRows[0].Cells[0].Value);
+                _loadedCharacter.ITEM.ToList()
+                    .Find(x => x.i_id == (int) _view.InventoryGridView.SelectedRows[0].Cells[0].Value);
 
             _view.ItemDescription = selectedItem.i_description;
+        }
+
+        public void UpdateInventoryGrid(ITEM item)
+        {
+            var itemToUpdate = _loadedCharacter.ITEM.ToList().Find(x => x.i_id == item.i_id);
+
+            itemToUpdate.i_name = item.i_name;
+            itemToUpdate.i_quantity = item.i_quantity;
+            itemToUpdate.i_weight = item.i_weight;
+            itemToUpdate.i_description = item.i_description;
+
+            RefreshInventory();
         }
 
         #endregion
@@ -280,10 +273,6 @@ namespace DND.Controllers
             else if (mode == FormMode.EditForm) UpdateCharacter();
         }
 
-        public void LoadCharacterSheet()
-        {
-        }
-
         public void UpdateFeatControls()
         {
             using (var db = new DragonDBModel())
@@ -314,7 +303,7 @@ namespace DND.Controllers
 
         public void AddClass()
         {
-            var form = new ClassManagerForm(_characterId, _loadedCharacterClasses);
+            var form = new ClassManagerForm(_characterId, _loadedCharacter.CHARACTER_CLASS.ToList());
 
             form.SetController(new ClassManagerController(form, _view));
 
@@ -323,13 +312,14 @@ namespace DND.Controllers
 
         public void LoadCharacterClasses(List<CHARACTER_CLASS> characterClassList)
         {
-            _loadedCharacterClasses = characterClassList;
+            _loadedCharacter.CHARACTER_CLASS.ToList().Clear();
+            _loadedCharacter.CHARACTER_CLASS = characterClassList;
 
             _view.ClassComboBox.DataSource =
-                (from cc in _loadedCharacterClasses
+                (from cc in _loadedCharacter.CHARACTER_CLASS.ToList()
                     select cc.CLASS).ToList();
         }
-        
+
         public void UpdateLevel()
         {
             var selectedClass = (CLASS) _view.ClassComboBox.SelectedItem;
@@ -340,7 +330,7 @@ namespace DND.Controllers
             var selectedClassId = selectedClass.cl_id;
 
             _view.Level =
-                (from cc in _loadedCharacterClasses
+                (from cc in _loadedCharacter.CHARACTER_CLASS.ToList()
                     where cc.cc_clid == selectedClassId
                     select cc.cc_level).FirstOrDefault().GetValueOrDefault(1);
         }
@@ -372,28 +362,28 @@ namespace DND.Controllers
                         select c.CLASS).ToList();
             }
         }
-        
+
         public void UpdateClassLevel()
         {
             var selectedClass = (CLASS) _view.ClassComboBox.SelectedItem;
             var newLevel = _view.Level;
 
-            _loadedCharacterClasses.Find(x => x.cc_clid == selectedClass.cl_id).cc_level = newLevel;
+            _loadedCharacter.CHARACTER_CLASS.ToList().Find(x => x.cc_clid == selectedClass.cl_id).cc_level = newLevel;
         }
-        
+
         private void AddCharacter()
         {
             using (var db = new DragonDBModel())
             {
                 var characterRace =
                     (from r in db.RACE.ToList()
-                     where r.r_name == _view.RaceComboBox.SelectedText
-                     select r).First();
+                        where r.r_name == _view.RaceComboBox.SelectedText
+                        select r).First();
 
                 var primaryClass =
                     (from cl in db.CLASS.ToList()
-                     where cl.cl_name == _view.ClassComboBox.SelectedText
-                     select cl).First();
+                        where cl.cl_name == _view.ClassComboBox.SelectedText
+                        select cl).First();
 
                 var characterClass = new List<CHARACTER_CLASS>
                 {
@@ -463,9 +453,19 @@ namespace DND.Controllers
             throw new NotImplementedException();
         }
 
+        public void LoadCharacter()
+        {
+            if (_characterId == 0)
+                return;
 
-
-
+            using (var db = new DragonDBModel())
+            {
+                _loadedCharacter =
+                    (from c in db.CHARACTER.ToList()
+                        where c.c_id == _characterId
+                        select c).First();
+            }
+        }
 
         #endregion
     }

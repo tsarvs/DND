@@ -157,9 +157,9 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(205, 365);
+            this.btnAdd.Location = new System.Drawing.Point(191, 365);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(115, 28);
+            this.btnAdd.Size = new System.Drawing.Size(129, 28);
             this.btnAdd.TabIndex = 26;
             this.btnAdd.Text = "Update Attacks";
             this.btnAdd.UseVisualStyleBackColor = true;

@@ -19,18 +19,13 @@ namespace DND.Models
         public virtual DbSet<CHARACTER_ABILITY> CHARACTER_ABILITY { get; set; }
         public virtual DbSet<CHARACTER_ATTACK> CHARACTER_ATTACK { get; set; }
         public virtual DbSet<CHARACTER_CLASS> CHARACTER_CLASS { get; set; }
-        public virtual DbSet<CHARACTER_INVENTORY> CHARACTER_INVENTORY { get; set; }
         public virtual DbSet<CLASS> CLASS { get; set; }
-        public virtual DbSet<EFFECT> EFFECT { get; set; }
-        public virtual DbSet<EFFECT_PROCEDURE> EFFECT_PROCEDURE { get; set; }
         public virtual DbSet<ENCOUNTER> ENCOUNTER { get; set; }
         public virtual DbSet<EPISODE> EPISODE { get; set; }
         public virtual DbSet<EVENT_OCCURRED> EVENT_OCCURRED { get; set; }
         public virtual DbSet<EVENT_TYPE> EVENT_TYPE { get; set; }
         public virtual DbSet<FEATS> FEATS { get; set; }
         public virtual DbSet<ITEM> ITEM { get; set; }
-        public virtual DbSet<ITEM_BACKGROUND> ITEM_BACKGROUND { get; set; }
-        public virtual DbSet<ITEM_EFFECT> ITEM_EFFECT { get; set; }
         public virtual DbSet<LOCATION> LOCATION { get; set; }
         public virtual DbSet<PROFICIENCY> PROFICIENCY { get; set; }
         public virtual DbSet<QUEST> QUEST { get; set; }
@@ -45,12 +40,6 @@ namespace DND.Models
             modelBuilder.Entity<BACKGROUND>()
                 .Property(e => e.b_desc)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<BACKGROUND>()
-                .HasMany(e => e.ITEM_BACKGROUND)
-                .WithRequired(e => e.BACKGROUND)
-                .HasForeignKey(e => e.ib_bid)
-                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<BACKGROUND>()
                 .HasMany(e => e.CAMPAIGN)
@@ -145,9 +134,9 @@ namespace DND.Models
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<CHARACTER>()
-                .HasMany(e => e.CHARACTER_INVENTORY)
+                .HasMany(e => e.ITEM)
                 .WithRequired(e => e.CHARACTER)
-                .HasForeignKey(e => e.ci_cid)
+                .HasForeignKey(e => e.i_cid)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<CHARACTER>()
@@ -203,35 +192,6 @@ namespace DND.Models
                 .WithRequired(e => e.CLASS)
                 .HasForeignKey(e => e.cc_clid)
                 .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<EFFECT>()
-                .Property(e => e.ef_name)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<EFFECT>()
-                .Property(e => e.ef_desc)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<EFFECT>()
-                .HasMany(e => e.EFFECT_PROCEDURE)
-                .WithRequired(e => e.EFFECT)
-                .HasForeignKey(e => e.efp_efid)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<EFFECT>()
-                .HasMany(e => e.ITEM_EFFECT)
-                .WithRequired(e => e.EFFECT)
-                .HasForeignKey(e => e.if_efid)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<EFFECT>()
-                .HasMany(e => e.SPELLS)
-                .WithMany(e => e.EFFECT)
-                .Map(m => m.ToTable("SPELLS_EFFECT").MapLeftKey("sef_efid").MapRightKey("sef_sid"));
-
-            modelBuilder.Entity<EFFECT_PROCEDURE>()
-                .Property(e => e.efp_procedure)
-                .IsUnicode(false);
 
             modelBuilder.Entity<ENCOUNTER>()
                 .Property(e => e.e_desc)

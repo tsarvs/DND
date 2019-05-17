@@ -26,5 +26,7 @@ namespace DND.Models
         public decimal? i_weight { get; set; }
 
         public string i_description { get; set; }
+
+        public virtual CHARACTER CHARACTER { get; set; }
     }
 }
