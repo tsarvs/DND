@@ -12,7 +12,6 @@ namespace DND.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public BACKGROUND()
         {
-            ITEM_BACKGROUND = new HashSet<ITEM_BACKGROUND>();
             CAMPAIGN = new HashSet<CAMPAIGN>();
             CHARACTER = new HashSet<CHARACTER>();
             LOCATION = new HashSet<LOCATION>();
@@ -25,9 +24,6 @@ namespace DND.Models
         public int b_id { get; set; }
 
         public string b_desc { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ITEM_BACKGROUND> ITEM_BACKGROUND { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CAMPAIGN> CAMPAIGN { get; set; }

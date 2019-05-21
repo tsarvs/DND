@@ -83,32 +83,40 @@
             this.lblHistory = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
             this.dgvFeats = new System.Windows.Forms.DataGridView();
-            this.btnAddFeat = new System.Windows.Forms.Button();
             this.txtFeatDescription = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnManageInventory = new System.Windows.Forms.Button();
             this.txtItemDescription = new System.Windows.Forms.TextBox();
             this.dgvInventory = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabInventory = new System.Windows.Forms.TabPage();
-            this.lblGold = new System.Windows.Forms.Label();
+            this.txtGold = new System.Windows.Forms.NumericUpDown();
+            this.btnEditItem = new System.Windows.Forms.Button();
+            this.btnDeleteItem = new System.Windows.Forms.Button();
+            this.btnAddItem = new System.Windows.Forms.Button();
             this.lblWeight = new System.Windows.Forms.Label();
             this.tabFeats = new System.Windows.Forms.TabPage();
+            this.btnAddFeat = new System.Windows.Forms.Button();
             this.tabProficiencies = new System.Windows.Forms.TabPage();
-            this.btnManageProficiencies = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.txtProficiencyBonus = new System.Windows.Forms.NumericUpDown();
             this.lblProficiencyBonus = new System.Windows.Forms.Label();
             this.dgvProficiencies = new System.Windows.Forms.DataGridView();
             this.tabBackground = new System.Windows.Forms.TabPage();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
             this.cmbLore = new System.Windows.Forms.ComboBox();
             this.txtLoreDescription = new System.Windows.Forms.TextBox();
-            this.btnManageLore = new System.Windows.Forms.Button();
             this.lblLore = new System.Windows.Forms.Label();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabAttack = new System.Windows.Forms.TabPage();
+            this.btnEditAttack = new System.Windows.Forms.Button();
+            this.btnDeleteAttack = new System.Windows.Forms.Button();
             this.txtAttackDescription = new System.Windows.Forms.TextBox();
-            this.btnManageAttacks = new System.Windows.Forms.Button();
+            this.btnAddAttack = new System.Windows.Forms.Button();
             this.dgvAttack = new System.Windows.Forms.DataGridView();
             this.tabSpellbook = new System.Windows.Forms.TabPage();
             this.lblDuration = new System.Windows.Forms.Label();
@@ -242,6 +250,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabInventory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGold)).BeginInit();
             this.tabFeats.SuspendLayout();
             this.tabProficiencies.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtProficiencyBonus)).BeginInit();
@@ -401,10 +410,11 @@
             // 
             // txtLevel
             // 
-            this.txtLevel.Location = new System.Drawing.Point(385, 95);
+            this.txtLevel.Location = new System.Drawing.Point(385, 91);
             this.txtLevel.Name = "txtLevel";
             this.txtLevel.Size = new System.Drawing.Size(54, 22);
             this.txtLevel.TabIndex = 49;
+            this.txtLevel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtLevel.ValueChanged += new System.EventHandler(this.txtLevel_ValueChanged);
             // 
             // txtExperience
@@ -426,7 +436,7 @@
             // 
             // btnAddClass
             // 
-            this.btnAddClass.Location = new System.Drawing.Point(350, 123);
+            this.btnAddClass.Location = new System.Drawing.Point(347, 118);
             this.btnAddClass.Name = "btnAddClass";
             this.btnAddClass.Size = new System.Drawing.Size(92, 26);
             this.btnAddClass.TabIndex = 26;
@@ -447,7 +457,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(337, 97);
+            this.label2.Location = new System.Drawing.Point(337, 93);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 17);
             this.label2.TabIndex = 20;
@@ -825,16 +835,6 @@
             this.dgvFeats.TabIndex = 33;
             this.dgvFeats.SelectionChanged += new System.EventHandler(this.dgvFeats_SelectionChanged);
             // 
-            // btnAddFeat
-            // 
-            this.btnAddFeat.Location = new System.Drawing.Point(257, 302);
-            this.btnAddFeat.Name = "btnAddFeat";
-            this.btnAddFeat.Size = new System.Drawing.Size(171, 26);
-            this.btnAddFeat.TabIndex = 37;
-            this.btnAddFeat.Text = "Manage Feats";
-            this.btnAddFeat.UseVisualStyleBackColor = true;
-            this.btnAddFeat.Click += new System.EventHandler(this.btnManageFeats_Click);
-            // 
             // txtFeatDescription
             // 
             this.txtFeatDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -849,7 +849,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 189);
+            this.label9.Location = new System.Drawing.Point(282, 166);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(42, 17);
             this.label9.TabIndex = 40;
@@ -858,30 +858,21 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 173);
+            this.label8.Location = new System.Drawing.Point(3, 166);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(92, 17);
             this.label8.TabIndex = 39;
             this.label8.Text = "Total Weight:";
             // 
-            // btnManageInventory
-            // 
-            this.btnManageInventory.Location = new System.Drawing.Point(259, 305);
-            this.btnManageInventory.Name = "btnManageInventory";
-            this.btnManageInventory.Size = new System.Drawing.Size(171, 26);
-            this.btnManageInventory.TabIndex = 37;
-            this.btnManageInventory.Text = "Manage Inventory";
-            this.btnManageInventory.UseVisualStyleBackColor = true;
-            // 
             // txtItemDescription
             // 
             this.txtItemDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtItemDescription.Location = new System.Drawing.Point(6, 209);
+            this.txtItemDescription.Location = new System.Drawing.Point(3, 192);
             this.txtItemDescription.Multiline = true;
             this.txtItemDescription.Name = "txtItemDescription";
             this.txtItemDescription.ReadOnly = true;
             this.txtItemDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtItemDescription.Size = new System.Drawing.Size(424, 90);
+            this.txtItemDescription.Size = new System.Drawing.Size(427, 107);
             this.txtItemDescription.TabIndex = 35;
             // 
             // dgvInventory
@@ -890,12 +881,14 @@
             this.dgvInventory.AllowUserToResizeRows = false;
             this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventory.Location = new System.Drawing.Point(3, 3);
+            this.dgvInventory.MultiSelect = false;
             this.dgvInventory.Name = "dgvInventory";
             this.dgvInventory.RowHeadersVisible = false;
             this.dgvInventory.RowTemplate.Height = 24;
             this.dgvInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInventory.Size = new System.Drawing.Size(427, 167);
+            this.dgvInventory.Size = new System.Drawing.Size(427, 155);
             this.dgvInventory.TabIndex = 33;
+            this.dgvInventory.SelectionChanged += new System.EventHandler(this.dgvInventory_SelectionChanged);
             // 
             // tabControl1
             // 
@@ -911,9 +904,11 @@
             // 
             // tabInventory
             // 
-            this.tabInventory.Controls.Add(this.lblGold);
+            this.tabInventory.Controls.Add(this.txtGold);
+            this.tabInventory.Controls.Add(this.btnEditItem);
+            this.tabInventory.Controls.Add(this.btnDeleteItem);
+            this.tabInventory.Controls.Add(this.btnAddItem);
             this.tabInventory.Controls.Add(this.lblWeight);
-            this.tabInventory.Controls.Add(this.btnManageInventory);
             this.tabInventory.Controls.Add(this.label9);
             this.tabInventory.Controls.Add(this.dgvInventory);
             this.tabInventory.Controls.Add(this.label8);
@@ -925,19 +920,48 @@
             this.tabInventory.Text = "Inventory";
             this.tabInventory.UseVisualStyleBackColor = true;
             // 
-            // lblGold
+            // txtGold
             // 
-            this.lblGold.AutoSize = true;
-            this.lblGold.Location = new System.Drawing.Point(51, 189);
-            this.lblGold.Name = "lblGold";
-            this.lblGold.Size = new System.Drawing.Size(28, 17);
-            this.lblGold.TabIndex = 56;
-            this.lblGold.Text = "0.0";
+            this.txtGold.Location = new System.Drawing.Point(330, 164);
+            this.txtGold.Name = "txtGold";
+            this.txtGold.Size = new System.Drawing.Size(101, 22);
+            this.txtGold.TabIndex = 64;
+            this.txtGold.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnEditItem
+            // 
+            this.btnEditItem.Location = new System.Drawing.Point(267, 305);
+            this.btnEditItem.Name = "btnEditItem";
+            this.btnEditItem.Size = new System.Drawing.Size(79, 26);
+            this.btnEditItem.TabIndex = 63;
+            this.btnEditItem.Text = "Edit";
+            this.btnEditItem.UseVisualStyleBackColor = true;
+            this.btnEditItem.Click += new System.EventHandler(this.btnEditItem_Click);
+            // 
+            // btnDeleteItem
+            // 
+            this.btnDeleteItem.Location = new System.Drawing.Point(182, 305);
+            this.btnDeleteItem.Name = "btnDeleteItem";
+            this.btnDeleteItem.Size = new System.Drawing.Size(79, 26);
+            this.btnDeleteItem.TabIndex = 62;
+            this.btnDeleteItem.Text = "Delete";
+            this.btnDeleteItem.UseVisualStyleBackColor = true;
+            this.btnDeleteItem.Click += new System.EventHandler(this.btnDeleteItem_Click);
+            // 
+            // btnAddItem
+            // 
+            this.btnAddItem.Location = new System.Drawing.Point(352, 305);
+            this.btnAddItem.Name = "btnAddItem";
+            this.btnAddItem.Size = new System.Drawing.Size(79, 26);
+            this.btnAddItem.TabIndex = 61;
+            this.btnAddItem.Text = "Add";
+            this.btnAddItem.UseVisualStyleBackColor = true;
+            this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
             // 
             // lblWeight
             // 
             this.lblWeight.AutoSize = true;
-            this.lblWeight.Location = new System.Drawing.Point(101, 173);
+            this.lblWeight.Location = new System.Drawing.Point(101, 166);
             this.lblWeight.Name = "lblWeight";
             this.lblWeight.Size = new System.Drawing.Size(28, 17);
             this.lblWeight.TabIndex = 55;
@@ -956,9 +980,21 @@
             this.tabFeats.Text = "Feats";
             this.tabFeats.UseVisualStyleBackColor = true;
             // 
+            // btnAddFeat
+            // 
+            this.btnAddFeat.Location = new System.Drawing.Point(301, 302);
+            this.btnAddFeat.Name = "btnAddFeat";
+            this.btnAddFeat.Size = new System.Drawing.Size(127, 26);
+            this.btnAddFeat.TabIndex = 37;
+            this.btnAddFeat.Text = "Manage Feats";
+            this.btnAddFeat.UseVisualStyleBackColor = true;
+            this.btnAddFeat.Click += new System.EventHandler(this.btnManageFeats_Click);
+            // 
             // tabProficiencies
             // 
-            this.tabProficiencies.Controls.Add(this.btnManageProficiencies);
+            this.tabProficiencies.Controls.Add(this.button6);
+            this.tabProficiencies.Controls.Add(this.button7);
+            this.tabProficiencies.Controls.Add(this.button8);
             this.tabProficiencies.Controls.Add(this.txtProficiencyBonus);
             this.tabProficiencies.Controls.Add(this.lblProficiencyBonus);
             this.tabProficiencies.Controls.Add(this.dgvProficiencies);
@@ -969,14 +1005,32 @@
             this.tabProficiencies.Text = "Proficiencies";
             this.tabProficiencies.UseVisualStyleBackColor = true;
             // 
-            // btnManageProficiencies
+            // button6
             // 
-            this.btnManageProficiencies.Location = new System.Drawing.Point(259, 305);
-            this.btnManageProficiencies.Name = "btnManageProficiencies";
-            this.btnManageProficiencies.Size = new System.Drawing.Size(171, 26);
-            this.btnManageProficiencies.TabIndex = 41;
-            this.btnManageProficiencies.Text = "Manage Proficiencies";
-            this.btnManageProficiencies.UseVisualStyleBackColor = true;
+            this.button6.Location = new System.Drawing.Point(266, 305);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(79, 26);
+            this.button6.TabIndex = 63;
+            this.button6.Text = "Edit";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(181, 305);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(79, 26);
+            this.button7.TabIndex = 62;
+            this.button7.Text = "Delete";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(351, 305);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(79, 26);
+            this.button8.TabIndex = 61;
+            this.button8.Text = "Add";
+            this.button8.UseVisualStyleBackColor = true;
             // 
             // txtProficiencyBonus
             // 
@@ -1005,9 +1059,11 @@
             // 
             // tabBackground
             // 
+            this.tabBackground.Controls.Add(this.button9);
+            this.tabBackground.Controls.Add(this.button10);
+            this.tabBackground.Controls.Add(this.button11);
             this.tabBackground.Controls.Add(this.cmbLore);
             this.tabBackground.Controls.Add(this.txtLoreDescription);
-            this.tabBackground.Controls.Add(this.btnManageLore);
             this.tabBackground.Controls.Add(this.lblLore);
             this.tabBackground.Location = new System.Drawing.Point(4, 25);
             this.tabBackground.Name = "tabBackground";
@@ -1015,6 +1071,33 @@
             this.tabBackground.TabIndex = 3;
             this.tabBackground.Text = "Background";
             this.tabBackground.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(271, 305);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(79, 26);
+            this.button9.TabIndex = 63;
+            this.button9.Text = "Edit";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(186, 305);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(79, 26);
+            this.button10.TabIndex = 62;
+            this.button10.Text = "Delete";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(356, 305);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(79, 26);
+            this.button11.TabIndex = 61;
+            this.button11.Text = "Add";
+            this.button11.UseVisualStyleBackColor = true;
             // 
             // cmbLore
             // 
@@ -1034,15 +1117,6 @@
             this.txtLoreDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtLoreDescription.Size = new System.Drawing.Size(427, 266);
             this.txtLoreDescription.TabIndex = 43;
-            // 
-            // btnManageLore
-            // 
-            this.btnManageLore.Location = new System.Drawing.Point(259, 305);
-            this.btnManageLore.Name = "btnManageLore";
-            this.btnManageLore.Size = new System.Drawing.Size(171, 26);
-            this.btnManageLore.TabIndex = 42;
-            this.btnManageLore.Text = "Manage Lore";
-            this.btnManageLore.UseVisualStyleBackColor = true;
             // 
             // lblLore
             // 
@@ -1065,8 +1139,10 @@
             // 
             // tabAttack
             // 
+            this.tabAttack.Controls.Add(this.btnEditAttack);
+            this.tabAttack.Controls.Add(this.btnDeleteAttack);
             this.tabAttack.Controls.Add(this.txtAttackDescription);
-            this.tabAttack.Controls.Add(this.btnManageAttacks);
+            this.tabAttack.Controls.Add(this.btnAddAttack);
             this.tabAttack.Controls.Add(this.dgvAttack);
             this.tabAttack.Location = new System.Drawing.Point(4, 25);
             this.tabAttack.Name = "tabAttack";
@@ -1075,25 +1151,46 @@
             this.tabAttack.Text = "Attack";
             this.tabAttack.UseVisualStyleBackColor = true;
             // 
+            // btnEditAttack
+            // 
+            this.btnEditAttack.Location = new System.Drawing.Point(271, 331);
+            this.btnEditAttack.Name = "btnEditAttack";
+            this.btnEditAttack.Size = new System.Drawing.Size(79, 26);
+            this.btnEditAttack.TabIndex = 60;
+            this.btnEditAttack.Text = "Edit";
+            this.btnEditAttack.UseVisualStyleBackColor = true;
+            this.btnEditAttack.Click += new System.EventHandler(this.btnEditAttack_Click);
+            // 
+            // btnDeleteAttack
+            // 
+            this.btnDeleteAttack.Location = new System.Drawing.Point(186, 331);
+            this.btnDeleteAttack.Name = "btnDeleteAttack";
+            this.btnDeleteAttack.Size = new System.Drawing.Size(79, 26);
+            this.btnDeleteAttack.TabIndex = 40;
+            this.btnDeleteAttack.Text = "Delete";
+            this.btnDeleteAttack.UseVisualStyleBackColor = true;
+            this.btnDeleteAttack.Click += new System.EventHandler(this.btnDeleteAttack_Click);
+            // 
             // txtAttackDescription
             // 
             this.txtAttackDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAttackDescription.Location = new System.Drawing.Point(6, 166);
+            this.txtAttackDescription.Location = new System.Drawing.Point(6, 149);
             this.txtAttackDescription.Multiline = true;
             this.txtAttackDescription.Name = "txtAttackDescription";
             this.txtAttackDescription.ReadOnly = true;
             this.txtAttackDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtAttackDescription.Size = new System.Drawing.Size(429, 159);
+            this.txtAttackDescription.Size = new System.Drawing.Size(429, 176);
             this.txtAttackDescription.TabIndex = 39;
             // 
-            // btnManageAttacks
+            // btnAddAttack
             // 
-            this.btnManageAttacks.Location = new System.Drawing.Point(264, 331);
-            this.btnManageAttacks.Name = "btnManageAttacks";
-            this.btnManageAttacks.Size = new System.Drawing.Size(171, 26);
-            this.btnManageAttacks.TabIndex = 38;
-            this.btnManageAttacks.Text = "Manage Attacks";
-            this.btnManageAttacks.UseVisualStyleBackColor = true;
+            this.btnAddAttack.Location = new System.Drawing.Point(356, 331);
+            this.btnAddAttack.Name = "btnAddAttack";
+            this.btnAddAttack.Size = new System.Drawing.Size(79, 26);
+            this.btnAddAttack.TabIndex = 38;
+            this.btnAddAttack.Text = "Add";
+            this.btnAddAttack.UseVisualStyleBackColor = true;
+            this.btnAddAttack.Click += new System.EventHandler(this.btnAddAttack_Click);
             // 
             // dgvAttack
             // 
@@ -1101,12 +1198,15 @@
             this.dgvAttack.AllowUserToResizeRows = false;
             this.dgvAttack.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAttack.Location = new System.Drawing.Point(3, 3);
+            this.dgvAttack.MultiSelect = false;
             this.dgvAttack.Name = "dgvAttack";
             this.dgvAttack.RowHeadersVisible = false;
             this.dgvAttack.RowTemplate.Height = 24;
+            this.dgvAttack.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvAttack.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAttack.Size = new System.Drawing.Size(432, 159);
+            this.dgvAttack.Size = new System.Drawing.Size(432, 140);
             this.dgvAttack.TabIndex = 34;
+            this.dgvAttack.SelectionChanged += new System.EventHandler(this.dgvAttack_SelectionChanged);
             // 
             // tabSpellbook
             // 
@@ -1241,6 +1341,7 @@
             // 
             this.cmbSpellcastingAbility.FormattingEnabled = true;
             this.cmbSpellcastingAbility.Items.AddRange(new object[] {
+            "None",
             "Charisma",
             "Constitution",
             "Dexterity",
@@ -1263,9 +1364,9 @@
             // 
             // btnManageSpells
             // 
-            this.btnManageSpells.Location = new System.Drawing.Point(261, 329);
+            this.btnManageSpells.Location = new System.Drawing.Point(305, 329);
             this.btnManageSpells.Name = "btnManageSpells";
-            this.btnManageSpells.Size = new System.Drawing.Size(171, 26);
+            this.btnManageSpells.Size = new System.Drawing.Size(127, 26);
             this.btnManageSpells.TabIndex = 74;
             this.btnManageSpells.Text = "Manage Spells";
             this.btnManageSpells.UseVisualStyleBackColor = true;
@@ -1678,6 +1779,7 @@
             this.txtHitDiceMax.Name = "txtHitDiceMax";
             this.txtHitDiceMax.Size = new System.Drawing.Size(65, 22);
             this.txtHitDiceMax.TabIndex = 53;
+            this.txtHitDiceMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtHitDiceCurrent
             // 
@@ -1685,6 +1787,7 @@
             this.txtHitDiceCurrent.Name = "txtHitDiceCurrent";
             this.txtHitDiceCurrent.Size = new System.Drawing.Size(65, 22);
             this.txtHitDiceCurrent.TabIndex = 52;
+            this.txtHitDiceCurrent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label22
             // 
@@ -1719,6 +1822,7 @@
             this.txtHPtemp.Name = "txtHPtemp";
             this.txtHPtemp.Size = new System.Drawing.Size(79, 22);
             this.txtHPtemp.TabIndex = 47;
+            this.txtHPtemp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtSpeed
             // 
@@ -1726,6 +1830,7 @@
             this.txtSpeed.Name = "txtSpeed";
             this.txtSpeed.Size = new System.Drawing.Size(64, 22);
             this.txtSpeed.TabIndex = 46;
+            this.txtSpeed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtInitiative
             // 
@@ -1733,6 +1838,7 @@
             this.txtInitiative.Name = "txtInitiative";
             this.txtInitiative.Size = new System.Drawing.Size(64, 22);
             this.txtInitiative.TabIndex = 44;
+            this.txtInitiative.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtAC
             // 
@@ -1740,6 +1846,7 @@
             this.txtAC.Name = "txtAC";
             this.txtAC.Size = new System.Drawing.Size(64, 22);
             this.txtAC.TabIndex = 45;
+            this.txtAC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtHPmax
             // 
@@ -1747,6 +1854,7 @@
             this.txtHPmax.Name = "txtHPmax";
             this.txtHPmax.Size = new System.Drawing.Size(79, 22);
             this.txtHPmax.TabIndex = 43;
+            this.txtHPmax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtHPcurrent
             // 
@@ -1754,6 +1862,7 @@
             this.txtHPcurrent.Name = "txtHPcurrent";
             this.txtHPcurrent.Size = new System.Drawing.Size(79, 22);
             this.txtHPcurrent.TabIndex = 42;
+            this.txtHPcurrent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
@@ -2186,6 +2295,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabInventory.ResumeLayout(false);
             this.tabInventory.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGold)).EndInit();
             this.tabFeats.ResumeLayout(false);
             this.tabFeats.PerformLayout();
             this.tabProficiencies.ResumeLayout(false);
@@ -2281,11 +2391,9 @@
         private System.Windows.Forms.Label lblArcana;
         private System.Windows.Forms.Label lblAnimalHandling;
         private System.Windows.Forms.DataGridView dgvFeats;
-        private System.Windows.Forms.Button btnAddFeat;
         private System.Windows.Forms.TextBox txtFeatDescription;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnManageInventory;
         private System.Windows.Forms.TextBox txtItemDescription;
         private System.Windows.Forms.DataGridView dgvInventory;
         private System.Windows.Forms.TabControl tabControl1;
@@ -2293,17 +2401,15 @@
         private System.Windows.Forms.TabPage tabFeats;
         private System.Windows.Forms.TabPage tabProficiencies;
         private System.Windows.Forms.TabPage tabBackground;
-        private System.Windows.Forms.Button btnManageProficiencies;
         private System.Windows.Forms.NumericUpDown txtProficiencyBonus;
         private System.Windows.Forms.Label lblProficiencyBonus;
         private System.Windows.Forms.DataGridView dgvProficiencies;
         private System.Windows.Forms.ComboBox cmbLore;
         private System.Windows.Forms.TextBox txtLoreDescription;
-        private System.Windows.Forms.Button btnManageLore;
         private System.Windows.Forms.Label lblLore;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabAttack;
-        private System.Windows.Forms.Button btnManageAttacks;
+        private System.Windows.Forms.Button btnAddAttack;
         private System.Windows.Forms.DataGridView dgvAttack;
         private System.Windows.Forms.TabPage tabSpellbook;
         private System.Windows.Forms.NumericUpDown txtSpellSlot_Level8_Max;
@@ -2432,9 +2538,21 @@
         private System.Windows.Forms.Label lblDuration;
         private System.Windows.Forms.Label lblRange;
         private System.Windows.Forms.Label lblCastingTime;
-        private System.Windows.Forms.Label lblGold;
         private System.Windows.Forms.Label lblWeight;
         private System.Windows.Forms.NumericUpDown txtLevel;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDeleteAttack;
+        private System.Windows.Forms.Button btnEditItem;
+        private System.Windows.Forms.Button btnDeleteItem;
+        private System.Windows.Forms.Button btnAddItem;
+        private System.Windows.Forms.Button btnAddFeat;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button btnEditAttack;
+        private System.Windows.Forms.NumericUpDown txtGold;
     }
 }
