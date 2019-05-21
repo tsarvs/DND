@@ -60,6 +60,7 @@
     <Compile Include="Controllers\AddCampaignController.cs" />
     <Compile Include="Controllers\CharacterSheetController.cs" />
     <Compile Include="Controllers\ClassManagerController.cs" />
+    <Compile Include="Controllers\DiceRollerController.cs" />
     <Compile Include="Controllers\FeatManagerController.cs" />
     <Compile Include="Controllers\NewFeatController.cs" />
     <Compile Include="Models\BACKGROUND.cs" />
@@ -110,6 +111,12 @@
     <Compile Include="Views\Forms\ClassManagerForm.Designer.cs">
       <DependentUpon>ClassManagerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Forms\DiceRollerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\DiceRollerForm.Designer.cs">
+      <DependentUpon>DiceRollerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Forms\FeatManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +144,7 @@
     <Compile Include="Views\Interfaces\IAddCampaignForm.cs" />
     <Compile Include="Views\Interfaces\ICharacterSheetForm.cs" />
     <Compile Include="Views\Interfaces\IClassManagerForm.cs" />
+    <Compile Include="Views\Interfaces\IDiceRollerForm.cs" />
     <Compile Include="Views\Interfaces\IFeatManagerForm.cs" />
     <Compile Include="Views\Interfaces\ILoadCampaignForm.cs" />
     <Compile Include="Views\Interfaces\ILoadCharacterSheetForm.cs" />
@@ -158,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\ClassManagerForm.resx">
       <DependentUpon>ClassManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\DiceRollerForm.resx">
+      <DependentUpon>DiceRollerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\FeatManagerForm.resx">
       <DependentUpon>FeatManagerForm.cs</DependentUpon>
