@@ -72,6 +72,7 @@
     <Compile Include="Models\CHARACTER_ABILITY.cs" />
     <Compile Include="Models\CHARACTER_ATTACK.cs" />
     <Compile Include="Models\CHARACTER_CLASS.cs" />
+    <Compile Include="Models\CHARACTER_JOURNAL.cs" />
     <Compile Include="Models\CLASS.cs" />
     <Compile Include="Models\DragonDBModel.cs" />
     <Compile Include="Models\ENCOUNTER.cs" />

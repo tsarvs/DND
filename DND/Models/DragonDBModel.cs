@@ -19,6 +19,7 @@ namespace DND.Models
         public virtual DbSet<CHARACTER_ABILITY> CHARACTER_ABILITY { get; set; }
         public virtual DbSet<CHARACTER_ATTACK> CHARACTER_ATTACK { get; set; }
         public virtual DbSet<CHARACTER_CLASS> CHARACTER_CLASS { get; set; }
+        public virtual DbSet<CHARACTER_JOURNAL> CHARACTER_JOURNAL { get; set; }
         public virtual DbSet<CLASS> CLASS { get; set; }
         public virtual DbSet<ENCOUNTER> ENCOUNTER { get; set; }
         public virtual DbSet<EPISODE> EPISODE { get; set; }
@@ -134,6 +135,12 @@ namespace DND.Models
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<CHARACTER>()
+                .HasMany(e => e.CHARACTER_JOURNAL)
+                .WithRequired(e => e.CHARACTER)
+                .HasForeignKey(e => e.cj_cid)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<CHARACTER>()
                 .HasMany(e => e.ITEM)
                 .WithRequired(e => e.CHARACTER)
                 .HasForeignKey(e => e.i_cid)
@@ -181,6 +188,10 @@ namespace DND.Models
 
             modelBuilder.Entity<CHARACTER_ATTACK>()
                 .Property(e => e.a_description)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<CHARACTER_JOURNAL>()
+                .Property(e => e.cj_text)
                 .IsUnicode(false);
 
             modelBuilder.Entity<CLASS>()
