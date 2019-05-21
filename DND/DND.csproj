@@ -57,7 +57,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AddAttackController.cs" />
     <Compile Include="Controllers\AddCampaignController.cs" />
+    <Compile Include="Controllers\AddEditItemController.cs" />
     <Compile Include="Controllers\CharacterSheetController.cs" />
     <Compile Include="Controllers\ClassManagerController.cs" />
     <Compile Include="Controllers\DiceRollerController.cs" />
@@ -70,18 +72,14 @@
     <Compile Include="Models\CHARACTER_ABILITY.cs" />
     <Compile Include="Models\CHARACTER_ATTACK.cs" />
     <Compile Include="Models\CHARACTER_CLASS.cs" />
-    <Compile Include="Models\CHARACTER_INVENTORY.cs" />
     <Compile Include="Models\CLASS.cs" />
     <Compile Include="Models\DragonDBModel.cs" />
-    <Compile Include="Models\EFFECT.cs" />
-    <Compile Include="Models\EFFECT_PROCEDURE.cs" />
     <Compile Include="Models\ENCOUNTER.cs" />
     <Compile Include="Models\EPISODE.cs" />
     <Compile Include="Models\EVENT_OCCURRED.cs" />
     <Compile Include="Models\EVENT_TYPE.cs" />
     <Compile Include="Models\FEATS.cs" />
     <Compile Include="Models\ITEM.cs" />
-    <Compile Include="Models\ITEM_BACKGROUND.cs" />
     <Compile Include="Models\LOCATION.cs" />
     <Compile Include="Models\PROFICIENCY.cs" />
     <Compile Include="Models\QUEST.cs" />
@@ -93,11 +91,23 @@
     <Compile Include="Views\Enums\FormMode.cs" />
     <Compile Include="Controllers\LoadCampaignController.cs" />
     <Compile Include="Controllers\LoadCharacterSheetController.cs" />
+    <Compile Include="Views\Forms\AddEditAttackForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\AddEditAttackForm.Designer.cs">
+      <DependentUpon>AddEditAttackForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Forms\AddCampaignForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Forms\AddCampaignForm.Designer.cs">
       <DependentUpon>AddCampaignForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\AddEditItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\AddEditItemForm.Designer.cs">
+      <DependentUpon>AddEditItemForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Forms\CharacterSheetForm.cs">
       <SubType>Form</SubType>
@@ -141,7 +151,9 @@
     <Compile Include="Views\Forms\NewFeatForm.Designer.cs">
       <DependentUpon>NewFeatForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Interfaces\IAddEditAttackForm.cs" />
     <Compile Include="Views\Interfaces\IAddCampaignForm.cs" />
+    <Compile Include="Views\Interfaces\IAddEditItemForm.cs" />
     <Compile Include="Views\Interfaces\ICharacterSheetForm.cs" />
     <Compile Include="Views\Interfaces\IClassManagerForm.cs" />
     <Compile Include="Views\Interfaces\IDiceRollerForm.cs" />
@@ -158,8 +170,14 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Interfaces\INewFeatForm.cs" />
+    <EmbeddedResource Include="Views\Forms\AddEditAttackForm.resx">
+      <DependentUpon>AddEditAttackForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\AddCampaignForm.resx">
       <DependentUpon>AddCampaignForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\AddEditItemForm.resx">
+      <DependentUpon>AddEditItemForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\CharacterSheetForm.resx">
       <DependentUpon>CharacterSheetForm.cs</DependentUpon>
@@ -217,6 +235,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

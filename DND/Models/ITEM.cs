@@ -9,26 +9,24 @@ namespace DND.Models
     [Table("ITEM")]
     public partial class ITEM
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ITEM()
-        {
-            CHARACTER_INVENTORY = new HashSet<CHARACTER_INVENTORY>();
-            EFFECT = new HashSet<EFFECT>();
-        }
+        [Key]
+        [Column(Order = 0)]
+        public int i_id { get; set; }
 
         [Key]
-        public int i_id { get; set; }
+        [Column(Order = 1)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int i_cid { get; set; }
+
+        [StringLength(250)]
+        public string i_name { get; set; }
+
+        public int? i_quantity { get; set; }
 
         public decimal? i_weight { get; set; }
 
-        public decimal? i_gp { get; set; }
-
         public string i_description { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CHARACTER_INVENTORY> CHARACTER_INVENTORY { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EFFECT> EFFECT { get; set; }
+        public virtual CHARACTER CHARACTER { get; set; }
     }
 }

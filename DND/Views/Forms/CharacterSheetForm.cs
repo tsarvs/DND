@@ -546,8 +546,8 @@ namespace DND.Views.Forms
 
         public double Gold
         {
-            get { return Convert.ToInt32(this.lblGold.Text); }
-            set { this.lblGold.Text = value.ToString(); } //todo: set format
+            get { return (double) this.txtGold.Value; }
+            set { this.txtGold.Value = (decimal) value; }
         }
 
         public string ItemDescription
@@ -627,9 +627,35 @@ namespace DND.Views.Forms
             _controller = controller;
         }
 
+        public void AddAttack(CHARACTER_ATTACK attack)
+        {
+            _controller.AddAttackToGrid(attack);
+        }
+
+        public void AddItem(ITEM item)
+        {
+            _controller.AddItemToGrid(item);
+        }
+
+        public void UpdateInventory(ITEM item)
+        {
+            if (_controller == null)
+                return;
+
+            _controller.UpdateInventoryGrid(item);
+        }
+
         public void LoadCharacterClasses(List<CHARACTER_CLASS> characterClassList)
         {
             _controller.LoadCharacterClasses(characterClassList);
+        }
+
+        public void UpdateAttacks(CHARACTER_ATTACK attack)
+        {
+            if (_controller == null)
+                return;
+
+            _controller.UpdateAttackGrid(attack);
         }
 
         public void UpdateFeatGrid()
@@ -645,7 +671,7 @@ namespace DND.Views.Forms
             _characterId = characterId;
 
             _controller.InitializeData(_characterId);
-            _controller.LoadCharacterSheet();
+            _controller.LoadCharacter();
 
             UpdateFeatGrid();
         }
@@ -685,6 +711,46 @@ namespace DND.Views.Forms
         private void txtLevel_ValueChanged(object sender, EventArgs e)
         {
             _controller.UpdateClassLevel();
+        }
+
+        private void btnAddAttack_Click(object sender, EventArgs e)
+        {
+            _controller.AddAttack();
+        }
+
+        private void btnDeleteAttack_Click(object sender, EventArgs e)
+        {
+            _controller.DeleteSelectedAttack();
+        }
+
+        private void dgvAttack_SelectionChanged(object sender, EventArgs e)
+        {
+            _controller.UpdateAttackControls();
+        }
+
+        private void btnEditAttack_Click(object sender, EventArgs e)
+        {
+            _controller.EditAttack();
+        }
+
+        private void btnAddItem_Click(object sender, EventArgs e)
+        {
+            _controller.LoadAddEditItemForm(FormMode.NewForm);
+        }
+
+        private void btnEditItem_Click(object sender, EventArgs e)
+        {
+            _controller.LoadAddEditItemForm(FormMode.EditForm);
+        }
+
+        private void btnDeleteItem_Click(object sender, EventArgs e)
+        {
+            _controller.DeleteItem();
+        }
+
+        private void dgvInventory_SelectionChanged(object sender, EventArgs e)
+        {
+            _controller.UpdateItemDescription();
         }
 
         #endregion

@@ -35,4 +35,18 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="a_attackability" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="98fcb71d-6e14-4a95-9dd8-8db7d2aa982a" ChangeDateTime="05/14/2019 02:02:50">
+    <Property Name="ElementName" Value="[dbo].[CHARACTER_ATTACK].[a_itemdescription]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[CHARACTER_ATTACK]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="a_description" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a2d389cb-8c2c-401b-a49e-c87f83d96900" ChangeDateTime="05/15/2019 01:59:55">
+    <Property Name="ElementName" Value="[dbo].[ITEM].[I_name]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ITEM]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="i_name" />
+  </Operation>
 </Operations>
