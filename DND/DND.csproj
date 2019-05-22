@@ -111,6 +111,12 @@
     <Compile Include="Views\Forms\AddEditItemForm.Designer.cs">
       <DependentUpon>AddEditItemForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Forms\AddEditRaceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\AddEditRaceForm.Designer.cs">
+      <DependentUpon>AddEditRaceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Forms\CharacterJournalForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,7 @@
     <Compile Include="Views\Interfaces\IAddEditAttackForm.cs" />
     <Compile Include="Views\Interfaces\IAddCampaignForm.cs" />
     <Compile Include="Views\Interfaces\IAddEditItemForm.cs" />
+    <Compile Include="Views\Interfaces\IAddEditRaceForm.cs" />
     <Compile Include="Views\Interfaces\ICharacterJournalForm.cs" />
     <Compile Include="Views\Interfaces\ICharacterSheetForm.cs" />
     <Compile Include="Views\Interfaces\IClassManagerForm.cs" />
@@ -187,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\AddEditItemForm.resx">
       <DependentUpon>AddEditItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\AddEditRaceForm.resx">
+      <DependentUpon>AddEditRaceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\CharacterJournalForm.resx">
       <DependentUpon>CharacterJournalForm.cs</DependentUpon>
