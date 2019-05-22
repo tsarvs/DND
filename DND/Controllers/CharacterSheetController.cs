@@ -83,6 +83,7 @@ namespace DND.Controllers
         {
             var selectedRows = _view.AttackGridView.SelectedRows;
 
+
             if (selectedRows.Count == 0)
                 return;
 
@@ -262,6 +263,7 @@ namespace DND.Controllers
 
             //hide ID column from display
             _view.FeatGridView.Columns[0].Visible = false;
+
         }
 
         public void UpdateFeatControls()
@@ -358,7 +360,7 @@ namespace DND.Controllers
                     where cc.cc_clid == selectedClassId
                     select cc.cc_level).FirstOrDefault().GetValueOrDefault(1);
         }
-        
+
         public void UpdateCharacterClasses()
         {
             using (var db = new DragonDBModel())

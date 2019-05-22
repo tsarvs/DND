@@ -15,6 +15,7 @@ namespace DND.Models
             CAMPAIGN_PLAYER_CHARACTERS = new HashSet<CAMPAIGN_PLAYER_CHARACTERS>();
             CHARACTER_ATTACK = new HashSet<CHARACTER_ATTACK>();
             CHARACTER_CLASS = new HashSet<CHARACTER_CLASS>();
+            CHARACTER_JOURNAL = new HashSet<CHARACTER_JOURNAL>();
             ITEM = new HashSet<ITEM>();
             BACKGROUND = new HashSet<BACKGROUND>();
             FEATS = new HashSet<FEATS>();
@@ -71,6 +72,9 @@ namespace DND.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHARACTER_CLASS> CHARACTER_CLASS { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CHARACTER_JOURNAL> CHARACTER_JOURNAL { get; set; }
 
         public virtual RACE RACE { get; set; }
 

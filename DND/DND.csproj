@@ -60,8 +60,10 @@
     <Compile Include="Controllers\AddAttackController.cs" />
     <Compile Include="Controllers\AddCampaignController.cs" />
     <Compile Include="Controllers\AddEditItemController.cs" />
+    <Compile Include="Controllers\CharacterJournalController.cs" />
     <Compile Include="Controllers\CharacterSheetController.cs" />
     <Compile Include="Controllers\ClassManagerController.cs" />
+    <Compile Include="Controllers\DiceRollerController.cs" />
     <Compile Include="Controllers\FeatManagerController.cs" />
     <Compile Include="Controllers\NewFeatController.cs" />
     <Compile Include="Models\BACKGROUND.cs" />
@@ -71,6 +73,7 @@
     <Compile Include="Models\CHARACTER_ABILITY.cs" />
     <Compile Include="Models\CHARACTER_ATTACK.cs" />
     <Compile Include="Models\CHARACTER_CLASS.cs" />
+    <Compile Include="Models\CHARACTER_JOURNAL.cs" />
     <Compile Include="Models\CLASS.cs" />
     <Compile Include="Models\DragonDBModel.cs" />
     <Compile Include="Models\ENCOUNTER.cs" />
@@ -108,6 +111,12 @@
     <Compile Include="Views\Forms\AddEditItemForm.Designer.cs">
       <DependentUpon>AddEditItemForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Forms\CharacterJournalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\CharacterJournalForm.Designer.cs">
+      <DependentUpon>CharacterJournalForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Forms\CharacterSheetForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +128,12 @@
     </Compile>
     <Compile Include="Views\Forms\ClassManagerForm.Designer.cs">
       <DependentUpon>ClassManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\DiceRollerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\DiceRollerForm.Designer.cs">
+      <DependentUpon>DiceRollerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Forms\FeatManagerForm.cs">
       <SubType>Form</SubType>
@@ -147,8 +162,10 @@
     <Compile Include="Views\Interfaces\IAddEditAttackForm.cs" />
     <Compile Include="Views\Interfaces\IAddCampaignForm.cs" />
     <Compile Include="Views\Interfaces\IAddEditItemForm.cs" />
+    <Compile Include="Views\Interfaces\ICharacterJournalForm.cs" />
     <Compile Include="Views\Interfaces\ICharacterSheetForm.cs" />
     <Compile Include="Views\Interfaces\IClassManagerForm.cs" />
+    <Compile Include="Views\Interfaces\IDiceRollerForm.cs" />
     <Compile Include="Views\Interfaces\IFeatManagerForm.cs" />
     <Compile Include="Views\Interfaces\ILoadCampaignForm.cs" />
     <Compile Include="Views\Interfaces\ILoadCharacterSheetForm.cs" />
@@ -171,11 +188,17 @@
     <EmbeddedResource Include="Views\Forms\AddEditItemForm.resx">
       <DependentUpon>AddEditItemForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\CharacterJournalForm.resx">
+      <DependentUpon>CharacterJournalForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\CharacterSheetForm.resx">
       <DependentUpon>CharacterSheetForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\ClassManagerForm.resx">
       <DependentUpon>ClassManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\DiceRollerForm.resx">
+      <DependentUpon>DiceRollerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\FeatManagerForm.resx">
       <DependentUpon>FeatManagerForm.cs</DependentUpon>

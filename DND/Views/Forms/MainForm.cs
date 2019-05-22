@@ -68,5 +68,14 @@ namespace DND.Views.Forms
 
             form.ShowDialog();
         }
+
+        private void diceRollerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DiceRollerForm form = new DiceRollerForm();
+
+            form.SetController(new DiceRollerController(form));
+
+            form.ShowDialog();
+        }
     }
 }

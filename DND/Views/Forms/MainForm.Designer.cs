@@ -40,6 +40,7 @@
             this.loadCharacterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newCharacterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.diceRollerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
             this.dungeonMasterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.campaignManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.episodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,7 +72,8 @@
             this.dungeonMasterToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(974, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(730, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -82,7 +84,7 @@
             this.connectToDatabaseToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // campaignToolStripMenuItem
@@ -91,33 +93,33 @@
             this.loadCampaignToolStripMenuItem,
             this.newCampaignToolStripMenuItem});
             this.campaignToolStripMenuItem.Name = "campaignToolStripMenuItem";
-            this.campaignToolStripMenuItem.Size = new System.Drawing.Size(223, 26);
+            this.campaignToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.campaignToolStripMenuItem.Text = "Campaign";
             // 
             // loadCampaignToolStripMenuItem
             // 
             this.loadCampaignToolStripMenuItem.Name = "loadCampaignToolStripMenuItem";
-            this.loadCampaignToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.loadCampaignToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.loadCampaignToolStripMenuItem.Text = "Load Campaign";
             this.loadCampaignToolStripMenuItem.Click += new System.EventHandler(this.loadCampaignToolStripMenuItem_Click);
             // 
             // newCampaignToolStripMenuItem
             // 
             this.newCampaignToolStripMenuItem.Name = "newCampaignToolStripMenuItem";
-            this.newCampaignToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.newCampaignToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.newCampaignToolStripMenuItem.Text = "New Campaign";
             this.newCampaignToolStripMenuItem.Click += new System.EventHandler(this.newCampaignToolStripMenuItem_Click);
             // 
             // connectToDatabaseToolStripMenuItem
             // 
             this.connectToDatabaseToolStripMenuItem.Name = "connectToDatabaseToolStripMenuItem";
-            this.connectToDatabaseToolStripMenuItem.Size = new System.Drawing.Size(223, 26);
+            this.connectToDatabaseToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.connectToDatabaseToolStripMenuItem.Text = "Connect to Database";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(223, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -128,7 +130,7 @@
             this.diceRollerToolStripMenuItem,
             this.notepadToolStripMenuItem});
             this.playerToolStripMenuItem.Name = "playerToolStripMenuItem";
-            this.playerToolStripMenuItem.Size = new System.Drawing.Size(61, 24);
+            this.playerToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.playerToolStripMenuItem.Text = "Player";
             // 
             // characterSheetToolStripMenuItem1
@@ -137,28 +139,29 @@
             this.loadCharacterToolStripMenuItem,
             this.newCharacterToolStripMenuItem});
             this.characterSheetToolStripMenuItem1.Name = "characterSheetToolStripMenuItem1";
-            this.characterSheetToolStripMenuItem1.Size = new System.Drawing.Size(188, 26);
+            this.characterSheetToolStripMenuItem1.Size = new System.Drawing.Size(157, 22);
             this.characterSheetToolStripMenuItem1.Text = "Character Sheet";
             // 
             // loadCharacterToolStripMenuItem
             // 
             this.loadCharacterToolStripMenuItem.Name = "loadCharacterToolStripMenuItem";
-            this.loadCharacterToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.loadCharacterToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.loadCharacterToolStripMenuItem.Text = "Load Character";
             this.loadCharacterToolStripMenuItem.Click += new System.EventHandler(this.loadCharacterToolStripMenuItem_Click);
             // 
             // newCharacterToolStripMenuItem
             // 
             this.newCharacterToolStripMenuItem.Name = "newCharacterToolStripMenuItem";
-            this.newCharacterToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.newCharacterToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.newCharacterToolStripMenuItem.Text = "New Character";
             this.newCharacterToolStripMenuItem.Click += new System.EventHandler(this.newCharacterToolStripMenuItem_Click);
             // 
             // diceRollerToolStripMenuItem
             // 
             this.diceRollerToolStripMenuItem.Name = "diceRollerToolStripMenuItem";
-            this.diceRollerToolStripMenuItem.Size = new System.Drawing.Size(188, 26);
+            this.diceRollerToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.diceRollerToolStripMenuItem.Text = "Dice Roller";
+            this.diceRollerToolStripMenuItem.Click += new System.EventHandler(this.diceRollerToolStripMenuItem_Click);
             // 
             // dungeonMasterToolStripMenuItem
             // 
@@ -168,7 +171,7 @@
             this.initiativeTrackerToolStripMenuItem,
             this.graveyardToolStripMenuItem});
             this.dungeonMasterToolStripMenuItem.Name = "dungeonMasterToolStripMenuItem";
-            this.dungeonMasterToolStripMenuItem.Size = new System.Drawing.Size(131, 24);
+            this.dungeonMasterToolStripMenuItem.Size = new System.Drawing.Size(107, 20);
             this.dungeonMasterToolStripMenuItem.Text = "Dungeon Master";
             // 
             // campaignManagerToolStripMenuItem
@@ -180,7 +183,7 @@
             this.manageQuestlinesToolStripMenuItem,
             this.manageLocationsToolStripMenuItem});
             this.campaignManagerToolStripMenuItem.Name = "campaignManagerToolStripMenuItem";
-            this.campaignManagerToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.campaignManagerToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.campaignManagerToolStripMenuItem.Text = "Manage Campaign";
             // 
             // episodeToolStripMenuItem
@@ -230,7 +233,7 @@
             this.itemToolStripMenuItem1,
             this.spellToolStripMenuItem1});
             this.createToolStripMenuItem1.Name = "createToolStripMenuItem1";
-            this.createToolStripMenuItem1.Size = new System.Drawing.Size(210, 26);
+            this.createToolStripMenuItem1.Size = new System.Drawing.Size(175, 22);
             this.createToolStripMenuItem1.Text = "Add/Edit...";
             // 
             // characterToolStripMenuItem
@@ -298,14 +301,15 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::DND.Properties.Resources.pixel;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(974, 467);
+            this.ClientSize = new System.Drawing.Size(730, 379);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainForm";
             this.Text = "Data N\' Dragons";
             this.menuStrip1.ResumeLayout(false);
