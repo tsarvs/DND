@@ -52,8 +52,8 @@
             this.lbFeats.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.lbFeats.Size = new System.Drawing.Size(243, 356);
             this.lbFeats.TabIndex = 0;
-            this.lbFeats.Click += new System.EventHandler(this.lbFeats_Click);
-            this.lbFeats.SelectedIndexChanged += new System.EventHandler(this.lbFeats_SelectedIndexChanged);
+            //this.lbFeats.Click += new System.EventHandler(this.lbFeats_Click);
+            //this.lbFeats.SelectedIndexChanged += new System.EventHandler(this.lbFeats_SelectedIndexChanged);
             // 
             // lbCharacterFeats
             // 
@@ -64,8 +64,8 @@
             this.lbCharacterFeats.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.lbCharacterFeats.Size = new System.Drawing.Size(243, 356);
             this.lbCharacterFeats.TabIndex = 1;
-            this.lbCharacterFeats.Click += new System.EventHandler(this.lbCharacterFeats_Click);
-            this.lbCharacterFeats.SelectedIndexChanged += new System.EventHandler(this.lbCharacterFeats_SelectedIndexChanged);
+            //this.lbCharacterFeats.Click += new System.EventHandler(this.lbCharacterFeats_Click);
+            //this.lbCharacterFeats.SelectedIndexChanged += new System.EventHandler(this.lbCharacterFeats_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -93,7 +93,7 @@
             this.btnAddFeatToCharacter.TabIndex = 4;
             this.btnAddFeatToCharacter.Text = "->";
             this.btnAddFeatToCharacter.UseVisualStyleBackColor = true;
-            this.btnAddFeatToCharacter.Click += new System.EventHandler(this.btnAddFeatToCharacter_Click);
+            //this.btnAddFeatToCharacter.Click += new System.EventHandler(this.btnAddFeatToCharacter_Click);
             // 
             // btnRemoveFeatFromCharacter
             // 
@@ -103,7 +103,7 @@
             this.btnRemoveFeatFromCharacter.TabIndex = 5;
             this.btnRemoveFeatFromCharacter.Text = "<-";
             this.btnRemoveFeatFromCharacter.UseVisualStyleBackColor = true;
-            this.btnRemoveFeatFromCharacter.Click += new System.EventHandler(this.btnRemoveFeatFromCharacter_Click);
+            //this.btnRemoveFeatFromCharacter.Click += new System.EventHandler(this.btnRemoveFeatFromCharacter_Click);
             // 
             // btnNewFeat
             // 
@@ -113,7 +113,7 @@
             this.btnNewFeat.TabIndex = 6;
             this.btnNewFeat.Text = "Add/Edit Feat";
             this.btnNewFeat.UseVisualStyleBackColor = true;
-            this.btnNewFeat.Click += new System.EventHandler(this.btnNewFeat_Click);
+            //this.btnNewFeat.Click += new System.EventHandler(this.btnNewFeat_Click);
             // 
             // btnSave
             // 
@@ -123,7 +123,7 @@
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            //this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // panel1
             // 
@@ -180,7 +180,7 @@
             this.Name = "FeatManagerForm";
             this.Text = "Feat Manager";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FeatManagerForm_FormClosed);
-            this.Shown += new System.EventHandler(this.FeatManagerForm_Shown);
+            //this.Shown += new System.EventHandler(this.FeatManagerForm_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

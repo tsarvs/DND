@@ -46,7 +46,8 @@ namespace DND.Controllers
                 db.SaveChanges();
             }
 
-            _parentView.Reload();
+            //todo: reenable this
+            //_parentView.Reload();
         }
 
 

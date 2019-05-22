@@ -81,70 +81,62 @@ namespace DND.Views.Forms
         #endregion
 
         #region Methods
-
-        public void Reload()
-        {
-            _controller.ReloadFeatList();
-        }
-
+        
         public void SetController(FeatManagerController controller)
         {
             _controller = controller;
         }
+        
+        //private void lbFeats_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    _controller.UpdateFeatDisplay(true);
+        //}
 
-        private void FeatManagerForm_Shown(object sender, EventArgs e)
-        {
-            _controller.PopulateControls(_characterId);
-        }
+        //private void lbCharacterFeats_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    _controller.UpdateFeatDisplay(false);
+        //}
 
-        private void lbFeats_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            _controller.UpdateFeatDisplay(true);
-        }
+        //private void btnRemoveFeatFromCharacter_Click(object sender, EventArgs e)
+        //{
+        //    _controller.RemoveFeatFromCharacter();
+        //    _controller.UnselectCharacterFeats();
+        //}
 
-        private void btnRemoveFeatFromCharacter_Click(object sender, EventArgs e)
-        {
-            _controller.RemoveFeatFromCharacter();
-            _controller.UnselectCharacterFeats();
-        }
+        //private void btnAddFeatToCharacter_Click(object sender, EventArgs e)
+        //{
+        //    _controller.AddFeatToCharacter();
+        //    _controller.UnselectFeats();
+        //}
 
-        private void btnAddFeatToCharacter_Click(object sender, EventArgs e)
-        {
-            _controller.AddFeatToCharacter();
-            _controller.UnselectFeats();
-        }
+        //private void btnSave_Click(object sender, EventArgs e)
+        //{
+        //    _controller.UpdateCharacterSheet();
 
-        private void lbCharacterFeats_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            _controller.UpdateFeatDisplay(false);
-        }
+        //    this.Close();
+        //}
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            _controller.Save();
+        //private void lbFeats_Click(object sender, EventArgs e)
+        //{
+        //    _controller.UnselectCharacterFeats();
+        //}
 
-            this.Close();
-        }
+        //private void lbCharacterFeats_Click(object sender, EventArgs e)
+        //{
+        //    _controller.UnselectFeats();
+        //}
 
-        private void lbFeats_Click(object sender, EventArgs e)
-        {
-            _controller.UnselectCharacterFeats();
-        }
-
-        private void lbCharacterFeats_Click(object sender, EventArgs e)
-        {
-            _controller.UnselectFeats();
-        }
+        //private void btnNewFeat_Click(object sender, EventArgs e)
+        //{
+        //    _controller.NewFeat();
+        //}
 
         private void FeatManagerForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             _parentView.UpdateFeatGrid();
         }
 
-        private void btnNewFeat_Click(object sender, EventArgs e)
-        {
-            _controller.NewFeat();
-        }
+
 
         #endregion
         
