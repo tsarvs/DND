@@ -244,6 +244,56 @@ namespace DND.Controllers
 
         #endregion
 
+        #region Feats
+
+        public void UpdateFeatGrid()
+        {
+            var featsGridContent =
+                from f in _loadedCharacter.FEATS.ToList()
+                where f.CHARACTER.Any(x => x.c_id == _characterId)
+                select new
+                {
+                    ID = f.f_id,
+                    Feat = f.f_name,
+                    Source = f.f_source
+                };
+
+            _view.FeatGridView.DataSource = featsGridContent.ToList();
+
+            //hide ID column from display
+            _view.FeatGridView.Columns[0].Visible = false;
+        }
+
+        public void UpdateFeatControls()
+        {
+            using (var db = new DragonDBModel())
+            {
+                string featDescription;
+
+                if (_view.FeatGridView.SelectedRows.Count == 0)
+                    featDescription = "";
+                else
+                    featDescription =
+                        (from f in db.FEATS.ToList()
+                            where f.f_name == _view.FeatGridView.SelectedRows[0].Cells[0].Value.ToString()
+                            where f.f_source == _view.FeatGridView.SelectedRows[0].Cells[1].Value.ToString()
+                            select f.f_description).FirstOrDefault();
+
+                _view.FeatDescription = featDescription;
+            }
+        }
+
+        public void ManageFeats()
+        {
+            var form = new FeatManagerForm(_characterId, _view);
+
+            form.SetController(new FeatManagerController(form, _view, _loadedCharacter.FEATS.ToList()));
+
+            form.Show();
+        }
+
+        #endregion
+
         public void InitializeData(int characterId)
         {
             _characterId = characterId;
@@ -273,33 +323,7 @@ namespace DND.Controllers
             else if (mode == FormMode.EditForm) UpdateCharacter();
         }
 
-        public void UpdateFeatControls()
-        {
-            using (var db = new DragonDBModel())
-            {
-                string featDescription;
 
-                if (_view.FeatGridView.SelectedRows.Count == 0)
-                    featDescription = "";
-                else
-                    featDescription =
-                        (from f in db.FEATS.ToList()
-                            where f.f_name == _view.FeatGridView.SelectedRows[0].Cells[0].Value.ToString()
-                            where f.f_source == _view.FeatGridView.SelectedRows[0].Cells[1].Value.ToString()
-                            select f.f_description).FirstOrDefault();
-
-                _view.FeatDescription = featDescription;
-            }
-        }
-
-        public void ManageFeats()
-        {
-            var form = new FeatManagerForm(_characterId, _view);
-
-            form.SetController(new FeatManagerController(form));
-
-            form.Show();
-        }
 
         public void AddClass()
         {
@@ -334,24 +358,7 @@ namespace DND.Controllers
                     where cc.cc_clid == selectedClassId
                     select cc.cc_level).FirstOrDefault().GetValueOrDefault(1);
         }
-
-        public void UpdateFeatGrid()
-        {
-            using (var db = new DragonDBModel())
-            {
-                var featsGridContent =
-                    from f in db.FEATS.ToList()
-                    where f.CHARACTER.Any(x => x.c_id == _characterId)
-                    select new
-                    {
-                        Feat = f.f_name,
-                        Source = f.f_source
-                    };
-
-                _view.FeatGridView.DataSource = featsGridContent.ToList();
-            }
-        }
-
+        
         public void UpdateCharacterClasses()
         {
             using (var db = new DragonDBModel())
