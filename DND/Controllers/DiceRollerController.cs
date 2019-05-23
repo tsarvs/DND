@@ -33,45 +33,45 @@ namespace DND.Controllers
             var roll = 0;
             var rollTotal = 0;
             var i = 1;
-
-            while (i <= numOfDice)
-            {
-
+            var k = 0;
+            
                 if (diceID == "d4")
                 {
-                    roll = _randomRoll.Next(1, 4);
+                    k = 4;
                 }
                 else if (diceID == "d6")
                 {
-                    roll = _randomRoll.Next(1, 6);
+                    k = 6;
                 }
                 else if (diceID == "d8")
                 {
-                    roll = _randomRoll.Next(1, 8);
+                    k = 8;
                 }
                 else if (diceID == "d10")
                 {
-                    roll = _randomRoll.Next(1, 10);
+                    k = 10;
                 }
                 else if (diceID == "d12")
                 {
-                    roll = _randomRoll.Next(1, 12);
+                    k = 12;
                 }
                 else if (diceID == "d20")
                 {
-                    roll = _randomRoll.Next(1, 20);
+                    k = 20;
                 }
                 else if (diceID == "d100")
                 {
-                    roll = _randomRoll.Next(1, 100);
+                    k = 100;
                 }
 
+            while (i <= numOfDice)
+            {
+                roll = _randomRoll.Next(1, k);
                 rollTotal = rollTotal + roll;
                 i = i + 1;
             }
-
+            
             return rollTotal;
-
         }
     }
 }

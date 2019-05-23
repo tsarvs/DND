@@ -61,6 +61,7 @@
     <Compile Include="Controllers\AddCampaignController.cs" />
     <Compile Include="Controllers\AddEditItemController.cs" />
     <Compile Include="Controllers\AddEditProficiencyController.cs" />
+    <Compile Include="Controllers\AddEditRaceController.cs" />
     <Compile Include="Controllers\CharacterJournalController.cs" />
     <Compile Include="Controllers\CharacterSheetController.cs" />
     <Compile Include="Controllers\ClassManagerController.cs" />
