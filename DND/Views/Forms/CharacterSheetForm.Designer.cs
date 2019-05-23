@@ -849,7 +849,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(282, 166);
+            this.label9.Location = new System.Drawing.Point(263, 279);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(42, 17);
             this.label9.TabIndex = 40;
@@ -858,7 +858,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 166);
+            this.label8.Location = new System.Drawing.Point(2, 279);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(92, 17);
             this.label8.TabIndex = 39;
@@ -867,12 +867,12 @@
             // txtItemDescription
             // 
             this.txtItemDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtItemDescription.Location = new System.Drawing.Point(3, 192);
+            this.txtItemDescription.Location = new System.Drawing.Point(3, 148);
             this.txtItemDescription.Multiline = true;
             this.txtItemDescription.Name = "txtItemDescription";
             this.txtItemDescription.ReadOnly = true;
             this.txtItemDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtItemDescription.Size = new System.Drawing.Size(427, 107);
+            this.txtItemDescription.Size = new System.Drawing.Size(427, 123);
             this.txtItemDescription.TabIndex = 35;
             // 
             // dgvInventory
@@ -886,7 +886,7 @@
             this.dgvInventory.RowHeadersVisible = false;
             this.dgvInventory.RowTemplate.Height = 24;
             this.dgvInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInventory.Size = new System.Drawing.Size(427, 155);
+            this.dgvInventory.Size = new System.Drawing.Size(427, 139);
             this.dgvInventory.TabIndex = 33;
             this.dgvInventory.SelectionChanged += new System.EventHandler(this.dgvInventory_SelectionChanged);
             // 
@@ -922,9 +922,9 @@
             // 
             // txtGold
             // 
-            this.txtGold.Location = new System.Drawing.Point(330, 164);
+            this.txtGold.Location = new System.Drawing.Point(311, 277);
             this.txtGold.Name = "txtGold";
-            this.txtGold.Size = new System.Drawing.Size(101, 22);
+            this.txtGold.Size = new System.Drawing.Size(116, 22);
             this.txtGold.TabIndex = 64;
             this.txtGold.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -961,7 +961,7 @@
             // lblWeight
             // 
             this.lblWeight.AutoSize = true;
-            this.lblWeight.Location = new System.Drawing.Point(101, 166);
+            this.lblWeight.Location = new System.Drawing.Point(100, 279);
             this.lblWeight.Name = "lblWeight";
             this.lblWeight.Size = new System.Drawing.Size(28, 17);
             this.lblWeight.TabIndex = 55;

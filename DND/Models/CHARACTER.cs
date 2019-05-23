@@ -17,6 +17,7 @@ namespace DND.Models
             CHARACTER_CLASS = new HashSet<CHARACTER_CLASS>();
             CHARACTER_JOURNAL = new HashSet<CHARACTER_JOURNAL>();
             ITEM = new HashSet<ITEM>();
+            ABILITY = new HashSet<ABILITY>();
             BACKGROUND = new HashSet<BACKGROUND>();
             FEATS = new HashSet<FEATS>();
             PROFICIENCY = new HashSet<PROFICIENCY>();
@@ -62,10 +63,10 @@ namespace DND.Models
 
         public int? c_gold { get; set; }
 
+        public int? c_proficiencybonus { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CAMPAIGN_PLAYER_CHARACTERS> CAMPAIGN_PLAYER_CHARACTERS { get; set; }
-
-        public virtual CHARACTER_ABILITY CHARACTER_ABILITY { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHARACTER_ATTACK> CHARACTER_ATTACK { get; set; }
@@ -84,6 +85,9 @@ namespace DND.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ITEM> ITEM { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ABILITY> ABILITY { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BACKGROUND> BACKGROUND { get; set; }

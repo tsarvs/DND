@@ -16,6 +16,7 @@
     [c_speed] INT NULL, 
     [c_experience] INT NULL, 
     [c_gold] INT NULL, 
+    [c_proficiencybonus] INT NULL, 
     PRIMARY KEY CLUSTERED ([c_id] ASC),
     CONSTRAINT [FK_CHARACTER_ToSPELLS_SLOTS_remaining] FOREIGN KEY ([c_spellslots_remaining]) REFERENCES [dbo].[SPELLS_SLOTS] ([ss_id]),
     CONSTRAINT [FK_CHARACTER_ToSPELLS_SLOTS_total] FOREIGN KEY ([c_spellslots_total]) REFERENCES [dbo].[SPELLS_SLOTS] ([ss_id]),

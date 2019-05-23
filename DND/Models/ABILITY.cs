@@ -6,28 +6,35 @@ namespace DND.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("RACE")]
-    public partial class RACE
+    [Table("ABILITY")]
+    public partial class ABILITY
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public RACE()
+        public ABILITY()
         {
             CHARACTER = new HashSet<CHARACTER>();
-            ABILITY = new HashSet<ABILITY>();
+            RACE = new HashSet<RACE>();
         }
 
         [Key]
-        public int r_id { get; set; }
+        public int a_id { get; set; }
 
-        [StringLength(100)]
-        public string r_name { get; set; }
+        public int? a_STR { get; set; }
 
-        public string r_description { get; set; }
+        public int? a_DEX { get; set; }
+
+        public int? a_WIS { get; set; }
+
+        public int? a_CON { get; set; }
+
+        public int? a_CHA { get; set; }
+
+        public int? a_INT { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHARACTER> CHARACTER { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ABILITY> ABILITY { get; set; }
+        public virtual ICollection<RACE> RACE { get; set; }
     }
 }
