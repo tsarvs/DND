@@ -769,5 +769,10 @@ namespace DND.Views.Forms
         {
             _controller.EditProficiency();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            _controller.DeleteProficiency();
+        }
     }
 }

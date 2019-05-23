@@ -466,7 +466,18 @@ namespace DND.Controllers
             form.Show();
         }
 
+        public void DeleteProficiency()
+        {
+            var selectedProficiency = _loadedCharacter.PROFICIENCY.FirstOrDefault(x =>
+                x.p_id == (int)(_view.ProficienciesGridView.SelectedRows[0]?.Cells[0]?.Value ?? -1));
 
+            if (selectedProficiency == null) return;
+
+            _loadedCharacter.PROFICIENCY.Remove(selectedProficiency);
+
+            RefreshProficiencyDataSource();
+        }
+        
         #endregion
     }
 }
