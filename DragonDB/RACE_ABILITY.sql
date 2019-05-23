@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[RACE_ABILITY]
+(
+	[ra_rid] INT NOT NULL , 
+    [ra_aid] INT NOT NULL, 
+    PRIMARY KEY ([ra_rid], [ra_aid]), 
+    CONSTRAINT [FK_RACE_ABILITY_ToRACE] FOREIGN KEY ([ra_rid]) REFERENCES [RACE]([r_id]), 
+    CONSTRAINT [FK_RACE_ABILITY_ToABILITY] FOREIGN KEY ([ra_aid]) REFERENCES [ABILITY]([a_id])
+)

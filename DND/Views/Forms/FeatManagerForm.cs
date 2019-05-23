@@ -93,13 +93,6 @@ namespace DND.Views.Forms
             _controller.RemoveFeatFromCharacter();
             _controller.UnselectCharacterFeats();
         }
-        
-        //private void btnSave_Click(object sender, EventArgs e)
-        //{
-        //    _controller.UpdateCharacterSheet();
-
-        //    this.Close();
-        //}
 
         private void FeatManagerForm_FormClosed(object sender, FormClosedEventArgs e)
         {

@@ -56,4 +56,25 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="cj_cid" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="b24d101a-bf53-4fe9-b16c-77b284766bf8" ChangeDateTime="05/22/2019 20:05:33">
+    <Property Name="ElementName" Value="[dbo].[ABILITY].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ABILITY]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="a_id" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1b1f32f0-74c9-4ed4-954a-373ea81ef20a" ChangeDateTime="05/22/2019 20:11:27">
+    <Property Name="ElementName" Value="[dbo].[RACE_ABILITY].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[RACE_ABILITY]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ra_rid" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="9ee64ded-94d0-4328-bc9e-d87302681ebe" ChangeDateTime="05/22/2019 20:12:36">
+    <Property Name="ElementName" Value="[dbo].[FK_RACE_ABILITY_ToTable]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[RACE_ABILITY]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_RACE_ABILITY_ToABILITY]" />
+  </Operation>
 </Operations>

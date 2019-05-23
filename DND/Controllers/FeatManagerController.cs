@@ -170,7 +170,6 @@ namespace DND.Controllers
                 _view.FeatSource.Text = selectedFeat.f_source;
                 _view.FeatDescription.Text = selectedFeat.f_description;
             }
-        }
 
         private void UpdateCharacterFeatSelection(List<FEATS> selectedFeats)
         {
