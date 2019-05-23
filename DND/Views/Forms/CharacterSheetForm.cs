@@ -644,6 +644,11 @@ namespace DND.Views.Forms
             _controller.UpdateFeatGrid();
         }
 
+        public void AddProficiency(PROFICIENCY proficiency)
+        {
+            _controller.AddProficiencyToGrid(proficiency);
+        }
+
         public void UpdateInventory(ITEM item)
         {
             if (_controller == null)
@@ -752,8 +757,17 @@ namespace DND.Views.Forms
             _controller.UpdateItemDescription();
         }
 
+
         #endregion
 
+        private void button8_Click(object sender, EventArgs e)
+        {
+            _controller.NewProficiency();
+        }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            _controller.EditProficiency();
+        }
     }
 }

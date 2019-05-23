@@ -422,6 +422,51 @@ namespace DND.Controllers
             }
         }
 
+        public void AddProficiencyToGrid(PROFICIENCY proficiency)
+        {
+            _loadedCharacter.PROFICIENCY.Add(proficiency);
+
+            RefreshProficiencyDataSource();
+        }
+
+        private void RefreshProficiencyDataSource()
+        {
+            _view.ProficienciesGridView.DataSource =
+                (from cp in _loadedCharacter.PROFICIENCY.ToList()
+                    select new
+                    {
+                        ID = cp.p_id,
+                        Proficiency = cp.p_name,
+                        Type = cp.p_type
+                    }).ToList();
+
+            _view.ProficienciesGridView.Columns[0].Visible = false;
+        }
+
+        public void NewProficiency()
+        {
+            AddEditProficiencyForm form = new AddEditProficiencyForm();
+
+            form.SetController(new AddEditProficiencyController(form, _view));
+
+            form.Show();
+        }
+
+        public void EditProficiency()
+        {
+            var selectedProficiency = _loadedCharacter.PROFICIENCY.FirstOrDefault(x =>
+                x.p_id == (int) (_view.ProficienciesGridView.SelectedRows[0]?.Cells[0]?.Value ?? -1));
+
+            if (selectedProficiency == null) return;
+
+            AddEditProficiencyForm form = new AddEditProficiencyForm();
+
+            form.SetController(new AddEditProficiencyController(form, _view, selectedProficiency));
+
+            form.Show();
+        }
+
+
         #endregion
     }
 }

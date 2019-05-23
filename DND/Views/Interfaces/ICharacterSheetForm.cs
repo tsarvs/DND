@@ -222,6 +222,8 @@ namespace DND.Views.Interfaces
 
         int ProficiencyBonus { get; set; }
 
+        void AddProficiency(PROFICIENCY proficiency);
+
         #endregion
 
         #region Background

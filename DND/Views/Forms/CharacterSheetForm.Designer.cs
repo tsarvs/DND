@@ -1013,6 +1013,7 @@
             this.button6.TabIndex = 63;
             this.button6.Text = "Edit";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -1031,6 +1032,7 @@
             this.button8.TabIndex = 61;
             this.button8.Text = "Add";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // txtProficiencyBonus
             // 
@@ -1052,8 +1054,11 @@
             // 
             this.dgvProficiencies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProficiencies.Location = new System.Drawing.Point(3, 3);
+            this.dgvProficiencies.MultiSelect = false;
             this.dgvProficiencies.Name = "dgvProficiencies";
+            this.dgvProficiencies.RowHeadersVisible = false;
             this.dgvProficiencies.RowTemplate.Height = 24;
+            this.dgvProficiencies.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProficiencies.Size = new System.Drawing.Size(427, 268);
             this.dgvProficiencies.TabIndex = 38;
             // 

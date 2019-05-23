@@ -60,6 +60,7 @@
     <Compile Include="Controllers\AddAttackController.cs" />
     <Compile Include="Controllers\AddCampaignController.cs" />
     <Compile Include="Controllers\AddEditItemController.cs" />
+    <Compile Include="Controllers\AddEditProficiencyController.cs" />
     <Compile Include="Controllers\CharacterJournalController.cs" />
     <Compile Include="Controllers\CharacterSheetController.cs" />
     <Compile Include="Controllers\ClassManagerController.cs" />
@@ -110,6 +111,12 @@
     </Compile>
     <Compile Include="Views\Forms\AddEditItemForm.Designer.cs">
       <DependentUpon>AddEditItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\AddEditProficiencyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\AddEditProficiencyForm.Designer.cs">
+      <DependentUpon>AddEditProficiencyForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Forms\AddEditRaceForm.cs">
       <SubType>Form</SubType>
@@ -168,6 +175,7 @@
     <Compile Include="Views\Interfaces\IAddEditAttackForm.cs" />
     <Compile Include="Views\Interfaces\IAddCampaignForm.cs" />
     <Compile Include="Views\Interfaces\IAddEditItemForm.cs" />
+    <Compile Include="Views\Interfaces\IAddEditProficiencyForm.cs" />
     <Compile Include="Views\Interfaces\IAddEditRaceForm.cs" />
     <Compile Include="Views\Interfaces\ICharacterJournalForm.cs" />
     <Compile Include="Views\Interfaces\ICharacterSheetForm.cs" />
@@ -194,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\AddEditItemForm.resx">
       <DependentUpon>AddEditItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\AddEditProficiencyForm.resx">
+      <DependentUpon>AddEditProficiencyForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\AddEditRaceForm.resx">
       <DependentUpon>AddEditRaceForm.cs</DependentUpon>
