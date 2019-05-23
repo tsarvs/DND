@@ -12,13 +12,14 @@ namespace DND.Models
         {
         }
 
+        public virtual DbSet<ABILITY> ABILITY { get; set; }
         public virtual DbSet<BACKGROUND> BACKGROUND { get; set; }
         public virtual DbSet<CAMPAIGN> CAMPAIGN { get; set; }
         public virtual DbSet<CAMPAIGN_PLAYER_CHARACTERS> CAMPAIGN_PLAYER_CHARACTERS { get; set; }
         public virtual DbSet<CHARACTER> CHARACTER { get; set; }
-        public virtual DbSet<CHARACTER_ABILITY> CHARACTER_ABILITY { get; set; }
         public virtual DbSet<CHARACTER_ATTACK> CHARACTER_ATTACK { get; set; }
         public virtual DbSet<CHARACTER_CLASS> CHARACTER_CLASS { get; set; }
+        public virtual DbSet<CHARACTER_JOURNAL> CHARACTER_JOURNAL { get; set; }
         public virtual DbSet<CLASS> CLASS { get; set; }
         public virtual DbSet<ENCOUNTER> ENCOUNTER { get; set; }
         public virtual DbSet<EPISODE> EPISODE { get; set; }
@@ -37,6 +38,16 @@ namespace DND.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<ABILITY>()
+                .HasMany(e => e.CHARACTER)
+                .WithMany(e => e.ABILITY)
+                .Map(m => m.ToTable("CHARACTER_ABILITY").MapLeftKey("ca_aid").MapRightKey("ca_cid"));
+
+            modelBuilder.Entity<ABILITY>()
+                .HasMany(e => e.RACE)
+                .WithMany(e => e.ABILITY)
+                .Map(m => m.ToTable("RACE_ABILITY").MapLeftKey("ra_aid").MapRightKey("ra_rid"));
+
             modelBuilder.Entity<BACKGROUND>()
                 .Property(e => e.b_desc)
                 .IsUnicode(false);
@@ -65,11 +76,6 @@ namespace DND.Models
                 .HasMany(e => e.QUESTLINE)
                 .WithMany(e => e.BACKGROUND)
                 .Map(m => m.ToTable("QUESTLINE_BACKGROUND").MapLeftKey("qlb_bid").MapRightKey("qlb_qlid"));
-
-            modelBuilder.Entity<BACKGROUND>()
-                .HasMany(e => e.RACE)
-                .WithMany(e => e.BACKGROUND)
-                .Map(m => m.ToTable("RACE_BACKGROUND").MapLeftKey("rb_bid").MapRightKey("rb_rid"));
 
             modelBuilder.Entity<CAMPAIGN>()
                 .Property(e => e.cmp_name)
@@ -118,10 +124,6 @@ namespace DND.Models
                 .HasForeignKey(e => e.cpc_cid);
 
             modelBuilder.Entity<CHARACTER>()
-                .HasOptional(e => e.CHARACTER_ABILITY)
-                .WithRequired(e => e.CHARACTER);
-
-            modelBuilder.Entity<CHARACTER>()
                 .HasMany(e => e.CHARACTER_ATTACK)
                 .WithRequired(e => e.CHARACTER)
                 .HasForeignKey(e => e.a_cid)
@@ -138,8 +140,8 @@ namespace DND.Models
                 .WithRequired(e => e.CHARACTER)
                 .HasForeignKey(e => e.cj_cid)
                 .WillCascadeOnDelete(false);
-            modelBuilder.Entity<CHARACTER>()
 
+            modelBuilder.Entity<CHARACTER>()
                 .HasMany(e => e.ITEM)
                 .WithRequired(e => e.CHARACTER)
                 .HasForeignKey(e => e.i_cid)
@@ -302,14 +304,13 @@ namespace DND.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<RACE>()
+                .Property(e => e.r_description)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<RACE>()
                 .HasMany(e => e.CHARACTER)
                 .WithOptional(e => e.RACE)
                 .HasForeignKey(e => e.c_rid);
-
-            modelBuilder.Entity<RACE>()
-                .HasMany(e => e.SKILL)
-                .WithMany(e => e.RACE)
-                .Map(m => m.ToTable("RACE_SKILL").MapLeftKey("rs_rid").MapRightKey("rs_sid"));
 
             modelBuilder.Entity<SPELLS>()
                 .Property(e => e.s_name)

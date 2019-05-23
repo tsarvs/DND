@@ -66,11 +66,11 @@
     <Compile Include="Controllers\DiceRollerController.cs" />
     <Compile Include="Controllers\FeatManagerController.cs" />
     <Compile Include="Controllers\NewFeatController.cs" />
+    <Compile Include="Models\ABILITY.cs" />
     <Compile Include="Models\BACKGROUND.cs" />
     <Compile Include="Models\CAMPAIGN.cs" />
     <Compile Include="Models\CAMPAIGN_PLAYER_CHARACTERS.cs" />
     <Compile Include="Models\CHARACTER.cs" />
-    <Compile Include="Models\CHARACTER_ABILITY.cs" />
     <Compile Include="Models\CHARACTER_ATTACK.cs" />
     <Compile Include="Models\CHARACTER_CLASS.cs" />
     <Compile Include="Models\CHARACTER_JOURNAL.cs" />
