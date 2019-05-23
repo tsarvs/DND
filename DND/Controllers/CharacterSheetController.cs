@@ -315,38 +315,6 @@ namespace DND.Controllers
                 _view.RaceComboBox.DisplayMember = "r_name";
                 _view.RaceComboBox.SelectedItem = null;
 
-        public void UpdateFeatGrid()
-        {
-            var featsGridContent =
-                from f in _loadedCharacter.FEATS.ToList()
-                where f.CHARACTER.Any(x => x.c_id == _characterId)
-                select new
-                {
-                    ID = f.f_id,
-                    Feat = f.f_name,
-                    Source = f.f_source
-                };
-
-            _view.FeatGridView.DataSource = featsGridContent.ToList();
-
-            //hide ID column from display
-            _view.FeatGridView.Columns[0].Visible = false;
-
-        }
-
-        #endregion
-
-        public void InitializeData(int characterId)
-        {
-            _characterId = characterId;
-
-            using (var db = new DragonDBModel())
-            {
-                _view.RaceComboBox.DataSource = db.RACE.ToList();
-                _view.RaceComboBox.ValueMember = "r_id";
-                _view.RaceComboBox.DisplayMember = "r_name";
-                _view.RaceComboBox.SelectedItem = null;
-
                 _view.ClassComboBox.ValueMember = "cl_id";
                 _view.ClassComboBox.DisplayMember = "cl_name";
                 _view.ClassComboBox.SelectedItem = null;
