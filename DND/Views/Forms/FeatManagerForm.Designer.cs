@@ -34,12 +34,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnAddFeatToCharacter = new System.Windows.Forms.Button();
             this.btnRemoveFeatFromCharacter = new System.Windows.Forms.Button();
-            this.btnNewFeat = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtFeatDescription = new System.Windows.Forms.TextBox();
             this.lblFeatSource = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtFeatDescription = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,19 +104,9 @@
             this.btnRemoveFeatFromCharacter.UseVisualStyleBackColor = true;
             //this.btnRemoveFeatFromCharacter.Click += new System.EventHandler(this.btnRemoveFeatFromCharacter_Click);
             // 
-            // btnNewFeat
-            // 
-            this.btnNewFeat.Location = new System.Drawing.Point(356, 560);
-            this.btnNewFeat.Name = "btnNewFeat";
-            this.btnNewFeat.Size = new System.Drawing.Size(113, 23);
-            this.btnNewFeat.TabIndex = 6;
-            this.btnNewFeat.Text = "Add/Edit Feat";
-            this.btnNewFeat.UseVisualStyleBackColor = true;
-            //this.btnNewFeat.Click += new System.EventHandler(this.btnNewFeat_Click);
-            // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(475, 560);
+            this.btnSave.Location = new System.Drawing.Point(476, 560);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(113, 23);
             this.btnSave.TabIndex = 7;
@@ -134,6 +123,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(577, 163);
             this.panel1.TabIndex = 8;
+            // 
+            // txtFeatDescription
+            // 
+            this.txtFeatDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFeatDescription.Location = new System.Drawing.Point(3, 20);
+            this.txtFeatDescription.Multiline = true;
+            this.txtFeatDescription.Name = "txtFeatDescription";
+            this.txtFeatDescription.ReadOnly = true;
+            this.txtFeatDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtFeatDescription.Size = new System.Drawing.Size(571, 140);
+            this.txtFeatDescription.TabIndex = 4;
             // 
             // lblFeatSource
             // 
@@ -152,25 +152,13 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Source:";
             // 
-            // txtFeatDescription
-            // 
-            this.txtFeatDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFeatDescription.Location = new System.Drawing.Point(3, 20);
-            this.txtFeatDescription.Multiline = true;
-            this.txtFeatDescription.Name = "txtFeatDescription";
-            this.txtFeatDescription.ReadOnly = true;
-            this.txtFeatDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtFeatDescription.Size = new System.Drawing.Size(571, 140);
-            this.txtFeatDescription.TabIndex = 4;
-            // 
             // FeatManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(601, 595);
+            this.ClientSize = new System.Drawing.Size(601, 594);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnNewFeat);
             this.Controls.Add(this.btnRemoveFeatFromCharacter);
             this.Controls.Add(this.btnAddFeatToCharacter);
             this.Controls.Add(this.label2);
@@ -180,7 +168,6 @@
             this.Name = "FeatManagerForm";
             this.Text = "Feat Manager";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FeatManagerForm_FormClosed);
-            //this.Shown += new System.EventHandler(this.FeatManagerForm_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -196,7 +183,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAddFeatToCharacter;
         private System.Windows.Forms.Button btnRemoveFeatFromCharacter;
-        private System.Windows.Forms.Button btnNewFeat;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblFeatSource;

@@ -637,6 +637,13 @@ namespace DND.Views.Forms
             _controller.AddItemToGrid(item);
         }
 
+        public void AddFeats(List<FEATS> characterFeats)
+        {
+            _controller.AddFeatsToGrid(characterFeats);
+
+            _controller.UpdateFeatGrid();
+        }
+
         public void UpdateInventory(ITEM item)
         {
             if (_controller == null)
@@ -652,18 +659,12 @@ namespace DND.Views.Forms
 
         public void UpdateAttacks(CHARACTER_ATTACK attack)
         {
-            if (_controller == null)
-                return;
-
-            _controller.UpdateAttackGrid(attack);
+            _controller?.UpdateAttackGrid(attack);
         }
 
         public void UpdateFeatGrid()
         {
-            if (_controller == null)
-                return;
-
-            _controller.UpdateFeatGrid();
+            _controller?.UpdateFeatGrid();
         }
 
         public void LoadCharacter(int characterId)
@@ -672,8 +673,6 @@ namespace DND.Views.Forms
 
             _controller.InitializeData(_characterId);
             _controller.LoadCharacter();
-
-            UpdateFeatGrid();
         }
 
         private void btnSaveAndClose_Click(object sender, EventArgs e)

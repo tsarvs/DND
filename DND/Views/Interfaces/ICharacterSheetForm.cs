@@ -201,6 +201,8 @@ namespace DND.Views.Interfaces
 
         double Gold { get; set; }
 
+        void AddFeats(List<FEATS> characterFeats);
+
         string ItemDescription { get; set; }
 
         #endregion

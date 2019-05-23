@@ -251,7 +251,6 @@ namespace DND.Controllers
         {
             var featsGridContent =
                 from f in _loadedCharacter.FEATS.ToList()
-                where f.CHARACTER.Any(x => x.c_id == _characterId)
                 select new
                 {
                     ID = f.f_id,
@@ -268,20 +267,29 @@ namespace DND.Controllers
 
         public void UpdateFeatControls()
         {
-            using (var db = new DragonDBModel())
+            int selectedFeatId;
+
+            if (_view.FeatGridView.SelectedRows.Count == 0)
             {
-                string featDescription;
+                selectedFeatId = -1;
+            }
+            else
+            {
+                selectedFeatId = (int)(_view.FeatGridView.SelectedRows[0]?.Cells[0]?.Value ?? -1);
+            }
+            
+            if (selectedFeatId == -1)
+            {
+                _view.FeatDescription = "";
+            }
+            else
+            {
+                var selectedFeatDescription =
+                    (from f in _loadedCharacter.FEATS.ToList()
+                        where (f.f_id == selectedFeatId)
+                        select f.f_description).First();
 
-                if (_view.FeatGridView.SelectedRows.Count == 0)
-                    featDescription = "";
-                else
-                    featDescription =
-                        (from f in db.FEATS.ToList()
-                            where f.f_name == _view.FeatGridView.SelectedRows[0].Cells[0].Value.ToString()
-                            where f.f_source == _view.FeatGridView.SelectedRows[0].Cells[1].Value.ToString()
-                            select f.f_description).FirstOrDefault();
-
-                _view.FeatDescription = featDescription;
+                _view.FeatDescription = selectedFeatDescription ?? "";
             }
         }
 
@@ -292,6 +300,38 @@ namespace DND.Controllers
             form.SetController(new FeatManagerController(form, _view, _loadedCharacter.FEATS.ToList()));
 
             form.Show();
+        }
+
+        #endregion
+
+        public void InitializeData(int characterId)
+        {
+            _characterId = characterId;
+
+            using (var db = new DragonDBModel())
+            {
+                _view.RaceComboBox.DataSource = db.RACE.ToList();
+                _view.RaceComboBox.ValueMember = "r_id";
+                _view.RaceComboBox.DisplayMember = "r_name";
+                _view.RaceComboBox.SelectedItem = null;
+
+        public void UpdateFeatGrid()
+        {
+            var featsGridContent =
+                from f in _loadedCharacter.FEATS.ToList()
+                where f.CHARACTER.Any(x => x.c_id == _characterId)
+                select new
+                {
+                    ID = f.f_id,
+                    Feat = f.f_name,
+                    Source = f.f_source
+                };
+
+            _view.FeatGridView.DataSource = featsGridContent.ToList();
+
+            //hide ID column from display
+            _view.FeatGridView.Columns[0].Visible = false;
+
         }
 
         #endregion
@@ -473,6 +513,16 @@ namespace DND.Controllers
                     (from c in db.CHARACTER.ToList()
                         where c.c_id == _characterId
                         select c).First();
+            }
+        }
+
+        public void AddFeatsToGrid(List<FEATS> characterFeats)
+        {
+            _loadedCharacter.FEATS.Clear();
+
+            foreach (var feat in characterFeats)
+            {
+                _loadedCharacter.FEATS.Add(feat);    
             }
         }
 
