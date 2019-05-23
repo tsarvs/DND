@@ -477,6 +477,7 @@ namespace DND.Controllers
 
             RefreshProficiencyDataSource();
         }
+        
         #endregion
     }
 }
