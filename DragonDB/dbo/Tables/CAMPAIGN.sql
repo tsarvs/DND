@@ -3,6 +3,7 @@
     [cmp_name]      VARCHAR (250) NULL,
     [cmp_startdate] DATE DEFAULT (getdate()) NULL,
     [cmp_dm]        VARCHAR (50) NULL,
+    [cmp_description] VARCHAR(MAX) NULL, 
     PRIMARY KEY CLUSTERED ([cmp_id] ASC)
 );
 

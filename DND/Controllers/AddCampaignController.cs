@@ -24,19 +24,13 @@ namespace DND.Controllers
         {
             using (var db = new DragonDBModel())
             {
-                BACKGROUND campaignBackground = new BACKGROUND
-                {
-                    b_desc = _view.CampaignDescription
-                };
-
-                db.BACKGROUND.Add(campaignBackground);
 
                 CAMPAIGN newCampaign = new CAMPAIGN
                 {
                     cmp_name = _view.CampaignTitle,
                     cmp_dm = _view.DungeonMaster,
                     cmp_startdate = DateTime.Now,
-                    BACKGROUND = db.BACKGROUND.Local
+                    cmp_description = _view.CampaignDescription
                 };
 
                 db.CAMPAIGN.Add(newCampaign);

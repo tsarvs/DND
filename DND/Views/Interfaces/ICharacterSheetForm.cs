@@ -252,6 +252,8 @@ namespace DND.Views.Interfaces
 
         void UpdateInventory(ITEM item);
 
+        void AddLore(CHARACTER_BACKGROUND loadedBackground);
+
         #endregion
     }
 }

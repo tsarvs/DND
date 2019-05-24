@@ -13,11 +13,11 @@ namespace DND.Models
         }
 
         public virtual DbSet<ABILITY> ABILITY { get; set; }
-        public virtual DbSet<BACKGROUND> BACKGROUND { get; set; }
         public virtual DbSet<CAMPAIGN> CAMPAIGN { get; set; }
         public virtual DbSet<CAMPAIGN_PLAYER_CHARACTERS> CAMPAIGN_PLAYER_CHARACTERS { get; set; }
         public virtual DbSet<CHARACTER> CHARACTER { get; set; }
         public virtual DbSet<CHARACTER_ATTACK> CHARACTER_ATTACK { get; set; }
+        public virtual DbSet<CHARACTER_BACKGROUND> CHARACTER_BACKGROUND { get; set; }
         public virtual DbSet<CHARACTER_CLASS> CHARACTER_CLASS { get; set; }
         public virtual DbSet<CHARACTER_JOURNAL> CHARACTER_JOURNAL { get; set; }
         public virtual DbSet<CLASS> CLASS { get; set; }
@@ -47,35 +47,6 @@ namespace DND.Models
                 .HasMany(e => e.RACE)
                 .WithMany(e => e.ABILITY)
                 .Map(m => m.ToTable("RACE_ABILITY").MapLeftKey("ra_aid").MapRightKey("ra_rid"));
-
-            modelBuilder.Entity<BACKGROUND>()
-                .Property(e => e.b_desc)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<BACKGROUND>()
-                .HasMany(e => e.CAMPAIGN)
-                .WithMany(e => e.BACKGROUND)
-                .Map(m => m.ToTable("CAMPAIGN_BACKGROUND").MapLeftKey("cmpb_bid").MapRightKey("cmpb_cmpid"));
-
-            modelBuilder.Entity<BACKGROUND>()
-                .HasMany(e => e.CHARACTER)
-                .WithMany(e => e.BACKGROUND)
-                .Map(m => m.ToTable("CHARACTER_BACKGROUND").MapLeftKey("cb_bid").MapRightKey("cb_cid"));
-
-            modelBuilder.Entity<BACKGROUND>()
-                .HasMany(e => e.LOCATION)
-                .WithMany(e => e.BACKGROUND)
-                .Map(m => m.ToTable("LOCATION_BACKGROUND").MapLeftKey("lb_bid").MapRightKey("lb_lid"));
-
-            modelBuilder.Entity<BACKGROUND>()
-                .HasMany(e => e.QUEST)
-                .WithMany(e => e.BACKGROUND)
-                .Map(m => m.ToTable("QUEST_BACKGROUND").MapLeftKey("qb_bid").MapRightKey("qb_qid"));
-
-            modelBuilder.Entity<BACKGROUND>()
-                .HasMany(e => e.QUESTLINE)
-                .WithMany(e => e.BACKGROUND)
-                .Map(m => m.ToTable("QUESTLINE_BACKGROUND").MapLeftKey("qlb_bid").MapRightKey("qlb_qlid"));
 
             modelBuilder.Entity<CAMPAIGN>()
                 .Property(e => e.cmp_name)
@@ -127,6 +98,12 @@ namespace DND.Models
                 .HasMany(e => e.CHARACTER_ATTACK)
                 .WithRequired(e => e.CHARACTER)
                 .HasForeignKey(e => e.a_cid)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<CHARACTER>()
+                .HasMany(e => e.CHARACTER_BACKGROUND)
+                .WithRequired(e => e.CHARACTER)
+                .HasForeignKey(e => e.cb_cid)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<CHARACTER>()
@@ -189,6 +166,14 @@ namespace DND.Models
 
             modelBuilder.Entity<CHARACTER_ATTACK>()
                 .Property(e => e.a_description)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<CHARACTER_BACKGROUND>()
+                .Property(e => e.cb_title)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<CHARACTER_BACKGROUND>()
+                .Property(e => e.cb_description)
                 .IsUnicode(false);
 
             modelBuilder.Entity<CHARACTER_JOURNAL>()

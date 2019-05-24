@@ -77,4 +77,11 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="[FK_RACE_ABILITY_ToABILITY]" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="c887aaae-f11d-4c17-baa0-75020a3df1b5" ChangeDateTime="05/23/2019 21:08:14">
+    <Property Name="ElementName" Value="[dbo].[CHARACTER_BACKGROUND].[cb_bid]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[CHARACTER_BACKGROUND]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="cb_id" />
+  </Operation>
 </Operations>

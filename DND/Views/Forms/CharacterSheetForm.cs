@@ -649,6 +649,11 @@ namespace DND.Views.Forms
             _controller.AddProficiencyToGrid(proficiency);
         }
 
+        public void AddLore(CHARACTER_BACKGROUND loadedBackground)
+        {
+            _controller.AddLoreToCharacter(loadedBackground);
+        }
+
         public void UpdateInventory(ITEM item)
         {
             if (_controller == null)
@@ -756,8 +761,7 @@ namespace DND.Views.Forms
         {
             _controller.UpdateItemDescription();
         }
-
-
+        
         #endregion
 
         private void button8_Click(object sender, EventArgs e)
@@ -773,6 +777,26 @@ namespace DND.Views.Forms
         private void button7_Click(object sender, EventArgs e)
         {
             _controller.DeleteProficiency();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            _controller.NewBackground();
+        }
+
+        private void cmbLore_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _controller.UpdateLoreDescription();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            _controller.EditLore();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            _controller.DeleteLore();
         }
     }
 }

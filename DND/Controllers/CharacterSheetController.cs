@@ -443,6 +443,28 @@ namespace DND.Controllers
             _view.ProficienciesGridView.Columns[0].Visible = false;
         }
 
+        private void RefreshBackgroundDataSource()
+        {
+            _view.LoreComboBox.ValueMember = "cb_id";
+            _view.LoreComboBox.DisplayMember = "cb_title";
+
+            RefreshBackgroundIds();
+
+            _view.LoreComboBox.DataSource =
+                (from cb in _loadedCharacter.CHARACTER_BACKGROUND.ToList()
+                    select cb).ToList();
+
+            UpdateLoreDescription();
+        }
+
+        private void RefreshBackgroundIds()
+        {
+            for (int i = 0; i < _loadedCharacter.CHARACTER_BACKGROUND.Count; i++)
+            {
+                _loadedCharacter.CHARACTER_BACKGROUND.ElementAt(i).cb_id = i;
+            }
+        }
+
         public void NewProficiency()
         {
             AddEditProficiencyForm form = new AddEditProficiencyForm();
@@ -477,7 +499,76 @@ namespace DND.Controllers
 
             RefreshProficiencyDataSource();
         }
-        
+
+        public void NewBackground()
+        {
+            AddEditBackgroundForm form = new AddEditBackgroundForm();
+
+            form.SetController(new AddEditBackgroundController(form, _view));
+
+            form.Show();
+        }
+
+        public void AddLoreToCharacter(CHARACTER_BACKGROUND loadedBackground)
+        {
+            _loadedCharacter.CHARACTER_BACKGROUND.Add(loadedBackground);
+
+            RefreshBackgroundDataSource();
+        }
+
+        public void UpdateLoreDescription()
+        {
+            var selectedLore = (CHARACTER_BACKGROUND)_view.LoreComboBox.SelectedItem;
+
+            if (selectedLore == null)
+            {
+                _view.LoreDescription = null;
+                return;
+            }
+
+            var selectedDescription = _loadedCharacter.CHARACTER_BACKGROUND
+                .First(x => x.cb_id == selectedLore.cb_id ).cb_description;
+
+
+            _view.LoreDescription = selectedDescription;
+        }
+
+        public void EditLore()
+        {
+            var selectedLore = (CHARACTER_BACKGROUND)_view.LoreComboBox.SelectedItem;
+
+            if (selectedLore == null)
+            {
+                return;
+            }
+
+            AddEditBackgroundForm form = new AddEditBackgroundForm();
+
+            form.SetController(new AddEditBackgroundController(form, _view, selectedLore));
+
+            form.Show();
+        }
+
+        public void DeleteLore()
+        {
+            var selectedLore = (CHARACTER_BACKGROUND)_view.LoreComboBox.SelectedItem;
+
+            if (selectedLore == null)
+            {
+                return;
+            };
+
+            _loadedCharacter.CHARACTER_BACKGROUND.Remove(
+                _loadedCharacter.CHARACTER_BACKGROUND.First(x => x.cb_id == selectedLore.cb_id));
+
+            RefreshBackgroundDataSource();
+
+            if (_loadedCharacter.CHARACTER_BACKGROUND.Count == 0)
+            {
+                _view.LoreComboBox.Text = "";
+            }
+        }
+
         #endregion
     }
 }

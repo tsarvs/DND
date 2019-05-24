@@ -98,9 +98,9 @@
             this.tabFeats = new System.Windows.Forms.TabPage();
             this.btnAddFeat = new System.Windows.Forms.Button();
             this.tabProficiencies = new System.Windows.Forms.TabPage();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnEditProficiency = new System.Windows.Forms.Button();
+            this.btnDeleteProficiency = new System.Windows.Forms.Button();
+            this.btnAddProficiency = new System.Windows.Forms.Button();
             this.txtProficiencyBonus = new System.Windows.Forms.NumericUpDown();
             this.lblProficiencyBonus = new System.Windows.Forms.Label();
             this.dgvProficiencies = new System.Windows.Forms.DataGridView();
@@ -992,9 +992,9 @@
             // 
             // tabProficiencies
             // 
-            this.tabProficiencies.Controls.Add(this.button6);
-            this.tabProficiencies.Controls.Add(this.button7);
-            this.tabProficiencies.Controls.Add(this.button8);
+            this.tabProficiencies.Controls.Add(this.btnEditProficiency);
+            this.tabProficiencies.Controls.Add(this.btnDeleteProficiency);
+            this.tabProficiencies.Controls.Add(this.btnAddProficiency);
             this.tabProficiencies.Controls.Add(this.txtProficiencyBonus);
             this.tabProficiencies.Controls.Add(this.lblProficiencyBonus);
             this.tabProficiencies.Controls.Add(this.dgvProficiencies);
@@ -1005,35 +1005,35 @@
             this.tabProficiencies.Text = "Proficiencies";
             this.tabProficiencies.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnEditProficiency
             // 
-            this.button6.Location = new System.Drawing.Point(266, 305);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(79, 26);
-            this.button6.TabIndex = 63;
-            this.button6.Text = "Edit";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btnEditProficiency.Location = new System.Drawing.Point(266, 305);
+            this.btnEditProficiency.Name = "btnEditProficiency";
+            this.btnEditProficiency.Size = new System.Drawing.Size(79, 26);
+            this.btnEditProficiency.TabIndex = 63;
+            this.btnEditProficiency.Text = "Edit";
+            this.btnEditProficiency.UseVisualStyleBackColor = true;
+            this.btnEditProficiency.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button7
+            // btnDeleteProficiency
             // 
-            this.button7.Location = new System.Drawing.Point(181, 305);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(79, 26);
-            this.button7.TabIndex = 62;
-            this.button7.Text = "Delete";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.btnDeleteProficiency.Location = new System.Drawing.Point(181, 305);
+            this.btnDeleteProficiency.Name = "btnDeleteProficiency";
+            this.btnDeleteProficiency.Size = new System.Drawing.Size(79, 26);
+            this.btnDeleteProficiency.TabIndex = 62;
+            this.btnDeleteProficiency.Text = "Delete";
+            this.btnDeleteProficiency.UseVisualStyleBackColor = true;
+            this.btnDeleteProficiency.Click += new System.EventHandler(this.button7_Click);
             // 
-            // button8
+            // btnAddProficiency
             // 
-            this.button8.Location = new System.Drawing.Point(351, 305);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(79, 26);
-            this.button8.TabIndex = 61;
-            this.button8.Text = "Add";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.btnAddProficiency.Location = new System.Drawing.Point(351, 305);
+            this.btnAddProficiency.Name = "btnAddProficiency";
+            this.btnAddProficiency.Size = new System.Drawing.Size(79, 26);
+            this.btnAddProficiency.TabIndex = 61;
+            this.btnAddProficiency.Text = "Add";
+            this.btnAddProficiency.UseVisualStyleBackColor = true;
+            this.btnAddProficiency.Click += new System.EventHandler(this.button8_Click);
             // 
             // txtProficiencyBonus
             // 
@@ -1086,6 +1086,7 @@
             this.button9.TabIndex = 63;
             this.button9.Text = "Edit";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button10
             // 
@@ -1095,6 +1096,7 @@
             this.button10.TabIndex = 62;
             this.button10.Text = "Delete";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button11
             // 
@@ -1104,6 +1106,7 @@
             this.button11.TabIndex = 61;
             this.button11.Text = "Add";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // cmbLore
             // 
@@ -1112,6 +1115,7 @@
             this.cmbLore.Name = "cmbLore";
             this.cmbLore.Size = new System.Drawing.Size(384, 24);
             this.cmbLore.TabIndex = 44;
+            this.cmbLore.SelectedIndexChanged += new System.EventHandler(this.cmbLore_SelectedIndexChanged);
             // 
             // txtLoreDescription
             // 
@@ -2552,9 +2556,9 @@
         private System.Windows.Forms.Button btnDeleteItem;
         private System.Windows.Forms.Button btnAddItem;
         private System.Windows.Forms.Button btnAddFeat;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnEditProficiency;
+        private System.Windows.Forms.Button btnDeleteProficiency;
+        private System.Windows.Forms.Button btnAddProficiency;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
