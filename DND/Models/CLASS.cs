@@ -21,6 +21,12 @@ namespace DND.Models
         [StringLength(50)]
         public string cl_name { get; set; }
 
+        [StringLength(10)]
+        public string cl_hitdicetype { get; set; }
+
+        [StringLength(10)]
+        public string cl_spellcastingability { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHARACTER_CLASS> CHARACTER_CLASS { get; set; }
     }

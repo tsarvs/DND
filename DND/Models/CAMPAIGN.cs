@@ -28,7 +28,7 @@ namespace DND.Models
 
         [StringLength(50)]
         public string cmp_dm { get; set; }
-        
+
         public string cmp_description { get; set; }
 
         public virtual CAMPAIGN_PLAYER_CHARACTERS CAMPAIGN_PLAYER_CHARACTERS { get; set; }

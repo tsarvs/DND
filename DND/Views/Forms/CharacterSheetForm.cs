@@ -366,11 +366,7 @@ namespace DND.Views.Forms
 
         #region Spellbook
 
-        public ComboBox SpellcastingAbility
-        {
-            get { return this.cmbSpellcastingAbility; }
-            set { this.cmbSpellcastingAbility = value; }
-        }
+        public ComboBox SpellcastingAbility { get; set; }
 
         public DataGridView SpellsGridView
         {
@@ -378,23 +374,11 @@ namespace DND.Views.Forms
             set { this.dgvSpells = value; }
         }
 
-        public int SpellCastingTime
-        {
-            get { return Convert.ToInt32(this.lblCastingTime.Text);}
-            set { this.lblCastingTime.Text = value.ToString(); }
-        }
+        public int SpellCastingTime { get; set; }
 
-        public int SpellRange
-        {
-            get { return Convert.ToInt32(this.lblRange.Text); }
-            set { this.lblRange.Text = value.ToString(); }
-        }
+        public int SpellRange { get; set; }
 
-        public int SpellDuration
-        {
-            get { return Convert.ToInt32(this.lblDuration.Text); }
-            set { this.lblDuration.Text = value.ToString(); }
-        }
+        public int SpellDuration { get; set; }
 
         public string SpellDescription
         {
@@ -654,6 +638,11 @@ namespace DND.Views.Forms
             _controller.AddLoreToCharacter(loadedBackground);
         }
 
+        public void AddSpells(List<SPELLS> characterSpells)
+        {
+            _controller.AddSpellsToGrid(characterSpells);
+        }
+
         public void UpdateInventory(ITEM item)
         {
             if (_controller == null)
@@ -797,6 +786,16 @@ namespace DND.Views.Forms
         private void button10_Click(object sender, EventArgs e)
         {
             _controller.DeleteLore();
+        }
+
+        private void btnManageSpells_Click(object sender, EventArgs e)
+        {
+            _controller.ManageSpells();
+        }
+
+        private void dgvSpells_SelectionChanged(object sender, EventArgs e)
+        {
+            _controller.UpdateSpellDescription();
         }
     }
 }

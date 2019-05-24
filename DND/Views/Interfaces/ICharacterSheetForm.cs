@@ -251,7 +251,7 @@ namespace DND.Views.Interfaces
         void AddItem(ITEM item);
 
         void UpdateInventory(ITEM item);
-
+        void AddSpells(List<SPELLS> characterSpells);
         void AddLore(CHARACTER_BACKGROUND loadedBackground);
 
         #endregion

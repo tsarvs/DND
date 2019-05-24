@@ -333,7 +333,129 @@ namespace DND.Controllers
             else if (mode == FormMode.EditForm) UpdateCharacter();
         }
 
+        public void AddSpellsToGrid(List<SPELLS> characterSpells)
+        {
+            _loadedCharacter.SPELLS.Clear();
 
+            foreach (var spell in characterSpells)
+            {
+                _loadedCharacter.SPELLS.Add(spell);
+            }
+
+            RefreshSpellsDataSource();
+        }
+
+        private void RefreshSpellsDataSource()
+        {
+            _view.SpellsGridView.DataSource =
+                (from s in _loadedCharacter.SPELLS.ToList()
+                    select new
+                    {
+                        ID = s.s_id,
+                        Name = s.s_name,
+                        Level = s.s_level
+                    }).ToList();
+
+            _view.SpellsGridView.Columns[0].Visible = false;
+
+            UpdateSpellDescription();
+        }
+
+        public void UpdateSpellDescription()
+        {
+            var selectedSpellId = (int)(_view.SpellsGridView.SelectedRows[0]?.Cells[0]?.Value ?? -1);
+
+            var selectedSpell = _loadedCharacter.SPELLS.FirstOrDefault(x => x.s_id == selectedSpellId);
+
+            if (selectedSpell == null)
+            {
+                _view.SpellDescription = null;
+                return;
+            }
+            _view.SpellDescription = GenerateSpellDescription(selectedSpell);
+        }
+
+        private string GenerateSpellDescription(SPELLS selectedSpell)
+        {
+            var spellDescription = "";
+
+            if (selectedSpell != null)
+            {
+                if (!selectedSpell.s_name.Equals(""))
+                {
+                    spellDescription += selectedSpell.s_name + "\r\n";
+                }
+
+                if (!selectedSpell.s_school.Equals(""))
+                {
+                    spellDescription += selectedSpell.s_school + " ";
+                }
+
+                if (selectedSpell.s_level != null)
+                {
+                    spellDescription += "lvl " + selectedSpell.s_level.ToString() + "\r\n";
+                }
+                else if (!selectedSpell.s_school.Equals(""))
+                {
+                    spellDescription += "\r\n";
+                }
+
+                if (!selectedSpell.s_range.Equals(""))
+                {
+                    spellDescription += "Range: " + selectedSpell.s_range + "\r\n";
+                }
+
+                if (!selectedSpell.s_target.Equals(""))
+                {
+                    spellDescription += "Target: " + selectedSpell.s_target + "\r\n";
+                }
+
+                if (selectedSpell.s_castingtimeminutes != null)
+                {
+                    spellDescription += "Casting Time: " + selectedSpell.s_castingtimeminutes.ToString() + "\r\n";
+                }
+
+                if (selectedSpell.s_durationminutes != null)
+                {
+                    spellDescription += "Duration: " + selectedSpell.s_durationminutes.ToString() + "\r\n";
+                }
+
+                if (selectedSpell.s_isconcentration != null)
+                {
+                    spellDescription += "Concentration: " + (selectedSpell.s_isconcentration.GetValueOrDefault(false) ? "Y" : "N") + "\r\n";
+                }
+
+                if ((selectedSpell.s_component_m != null) || (selectedSpell.s_component_s != null) || (selectedSpell.s_component_v != null))
+                {
+                    spellDescription += "Components: ";
+
+                    if (selectedSpell.s_component_m != null && !selectedSpell.s_component_m.Equals(""))
+                    {
+                        spellDescription += "M (" + selectedSpell.s_component_m + ") ";
+                    }
+
+                    if (selectedSpell.s_component_s != null && selectedSpell.s_component_s == true)
+                    {
+                        spellDescription += "S ";
+                    }
+
+                    if (selectedSpell.s_component_v != null && selectedSpell.s_component_v == true)
+                    {
+                        spellDescription += "V ";
+                    }
+
+                    spellDescription += "\r\n";
+                }
+
+                if (selectedSpell.s_description != null && !selectedSpell.s_description.Equals(""))
+                {
+                    spellDescription += "\r\n" + selectedSpell.s_description;
+                }
+
+            }
+
+            return spellDescription;
+        }
 
         public void AddClass()
         {
@@ -567,6 +689,15 @@ namespace DND.Controllers
             {
                 _view.LoreComboBox.Text = "";
             }
+        }
+
+        public void ManageSpells()
+        {
+            SpellbookManagerForm form = new SpellbookManagerForm();
+
+            form.SetController(new SpellbookManagerController(form, _view, _loadedCharacter.SPELLS.ToList()));
+
+            form.Show();
         }
 
         #endregion

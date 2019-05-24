@@ -57,6 +57,10 @@ namespace DND.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<CAMPAIGN>()
+                .Property(e => e.cmp_description)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<CAMPAIGN>()
                 .HasOptional(e => e.CAMPAIGN_PLAYER_CHARACTERS)
                 .WithRequired(e => e.CAMPAIGN);
 
@@ -182,6 +186,14 @@ namespace DND.Models
 
             modelBuilder.Entity<CLASS>()
                 .Property(e => e.cl_name)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<CLASS>()
+                .Property(e => e.cl_hitdicetype)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<CLASS>()
+                .Property(e => e.cl_spellcastingability)
                 .IsUnicode(false);
 
             modelBuilder.Entity<CLASS>()
@@ -315,6 +327,10 @@ namespace DND.Models
 
             modelBuilder.Entity<SPELLS>()
                 .Property(e => e.s_component_m)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<SPELLS>()
+                .Property(e => e.s_description)
                 .IsUnicode(false);
 
             modelBuilder.Entity<SPELLS_SLOTS>()

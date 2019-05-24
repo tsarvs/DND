@@ -23,6 +23,8 @@ namespace DND.Models
         [StringLength(100)]
         public string s_school { get; set; }
 
+        public int? s_level { get; set; }
+
         public int? s_castingtimeminutes { get; set; }
 
         [StringLength(10)]
@@ -41,6 +43,8 @@ namespace DND.Models
         public bool? s_isconcentration { get; set; }
 
         public int? s_durationminutes { get; set; }
+
+        public string s_description { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHARACTER> CHARACTER { get; set; }

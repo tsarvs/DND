@@ -84,4 +84,11 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="cb_id" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="5d5483fc-a582-4a9d-a9ae-dbf76f8ddce2" ChangeDateTime="05/24/2019 16:50:23">
+    <Property Name="ElementName" Value="[dbo].[CLASS].[cl_hitdice]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[CLASS]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="cl_hitdicetype" />
+  </Operation>
 </Operations>

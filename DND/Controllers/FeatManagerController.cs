@@ -38,8 +38,7 @@ namespace DND.Controllers
 
             using (var db = new DragonDBModel())
             {
-                var list = db.FEATS.ToList();
-                _dbFeats = list;
+                _dbFeats = db.FEATS.ToList();
             }
 
             _loadedFeats = new BindingList<FEATS>();
@@ -101,7 +100,7 @@ namespace DND.Controllers
 
                 _loadedCharacterFeats.Add(featToAddToCharacter);
                 
-                _loadedFeats.Remove(_loadedFeats.First(x => x.f_id == feat.f_id));
+                _loadedFeats.Remove(_loadedFeats.First(x => x.f_id == featToAddToCharacter.f_id));
             }
 
             UpdateCharacterFeatSelection(selectedFeats);
