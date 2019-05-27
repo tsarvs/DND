@@ -40,8 +40,8 @@ namespace DND.Models
         {
             modelBuilder.Entity<ABILITY>()
                 .HasMany(e => e.CHARACTER)
-                .WithMany(e => e.ABILITY)
-                .Map(m => m.ToTable("CHARACTER_ABILITY").MapLeftKey("ca_aid").MapRightKey("ca_cid"));
+                .WithOptional(e => e.ABILITY)
+                .HasForeignKey(e => e.c_aid);
 
             modelBuilder.Entity<ABILITY>()
                 .HasMany(e => e.RACE)
@@ -137,11 +137,6 @@ namespace DND.Models
                 .HasMany(e => e.PROFICIENCY)
                 .WithMany(e => e.CHARACTER)
                 .Map(m => m.ToTable("CHARACTER_PROFICIENCIES").MapLeftKey("cp_cid").MapRightKey("cp_pid"));
-
-            modelBuilder.Entity<CHARACTER>()
-                .HasMany(e => e.SKILL)
-                .WithMany(e => e.CHARACTER)
-                .Map(m => m.ToTable("CHARACTER_SKILL").MapLeftKey("cs_cid").MapRightKey("cs_sid"));
 
             modelBuilder.Entity<CHARACTER>()
                 .HasMany(e => e.SPELLS)
@@ -309,12 +304,21 @@ namespace DND.Models
                 .WithOptional(e => e.RACE)
                 .HasForeignKey(e => e.c_rid);
 
+            modelBuilder.Entity<SKILL>()
+                .HasMany(e => e.CHARACTER)
+                .WithOptional(e => e.SKILL)
+                .HasForeignKey(e => e.c_sid);
+
             modelBuilder.Entity<SPELLS>()
                 .Property(e => e.s_name)
                 .IsUnicode(false);
 
             modelBuilder.Entity<SPELLS>()
                 .Property(e => e.s_school)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<SPELLS>()
+                .Property(e => e.s_castingtime)
                 .IsUnicode(false);
 
             modelBuilder.Entity<SPELLS>()
@@ -327,6 +331,10 @@ namespace DND.Models
 
             modelBuilder.Entity<SPELLS>()
                 .Property(e => e.s_component_m)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<SPELLS>()
+                .Property(e => e.s_durationminutes)
                 .IsUnicode(false);
 
             modelBuilder.Entity<SPELLS>()

@@ -65,15 +65,18 @@ namespace DND.Controllers
             var selectedAttack =
                 _loadedCharacter.CHARACTER_ATTACK.ToList().Find(x => x.a_id == (int) selectedRow[0].Cells[0].Value);
 
-            if (!selectedAttack.a_damage1.Equals("") || !selectedAttack.a_damage2.Equals(""))
-            {
-                _view.AttackDescription = "Damage:";
+                if (!selectedAttack.a_damage1.Equals("") || !selectedAttack.a_damage2.Equals(""))
+                {
+                    _view.AttackDescription = "Damage:";
 
-                if (!selectedAttack.a_damage1.Equals(""))
-                    _view.AttackDescription += "\r\n\t" + selectedAttack.a_damage1;
+                    if (selectedAttack.a_damage1 != null)
+                        if (!selectedAttack.a_damage1.Equals("") || selectedAttack.a_damage1 != null)
+                            _view.AttackDescription += "\r\n\t" + selectedAttack.a_damage1;
 
-                if (!selectedAttack.a_damage2.Equals(""))
-                    _view.AttackDescription += "\r\n\t" + selectedAttack.a_damage2;
+                    if (selectedAttack.a_damage2 != null)
+                        if (!selectedAttack.a_damage2.Equals("") || selectedAttack.a_damage2 != null)
+                            _view.AttackDescription += "\r\n\t" + selectedAttack.a_damage2;
+                
             }
 
             _view.AttackDescription += "\r\n\r\n" + selectedAttack.a_description;
@@ -151,10 +154,10 @@ namespace DND.Controllers
         {
             _loadedCharacter.ITEM.Add(item);
 
-            RefreshInventory();
+            RefreshInventoryDataSource();
         }
 
-        private void RefreshInventory()
+        private void RefreshInventoryDataSource()
         {
             _view.InventoryGridView.DataSource =
                 (from ci in _loadedCharacter.ITEM.ToList()
@@ -203,7 +206,7 @@ namespace DND.Controllers
 
             _loadedCharacter.ITEM.Remove(selectedItem);
 
-            RefreshInventory();
+            RefreshInventoryDataSource();
         }
 
         private void UpdateWeight()
@@ -240,7 +243,7 @@ namespace DND.Controllers
             itemToUpdate.i_weight = item.i_weight;
             itemToUpdate.i_description = item.i_description;
 
-            RefreshInventory();
+            RefreshInventoryDataSource();
         }
 
         #endregion
@@ -310,18 +313,154 @@ namespace DND.Controllers
 
             using (var db = new DragonDBModel())
             {
-                _view.RaceComboBox.DataSource = db.RACE.ToList();
-                _view.RaceComboBox.ValueMember = "r_id";
-                _view.RaceComboBox.DisplayMember = "r_name";
-                _view.RaceComboBox.SelectedItem = null;
+                var loadedCharacter =
+                    (from c in db.CHARACTER.ToList()
+                        where (c.c_id == _characterId)
+                        select c).FirstOrDefault();
 
-                _view.ClassComboBox.ValueMember = "cl_id";
-                _view.ClassComboBox.DisplayMember = "cl_name";
-                _view.ClassComboBox.SelectedItem = null;
+                UpdateLoadedCharacterData(loadedCharacter);
+
+                _view.RaceComboBox.DataSource = db.RACE.ToList();
             }
 
-            UpdateFeatGrid();
+            _view.RaceComboBox.ValueMember = "r_id";
+            _view.RaceComboBox.DisplayMember = "r_name";
+            _view.RaceComboBox.SelectedItem = null;
+
+            _view.ClassComboBox.ValueMember = "cl_id";
+            _view.ClassComboBox.DisplayMember = "cl_name";
+            _view.ClassComboBox.SelectedItem = null;
+
+            RefreshControls();
+            
+        }
+
+        private void UpdateLoadedCharacterData(CHARACTER loadedCharacter)
+        {
+            if (loadedCharacter == null)
+            return;
+
+            _loadedCharacter.c_id = loadedCharacter.c_id;
+            _loadedCharacter.c_name = loadedCharacter.c_name;
+            _loadedCharacter.c_rid = loadedCharacter.c_rid;
+            _loadedCharacter.c_alignment = loadedCharacter.c_alignment;
+            _loadedCharacter.c_hpcurrent = loadedCharacter.c_hpcurrent;
+            _loadedCharacter.c_hpmax = loadedCharacter.c_hpmax;
+            _loadedCharacter.c_inspiration = loadedCharacter.c_inspiration;
+            _loadedCharacter.c_aid = loadedCharacter.c_aid;
+            _loadedCharacter.c_spellslots_remaining = loadedCharacter.c_spellslots_remaining;
+            _loadedCharacter.c_spellslots_total = loadedCharacter.c_spellslots_total;
+            _loadedCharacter.c_isNPC = loadedCharacter.c_isNPC;
+            _loadedCharacter.c_armorclass = loadedCharacter.c_armorclass;
+            _loadedCharacter.c_initiative = loadedCharacter.c_initiative;
+            _loadedCharacter.c_speed = loadedCharacter.c_speed;
+            _loadedCharacter.c_experience = loadedCharacter.c_experience;
+            _loadedCharacter.c_gold = loadedCharacter.c_gold;
+            _loadedCharacter.c_proficiencybonus = loadedCharacter.c_proficiencybonus;
+
+            _loadedCharacter.ABILITY = loadedCharacter.ABILITY;
+            _loadedCharacter.CHARACTER_ATTACK = loadedCharacter.CHARACTER_ATTACK;
+            _loadedCharacter.CHARACTER_BACKGROUND = loadedCharacter.CHARACTER_BACKGROUND;
+            _loadedCharacter.CHARACTER_JOURNAL = loadedCharacter.CHARACTER_JOURNAL;
+            _loadedCharacter.CHARACTER_CLASS = loadedCharacter.CHARACTER_CLASS;
+            _loadedCharacter.FEATS = loadedCharacter.FEATS;
+            _loadedCharacter.ITEM = loadedCharacter.ITEM;
+            _loadedCharacter.PROFICIENCY = loadedCharacter.PROFICIENCY;
+            _loadedCharacter.RACE = loadedCharacter.RACE;
+            _loadedCharacter.SKILL = loadedCharacter.SKILL;
+            _loadedCharacter.SPELLS = loadedCharacter.SPELLS;
+            _loadedCharacter.SPELLS_SLOTS = loadedCharacter.SPELLS_SLOTS;
+            _loadedCharacter.SPELLS_SLOTS1 = loadedCharacter.SPELLS_SLOTS1;
+        }
+
+        private void RefreshControls()
+        {
+            _view.CharacterName = _loadedCharacter.c_name;
+            _view.Alignment = _loadedCharacter.c_alignment;
+            _view.RaceComboBox.Text = _loadedCharacter.RACE?.r_name ?? "";
+            _view.Experience = _loadedCharacter.c_experience.GetValueOrDefault(0);
+            _view.IsNpc = _loadedCharacter.c_isNPC.GetValueOrDefault(false);
+
+            _view.ArmorClass = _loadedCharacter.c_armorclass.GetValueOrDefault(0);
+            _view.Speed = _loadedCharacter.c_speed.GetValueOrDefault(0);
+            _view.Initiative = _loadedCharacter.c_initiative.GetValueOrDefault(0);
+            _view.HpCurrent = _loadedCharacter.c_hpcurrent.GetValueOrDefault(0);
+            _view.HpMax = _loadedCharacter.c_hpmax.GetValueOrDefault(0);
+            _view.HpTemp = _loadedCharacter.c_hptemp.GetValueOrDefault(0);
+
+            _view.CHA = _loadedCharacter.ABILITY?.a_CHA.GetValueOrDefault(0) ?? 0;
+            _view.CON = _loadedCharacter.ABILITY?.a_CON.GetValueOrDefault(0) ?? 0;
+            _view.DEX = _loadedCharacter.ABILITY?.a_DEX.GetValueOrDefault(0) ?? 0;
+            _view.INT = _loadedCharacter.ABILITY?.a_INT.GetValueOrDefault(0) ?? 0;
+            _view.STR = _loadedCharacter.ABILITY?.a_STR.GetValueOrDefault(0) ?? 0;
+            _view.WIS = _loadedCharacter.ABILITY?.a_WIS.GetValueOrDefault(0) ?? 0;
+
+            //todo implement racial bonus & saving throw
+
+            _view.Acrobatics = _loadedCharacter.SKILL?.s_acrobatics.GetValueOrDefault(0) ?? 0;
+            _view.AnimalHandling = _loadedCharacter.SKILL?.s_animalhandling.GetValueOrDefault(0) ?? 0;
+            _view.Arcana = _loadedCharacter.SKILL?.s_arcana.GetValueOrDefault(0) ?? 0;
+            _view.Athletics = _loadedCharacter.SKILL?.s_athletics.GetValueOrDefault(0) ?? 0;
+            _view.Deception = _loadedCharacter.SKILL?.s_deception.GetValueOrDefault(0) ?? 0;
+            _view.History = _loadedCharacter.SKILL?.s_history.GetValueOrDefault(0) ?? 0;
+            _view.Insight = _loadedCharacter.SKILL?.s_insight.GetValueOrDefault(0) ?? 0;
+            _view.Intimidation = _loadedCharacter.SKILL?.s_intimidation.GetValueOrDefault(0) ?? 0;
+            _view.Investigation = _loadedCharacter.SKILL?.s_investigation.GetValueOrDefault(0) ?? 0;
+            _view.Medicine = _loadedCharacter.SKILL?.s_medicine.GetValueOrDefault(0) ?? 0;
+            _view.Nature = _loadedCharacter.SKILL?.s_nature.GetValueOrDefault(0) ?? 0;
+            _view.Perception = _loadedCharacter.SKILL?.s_perception.GetValueOrDefault(0) ?? 0;
+            _view.Performance = _loadedCharacter.SKILL?.s_performance.GetValueOrDefault(0) ?? 0;
+            _view.Persuasion = _loadedCharacter.SKILL?.s_persuasion.GetValueOrDefault(0) ?? 0;
+            _view.Religion = _loadedCharacter.SKILL?.s_religion.GetValueOrDefault(0) ?? 0;
+            _view.SleightOfHand = _loadedCharacter.SKILL?.s_sleightofhand.GetValueOrDefault(0) ?? 0;
+            _view.Stealth = _loadedCharacter.SKILL?.s_stealth.GetValueOrDefault(0) ?? 0;
+            _view.Survival = _loadedCharacter.SKILL?.s_survival.GetValueOrDefault(0) ?? 0;
+            
+            _view.SpellSlots_Level1_Current = _loadedCharacter.SPELLS_SLOTS?.ss_lvl1.GetValueOrDefault(0) ?? 0;
+            _view.SpellSlots_Level2_Current = _loadedCharacter.SPELLS_SLOTS?.ss_lvl2.GetValueOrDefault(0) ?? 0;
+            _view.SpellSlots_Level3_Current = _loadedCharacter.SPELLS_SLOTS?.ss_lvl3.GetValueOrDefault(0) ?? 0;
+            _view.SpellSlots_Level4_Current = _loadedCharacter.SPELLS_SLOTS?.ss_lvl4.GetValueOrDefault(0) ?? 0;
+            _view.SpellSlots_Level5_Current = _loadedCharacter.SPELLS_SLOTS?.ss_lvl5.GetValueOrDefault(0) ?? 0;
+            _view.SpellSlots_Level6_Current = _loadedCharacter.SPELLS_SLOTS?.ss_lvl6.GetValueOrDefault(0) ?? 0;
+            _view.SpellSlots_Level7_Current = _loadedCharacter.SPELLS_SLOTS?.ss_lvl7.GetValueOrDefault(0) ?? 0;
+            _view.SpellSlots_Level8_Current = _loadedCharacter.SPELLS_SLOTS?.ss_lvl8.GetValueOrDefault(0) ?? 0;
+            _view.SpellSlots_Level9_Current = _loadedCharacter.SPELLS_SLOTS?.ss_lvl9.GetValueOrDefault(0) ?? 0;
+
+            _view.SpellSlots_Level1_Max = _loadedCharacter.SPELLS_SLOTS1?.ss_lvl1.GetValueOrDefault(0) ?? 0;
+            _view.SpellSlots_Level2_Max = _loadedCharacter.SPELLS_SLOTS1?.ss_lvl2.GetValueOrDefault(0) ?? 0;
+            _view.SpellSlots_Level3_Max = _loadedCharacter.SPELLS_SLOTS1?.ss_lvl3.GetValueOrDefault(0) ?? 0;
+            _view.SpellSlots_Level4_Max = _loadedCharacter.SPELLS_SLOTS1?.ss_lvl4.GetValueOrDefault(0) ?? 0;
+            _view.SpellSlots_Level5_Max = _loadedCharacter.SPELLS_SLOTS1?.ss_lvl5.GetValueOrDefault(0) ?? 0;
+            _view.SpellSlots_Level6_Max = _loadedCharacter.SPELLS_SLOTS1?.ss_lvl6.GetValueOrDefault(0) ?? 0;
+            _view.SpellSlots_Level7_Max = _loadedCharacter.SPELLS_SLOTS1?.ss_lvl7.GetValueOrDefault(0) ?? 0;
+            _view.SpellSlots_Level8_Max = _loadedCharacter.SPELLS_SLOTS1?.ss_lvl8.GetValueOrDefault(0) ?? 0;
+            _view.SpellSlots_Level9_Max = _loadedCharacter.SPELLS_SLOTS1?.ss_lvl9.GetValueOrDefault(0) ?? 0;
+
+            _view.Gold = _loadedCharacter.c_gold.GetValueOrDefault(0);
+            _view.ProficiencyBonus = _loadedCharacter.c_proficiencybonus.GetValueOrDefault(0);
+
+            //refresh data sources
+            //class
             UpdateCharacterClasses();
+
+            //attack
+            RefreshAttackDataSource();
+
+            //spellbook
+            RefreshSpellsDataSource();
+
+            //inventory
+            RefreshInventoryDataSource();
+
+            //feats
+            UpdateFeatGrid();
+
+            //prof.
+            RefreshProficiencyDataSource();
+
+            //background
+            RefreshBackgroundDataSource();
+            
         }
 
         public void SaveCharacter()
@@ -363,15 +502,16 @@ namespace DND.Controllers
 
         public void UpdateSpellDescription()
         {
-            var selectedSpellId = (int)(_view.SpellsGridView.SelectedRows[0]?.Cells[0]?.Value ?? -1);
-
-            var selectedSpell = _loadedCharacter.SPELLS.FirstOrDefault(x => x.s_id == selectedSpellId);
-
-            if (selectedSpell == null)
+            if(_view.SpellsGridView.SelectedRows.Count == 0)
             {
                 _view.SpellDescription = null;
                 return;
             }
+
+            var selectedSpellId = (int)(_view.SpellsGridView.SelectedRows[0]?.Cells[0]?.Value ?? -1);
+
+            var selectedSpell = _loadedCharacter.SPELLS.FirstOrDefault(x => x.s_id == selectedSpellId);
+            
             _view.SpellDescription = GenerateSpellDescription(selectedSpell);
         }
 
@@ -410,9 +550,9 @@ namespace DND.Controllers
                     spellDescription += "Target: " + selectedSpell.s_target + "\r\n";
                 }
 
-                if (selectedSpell.s_castingtimeminutes != null)
+                if (selectedSpell.s_castingtime != null)
                 {
-                    spellDescription += "Casting Time: " + selectedSpell.s_castingtimeminutes.ToString() + "\r\n";
+                    spellDescription += "Casting Time: " + selectedSpell.s_castingtime.ToString() + "\r\n";
                 }
 
                 if (selectedSpell.s_durationminutes != null)

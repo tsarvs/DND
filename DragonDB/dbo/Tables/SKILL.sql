@@ -1,5 +1,6 @@
 ﻿CREATE TABLE [dbo].[SKILL] (
     [s_id]             INT IDENTITY(1,1) NOT NULL,
+	[s_acrobatics]	   INT NULL DEFAULT 0, 
     [s_animalhandling] INT DEFAULT ((0)) NULL,
     [s_arcana]         INT DEFAULT ((0)) NULL,
     [s_athletics]      INT DEFAULT ((0)) NULL,
@@ -7,6 +8,7 @@
     [s_history]        INT DEFAULT ((0)) NULL,
     [s_insight]        INT DEFAULT ((0)) NULL,
     [s_intimidation]   INT DEFAULT ((0)) NULL,
+	[s_investigation]  INT DEFAULT 0 NULL,
     [s_medicine]       INT DEFAULT ((0)) NULL,
     [s_nature]         INT DEFAULT ((0)) NULL,
     [s_perception]     INT DEFAULT ((0)) NULL,

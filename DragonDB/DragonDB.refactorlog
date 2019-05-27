@@ -91,4 +91,25 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="cl_hitdicetype" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="17fac5cd-f0ac-466c-8790-a070ce84335e" ChangeDateTime="05/24/2019 23:56:39">
+    <Property Name="ElementName" Value="[dbo].[CHARACTER].[c_]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[CHARACTER]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="c_sid" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e1440b88-e2f0-4ff3-8ac2-2d30a21f2db7" ChangeDateTime="05/25/2019 20:20:50">
+    <Property Name="ElementName" Value="[dbo].[SKILL].[a_acrobatics]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[SKILL]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="s_acrobatics" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b53f1f84-52cd-4e68-bd45-95ca1a561c0d" ChangeDateTime="05/27/2019 14:33:38">
+    <Property Name="ElementName" Value="[dbo].[SPELLS].[s_castingtimeminutes]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[SPELLS]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="s_castingtime" />
+  </Operation>
 </Operations>

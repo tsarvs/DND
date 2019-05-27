@@ -25,7 +25,8 @@ namespace DND.Models
 
         public int? s_level { get; set; }
 
-        public int? s_castingtimeminutes { get; set; }
+        [StringLength(100)]
+        public string s_castingtime { get; set; }
 
         [StringLength(10)]
         public string s_range { get; set; }
@@ -42,7 +43,8 @@ namespace DND.Models
 
         public bool? s_isconcentration { get; set; }
 
-        public int? s_durationminutes { get; set; }
+        [StringLength(100)]
+        public string s_durationminutes { get; set; }
 
         public string s_description { get; set; }
 

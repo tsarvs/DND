@@ -16,7 +16,6 @@ namespace DND.Models
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int p_id { get; set; }
 
         [StringLength(100)]

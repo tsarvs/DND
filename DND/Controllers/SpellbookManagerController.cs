@@ -70,7 +70,7 @@ namespace DND.Controllers
                     s_name = spell.s_name,
                     s_school = spell.s_school,
                     s_level = spell.s_level,
-                    s_castingtimeminutes = spell.s_castingtimeminutes,
+                    s_castingtime = spell.s_castingtime,
                     s_range = spell.s_range,
                     s_target = spell.s_target,
                     s_component_m = spell.s_component_m,
@@ -103,7 +103,7 @@ namespace DND.Controllers
                     s_name = spell.s_name,
                     s_school = spell.s_school,
                     s_level = spell.s_level,
-                    s_castingtimeminutes = spell.s_castingtimeminutes,
+                    s_castingtime = spell.s_castingtime,
                     s_range = spell.s_range,
                     s_target = spell.s_target,
                     s_component_m = spell.s_component_m,
@@ -178,9 +178,9 @@ namespace DND.Controllers
                     _view.SpellDescription += "Target: " + selectedSpell.s_target + "\r\n";
                 }
 
-                if (selectedSpell.s_castingtimeminutes != null)
+                if (selectedSpell.s_castingtime != null)
                 {
-                    _view.SpellDescription += "Casting Time: " + selectedSpell.s_castingtimeminutes.ToString() + "\r\n";
+                    _view.SpellDescription += "Casting Time: " + selectedSpell.s_castingtime.ToString() + "\r\n";
                 }
 
                 if (selectedSpell.s_durationminutes != null)
@@ -269,7 +269,7 @@ namespace DND.Controllers
                     s_name = dbSpell.s_name,
                     s_school = dbSpell.s_school,
                     s_level = dbSpell.s_level,
-                    s_castingtimeminutes = dbSpell.s_castingtimeminutes,
+                    s_castingtime = dbSpell.s_castingtime,
                     s_range = dbSpell.s_range,
                     s_target = dbSpell.s_target,
                     s_component_m = dbSpell.s_component_m,

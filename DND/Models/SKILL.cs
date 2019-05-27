@@ -18,6 +18,8 @@ namespace DND.Models
         [Key]
         public int s_id { get; set; }
 
+        public int? s_acrobatics { get; set; }
+
         public int? s_animalhandling { get; set; }
 
         public int? s_arcana { get; set; }
@@ -31,6 +33,8 @@ namespace DND.Models
         public int? s_insight { get; set; }
 
         public int? s_intimidation { get; set; }
+
+        public int? s_investigation { get; set; }
 
         public int? s_medicine { get; set; }
 
