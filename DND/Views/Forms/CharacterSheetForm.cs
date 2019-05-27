@@ -250,6 +250,12 @@ namespace DND.Views.Forms
 
         #region Skills
 
+        public int Acrobatics
+        {
+            get { return (int) this.txtAcrobatics.Value; }
+            set { this.txtAcrobatics.Value = value; }
+        }
+
         public int AnimalHandling
         {
             get { return (int)this.txtAnimalHandling.Value; }
@@ -290,6 +296,12 @@ namespace DND.Views.Forms
         {
             get { return (int)this.txtIntimidation.Value; }
             set { this.txtIntimidation.Value = value; }
+        }
+
+        public int Investigation
+        {
+            get { return (int)this.txtInvestigation.Value; }
+            set { this.txtInvestigation.Value = value; }
         }
 
         public int Medicine
@@ -374,29 +386,15 @@ namespace DND.Views.Forms
             set { this.dgvSpells = value; }
         }
 
-        public int SpellCastingTime { get; set; }
-
-        public int SpellRange { get; set; }
-
-        public int SpellDuration { get; set; }
-
         public string SpellDescription
         {
             get { return this.txtSpellDescription.Text; }
             set { this.txtSpellDescription.Text = value; }
         }
 
-        public int SpellSaveDC
-        {
-            get { return (int) this.txtSpellSaveDC.Value; }
-            set { this.txtSpellSaveDC.Value = value; }
-        }
+        public int SpellSaveDC {  get; set; }
 
-        public int SpellAttackBonus
-        {
-            get { return (int)this.txtSpellAttackBonus.Value; }
-            set { this.txtSpellAttackBonus.Value = value; }
-        }
+        public int SpellAttackBonus { get; set; }
 
         public int SpellSlots_Level1_Current
         {
@@ -528,9 +526,9 @@ namespace DND.Views.Forms
             set { this.lblWeight.Text = value.ToString(); } //todo: set format
         }
 
-        public double Gold
+        public int Gold
         {
-            get { return (double) this.txtGold.Value; }
+            get { return (int) this.txtGold.Value; }
             set { this.txtGold.Value = (decimal) value; }
         }
 
@@ -671,7 +669,6 @@ namespace DND.Views.Forms
             _characterId = characterId;
 
             _controller.InitializeData(_characterId);
-            _controller.LoadCharacter();
         }
 
         private void btnSaveAndClose_Click(object sender, EventArgs e)
@@ -750,8 +747,6 @@ namespace DND.Views.Forms
         {
             _controller.UpdateItemDescription();
         }
-        
-        #endregion
 
         private void button8_Click(object sender, EventArgs e)
         {
@@ -797,5 +792,8 @@ namespace DND.Views.Forms
         {
             _controller.UpdateSpellDescription();
         }
+
+        #endregion
+        
     }
 }

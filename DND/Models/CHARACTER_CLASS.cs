@@ -22,10 +22,6 @@ namespace DND.Models
 
         public int? cc_hitdice_current { get; set; }
 
-        public int? cc_spellsave_dc { get; set; }
-
-        public int? cc_spellattackbonus { get; set; }
-
         public virtual CHARACTER CHARACTER { get; set; }
 
         public virtual CLASS CLASS { get; set; }

@@ -18,10 +18,8 @@ namespace DND.Models
             CHARACTER_CLASS = new HashSet<CHARACTER_CLASS>();
             CHARACTER_JOURNAL = new HashSet<CHARACTER_JOURNAL>();
             ITEM = new HashSet<ITEM>();
-            ABILITY = new HashSet<ABILITY>();
             FEATS = new HashSet<FEATS>();
             PROFICIENCY = new HashSet<PROFICIENCY>();
-            SKILL = new HashSet<SKILL>();
             SPELLS = new HashSet<SPELLS>();
             CAMPAIGN = new HashSet<CAMPAIGN>();
         }
@@ -45,11 +43,13 @@ namespace DND.Models
 
         public bool? c_inspiration { get; set; }
 
+        public int? c_aid { get; set; }
+
+        public int? c_sid { get; set; }
+
         public int? c_spellslots_remaining { get; set; }
 
         public int? c_spellslots_total { get; set; }
-
-        public int? c_bid { get; set; }
 
         public bool? c_isNPC { get; set; }
 
@@ -64,6 +64,8 @@ namespace DND.Models
         public int? c_gold { get; set; }
 
         public int? c_proficiencybonus { get; set; }
+
+        public virtual ABILITY ABILITY { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CAMPAIGN_PLAYER_CHARACTERS> CAMPAIGN_PLAYER_CHARACTERS { get; set; }
@@ -82,6 +84,8 @@ namespace DND.Models
 
         public virtual RACE RACE { get; set; }
 
+        public virtual SKILL SKILL { get; set; }
+
         public virtual SPELLS_SLOTS SPELLS_SLOTS { get; set; }
 
         public virtual SPELLS_SLOTS SPELLS_SLOTS1 { get; set; }
@@ -90,16 +94,10 @@ namespace DND.Models
         public virtual ICollection<ITEM> ITEM { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ABILITY> ABILITY { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FEATS> FEATS { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PROFICIENCY> PROFICIENCY { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SKILL> SKILL { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SPELLS> SPELLS { get; set; }

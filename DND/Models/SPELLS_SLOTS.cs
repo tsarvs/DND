@@ -16,7 +16,6 @@ namespace DND.Models
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ss_id { get; set; }
 
         public int? ss_lvl1 { get; set; }

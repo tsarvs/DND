@@ -7,9 +7,10 @@
     [c_hpmax]                INT           NULL,
     [c_hptemp]               INT           NULL,
     [c_inspiration]          BIT           NULL,
+	[c_aid] INT NULL, 
+    [c_sid] INT NULL,
     [c_spellslots_remaining] INT           NULL,
     [c_spellslots_total]     INT           NULL,
-    [c_bid]                  INT           NULL,
     [c_isNPC]                BIT           DEFAULT 0 NULL,
     [c_armorclass] INT NULL, 
     [c_initiative] INT NULL, 
@@ -20,6 +21,8 @@
     PRIMARY KEY CLUSTERED ([c_id] ASC),
     CONSTRAINT [FK_CHARACTER_ToSPELLS_SLOTS_remaining] FOREIGN KEY ([c_spellslots_remaining]) REFERENCES [dbo].[SPELLS_SLOTS] ([ss_id]),
     CONSTRAINT [FK_CHARACTER_ToSPELLS_SLOTS_total] FOREIGN KEY ([c_spellslots_total]) REFERENCES [dbo].[SPELLS_SLOTS] ([ss_id]),
-	CONSTRAINT [FK_CHARACTER_ToRACE] FOREIGN KEY ([c_rid]) REFERENCES [dbo].[RACE] ([r_id])
+	CONSTRAINT [FK_CHARACTER_ToRACE] FOREIGN KEY ([c_rid]) REFERENCES [dbo].[RACE] ([r_id]), 
+    CONSTRAINT [FK_CHARACTER_ToABILITY] FOREIGN KEY ([c_aid]) REFERENCES [ABILITY]([a_id]), 
+    CONSTRAINT [FK_CHARACTER_ToSKILL] FOREIGN KEY ([c_sid]) REFERENCES [SKILL]([s_id])
 );
 

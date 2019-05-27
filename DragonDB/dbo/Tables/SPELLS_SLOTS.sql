@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[SPELLS_SLOTS] (
-    [ss_id]   INT NOT NULL,
+    [ss_id]   INT IDENTITY(1,1) NOT NULL,
     [ss_lvl1] INT DEFAULT ((0)) NULL,
     [ss_lvl2] INT DEFAULT ((0)) NULL,
     [ss_lvl3] INT DEFAULT ((0)) NULL,

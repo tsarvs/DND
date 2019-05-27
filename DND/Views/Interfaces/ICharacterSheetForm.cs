@@ -95,6 +95,8 @@ namespace DND.Views.Interfaces
 
         #region Skills
 
+        int Acrobatics { get; set; }
+
         int AnimalHandling { get; set; }
 
         int Arcana { get; set; }
@@ -108,6 +110,8 @@ namespace DND.Views.Interfaces
         int Insight { get; set; }
 
         int Intimidation { get; set; }
+
+        int Investigation { get; set; }
 
         int Medicine { get; set; }
 
@@ -142,12 +146,6 @@ namespace DND.Views.Interfaces
         ComboBox SpellcastingAbility { get; set; }
 
         DataGridView SpellsGridView { get; set; }
-
-        int SpellCastingTime { get; set; }
-
-        int SpellRange { get; set; }
-
-        int SpellDuration { get; set; }
 
         string SpellDescription { get; set; }
 
@@ -199,7 +197,7 @@ namespace DND.Views.Interfaces
 
         double InventoryWeight { get; set; }
 
-        double Gold { get; set; }
+        int Gold { get; set; }
 
         void AddFeats(List<FEATS> characterFeats);
 
