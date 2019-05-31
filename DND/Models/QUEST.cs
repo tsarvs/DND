@@ -9,6 +9,12 @@ namespace DND.Models
     [Table("QUEST")]
     public partial class QUEST
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public QUEST()
+        {
+            BACKGROUND = new HashSet<BACKGROUND>();
+        }
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int q_id { get; set; }
@@ -25,5 +31,8 @@ namespace DND.Models
         public int? q_next { get; set; }
 
         public virtual QUESTLINE QUESTLINE { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BACKGROUND> BACKGROUND { get; set; }
     }
 }

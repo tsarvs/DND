@@ -6,44 +6,37 @@ namespace DND.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("CAMPAIGN")]
-    public partial class CAMPAIGN
+    [Table("BACKGROUND")]
+    public partial class BACKGROUND
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CAMPAIGN()
+        public BACKGROUND()
         {
-            EPISODE = new HashSet<EPISODE>();
+            CAMPAIGN = new HashSet<CAMPAIGN>();
+            LOCATION = new HashSet<LOCATION>();
+            QUEST = new HashSet<QUEST>();
             QUESTLINE = new HashSet<QUESTLINE>();
-            BACKGROUND = new HashSet<BACKGROUND>();
-            CHARACTER = new HashSet<CHARACTER>();
+            RACE = new HashSet<RACE>();
         }
 
         [Key]
-        public int cmp_id { get; set; }
+        public int b_id { get; set; }
 
-        [StringLength(250)]
-        public string cmp_name { get; set; }
-
-        [Column(TypeName = "date")]
-        public DateTime? cmp_startdate { get; set; }
-
-        [StringLength(50)]
-        public string cmp_dm { get; set; }
-
-        public string cmp_description { get; set; }
-
-        public virtual CAMPAIGN_PLAYER_CHARACTERS CAMPAIGN_PLAYER_CHARACTERS { get; set; }
+        public string b_desc { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EPISODE> EPISODE { get; set; }
+        public virtual ICollection<CAMPAIGN> CAMPAIGN { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<LOCATION> LOCATION { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<QUEST> QUEST { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<QUESTLINE> QUESTLINE { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BACKGROUND> BACKGROUND { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CHARACTER> CHARACTER { get; set; }
+        public virtual ICollection<RACE> RACE { get; set; }
     }
 }

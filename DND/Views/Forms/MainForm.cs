@@ -77,5 +77,14 @@ namespace DND.Views.Forms
 
             form.ShowDialog();
         }
+
+        private void raceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddEditRaceForm form = new Forms.AddEditRaceForm();
+
+            form.SetController(new AddEditRaceController(form));
+
+            form.ShowDialog();
+        }
     }
 }

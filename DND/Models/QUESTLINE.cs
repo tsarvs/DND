@@ -13,6 +13,7 @@ namespace DND.Models
         public QUESTLINE()
         {
             QUEST = new HashSet<QUEST>();
+            BACKGROUND = new HashSet<BACKGROUND>();
         }
 
         [Key]
@@ -30,5 +31,8 @@ namespace DND.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<QUEST> QUEST { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BACKGROUND> BACKGROUND { get; set; }
     }
 }

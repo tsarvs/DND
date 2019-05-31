@@ -6,36 +6,35 @@ namespace DND.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("RACE")]
-    public partial class RACE
+    [Table("EFFECT")]
+    public partial class EFFECT
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public RACE()
+        public EFFECT()
         {
-            CHARACTER = new HashSet<CHARACTER>();
-            RACE_SKILL = new HashSet<RACE_SKILL>();
-            BACKGROUND = new HashSet<BACKGROUND>();
+            EFFECT_PROCEDURE = new HashSet<EFFECT_PROCEDURE>();
+            ITEM_EFFECT = new HashSet<ITEM_EFFECT>();
+            SPELLS_EFFECT = new HashSet<SPELLS_EFFECT>();
         }
 
         [Key]
-        public int r_id { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int ef_id { get; set; }
 
-        [StringLength(100)]
-        public string r_name { get; set; }
+        [StringLength(150)]
+        public string ef_name { get; set; }
 
-        public string r_description { get; set; }
+        public string ef_desc { get; set; }
 
-        public int? r_aid { get; set; }
-
-        public virtual ABILITY ABILITY { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CHARACTER> CHARACTER { get; set; }
+        public bool? ef_hasprocedure { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RACE_SKILL> RACE_SKILL { get; set; }
+        public virtual ICollection<EFFECT_PROCEDURE> EFFECT_PROCEDURE { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BACKGROUND> BACKGROUND { get; set; }
+        public virtual ICollection<ITEM_EFFECT> ITEM_EFFECT { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SPELLS_EFFECT> SPELLS_EFFECT { get; set; }
     }
 }

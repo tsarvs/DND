@@ -67,8 +67,8 @@ namespace DND.Controllers
             while (i <= numOfDice)
             {
                 roll = _randomRoll.Next(1, k);
-                rollTotal = rollTotal + roll;
-                i = i + 1;
+                rollTotal += roll;
+                i += 1;
             }
             
             return rollTotal;
