@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using DND.Models;
 using DND.Views.Enums;
@@ -85,8 +86,7 @@ namespace DND.Controllers
         public void EditAttack()
         {
             var selectedRows = _view.AttackGridView.SelectedRows;
-
-
+            
             if (selectedRows.Count == 0)
                 return;
 
@@ -334,11 +334,13 @@ namespace DND.Controllers
             RefreshControls();
             
         }
-
+        
         private void UpdateLoadedCharacterData(CHARACTER loadedCharacter)
         {
             if (loadedCharacter == null)
-            return;
+                return;
+
+            _view.CharacterSheetMode = FormMode.EditForm;
 
             _loadedCharacter.c_id = loadedCharacter.c_id;
             _loadedCharacter.c_name = loadedCharacter.c_name;
@@ -371,6 +373,84 @@ namespace DND.Controllers
             _loadedCharacter.SPELLS = loadedCharacter.SPELLS;
             _loadedCharacter.SPELLS_SLOTS = loadedCharacter.SPELLS_SLOTS;
             _loadedCharacter.SPELLS_SLOTS1 = loadedCharacter.SPELLS_SLOTS1;
+        }
+
+        private void RefreshLoadedCharacterDataFromControls()
+        {
+            if (_loadedCharacter == null)
+                return;
+            
+            //_loadedCharacter.c_id = ?;
+            _loadedCharacter.c_name = _view.CharacterName;
+            //_loadedCharacter.c_rid = loadedCharacter.c_rid;
+            _loadedCharacter.c_alignment = _view.Alignment;
+            _loadedCharacter.c_hpcurrent = _view.HpCurrent;
+            _loadedCharacter.c_hpmax = _view.HitDiceMax;
+            _loadedCharacter.c_inspiration = _view.HasInspiration;
+            
+            _loadedCharacter.ABILITY.a_CHA = _view.CHA;
+            _loadedCharacter.ABILITY.a_CON = _view.CON;
+            _loadedCharacter.ABILITY.a_DEX = _view.DEX;
+            _loadedCharacter.ABILITY.a_INT = _view.INT;
+            _loadedCharacter.ABILITY.a_STR = _view.STR;
+            _loadedCharacter.ABILITY.a_WIS = _view.WIS;
+
+            _loadedCharacter.SKILL.s_acrobatics = _view.Acrobatics;
+            _loadedCharacter.SKILL.s_animalhandling = _view.AnimalHandling;
+            _loadedCharacter.SKILL.s_arcana = _view.Arcana;
+            _loadedCharacter.SKILL.s_athletics = _view.Athletics;
+            _loadedCharacter.SKILL.s_deception = _view.Deception;
+            _loadedCharacter.SKILL.s_history = _view.History;
+            _loadedCharacter.SKILL.s_insight = _view.Insight;
+            _loadedCharacter.SKILL.s_intimidation = _view.Intimidation;
+            _loadedCharacter.SKILL.s_investigation = _view.Investigation;
+            _loadedCharacter.SKILL.s_medicine = _view.Medicine;
+            _loadedCharacter.SKILL.s_nature = _view.Nature;
+            _loadedCharacter.SKILL.s_perception = _view.Perception;
+            _loadedCharacter.SKILL.s_performance = _view.Performance;
+            _loadedCharacter.SKILL.s_persuasion = _view.Persuasion;
+            _loadedCharacter.SKILL.s_religion = _view.Religion;
+            _loadedCharacter.SKILL.s_sleightofhand = _view.SleightOfHand;
+            _loadedCharacter.SKILL.s_stealth = _view.Stealth;
+            _loadedCharacter.SKILL.s_survival = _view.Survival;
+
+            _loadedCharacter.SPELLS_SLOTS.ss_lvl1 = _view.SpellSlots_Level1_Current;
+            _loadedCharacter.SPELLS_SLOTS.ss_lvl2 = _view.SpellSlots_Level2_Current;
+            _loadedCharacter.SPELLS_SLOTS.ss_lvl3 = _view.SpellSlots_Level3_Current;
+            _loadedCharacter.SPELLS_SLOTS.ss_lvl4 = _view.SpellSlots_Level4_Current;
+            _loadedCharacter.SPELLS_SLOTS.ss_lvl5 = _view.SpellSlots_Level5_Current;
+            _loadedCharacter.SPELLS_SLOTS.ss_lvl6 = _view.SpellSlots_Level6_Current;
+            _loadedCharacter.SPELLS_SLOTS.ss_lvl7 = _view.SpellSlots_Level7_Current;
+            _loadedCharacter.SPELLS_SLOTS.ss_lvl8 = _view.SpellSlots_Level8_Current;
+            _loadedCharacter.SPELLS_SLOTS.ss_lvl9 = _view.SpellSlots_Level9_Current;
+
+            _loadedCharacter.SPELLS_SLOTS1.ss_lvl1 = _view.SpellSlots_Level1_Max;
+            _loadedCharacter.SPELLS_SLOTS1.ss_lvl2 = _view.SpellSlots_Level2_Max;
+            _loadedCharacter.SPELLS_SLOTS1.ss_lvl3 = _view.SpellSlots_Level3_Max;
+            _loadedCharacter.SPELLS_SLOTS1.ss_lvl4 = _view.SpellSlots_Level4_Max;
+            _loadedCharacter.SPELLS_SLOTS1.ss_lvl5 = _view.SpellSlots_Level5_Max;
+            _loadedCharacter.SPELLS_SLOTS1.ss_lvl6 = _view.SpellSlots_Level6_Max;
+            _loadedCharacter.SPELLS_SLOTS1.ss_lvl7 = _view.SpellSlots_Level7_Max;
+            _loadedCharacter.SPELLS_SLOTS1.ss_lvl8 = _view.SpellSlots_Level8_Max;
+            _loadedCharacter.SPELLS_SLOTS1.ss_lvl9 = _view.SpellSlots_Level9_Max;
+
+            _loadedCharacter.c_isNPC = _view.IsNpc;
+            _loadedCharacter.c_armorclass = _view.ArmorClass;
+            _loadedCharacter.c_initiative = _view.Initiative;
+            _loadedCharacter.c_speed = _view.Speed;
+            _loadedCharacter.c_experience = _view.Experience;
+            _loadedCharacter.c_gold = _view.Gold;
+            _loadedCharacter.c_proficiencybonus = _view.ProficiencyBonus;
+
+            //_loadedCharacter.CHARACTER_ATTACK = _view.AttackGridView;
+            //_loadedCharacter.CHARACTER_BACKGROUND = loadedCharacter.CHARACTER_BACKGROUND;
+            //_loadedCharacter.CHARACTER_JOURNAL = loadedCharacter.CHARACTER_JOURNAL;
+            //_loadedCharacter.CHARACTER_CLASS = loadedCharacter.CHARACTER_CLASS;
+            //_loadedCharacter.FEATS = loadedCharacter.FEATS;
+            //_loadedCharacter.ITEM = loadedCharacter.ITEM;
+            //_loadedCharacter.PROFICIENCY = loadedCharacter.PROFICIENCY;
+            //_loadedCharacter.RACE = loadedCharacter.RACE;
+            //_loadedCharacter.SPELLS = loadedCharacter.SPELLS;
         }
 
         private void RefreshControls()
@@ -465,11 +545,11 @@ namespace DND.Controllers
 
         public void SaveCharacter()
         {
-            var mode = _view.CharacterSheetMode;
-
-            if (mode == FormMode.NewForm)
+            if (_view.CharacterSheetMode == FormMode.NewForm)
                 AddCharacter();
-            else if (mode == FormMode.EditForm) UpdateCharacter();
+            else if (_view.CharacterSheetMode == FormMode.EditForm)
+                RefreshLoadedCharacterDataFromControls();
+                UpdateCharacter();
         }
 
         public void AddSpellsToGrid(List<SPELLS> characterSpells)
@@ -631,6 +711,76 @@ namespace DND.Controllers
                     select cc.cc_level).FirstOrDefault().GetValueOrDefault(1);
         }
 
+        public void UpdateHitDice()
+        {
+            var selectedClass = (CLASS)_view.ClassComboBox.SelectedItem;
+
+            if (selectedClass == null)
+                return;
+
+            _view.HitDiceType = selectedClass.cl_hitdicetype;
+
+            _view.HitDiceCurrent =
+                (from cc in _loadedCharacter.CHARACTER_CLASS.ToList()
+                    where (cc.cc_clid == selectedClass.cl_id)
+                    select cc.cc_hitdice_current).First() ?? 0;
+
+            _view.HitDiceMax =
+                (from cc in _loadedCharacter.CHARACTER_CLASS.ToList()
+                    where (cc.cc_clid == selectedClass.cl_id)
+                    select cc.cc_level).First() ?? 1;
+        }
+
+        public void UpdateSpellStats()
+        {
+            var selectedClass = (CLASS)_view.ClassComboBox.SelectedItem;
+
+            if (selectedClass == null)
+                return;
+
+            if (selectedClass.cl_spellcastingability == null)
+            {
+                _view.SpellcastingAbility = "None";
+                _view.SpellAttackBonus = 0;
+                _view.SpellSaveDC = 0;
+            }
+            else
+            {
+                _view.SpellcastingAbility = selectedClass.cl_spellcastingability;
+                _view.SpellAttackBonus = CalculateSpellBonus(selectedClass.cl_spellcastingability);
+                _view.SpellSaveDC = 8 + CalculateSpellBonus(selectedClass.cl_spellcastingability);
+            }
+        }
+
+        private int CalculateSpellBonus(string ability)
+        {
+            var bonus = (_loadedCharacter.c_proficiencybonus ?? 0);
+
+            switch (ability.ToUpper())
+            {
+                case ("CHA"):
+                    bonus += CalculateModifier(_loadedCharacter.ABILITY?.a_CHA ?? 0);
+                    break;
+                case ("INT"):
+                    bonus += CalculateModifier(_loadedCharacter.ABILITY?.a_INT ?? 0);
+                    break;
+                case ("WIS"):
+                    bonus += CalculateModifier(_loadedCharacter.ABILITY?.a_WIS ?? 0);
+                    break;
+                case ("STR"):
+                    bonus += CalculateModifier(_loadedCharacter.ABILITY?.a_STR ?? 0);
+                    break;
+                case ("CON"):
+                    bonus += CalculateModifier(_loadedCharacter.ABILITY?.a_CON ?? 0);
+                    break;
+                case ("DEX"):
+                    bonus += CalculateModifier(_loadedCharacter.ABILITY?.a_DEX ?? 0);
+                    break;
+            }
+
+            return bonus;
+        }
+
         public void UpdateCharacterClasses()
         {
             using (var db = new DragonDBModel())
@@ -657,7 +807,48 @@ namespace DND.Controllers
 
         private void UpdateCharacter()
         {
-            throw new NotImplementedException();
+            //todo refresh loaded character data before saving
+
+            using (var db = new DragonDBModel())
+            {
+                var character =
+                    (from c in db.CHARACTER.ToList()
+                     where (c.c_id == _characterId)
+                     select c).First();
+
+                character.c_name = _loadedCharacter.c_name;
+                character.c_alignment = _loadedCharacter.c_alignment;
+                character.c_rid = _loadedCharacter.c_rid;
+                character.c_aid = _loadedCharacter.c_aid;
+                character.c_experience = _loadedCharacter.c_experience;
+                character.c_isNPC = _loadedCharacter.c_isNPC;
+                character.c_armorclass = _loadedCharacter.c_armorclass;
+                character.c_speed = _loadedCharacter.c_speed;
+                character.c_initiative = _loadedCharacter.c_initiative;
+                character.c_inspiration = _loadedCharacter.c_inspiration;
+                character.c_hpcurrent = _loadedCharacter.c_hpcurrent;
+                character.c_hpmax = _loadedCharacter.c_hpmax;
+                character.c_hptemp = _loadedCharacter.c_hptemp;
+                character.c_gold = _loadedCharacter.c_gold;
+                character.c_proficiencybonus = _loadedCharacter.c_proficiencybonus;
+
+                //character.SPELLS = _loadedCharacter.SPELLS;
+                //character.SPELLS_SLOTS = _loadedCharacter.SPELLS_SLOTS;
+                //character.SPELLS_SLOTS1 = _loadedCharacter.SPELLS_SLOTS1;
+                //character.FEATS = _loadedCharacter.FEATS;
+                //character.ABILITY = _loadedCharacter.ABILITY;
+                //character.SKILL = _loadedCharacter.SKILL;
+                //character.ITEM = _loadedCharacter.ITEM;
+                //character.RACE = _loadedCharacter.RACE;
+                //character.CHARACTER_CLASS = _loadedCharacter.CHARACTER_CLASS;
+                //character.PROFICIENCY = _loadedCharacter.PROFICIENCY;
+                //character.CHARACTER_BACKGROUND = _loadedCharacter.CHARACTER_BACKGROUND;
+
+                //character.CHARACTER_ATTACK = _loadedCharacter.CHARACTER_ATTACK;
+
+                db.SaveChanges();
+                
+            }
         }
 
         public void LoadCharacter()
@@ -838,6 +1029,13 @@ namespace DND.Controllers
             form.SetController(new SpellbookManagerController(form, _view, _loadedCharacter.SPELLS.ToList()));
 
             form.Show();
+        }
+
+        private int CalculateModifier(int abilityScore)
+        {
+            var mod = (abilityScore - 10);
+
+            return mod;
         }
 
         #endregion

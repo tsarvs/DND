@@ -46,41 +46,44 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cmbClass = new System.Windows.Forms.ComboBox();
             this.chkInspiration = new System.Windows.Forms.CheckBox();
-            this.btnSaveAndClose = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.txtSurvival = new System.Windows.Forms.NumericUpDown();
-            this.txtStealth = new System.Windows.Forms.NumericUpDown();
-            this.txtSleightOfHand = new System.Windows.Forms.NumericUpDown();
-            this.txtReligion = new System.Windows.Forms.NumericUpDown();
-            this.txtPersuasion = new System.Windows.Forms.NumericUpDown();
-            this.txtPerformance = new System.Windows.Forms.NumericUpDown();
-            this.txtPerception = new System.Windows.Forms.NumericUpDown();
-            this.txtNature = new System.Windows.Forms.NumericUpDown();
-            this.txtMedicine = new System.Windows.Forms.NumericUpDown();
-            this.txtIntimidation = new System.Windows.Forms.NumericUpDown();
-            this.txtInsight = new System.Windows.Forms.NumericUpDown();
-            this.txtHistory = new System.Windows.Forms.NumericUpDown();
-            this.txtDeception = new System.Windows.Forms.NumericUpDown();
-            this.txtAthletics = new System.Windows.Forms.NumericUpDown();
-            this.txtArcana = new System.Windows.Forms.NumericUpDown();
-            this.txtAnimalHandling = new System.Windows.Forms.NumericUpDown();
-            this.lblAnimalHandling = new System.Windows.Forms.Label();
-            this.lblSurvival = new System.Windows.Forms.Label();
-            this.lblStealth = new System.Windows.Forms.Label();
-            this.lblSleightOfHand = new System.Windows.Forms.Label();
-            this.lblReligion = new System.Windows.Forms.Label();
             this.lblPersuasion = new System.Windows.Forms.Label();
+            this.txtInvestigation = new System.Windows.Forms.NumericUpDown();
+            this.lblReligion = new System.Windows.Forms.Label();
+            this.txtAcrobatics = new System.Windows.Forms.NumericUpDown();
             this.lblPerformance = new System.Windows.Forms.Label();
+            this.txtStealth = new System.Windows.Forms.NumericUpDown();
+            this.lblSleightOfHand = new System.Windows.Forms.Label();
             this.lblPerception = new System.Windows.Forms.Label();
+            this.lblStealth = new System.Windows.Forms.Label();
+            this.txtSleightOfHand = new System.Windows.Forms.NumericUpDown();
             this.lblNature = new System.Windows.Forms.Label();
+            this.lblSurvival = new System.Windows.Forms.Label();
+            this.txtReligion = new System.Windows.Forms.NumericUpDown();
             this.lblMedicine = new System.Windows.Forms.Label();
+            this.lblAnimalHandling = new System.Windows.Forms.Label();
+            this.txtPersuasion = new System.Windows.Forms.NumericUpDown();
             this.lblArcana = new System.Windows.Forms.Label();
+            this.txtAnimalHandling = new System.Windows.Forms.NumericUpDown();
+            this.txtPerformance = new System.Windows.Forms.NumericUpDown();
             this.lblIntimidation = new System.Windows.Forms.Label();
+            this.txtArcana = new System.Windows.Forms.NumericUpDown();
+            this.txtPerception = new System.Windows.Forms.NumericUpDown();
             this.lblAthletics = new System.Windows.Forms.Label();
+            this.txtAthletics = new System.Windows.Forms.NumericUpDown();
+            this.txtNature = new System.Windows.Forms.NumericUpDown();
             this.lblInsight = new System.Windows.Forms.Label();
+            this.txtDeception = new System.Windows.Forms.NumericUpDown();
+            this.txtMedicine = new System.Windows.Forms.NumericUpDown();
             this.lblDeception = new System.Windows.Forms.Label();
+            this.txtHistory = new System.Windows.Forms.NumericUpDown();
+            this.txtIntimidation = new System.Windows.Forms.NumericUpDown();
             this.lblHistory = new System.Windows.Forms.Label();
+            this.txtInsight = new System.Windows.Forms.NumericUpDown();
             this.label54 = new System.Windows.Forms.Label();
             this.dgvFeats = new System.Windows.Forms.DataGridView();
             this.txtFeatDescription = new System.Windows.Forms.TextBox();
@@ -119,54 +122,56 @@
             this.btnAddAttack = new System.Windows.Forms.Button();
             this.dgvAttack = new System.Windows.Forms.DataGridView();
             this.tabSpellbook = new System.Windows.Forms.TabPage();
+            this.lblSpellAttackBonus = new System.Windows.Forms.Label();
+            this.lblSpellSaveDC = new System.Windows.Forms.Label();
             this.lblSpellCastingAbility = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtSpellSlot_Level1_Current = new System.Windows.Forms.NumericUpDown();
             this.btnManageSpells = new System.Windows.Forms.Button();
+            this.txtSpellDescription = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.dgvSpells = new System.Windows.Forms.DataGridView();
+            this.txtSpellSlot_Level1_Current = new System.Windows.Forms.NumericUpDown();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.txtSpellSlot_Level6_Current = new System.Windows.Forms.NumericUpDown();
+            this.txtSpellSlot_Level8_Max = new System.Windows.Forms.NumericUpDown();
             this.label47 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.txtSpellSlot_Level1_Max = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.txtSpellSlot_Level5_Max = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.txtSpellSlot_Level3_Max = new System.Windows.Forms.NumericUpDown();
+            this.txtSpellSlot_Level6_Max = new System.Windows.Forms.NumericUpDown();
+            this.txtSpellSlot_Level5_Current = new System.Windows.Forms.NumericUpDown();
+            this.txtSpellSlot_Level9_Max = new System.Windows.Forms.NumericUpDown();
+            this.txtSpellSlot_Level8_Current = new System.Windows.Forms.NumericUpDown();
+            this.label30 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
+            this.txtSpellSlot_Level2_Current = new System.Windows.Forms.NumericUpDown();
+            this.txtSpellSlot_Level7_Max = new System.Windows.Forms.NumericUpDown();
+            this.label25 = new System.Windows.Forms.Label();
             this.txtSpellSlot_Level3_Current = new System.Windows.Forms.NumericUpDown();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
+            this.txtSpellSlot_Level9_Current = new System.Windows.Forms.NumericUpDown();
+            this.label28 = new System.Windows.Forms.Label();
+            this.txtSpellSlot_Level2_Max = new System.Windows.Forms.NumericUpDown();
             this.txtSpellSlot_Level4_Current = new System.Windows.Forms.NumericUpDown();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.txtSpellSlot_Level4_Max = new System.Windows.Forms.NumericUpDown();
-            this.txtSpellDescription = new System.Windows.Forms.TextBox();
-            this.txtSpellSlot_Level2_Max = new System.Windows.Forms.NumericUpDown();
-            this.label36 = new System.Windows.Forms.Label();
-            this.dgvSpells = new System.Windows.Forms.DataGridView();
-            this.txtSpellSlot_Level2_Current = new System.Windows.Forms.NumericUpDown();
-            this.label41 = new System.Windows.Forms.Label();
-            this.txtSpellSlot_Level5_Current = new System.Windows.Forms.NumericUpDown();
-            this.label33 = new System.Windows.Forms.Label();
-            this.txtSpellSlot_Level5_Max = new System.Windows.Forms.NumericUpDown();
-            this.txtSpellSlot_Level1_Max = new System.Windows.Forms.NumericUpDown();
-            this.txtSpellSlot_Level8_Max = new System.Windows.Forms.NumericUpDown();
-            this.label37 = new System.Windows.Forms.Label();
-            this.txtSpellSlot_Level8_Current = new System.Windows.Forms.NumericUpDown();
-            this.label32 = new System.Windows.Forms.Label();
-            this.txtSpellSlot_Level6_Current = new System.Windows.Forms.NumericUpDown();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.txtSpellSlot_Level6_Max = new System.Windows.Forms.NumericUpDown();
-            this.txtSpellSlot_Level9_Max = new System.Windows.Forms.NumericUpDown();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.txtSpellSlot_Level9_Current = new System.Windows.Forms.NumericUpDown();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
             this.txtSpellSlot_Level7_Current = new System.Windows.Forms.NumericUpDown();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.txtSpellSlot_Level7_Max = new System.Windows.Forms.NumericUpDown();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblHitDiceMax = new System.Windows.Forms.Label();
             this.lblHitDiceType = new System.Windows.Forms.Label();
-            this.txtHitDiceMax = new System.Windows.Forms.NumericUpDown();
             this.txtHitDiceCurrent = new System.Windows.Forms.NumericUpDown();
             this.label22 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
@@ -175,75 +180,71 @@
             this.txtSpeed = new System.Windows.Forms.NumericUpDown();
             this.txtInitiative = new System.Windows.Forms.NumericUpDown();
             this.txtAC = new System.Windows.Forms.NumericUpDown();
-            this.txtHPmax = new System.Windows.Forms.NumericUpDown();
-            this.txtHPcurrent = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
+            this.txtHPmax = new System.Windows.Forms.NumericUpDown();
             this.label50 = new System.Windows.Forms.Label();
+            this.txtHPcurrent = new System.Windows.Forms.NumericUpDown();
             this.label51 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label53 = new System.Windows.Forms.Label();
-            this.label56 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.lblWisdom_RB = new System.Windows.Forms.Label();
-            this.lblDexterity = new System.Windows.Forms.Label();
-            this.lblStrength_RB = new System.Windows.Forms.Label();
-            this.lblCharisma = new System.Windows.Forms.Label();
-            this.lblIntelligence_RB = new System.Windows.Forms.Label();
-            this.lblConstitution = new System.Windows.Forms.Label();
-            this.lblDexterity_RB = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.lblConstitution_RB = new System.Windows.Forms.Label();
-            this.lblIntelligence = new System.Windows.Forms.Label();
-            this.lblCharisma_RB = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblDexterity_RB = new System.Windows.Forms.Label();
+            this.lblIntelligence_RB = new System.Windows.Forms.Label();
+            this.lblStrength_RB = new System.Windows.Forms.Label();
+            this.txtWisdom = new System.Windows.Forms.NumericUpDown();
+            this.label56 = new System.Windows.Forms.Label();
+            this.txtStrength = new System.Windows.Forms.NumericUpDown();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txtCharisma = new System.Windows.Forms.NumericUpDown();
+            this.txtIntelligence = new System.Windows.Forms.NumericUpDown();
+            this.lblWisdom_ST = new System.Windows.Forms.Label();
+            this.lblDexterity = new System.Windows.Forms.Label();
             this.lblStrength = new System.Windows.Forms.Label();
+            this.lblStrength_ST = new System.Windows.Forms.Label();
+            this.txtDexterity = new System.Windows.Forms.NumericUpDown();
+            this.lblConstitution = new System.Windows.Forms.Label();
+            this.lblIntelligence = new System.Windows.Forms.Label();
+            this.lblIntelligence_ST = new System.Windows.Forms.Label();
+            this.txtConstitution = new System.Windows.Forms.NumericUpDown();
+            this.lblDexterity_ST = new System.Windows.Forms.Label();
+            this.lblConstitution_ST = new System.Windows.Forms.Label();
+            this.lblCharisma = new System.Windows.Forms.Label();
+            this.lblCharisma_ST = new System.Windows.Forms.Label();
+            this.lblWisdom = new System.Windows.Forms.Label();
+            this.lblWisdom_RB = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lblCharisma_RB = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.lblWisdom = new System.Windows.Forms.Label();
-            this.lblWisdom_ST = new System.Windows.Forms.Label();
-            this.lblStrength_ST = new System.Windows.Forms.Label();
-            this.lblIntelligence_ST = new System.Windows.Forms.Label();
-            this.lblDexterity_ST = new System.Windows.Forms.Label();
-            this.lblConstitution_ST = new System.Windows.Forms.Label();
-            this.lblCharisma_ST = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.txtWisdom = new System.Windows.Forms.NumericUpDown();
-            this.txtStrength = new System.Windows.Forms.NumericUpDown();
-            this.txtIntelligence = new System.Windows.Forms.NumericUpDown();
-            this.txtDexterity = new System.Windows.Forms.NumericUpDown();
-            this.txtConstitution = new System.Windows.Forms.NumericUpDown();
-            this.txtCharisma = new System.Windows.Forms.NumericUpDown();
             this.button1 = new System.Windows.Forms.Button();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txtInvestigation = new System.Windows.Forms.NumericUpDown();
-            this.txtAcrobatics = new System.Windows.Forms.NumericUpDown();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtExperience)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSurvival)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtInvestigation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAcrobatics)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStealth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSleightOfHand)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtReligion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPersuasion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAnimalHandling)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPerformance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtArcana)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPerception)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAthletics)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNature)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDeception)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMedicine)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHistory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIntimidation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtInsight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtHistory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDeception)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAthletics)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtArcana)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAnimalHandling)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFeats)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -258,27 +259,26 @@
             this.tabAttack.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAttack)).BeginInit();
             this.tabSpellbook.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSpells)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level1_Current)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level6_Current)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level8_Max)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level1_Max)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level5_Max)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level3_Max)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level6_Max)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level5_Current)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level9_Max)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level8_Current)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level2_Current)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level7_Max)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level3_Current)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level9_Current)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level2_Max)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level4_Current)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level4_Max)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level2_Max)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSpells)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level2_Current)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level5_Current)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level5_Max)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level1_Max)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level8_Max)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level8_Current)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level6_Current)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level6_Max)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level9_Max)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level9_Current)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level7_Current)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level7_Max)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtHitDiceMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHitDiceCurrent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHPtemp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSpeed)).BeginInit();
@@ -290,12 +290,10 @@
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtWisdom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStrength)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCharisma)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIntelligence)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDexterity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtConstitution)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCharisma)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtInvestigation)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAcrobatics)).BeginInit();
             this.SuspendLayout();
             // 
             // txtName
@@ -485,21 +483,11 @@
             this.chkInspiration.Text = "Inspiration";
             this.chkInspiration.UseVisualStyleBackColor = true;
             // 
-            // btnSaveAndClose
-            // 
-            this.btnSaveAndClose.Location = new System.Drawing.Point(557, 970);
-            this.btnSaveAndClose.Name = "btnSaveAndClose";
-            this.btnSaveAndClose.Size = new System.Drawing.Size(126, 26);
-            this.btnSaveAndClose.TabIndex = 32;
-            this.btnSaveAndClose.Text = "Save and Close";
-            this.btnSaveAndClose.UseVisualStyleBackColor = true;
-            this.btnSaveAndClose.Click += new System.EventHandler(this.btnSaveAndClose_Click);
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.label54);
-            this.panel4.Location = new System.Drawing.Point(460, 437);
+            this.panel4.Location = new System.Drawing.Point(460, 441);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(223, 527);
             this.panel4.TabIndex = 26;
@@ -547,6 +535,24 @@
             this.panel5.Size = new System.Drawing.Size(180, 506);
             this.panel5.TabIndex = 88;
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(15, 232);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(87, 17);
+            this.label19.TabIndex = 122;
+            this.label19.Text = "Investigation";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(21, 8);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(74, 17);
+            this.label20.TabIndex = 121;
+            this.label20.Text = "Acrobatics";
+            // 
             // txtSurvival
             // 
             this.txtSurvival.Location = new System.Drawing.Point(119, 479);
@@ -559,6 +565,59 @@
             this.txtSurvival.Size = new System.Drawing.Size(55, 22);
             this.txtSurvival.TabIndex = 120;
             this.txtSurvival.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblPersuasion
+            // 
+            this.lblPersuasion.AutoSize = true;
+            this.lblPersuasion.Location = new System.Drawing.Point(19, 369);
+            this.lblPersuasion.Name = "lblPersuasion";
+            this.lblPersuasion.Size = new System.Drawing.Size(79, 17);
+            this.lblPersuasion.TabIndex = 50;
+            this.lblPersuasion.Text = "Persuasion";
+            // 
+            // txtInvestigation
+            // 
+            this.txtInvestigation.Location = new System.Drawing.Point(119, 227);
+            this.txtInvestigation.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.txtInvestigation.Name = "txtInvestigation";
+            this.txtInvestigation.Size = new System.Drawing.Size(55, 22);
+            this.txtInvestigation.TabIndex = 124;
+            this.txtInvestigation.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblReligion
+            // 
+            this.lblReligion.AutoSize = true;
+            this.lblReligion.Location = new System.Drawing.Point(29, 397);
+            this.lblReligion.Name = "lblReligion";
+            this.lblReligion.Size = new System.Drawing.Size(59, 17);
+            this.lblReligion.TabIndex = 52;
+            this.lblReligion.Text = "Religion";
+            // 
+            // txtAcrobatics
+            // 
+            this.txtAcrobatics.Location = new System.Drawing.Point(119, 3);
+            this.txtAcrobatics.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.txtAcrobatics.Name = "txtAcrobatics";
+            this.txtAcrobatics.Size = new System.Drawing.Size(55, 22);
+            this.txtAcrobatics.TabIndex = 123;
+            this.txtAcrobatics.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblPerformance
+            // 
+            this.lblPerformance.AutoSize = true;
+            this.lblPerformance.Location = new System.Drawing.Point(14, 341);
+            this.lblPerformance.Name = "lblPerformance";
+            this.lblPerformance.Size = new System.Drawing.Size(89, 17);
+            this.lblPerformance.TabIndex = 48;
+            this.lblPerformance.Text = "Performance";
             // 
             // txtStealth
             // 
@@ -573,6 +632,33 @@
             this.txtStealth.TabIndex = 119;
             this.txtStealth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // lblSleightOfHand
+            // 
+            this.lblSleightOfHand.AutoSize = true;
+            this.lblSleightOfHand.Location = new System.Drawing.Point(6, 425);
+            this.lblSleightOfHand.Name = "lblSleightOfHand";
+            this.lblSleightOfHand.Size = new System.Drawing.Size(105, 17);
+            this.lblSleightOfHand.TabIndex = 54;
+            this.lblSleightOfHand.Text = "Sleight of Hand";
+            // 
+            // lblPerception
+            // 
+            this.lblPerception.AutoSize = true;
+            this.lblPerception.Location = new System.Drawing.Point(20, 313);
+            this.lblPerception.Name = "lblPerception";
+            this.lblPerception.Size = new System.Drawing.Size(76, 17);
+            this.lblPerception.TabIndex = 46;
+            this.lblPerception.Text = "Perception";
+            // 
+            // lblStealth
+            // 
+            this.lblStealth.AutoSize = true;
+            this.lblStealth.Location = new System.Drawing.Point(32, 453);
+            this.lblStealth.Name = "lblStealth";
+            this.lblStealth.Size = new System.Drawing.Size(52, 17);
+            this.lblStealth.TabIndex = 56;
+            this.lblStealth.Text = "Stealth";
+            // 
             // txtSleightOfHand
             // 
             this.txtSleightOfHand.Location = new System.Drawing.Point(119, 423);
@@ -585,6 +671,24 @@
             this.txtSleightOfHand.Size = new System.Drawing.Size(55, 22);
             this.txtSleightOfHand.TabIndex = 118;
             this.txtSleightOfHand.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblNature
+            // 
+            this.lblNature.AutoSize = true;
+            this.lblNature.Location = new System.Drawing.Point(33, 285);
+            this.lblNature.Name = "lblNature";
+            this.lblNature.Size = new System.Drawing.Size(51, 17);
+            this.lblNature.TabIndex = 44;
+            this.lblNature.Text = "Nature";
+            // 
+            // lblSurvival
+            // 
+            this.lblSurvival.AutoSize = true;
+            this.lblSurvival.Location = new System.Drawing.Point(29, 481);
+            this.lblSurvival.Name = "lblSurvival";
+            this.lblSurvival.Size = new System.Drawing.Size(58, 17);
+            this.lblSurvival.TabIndex = 58;
+            this.lblSurvival.Text = "Survival";
             // 
             // txtReligion
             // 
@@ -599,6 +703,24 @@
             this.txtReligion.TabIndex = 117;
             this.txtReligion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // lblMedicine
+            // 
+            this.lblMedicine.AutoSize = true;
+            this.lblMedicine.Location = new System.Drawing.Point(26, 257);
+            this.lblMedicine.Name = "lblMedicine";
+            this.lblMedicine.Size = new System.Drawing.Size(64, 17);
+            this.lblMedicine.TabIndex = 42;
+            this.lblMedicine.Text = "Medicine";
+            // 
+            // lblAnimalHandling
+            // 
+            this.lblAnimalHandling.AutoSize = true;
+            this.lblAnimalHandling.Location = new System.Drawing.Point(3, 33);
+            this.lblAnimalHandling.Name = "lblAnimalHandling";
+            this.lblAnimalHandling.Size = new System.Drawing.Size(110, 17);
+            this.lblAnimalHandling.TabIndex = 28;
+            this.lblAnimalHandling.Text = "Animal Handling";
+            // 
             // txtPersuasion
             // 
             this.txtPersuasion.Location = new System.Drawing.Point(119, 367);
@@ -612,135 +734,14 @@
             this.txtPersuasion.TabIndex = 116;
             this.txtPersuasion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtPerformance
+            // lblArcana
             // 
-            this.txtPerformance.Location = new System.Drawing.Point(119, 339);
-            this.txtPerformance.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
-            this.txtPerformance.Name = "txtPerformance";
-            this.txtPerformance.Size = new System.Drawing.Size(55, 22);
-            this.txtPerformance.TabIndex = 115;
-            this.txtPerformance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtPerception
-            // 
-            this.txtPerception.Location = new System.Drawing.Point(119, 311);
-            this.txtPerception.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
-            this.txtPerception.Name = "txtPerception";
-            this.txtPerception.Size = new System.Drawing.Size(55, 22);
-            this.txtPerception.TabIndex = 114;
-            this.txtPerception.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtNature
-            // 
-            this.txtNature.Location = new System.Drawing.Point(119, 283);
-            this.txtNature.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
-            this.txtNature.Name = "txtNature";
-            this.txtNature.Size = new System.Drawing.Size(55, 22);
-            this.txtNature.TabIndex = 113;
-            this.txtNature.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtMedicine
-            // 
-            this.txtMedicine.Location = new System.Drawing.Point(119, 255);
-            this.txtMedicine.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
-            this.txtMedicine.Name = "txtMedicine";
-            this.txtMedicine.Size = new System.Drawing.Size(55, 22);
-            this.txtMedicine.TabIndex = 112;
-            this.txtMedicine.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtIntimidation
-            // 
-            this.txtIntimidation.Location = new System.Drawing.Point(119, 199);
-            this.txtIntimidation.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
-            this.txtIntimidation.Name = "txtIntimidation";
-            this.txtIntimidation.Size = new System.Drawing.Size(55, 22);
-            this.txtIntimidation.TabIndex = 111;
-            this.txtIntimidation.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtInsight
-            // 
-            this.txtInsight.Location = new System.Drawing.Point(119, 171);
-            this.txtInsight.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
-            this.txtInsight.Name = "txtInsight";
-            this.txtInsight.Size = new System.Drawing.Size(55, 22);
-            this.txtInsight.TabIndex = 110;
-            this.txtInsight.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtHistory
-            // 
-            this.txtHistory.Location = new System.Drawing.Point(119, 143);
-            this.txtHistory.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
-            this.txtHistory.Name = "txtHistory";
-            this.txtHistory.Size = new System.Drawing.Size(55, 22);
-            this.txtHistory.TabIndex = 109;
-            this.txtHistory.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtDeception
-            // 
-            this.txtDeception.Location = new System.Drawing.Point(119, 115);
-            this.txtDeception.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
-            this.txtDeception.Name = "txtDeception";
-            this.txtDeception.Size = new System.Drawing.Size(55, 22);
-            this.txtDeception.TabIndex = 108;
-            this.txtDeception.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtAthletics
-            // 
-            this.txtAthletics.Location = new System.Drawing.Point(119, 87);
-            this.txtAthletics.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
-            this.txtAthletics.Name = "txtAthletics";
-            this.txtAthletics.Size = new System.Drawing.Size(55, 22);
-            this.txtAthletics.TabIndex = 107;
-            this.txtAthletics.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtArcana
-            // 
-            this.txtArcana.Location = new System.Drawing.Point(119, 59);
-            this.txtArcana.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
-            this.txtArcana.Name = "txtArcana";
-            this.txtArcana.Size = new System.Drawing.Size(55, 22);
-            this.txtArcana.TabIndex = 106;
-            this.txtArcana.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lblArcana.AutoSize = true;
+            this.lblArcana.Location = new System.Drawing.Point(32, 61);
+            this.lblArcana.Name = "lblArcana";
+            this.lblArcana.Size = new System.Drawing.Size(53, 17);
+            this.lblArcana.TabIndex = 30;
+            this.lblArcana.Text = "Arcana";
             // 
             // txtAnimalHandling
             // 
@@ -755,104 +756,18 @@
             this.txtAnimalHandling.TabIndex = 105;
             this.txtAnimalHandling.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // lblAnimalHandling
+            // txtPerformance
             // 
-            this.lblAnimalHandling.AutoSize = true;
-            this.lblAnimalHandling.Location = new System.Drawing.Point(3, 33);
-            this.lblAnimalHandling.Name = "lblAnimalHandling";
-            this.lblAnimalHandling.Size = new System.Drawing.Size(110, 17);
-            this.lblAnimalHandling.TabIndex = 28;
-            this.lblAnimalHandling.Text = "Animal Handling";
-            // 
-            // lblSurvival
-            // 
-            this.lblSurvival.AutoSize = true;
-            this.lblSurvival.Location = new System.Drawing.Point(29, 481);
-            this.lblSurvival.Name = "lblSurvival";
-            this.lblSurvival.Size = new System.Drawing.Size(58, 17);
-            this.lblSurvival.TabIndex = 58;
-            this.lblSurvival.Text = "Survival";
-            // 
-            // lblStealth
-            // 
-            this.lblStealth.AutoSize = true;
-            this.lblStealth.Location = new System.Drawing.Point(32, 453);
-            this.lblStealth.Name = "lblStealth";
-            this.lblStealth.Size = new System.Drawing.Size(52, 17);
-            this.lblStealth.TabIndex = 56;
-            this.lblStealth.Text = "Stealth";
-            // 
-            // lblSleightOfHand
-            // 
-            this.lblSleightOfHand.AutoSize = true;
-            this.lblSleightOfHand.Location = new System.Drawing.Point(6, 425);
-            this.lblSleightOfHand.Name = "lblSleightOfHand";
-            this.lblSleightOfHand.Size = new System.Drawing.Size(105, 17);
-            this.lblSleightOfHand.TabIndex = 54;
-            this.lblSleightOfHand.Text = "Sleight of Hand";
-            // 
-            // lblReligion
-            // 
-            this.lblReligion.AutoSize = true;
-            this.lblReligion.Location = new System.Drawing.Point(29, 397);
-            this.lblReligion.Name = "lblReligion";
-            this.lblReligion.Size = new System.Drawing.Size(59, 17);
-            this.lblReligion.TabIndex = 52;
-            this.lblReligion.Text = "Religion";
-            // 
-            // lblPersuasion
-            // 
-            this.lblPersuasion.AutoSize = true;
-            this.lblPersuasion.Location = new System.Drawing.Point(19, 369);
-            this.lblPersuasion.Name = "lblPersuasion";
-            this.lblPersuasion.Size = new System.Drawing.Size(79, 17);
-            this.lblPersuasion.TabIndex = 50;
-            this.lblPersuasion.Text = "Persuasion";
-            // 
-            // lblPerformance
-            // 
-            this.lblPerformance.AutoSize = true;
-            this.lblPerformance.Location = new System.Drawing.Point(14, 341);
-            this.lblPerformance.Name = "lblPerformance";
-            this.lblPerformance.Size = new System.Drawing.Size(89, 17);
-            this.lblPerformance.TabIndex = 48;
-            this.lblPerformance.Text = "Performance";
-            // 
-            // lblPerception
-            // 
-            this.lblPerception.AutoSize = true;
-            this.lblPerception.Location = new System.Drawing.Point(20, 313);
-            this.lblPerception.Name = "lblPerception";
-            this.lblPerception.Size = new System.Drawing.Size(76, 17);
-            this.lblPerception.TabIndex = 46;
-            this.lblPerception.Text = "Perception";
-            // 
-            // lblNature
-            // 
-            this.lblNature.AutoSize = true;
-            this.lblNature.Location = new System.Drawing.Point(33, 285);
-            this.lblNature.Name = "lblNature";
-            this.lblNature.Size = new System.Drawing.Size(51, 17);
-            this.lblNature.TabIndex = 44;
-            this.lblNature.Text = "Nature";
-            // 
-            // lblMedicine
-            // 
-            this.lblMedicine.AutoSize = true;
-            this.lblMedicine.Location = new System.Drawing.Point(26, 257);
-            this.lblMedicine.Name = "lblMedicine";
-            this.lblMedicine.Size = new System.Drawing.Size(64, 17);
-            this.lblMedicine.TabIndex = 42;
-            this.lblMedicine.Text = "Medicine";
-            // 
-            // lblArcana
-            // 
-            this.lblArcana.AutoSize = true;
-            this.lblArcana.Location = new System.Drawing.Point(32, 61);
-            this.lblArcana.Name = "lblArcana";
-            this.lblArcana.Size = new System.Drawing.Size(53, 17);
-            this.lblArcana.TabIndex = 30;
-            this.lblArcana.Text = "Arcana";
+            this.txtPerformance.Location = new System.Drawing.Point(119, 339);
+            this.txtPerformance.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.txtPerformance.Name = "txtPerformance";
+            this.txtPerformance.Size = new System.Drawing.Size(55, 22);
+            this.txtPerformance.TabIndex = 115;
+            this.txtPerformance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblIntimidation
             // 
@@ -863,6 +778,32 @@
             this.lblIntimidation.TabIndex = 40;
             this.lblIntimidation.Text = "Intimidation";
             // 
+            // txtArcana
+            // 
+            this.txtArcana.Location = new System.Drawing.Point(119, 59);
+            this.txtArcana.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.txtArcana.Name = "txtArcana";
+            this.txtArcana.Size = new System.Drawing.Size(55, 22);
+            this.txtArcana.TabIndex = 106;
+            this.txtArcana.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtPerception
+            // 
+            this.txtPerception.Location = new System.Drawing.Point(119, 311);
+            this.txtPerception.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.txtPerception.Name = "txtPerception";
+            this.txtPerception.Size = new System.Drawing.Size(55, 22);
+            this.txtPerception.TabIndex = 114;
+            this.txtPerception.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // lblAthletics
             // 
             this.lblAthletics.AutoSize = true;
@@ -871,6 +812,32 @@
             this.lblAthletics.Size = new System.Drawing.Size(61, 17);
             this.lblAthletics.TabIndex = 32;
             this.lblAthletics.Text = "Athletics";
+            // 
+            // txtAthletics
+            // 
+            this.txtAthletics.Location = new System.Drawing.Point(119, 87);
+            this.txtAthletics.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.txtAthletics.Name = "txtAthletics";
+            this.txtAthletics.Size = new System.Drawing.Size(55, 22);
+            this.txtAthletics.TabIndex = 107;
+            this.txtAthletics.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtNature
+            // 
+            this.txtNature.Location = new System.Drawing.Point(119, 283);
+            this.txtNature.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.txtNature.Name = "txtNature";
+            this.txtNature.Size = new System.Drawing.Size(55, 22);
+            this.txtNature.TabIndex = 113;
+            this.txtNature.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblInsight
             // 
@@ -881,6 +848,32 @@
             this.lblInsight.TabIndex = 38;
             this.lblInsight.Text = "Insight";
             // 
+            // txtDeception
+            // 
+            this.txtDeception.Location = new System.Drawing.Point(119, 115);
+            this.txtDeception.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.txtDeception.Name = "txtDeception";
+            this.txtDeception.Size = new System.Drawing.Size(55, 22);
+            this.txtDeception.TabIndex = 108;
+            this.txtDeception.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtMedicine
+            // 
+            this.txtMedicine.Location = new System.Drawing.Point(119, 255);
+            this.txtMedicine.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.txtMedicine.Name = "txtMedicine";
+            this.txtMedicine.Size = new System.Drawing.Size(55, 22);
+            this.txtMedicine.TabIndex = 112;
+            this.txtMedicine.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // lblDeception
             // 
             this.lblDeception.AutoSize = true;
@@ -890,6 +883,32 @@
             this.lblDeception.TabIndex = 34;
             this.lblDeception.Text = "Deception";
             // 
+            // txtHistory
+            // 
+            this.txtHistory.Location = new System.Drawing.Point(119, 143);
+            this.txtHistory.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.txtHistory.Name = "txtHistory";
+            this.txtHistory.Size = new System.Drawing.Size(55, 22);
+            this.txtHistory.TabIndex = 109;
+            this.txtHistory.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtIntimidation
+            // 
+            this.txtIntimidation.Location = new System.Drawing.Point(119, 199);
+            this.txtIntimidation.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.txtIntimidation.Name = "txtIntimidation";
+            this.txtIntimidation.Size = new System.Drawing.Size(55, 22);
+            this.txtIntimidation.TabIndex = 111;
+            this.txtIntimidation.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // lblHistory
             // 
             this.lblHistory.AutoSize = true;
@@ -898,6 +917,19 @@
             this.lblHistory.Size = new System.Drawing.Size(52, 17);
             this.lblHistory.TabIndex = 36;
             this.lblHistory.Text = "History";
+            // 
+            // txtInsight
+            // 
+            this.txtInsight.Location = new System.Drawing.Point(119, 171);
+            this.txtInsight.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.txtInsight.Name = "txtInsight";
+            this.txtInsight.Size = new System.Drawing.Size(55, 22);
+            this.txtInsight.TabIndex = 110;
+            this.txtInsight.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label54
             // 
@@ -986,7 +1018,7 @@
             this.tabControl1.Location = new System.Drawing.Point(8, 590);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(446, 376);
+            this.tabControl1.Size = new System.Drawing.Size(446, 378);
             this.tabControl1.TabIndex = 36;
             // 
             // tabInventory
@@ -1002,7 +1034,7 @@
             this.tabInventory.Controls.Add(this.txtItemDescription);
             this.tabInventory.Location = new System.Drawing.Point(4, 25);
             this.tabInventory.Name = "tabInventory";
-            this.tabInventory.Size = new System.Drawing.Size(438, 347);
+            this.tabInventory.Size = new System.Drawing.Size(438, 349);
             this.tabInventory.TabIndex = 0;
             this.tabInventory.Text = "Inventory";
             this.tabInventory.UseVisualStyleBackColor = true;
@@ -1067,7 +1099,7 @@
             this.tabFeats.Location = new System.Drawing.Point(4, 25);
             this.tabFeats.Name = "tabFeats";
             this.tabFeats.Padding = new System.Windows.Forms.Padding(3);
-            this.tabFeats.Size = new System.Drawing.Size(438, 347);
+            this.tabFeats.Size = new System.Drawing.Size(438, 349);
             this.tabFeats.TabIndex = 1;
             this.tabFeats.Text = "Feats";
             this.tabFeats.UseVisualStyleBackColor = true;
@@ -1092,7 +1124,7 @@
             this.tabProficiencies.Controls.Add(this.dgvProficiencies);
             this.tabProficiencies.Location = new System.Drawing.Point(4, 25);
             this.tabProficiencies.Name = "tabProficiencies";
-            this.tabProficiencies.Size = new System.Drawing.Size(438, 347);
+            this.tabProficiencies.Size = new System.Drawing.Size(438, 349);
             this.tabProficiencies.TabIndex = 2;
             this.tabProficiencies.Text = "Proficiencies";
             this.tabProficiencies.UseVisualStyleBackColor = true;
@@ -1133,6 +1165,7 @@
             this.txtProficiencyBonus.Name = "txtProficiencyBonus";
             this.txtProficiencyBonus.Size = new System.Drawing.Size(46, 22);
             this.txtProficiencyBonus.TabIndex = 40;
+            this.txtProficiencyBonus.ValueChanged += new System.EventHandler(this.txtProficiencyBonus_ValueChanged);
             // 
             // lblProficiencyBonus
             // 
@@ -1165,7 +1198,7 @@
             this.tabBackground.Controls.Add(this.lblLore);
             this.tabBackground.Location = new System.Drawing.Point(4, 25);
             this.tabBackground.Name = "tabBackground";
-            this.tabBackground.Size = new System.Drawing.Size(438, 347);
+            this.tabBackground.Size = new System.Drawing.Size(438, 349);
             this.tabBackground.TabIndex = 3;
             this.tabBackground.Text = "Background";
             this.tabBackground.UseVisualStyleBackColor = true;
@@ -1312,8 +1345,8 @@
             // 
             // tabSpellbook
             // 
-            this.tabSpellbook.Controls.Add(this.label17);
-            this.tabSpellbook.Controls.Add(this.label18);
+            this.tabSpellbook.Controls.Add(this.lblSpellAttackBonus);
+            this.tabSpellbook.Controls.Add(this.lblSpellSaveDC);
             this.tabSpellbook.Controls.Add(this.lblSpellCastingAbility);
             this.tabSpellbook.Controls.Add(this.btnManageSpells);
             this.tabSpellbook.Controls.Add(this.txtSpellDescription);
@@ -1366,6 +1399,24 @@
             this.tabSpellbook.Text = "Spellbook";
             this.tabSpellbook.UseVisualStyleBackColor = true;
             // 
+            // lblSpellAttackBonus
+            // 
+            this.lblSpellAttackBonus.AutoSize = true;
+            this.lblSpellAttackBonus.Location = new System.Drawing.Point(132, 58);
+            this.lblSpellAttackBonus.Name = "lblSpellAttackBonus";
+            this.lblSpellAttackBonus.Size = new System.Drawing.Size(16, 17);
+            this.lblSpellAttackBonus.TabIndex = 87;
+            this.lblSpellAttackBonus.Text = "0";
+            // 
+            // lblSpellSaveDC
+            // 
+            this.lblSpellSaveDC.AutoSize = true;
+            this.lblSpellSaveDC.Location = new System.Drawing.Point(132, 41);
+            this.lblSpellSaveDC.Name = "lblSpellSaveDC";
+            this.lblSpellSaveDC.Size = new System.Drawing.Size(16, 17);
+            this.lblSpellSaveDC.TabIndex = 86;
+            this.lblSpellSaveDC.Text = "0";
+            // 
             // lblSpellCastingAbility
             // 
             this.lblSpellCastingAbility.AutoSize = true;
@@ -1374,23 +1425,6 @@
             this.lblSpellCastingAbility.Size = new System.Drawing.Size(42, 17);
             this.lblSpellCastingAbility.TabIndex = 84;
             this.lblSpellCastingAbility.Text = "None";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(4, 24);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(129, 17);
-            this.label16.TabIndex = 83;
-            this.label16.Text = "Spellcasting Ability:";
-            // 
-            // txtSpellSlot_Level1_Current
-            // 
-            this.txtSpellSlot_Level1_Current.Location = new System.Drawing.Point(63, 104);
-            this.txtSpellSlot_Level1_Current.Name = "txtSpellSlot_Level1_Current";
-            this.txtSpellSlot_Level1_Current.Size = new System.Drawing.Size(46, 22);
-            this.txtSpellSlot_Level1_Current.TabIndex = 82;
-            this.txtSpellSlot_Level1_Current.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnManageSpells
             // 
@@ -1402,6 +1436,91 @@
             this.btnManageSpells.UseVisualStyleBackColor = true;
             this.btnManageSpells.Click += new System.EventHandler(this.btnManageSpells_Click);
             // 
+            // txtSpellDescription
+            // 
+            this.txtSpellDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSpellDescription.Location = new System.Drawing.Point(184, 178);
+            this.txtSpellDescription.Multiline = true;
+            this.txtSpellDescription.Name = "txtSpellDescription";
+            this.txtSpellDescription.ReadOnly = true;
+            this.txtSpellDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtSpellDescription.Size = new System.Drawing.Size(251, 174);
+            this.txtSpellDescription.TabIndex = 72;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(4, 24);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(129, 17);
+            this.label16.TabIndex = 83;
+            this.label16.Text = "Spellcasting Ability:";
+            // 
+            // dgvSpells
+            // 
+            this.dgvSpells.AllowUserToResizeColumns = false;
+            this.dgvSpells.AllowUserToResizeRows = false;
+            this.dgvSpells.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSpells.Location = new System.Drawing.Point(184, 23);
+            this.dgvSpells.Name = "dgvSpells";
+            this.dgvSpells.RowHeadersVisible = false;
+            this.dgvSpells.RowTemplate.Height = 24;
+            this.dgvSpells.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSpells.Size = new System.Drawing.Size(251, 149);
+            this.dgvSpells.TabIndex = 68;
+            this.dgvSpells.SelectionChanged += new System.EventHandler(this.dgvSpells_SelectionChanged);
+            // 
+            // txtSpellSlot_Level1_Current
+            // 
+            this.txtSpellSlot_Level1_Current.Location = new System.Drawing.Point(63, 104);
+            this.txtSpellSlot_Level1_Current.Name = "txtSpellSlot_Level1_Current";
+            this.txtSpellSlot_Level1_Current.Size = new System.Drawing.Size(46, 22);
+            this.txtSpellSlot_Level1_Current.TabIndex = 82;
+            this.txtSpellSlot_Level1_Current.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(179, 3);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(46, 17);
+            this.label41.TabIndex = 67;
+            this.label41.Text = "Spells";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(115, 106);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(12, 17);
+            this.label32.TabIndex = 13;
+            this.label32.Text = "/";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(115, 246);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(12, 17);
+            this.label37.TabIndex = 55;
+            this.label37.Text = "/";
+            // 
+            // txtSpellSlot_Level6_Current
+            // 
+            this.txtSpellSlot_Level6_Current.Location = new System.Drawing.Point(63, 243);
+            this.txtSpellSlot_Level6_Current.Name = "txtSpellSlot_Level6_Current";
+            this.txtSpellSlot_Level6_Current.Size = new System.Drawing.Size(46, 22);
+            this.txtSpellSlot_Level6_Current.TabIndex = 56;
+            this.txtSpellSlot_Level6_Current.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtSpellSlot_Level8_Max
+            // 
+            this.txtSpellSlot_Level8_Max.Location = new System.Drawing.Point(132, 300);
+            this.txtSpellSlot_Level8_Max.Name = "txtSpellSlot_Level8_Max";
+            this.txtSpellSlot_Level8_Max.Size = new System.Drawing.Size(46, 22);
+            this.txtSpellSlot_Level8_Max.TabIndex = 66;
+            this.txtSpellSlot_Level8_Max.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label47
             // 
             this.label47.AutoSize = true;
@@ -1410,6 +1529,23 @@
             this.label47.Size = new System.Drawing.Size(130, 17);
             this.label47.TabIndex = 80;
             this.label47.Text = "Spell Attack Bonus:";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(115, 302);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(12, 17);
+            this.label40.TabIndex = 64;
+            this.label40.Text = "/";
+            // 
+            // txtSpellSlot_Level1_Max
+            // 
+            this.txtSpellSlot_Level1_Max.Location = new System.Drawing.Point(132, 104);
+            this.txtSpellSlot_Level1_Max.Name = "txtSpellSlot_Level1_Max";
+            this.txtSpellSlot_Level1_Max.Size = new System.Drawing.Size(46, 22);
+            this.txtSpellSlot_Level1_Max.TabIndex = 42;
+            this.txtSpellSlot_Level1_Max.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -1420,6 +1556,23 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Spell Slots";
             // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(3, 134);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(54, 17);
+            this.label31.TabIndex = 9;
+            this.label31.Text = "Level 2";
+            // 
+            // txtSpellSlot_Level5_Max
+            // 
+            this.txtSpellSlot_Level5_Max.Location = new System.Drawing.Point(132, 216);
+            this.txtSpellSlot_Level5_Max.Name = "txtSpellSlot_Level5_Max";
+            this.txtSpellSlot_Level5_Max.Size = new System.Drawing.Size(46, 22);
+            this.txtSpellSlot_Level5_Max.TabIndex = 54;
+            this.txtSpellSlot_Level5_Max.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -1429,6 +1582,24 @@
             this.label7.TabIndex = 1;
             this.label7.Text = "Level 1";
             // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(3, 330);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(54, 17);
+            this.label24.TabIndex = 2;
+            this.label24.Text = "Level 9";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(115, 134);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(12, 17);
+            this.label33.TabIndex = 43;
+            this.label33.Text = "/";
+            // 
             // txtSpellSlot_Level3_Max
             // 
             this.txtSpellSlot_Level3_Max.Location = new System.Drawing.Point(132, 160);
@@ -1436,6 +1607,47 @@
             this.txtSpellSlot_Level3_Max.Size = new System.Drawing.Size(46, 22);
             this.txtSpellSlot_Level3_Max.TabIndex = 48;
             this.txtSpellSlot_Level3_Max.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtSpellSlot_Level6_Max
+            // 
+            this.txtSpellSlot_Level6_Max.Location = new System.Drawing.Point(132, 244);
+            this.txtSpellSlot_Level6_Max.Name = "txtSpellSlot_Level6_Max";
+            this.txtSpellSlot_Level6_Max.Size = new System.Drawing.Size(46, 22);
+            this.txtSpellSlot_Level6_Max.TabIndex = 57;
+            this.txtSpellSlot_Level6_Max.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtSpellSlot_Level5_Current
+            // 
+            this.txtSpellSlot_Level5_Current.Location = new System.Drawing.Point(63, 215);
+            this.txtSpellSlot_Level5_Current.Name = "txtSpellSlot_Level5_Current";
+            this.txtSpellSlot_Level5_Current.Size = new System.Drawing.Size(46, 22);
+            this.txtSpellSlot_Level5_Current.TabIndex = 53;
+            this.txtSpellSlot_Level5_Current.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtSpellSlot_Level9_Max
+            // 
+            this.txtSpellSlot_Level9_Max.Location = new System.Drawing.Point(132, 328);
+            this.txtSpellSlot_Level9_Max.Name = "txtSpellSlot_Level9_Max";
+            this.txtSpellSlot_Level9_Max.Size = new System.Drawing.Size(46, 22);
+            this.txtSpellSlot_Level9_Max.TabIndex = 63;
+            this.txtSpellSlot_Level9_Max.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtSpellSlot_Level8_Current
+            // 
+            this.txtSpellSlot_Level8_Current.Location = new System.Drawing.Point(63, 299);
+            this.txtSpellSlot_Level8_Current.Name = "txtSpellSlot_Level8_Current";
+            this.txtSpellSlot_Level8_Current.Size = new System.Drawing.Size(46, 22);
+            this.txtSpellSlot_Level8_Current.TabIndex = 65;
+            this.txtSpellSlot_Level8_Current.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(3, 161);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(54, 17);
+            this.label30.TabIndex = 8;
+            this.label30.Text = "Level 3";
             // 
             // label35
             // 
@@ -1446,6 +1658,31 @@
             this.label35.TabIndex = 49;
             this.label35.Text = "/";
             // 
+            // txtSpellSlot_Level2_Current
+            // 
+            this.txtSpellSlot_Level2_Current.Location = new System.Drawing.Point(63, 131);
+            this.txtSpellSlot_Level2_Current.Name = "txtSpellSlot_Level2_Current";
+            this.txtSpellSlot_Level2_Current.Size = new System.Drawing.Size(46, 22);
+            this.txtSpellSlot_Level2_Current.TabIndex = 44;
+            this.txtSpellSlot_Level2_Current.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtSpellSlot_Level7_Max
+            // 
+            this.txtSpellSlot_Level7_Max.Location = new System.Drawing.Point(132, 272);
+            this.txtSpellSlot_Level7_Max.Name = "txtSpellSlot_Level7_Max";
+            this.txtSpellSlot_Level7_Max.Size = new System.Drawing.Size(46, 22);
+            this.txtSpellSlot_Level7_Max.TabIndex = 60;
+            this.txtSpellSlot_Level7_Max.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(3, 301);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(54, 17);
+            this.label25.TabIndex = 3;
+            this.label25.Text = "Level 8";
+            // 
             // txtSpellSlot_Level3_Current
             // 
             this.txtSpellSlot_Level3_Current.Location = new System.Drawing.Point(63, 159);
@@ -1453,6 +1690,33 @@
             this.txtSpellSlot_Level3_Current.Size = new System.Drawing.Size(46, 22);
             this.txtSpellSlot_Level3_Current.TabIndex = 47;
             this.txtSpellSlot_Level3_Current.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(115, 274);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(12, 17);
+            this.label38.TabIndex = 58;
+            this.label38.Text = "/";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(3, 245);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(54, 17);
+            this.label27.TabIndex = 5;
+            this.label27.Text = "Level 6";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(115, 218);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(12, 17);
+            this.label36.TabIndex = 52;
+            this.label36.Text = "/";
             // 
             // label46
             // 
@@ -1463,6 +1727,31 @@
             this.label46.TabIndex = 77;
             this.label46.Text = "Spell Save DC:";
             // 
+            // txtSpellSlot_Level9_Current
+            // 
+            this.txtSpellSlot_Level9_Current.Location = new System.Drawing.Point(63, 327);
+            this.txtSpellSlot_Level9_Current.Name = "txtSpellSlot_Level9_Current";
+            this.txtSpellSlot_Level9_Current.Size = new System.Drawing.Size(46, 22);
+            this.txtSpellSlot_Level9_Current.TabIndex = 62;
+            this.txtSpellSlot_Level9_Current.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(3, 218);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(54, 17);
+            this.label28.TabIndex = 6;
+            this.label28.Text = "Level 5";
+            // 
+            // txtSpellSlot_Level2_Max
+            // 
+            this.txtSpellSlot_Level2_Max.Location = new System.Drawing.Point(132, 132);
+            this.txtSpellSlot_Level2_Max.Name = "txtSpellSlot_Level2_Max";
+            this.txtSpellSlot_Level2_Max.Size = new System.Drawing.Size(46, 22);
+            this.txtSpellSlot_Level2_Max.TabIndex = 45;
+            this.txtSpellSlot_Level2_Max.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // txtSpellSlot_Level4_Current
             // 
             this.txtSpellSlot_Level4_Current.Location = new System.Drawing.Point(63, 187);
@@ -1470,6 +1759,33 @@
             this.txtSpellSlot_Level4_Current.Size = new System.Drawing.Size(46, 22);
             this.txtSpellSlot_Level4_Current.TabIndex = 50;
             this.txtSpellSlot_Level4_Current.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(3, 189);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(54, 17);
+            this.label29.TabIndex = 7;
+            this.label29.Text = "Level 4";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(115, 330);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(12, 17);
+            this.label39.TabIndex = 61;
+            this.label39.Text = "/";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(3, 274);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(54, 17);
+            this.label26.TabIndex = 4;
+            this.label26.Text = "Level 7";
             // 
             // label34
             // 
@@ -1488,236 +1804,6 @@
             this.txtSpellSlot_Level4_Max.TabIndex = 51;
             this.txtSpellSlot_Level4_Max.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtSpellDescription
-            // 
-            this.txtSpellDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSpellDescription.Location = new System.Drawing.Point(184, 178);
-            this.txtSpellDescription.Multiline = true;
-            this.txtSpellDescription.Name = "txtSpellDescription";
-            this.txtSpellDescription.ReadOnly = true;
-            this.txtSpellDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtSpellDescription.Size = new System.Drawing.Size(251, 174);
-            this.txtSpellDescription.TabIndex = 72;
-            // 
-            // txtSpellSlot_Level2_Max
-            // 
-            this.txtSpellSlot_Level2_Max.Location = new System.Drawing.Point(132, 132);
-            this.txtSpellSlot_Level2_Max.Name = "txtSpellSlot_Level2_Max";
-            this.txtSpellSlot_Level2_Max.Size = new System.Drawing.Size(46, 22);
-            this.txtSpellSlot_Level2_Max.TabIndex = 45;
-            this.txtSpellSlot_Level2_Max.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(115, 218);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(12, 17);
-            this.label36.TabIndex = 52;
-            this.label36.Text = "/";
-            // 
-            // dgvSpells
-            // 
-            this.dgvSpells.AllowUserToResizeColumns = false;
-            this.dgvSpells.AllowUserToResizeRows = false;
-            this.dgvSpells.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSpells.Location = new System.Drawing.Point(184, 23);
-            this.dgvSpells.Name = "dgvSpells";
-            this.dgvSpells.RowHeadersVisible = false;
-            this.dgvSpells.RowTemplate.Height = 24;
-            this.dgvSpells.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSpells.Size = new System.Drawing.Size(251, 149);
-            this.dgvSpells.TabIndex = 68;
-            this.dgvSpells.SelectionChanged += new System.EventHandler(this.dgvSpells_SelectionChanged);
-            // 
-            // txtSpellSlot_Level2_Current
-            // 
-            this.txtSpellSlot_Level2_Current.Location = new System.Drawing.Point(63, 131);
-            this.txtSpellSlot_Level2_Current.Name = "txtSpellSlot_Level2_Current";
-            this.txtSpellSlot_Level2_Current.Size = new System.Drawing.Size(46, 22);
-            this.txtSpellSlot_Level2_Current.TabIndex = 44;
-            this.txtSpellSlot_Level2_Current.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(179, 3);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(46, 17);
-            this.label41.TabIndex = 67;
-            this.label41.Text = "Spells";
-            // 
-            // txtSpellSlot_Level5_Current
-            // 
-            this.txtSpellSlot_Level5_Current.Location = new System.Drawing.Point(63, 215);
-            this.txtSpellSlot_Level5_Current.Name = "txtSpellSlot_Level5_Current";
-            this.txtSpellSlot_Level5_Current.Size = new System.Drawing.Size(46, 22);
-            this.txtSpellSlot_Level5_Current.TabIndex = 53;
-            this.txtSpellSlot_Level5_Current.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(115, 134);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(12, 17);
-            this.label33.TabIndex = 43;
-            this.label33.Text = "/";
-            // 
-            // txtSpellSlot_Level5_Max
-            // 
-            this.txtSpellSlot_Level5_Max.Location = new System.Drawing.Point(132, 216);
-            this.txtSpellSlot_Level5_Max.Name = "txtSpellSlot_Level5_Max";
-            this.txtSpellSlot_Level5_Max.Size = new System.Drawing.Size(46, 22);
-            this.txtSpellSlot_Level5_Max.TabIndex = 54;
-            this.txtSpellSlot_Level5_Max.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtSpellSlot_Level1_Max
-            // 
-            this.txtSpellSlot_Level1_Max.Location = new System.Drawing.Point(132, 104);
-            this.txtSpellSlot_Level1_Max.Name = "txtSpellSlot_Level1_Max";
-            this.txtSpellSlot_Level1_Max.Size = new System.Drawing.Size(46, 22);
-            this.txtSpellSlot_Level1_Max.TabIndex = 42;
-            this.txtSpellSlot_Level1_Max.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtSpellSlot_Level8_Max
-            // 
-            this.txtSpellSlot_Level8_Max.Location = new System.Drawing.Point(132, 300);
-            this.txtSpellSlot_Level8_Max.Name = "txtSpellSlot_Level8_Max";
-            this.txtSpellSlot_Level8_Max.Size = new System.Drawing.Size(46, 22);
-            this.txtSpellSlot_Level8_Max.TabIndex = 66;
-            this.txtSpellSlot_Level8_Max.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(115, 246);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(12, 17);
-            this.label37.TabIndex = 55;
-            this.label37.Text = "/";
-            // 
-            // txtSpellSlot_Level8_Current
-            // 
-            this.txtSpellSlot_Level8_Current.Location = new System.Drawing.Point(63, 299);
-            this.txtSpellSlot_Level8_Current.Name = "txtSpellSlot_Level8_Current";
-            this.txtSpellSlot_Level8_Current.Size = new System.Drawing.Size(46, 22);
-            this.txtSpellSlot_Level8_Current.TabIndex = 65;
-            this.txtSpellSlot_Level8_Current.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(115, 106);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(12, 17);
-            this.label32.TabIndex = 13;
-            this.label32.Text = "/";
-            // 
-            // txtSpellSlot_Level6_Current
-            // 
-            this.txtSpellSlot_Level6_Current.Location = new System.Drawing.Point(63, 243);
-            this.txtSpellSlot_Level6_Current.Name = "txtSpellSlot_Level6_Current";
-            this.txtSpellSlot_Level6_Current.Size = new System.Drawing.Size(46, 22);
-            this.txtSpellSlot_Level6_Current.TabIndex = 56;
-            this.txtSpellSlot_Level6_Current.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(115, 302);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(12, 17);
-            this.label40.TabIndex = 64;
-            this.label40.Text = "/";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(3, 134);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(54, 17);
-            this.label31.TabIndex = 9;
-            this.label31.Text = "Level 2";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(3, 330);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(54, 17);
-            this.label24.TabIndex = 2;
-            this.label24.Text = "Level 9";
-            // 
-            // txtSpellSlot_Level6_Max
-            // 
-            this.txtSpellSlot_Level6_Max.Location = new System.Drawing.Point(132, 244);
-            this.txtSpellSlot_Level6_Max.Name = "txtSpellSlot_Level6_Max";
-            this.txtSpellSlot_Level6_Max.Size = new System.Drawing.Size(46, 22);
-            this.txtSpellSlot_Level6_Max.TabIndex = 57;
-            this.txtSpellSlot_Level6_Max.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtSpellSlot_Level9_Max
-            // 
-            this.txtSpellSlot_Level9_Max.Location = new System.Drawing.Point(132, 328);
-            this.txtSpellSlot_Level9_Max.Name = "txtSpellSlot_Level9_Max";
-            this.txtSpellSlot_Level9_Max.Size = new System.Drawing.Size(46, 22);
-            this.txtSpellSlot_Level9_Max.TabIndex = 63;
-            this.txtSpellSlot_Level9_Max.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(3, 161);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(54, 17);
-            this.label30.TabIndex = 8;
-            this.label30.Text = "Level 3";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(3, 301);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(54, 17);
-            this.label25.TabIndex = 3;
-            this.label25.Text = "Level 8";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(115, 274);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(12, 17);
-            this.label38.TabIndex = 58;
-            this.label38.Text = "/";
-            // 
-            // txtSpellSlot_Level9_Current
-            // 
-            this.txtSpellSlot_Level9_Current.Location = new System.Drawing.Point(63, 327);
-            this.txtSpellSlot_Level9_Current.Name = "txtSpellSlot_Level9_Current";
-            this.txtSpellSlot_Level9_Current.Size = new System.Drawing.Size(46, 22);
-            this.txtSpellSlot_Level9_Current.TabIndex = 62;
-            this.txtSpellSlot_Level9_Current.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(3, 189);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(54, 17);
-            this.label29.TabIndex = 7;
-            this.label29.Text = "Level 4";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(3, 274);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(54, 17);
-            this.label26.TabIndex = 4;
-            this.label26.Text = "Level 7";
-            // 
             // txtSpellSlot_Level7_Current
             // 
             this.txtSpellSlot_Level7_Current.Location = new System.Drawing.Point(63, 271);
@@ -1726,45 +1812,10 @@
             this.txtSpellSlot_Level7_Current.TabIndex = 59;
             this.txtSpellSlot_Level7_Current.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(115, 330);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(12, 17);
-            this.label39.TabIndex = 61;
-            this.label39.Text = "/";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(3, 218);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(54, 17);
-            this.label28.TabIndex = 6;
-            this.label28.Text = "Level 5";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(3, 245);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(54, 17);
-            this.label27.TabIndex = 5;
-            this.label27.Text = "Level 6";
-            // 
-            // txtSpellSlot_Level7_Max
-            // 
-            this.txtSpellSlot_Level7_Max.Location = new System.Drawing.Point(132, 272);
-            this.txtSpellSlot_Level7_Max.Name = "txtSpellSlot_Level7_Max";
-            this.txtSpellSlot_Level7_Max.Size = new System.Drawing.Size(46, 22);
-            this.txtSpellSlot_Level7_Max.TabIndex = 60;
-            this.txtSpellSlot_Level7_Max.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lblHitDiceMax);
             this.panel2.Controls.Add(this.lblHitDiceType);
-            this.panel2.Controls.Add(this.txtHitDiceMax);
             this.panel2.Controls.Add(this.txtHitDiceCurrent);
             this.panel2.Controls.Add(this.label22);
             this.panel2.Controls.Add(this.label52);
@@ -1787,22 +1838,25 @@
             this.panel2.Size = new System.Drawing.Size(223, 191);
             this.panel2.TabIndex = 38;
             // 
+            // lblHitDiceMax
+            // 
+            this.lblHitDiceMax.AutoSize = true;
+            this.lblHitDiceMax.BackColor = System.Drawing.Color.Transparent;
+            this.lblHitDiceMax.Location = new System.Drawing.Point(154, 109);
+            this.lblHitDiceMax.Name = "lblHitDiceMax";
+            this.lblHitDiceMax.Size = new System.Drawing.Size(16, 17);
+            this.lblHitDiceMax.TabIndex = 55;
+            this.lblHitDiceMax.Text = "0";
+            // 
             // lblHitDiceType
             // 
             this.lblHitDiceType.AutoSize = true;
-            this.lblHitDiceType.Location = new System.Drawing.Point(94, 87);
+            this.lblHitDiceType.BackColor = System.Drawing.Color.Transparent;
+            this.lblHitDiceType.Location = new System.Drawing.Point(97, 87);
             this.lblHitDiceType.Name = "lblHitDiceType";
             this.lblHitDiceType.Size = new System.Drawing.Size(24, 17);
             this.lblHitDiceType.TabIndex = 54;
             this.lblHitDiceType.Text = "d0";
-            // 
-            // txtHitDiceMax
-            // 
-            this.txtHitDiceMax.Location = new System.Drawing.Point(153, 107);
-            this.txtHitDiceMax.Name = "txtHitDiceMax";
-            this.txtHitDiceMax.Size = new System.Drawing.Size(65, 22);
-            this.txtHitDiceMax.TabIndex = 53;
-            this.txtHitDiceMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtHitDiceCurrent
             // 
@@ -1871,31 +1925,6 @@
             this.txtAC.TabIndex = 45;
             this.txtAC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtHPmax
-            // 
-            this.txtHPmax.Location = new System.Drawing.Point(153, 135);
-            this.txtHPmax.Name = "txtHPmax";
-            this.txtHPmax.Size = new System.Drawing.Size(65, 22);
-            this.txtHPmax.TabIndex = 43;
-            this.txtHPmax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtHPcurrent
-            // 
-            this.txtHPcurrent.Location = new System.Drawing.Point(64, 135);
-            this.txtHPcurrent.Name = "txtHPcurrent";
-            this.txtHPcurrent.Size = new System.Drawing.Size(65, 22);
-            this.txtHPcurrent.TabIndex = 42;
-            this.txtHPcurrent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(135, 137);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(12, 17);
-            this.label5.TabIndex = 34;
-            this.label5.Text = "/";
-            // 
             // label49
             // 
             this.label49.AutoSize = true;
@@ -1904,6 +1933,14 @@
             this.label49.Size = new System.Drawing.Size(26, 17);
             this.label49.TabIndex = 29;
             this.label49.Text = "AC";
+            // 
+            // txtHPmax
+            // 
+            this.txtHPmax.Location = new System.Drawing.Point(153, 135);
+            this.txtHPmax.Name = "txtHPmax";
+            this.txtHPmax.Size = new System.Drawing.Size(65, 22);
+            this.txtHPmax.TabIndex = 43;
+            this.txtHPmax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label50
             // 
@@ -1914,6 +1951,14 @@
             this.label50.TabIndex = 31;
             this.label50.Text = "Initiative";
             // 
+            // txtHPcurrent
+            // 
+            this.txtHPcurrent.Location = new System.Drawing.Point(64, 135);
+            this.txtHPcurrent.Name = "txtHPcurrent";
+            this.txtHPcurrent.Size = new System.Drawing.Size(65, 22);
+            this.txtHPcurrent.TabIndex = 42;
+            this.txtHPcurrent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label51
             // 
             this.label51.AutoSize = true;
@@ -1923,13 +1968,22 @@
             this.label51.TabIndex = 33;
             this.label51.Text = "Speed";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(135, 137);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(12, 17);
+            this.label5.TabIndex = 34;
+            this.label5.Text = "/";
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.label53);
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Location = new System.Drawing.Point(460, 209);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(223, 223);
+            this.panel3.Size = new System.Drawing.Size(223, 226);
             this.panel3.TabIndex = 87;
             // 
             // label53
@@ -1940,241 +1994,6 @@
             this.label53.Size = new System.Drawing.Size(56, 17);
             this.label53.TabIndex = 92;
             this.label53.Text = "Abilities";
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(153, 0);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(51, 34);
-            this.label56.TabIndex = 91;
-            this.label56.Tag = "";
-            this.label56.Text = "Saving\r\nThrow\r\n";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(99, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(48, 34);
-            this.label23.TabIndex = 84;
-            this.label23.Text = "Racial\r\nBonus";
-            // 
-            // lblWisdom_RB
-            // 
-            this.lblWisdom_RB.AutoSize = true;
-            this.lblWisdom_RB.Location = new System.Drawing.Point(119, 179);
-            this.lblWisdom_RB.Name = "lblWisdom_RB";
-            this.lblWisdom_RB.Size = new System.Drawing.Size(16, 17);
-            this.lblWisdom_RB.TabIndex = 83;
-            this.lblWisdom_RB.Text = "0";
-            // 
-            // lblDexterity
-            // 
-            this.lblDexterity.AutoSize = true;
-            this.lblDexterity.Location = new System.Drawing.Point(5, 95);
-            this.lblDexterity.Name = "lblDexterity";
-            this.lblDexterity.Size = new System.Drawing.Size(36, 17);
-            this.lblDexterity.TabIndex = 68;
-            this.lblDexterity.Text = "DEX";
-            // 
-            // lblStrength_RB
-            // 
-            this.lblStrength_RB.AutoSize = true;
-            this.lblStrength_RB.Location = new System.Drawing.Point(119, 151);
-            this.lblStrength_RB.Name = "lblStrength_RB";
-            this.lblStrength_RB.Size = new System.Drawing.Size(16, 17);
-            this.lblStrength_RB.TabIndex = 82;
-            this.lblStrength_RB.Text = "0";
-            // 
-            // lblCharisma
-            // 
-            this.lblCharisma.AutoSize = true;
-            this.lblCharisma.Location = new System.Drawing.Point(5, 39);
-            this.lblCharisma.Name = "lblCharisma";
-            this.lblCharisma.Size = new System.Drawing.Size(36, 17);
-            this.lblCharisma.TabIndex = 62;
-            this.lblCharisma.Text = "CHA";
-            // 
-            // lblIntelligence_RB
-            // 
-            this.lblIntelligence_RB.AutoSize = true;
-            this.lblIntelligence_RB.Location = new System.Drawing.Point(119, 123);
-            this.lblIntelligence_RB.Name = "lblIntelligence_RB";
-            this.lblIntelligence_RB.Size = new System.Drawing.Size(16, 17);
-            this.lblIntelligence_RB.TabIndex = 81;
-            this.lblIntelligence_RB.Text = "0";
-            // 
-            // lblConstitution
-            // 
-            this.lblConstitution.AutoSize = true;
-            this.lblConstitution.Location = new System.Drawing.Point(3, 67);
-            this.lblConstitution.Name = "lblConstitution";
-            this.lblConstitution.Size = new System.Drawing.Size(38, 17);
-            this.lblConstitution.TabIndex = 69;
-            this.lblConstitution.Text = "CON";
-            // 
-            // lblDexterity_RB
-            // 
-            this.lblDexterity_RB.AutoSize = true;
-            this.lblDexterity_RB.Location = new System.Drawing.Point(119, 95);
-            this.lblDexterity_RB.Name = "lblDexterity_RB";
-            this.lblDexterity_RB.Size = new System.Drawing.Size(16, 17);
-            this.lblDexterity_RB.TabIndex = 80;
-            this.lblDexterity_RB.Text = "0";
-            // 
-            // lblConstitution_RB
-            // 
-            this.lblConstitution_RB.AutoSize = true;
-            this.lblConstitution_RB.Location = new System.Drawing.Point(119, 67);
-            this.lblConstitution_RB.Name = "lblConstitution_RB";
-            this.lblConstitution_RB.Size = new System.Drawing.Size(16, 17);
-            this.lblConstitution_RB.TabIndex = 79;
-            this.lblConstitution_RB.Text = "0";
-            // 
-            // lblIntelligence
-            // 
-            this.lblIntelligence.AutoSize = true;
-            this.lblIntelligence.Location = new System.Drawing.Point(11, 123);
-            this.lblIntelligence.Name = "lblIntelligence";
-            this.lblIntelligence.Size = new System.Drawing.Size(30, 17);
-            this.lblIntelligence.TabIndex = 65;
-            this.lblIntelligence.Text = "INT";
-            // 
-            // lblCharisma_RB
-            // 
-            this.lblCharisma_RB.AutoSize = true;
-            this.lblCharisma_RB.Location = new System.Drawing.Point(119, 39);
-            this.lblCharisma_RB.Name = "lblCharisma_RB";
-            this.lblCharisma_RB.Size = new System.Drawing.Size(16, 17);
-            this.lblCharisma_RB.TabIndex = 78;
-            this.lblCharisma_RB.Text = "0";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(108, 179);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(16, 17);
-            this.label14.TabIndex = 77;
-            this.label14.Text = "+";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(108, 151);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(16, 17);
-            this.label15.TabIndex = 76;
-            this.label15.Text = "+";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(108, 123);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(16, 17);
-            this.label12.TabIndex = 75;
-            this.label12.Text = "+";
-            // 
-            // lblStrength
-            // 
-            this.lblStrength.AutoSize = true;
-            this.lblStrength.Location = new System.Drawing.Point(5, 151);
-            this.lblStrength.Name = "lblStrength";
-            this.lblStrength.Size = new System.Drawing.Size(36, 17);
-            this.lblStrength.TabIndex = 70;
-            this.lblStrength.Text = "STR";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(108, 95);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(16, 17);
-            this.label13.TabIndex = 74;
-            this.label13.Text = "+";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(108, 67);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(16, 17);
-            this.label11.TabIndex = 73;
-            this.label11.Text = "+";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(108, 39);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(16, 17);
-            this.label10.TabIndex = 72;
-            this.label10.Text = "+";
-            // 
-            // lblWisdom
-            // 
-            this.lblWisdom.AutoSize = true;
-            this.lblWisdom.Location = new System.Drawing.Point(8, 179);
-            this.lblWisdom.Name = "lblWisdom";
-            this.lblWisdom.Size = new System.Drawing.Size(33, 17);
-            this.lblWisdom.TabIndex = 71;
-            this.lblWisdom.Text = "WIS";
-            // 
-            // lblWisdom_ST
-            // 
-            this.lblWisdom_ST.AutoSize = true;
-            this.lblWisdom_ST.Location = new System.Drawing.Point(171, 179);
-            this.lblWisdom_ST.Name = "lblWisdom_ST";
-            this.lblWisdom_ST.Size = new System.Drawing.Size(16, 17);
-            this.lblWisdom_ST.TabIndex = 98;
-            this.lblWisdom_ST.Text = "0";
-            // 
-            // lblStrength_ST
-            // 
-            this.lblStrength_ST.AutoSize = true;
-            this.lblStrength_ST.Location = new System.Drawing.Point(171, 151);
-            this.lblStrength_ST.Name = "lblStrength_ST";
-            this.lblStrength_ST.Size = new System.Drawing.Size(16, 17);
-            this.lblStrength_ST.TabIndex = 97;
-            this.lblStrength_ST.Text = "0";
-            // 
-            // lblIntelligence_ST
-            // 
-            this.lblIntelligence_ST.AutoSize = true;
-            this.lblIntelligence_ST.Location = new System.Drawing.Point(171, 123);
-            this.lblIntelligence_ST.Name = "lblIntelligence_ST";
-            this.lblIntelligence_ST.Size = new System.Drawing.Size(16, 17);
-            this.lblIntelligence_ST.TabIndex = 96;
-            this.lblIntelligence_ST.Text = "0";
-            // 
-            // lblDexterity_ST
-            // 
-            this.lblDexterity_ST.AutoSize = true;
-            this.lblDexterity_ST.Location = new System.Drawing.Point(171, 95);
-            this.lblDexterity_ST.Name = "lblDexterity_ST";
-            this.lblDexterity_ST.Size = new System.Drawing.Size(16, 17);
-            this.lblDexterity_ST.TabIndex = 95;
-            this.lblDexterity_ST.Text = "0";
-            // 
-            // lblConstitution_ST
-            // 
-            this.lblConstitution_ST.AutoSize = true;
-            this.lblConstitution_ST.Location = new System.Drawing.Point(171, 67);
-            this.lblConstitution_ST.Name = "lblConstitution_ST";
-            this.lblConstitution_ST.Size = new System.Drawing.Size(16, 17);
-            this.lblConstitution_ST.TabIndex = 94;
-            this.lblConstitution_ST.Text = "0";
-            // 
-            // lblCharisma_ST
-            // 
-            this.lblCharisma_ST.AutoSize = true;
-            this.lblCharisma_ST.Location = new System.Drawing.Point(171, 39);
-            this.lblCharisma_ST.Name = "lblCharisma_ST";
-            this.lblCharisma_ST.Size = new System.Drawing.Size(16, 17);
-            this.lblCharisma_ST.TabIndex = 93;
-            this.lblCharisma_ST.Text = "0";
             // 
             // panel6
             // 
@@ -2212,8 +2031,44 @@
             this.panel6.Controls.Add(this.label10);
             this.panel6.Location = new System.Drawing.Point(6, 22);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(207, 201);
+            this.panel6.Size = new System.Drawing.Size(207, 204);
             this.panel6.TabIndex = 88;
+            // 
+            // lblConstitution_RB
+            // 
+            this.lblConstitution_RB.AutoSize = true;
+            this.lblConstitution_RB.Location = new System.Drawing.Point(119, 67);
+            this.lblConstitution_RB.Name = "lblConstitution_RB";
+            this.lblConstitution_RB.Size = new System.Drawing.Size(16, 17);
+            this.lblConstitution_RB.TabIndex = 79;
+            this.lblConstitution_RB.Text = "0";
+            // 
+            // lblDexterity_RB
+            // 
+            this.lblDexterity_RB.AutoSize = true;
+            this.lblDexterity_RB.Location = new System.Drawing.Point(119, 95);
+            this.lblDexterity_RB.Name = "lblDexterity_RB";
+            this.lblDexterity_RB.Size = new System.Drawing.Size(16, 17);
+            this.lblDexterity_RB.TabIndex = 80;
+            this.lblDexterity_RB.Text = "0";
+            // 
+            // lblIntelligence_RB
+            // 
+            this.lblIntelligence_RB.AutoSize = true;
+            this.lblIntelligence_RB.Location = new System.Drawing.Point(119, 123);
+            this.lblIntelligence_RB.Name = "lblIntelligence_RB";
+            this.lblIntelligence_RB.Size = new System.Drawing.Size(16, 17);
+            this.lblIntelligence_RB.TabIndex = 81;
+            this.lblIntelligence_RB.Text = "0";
+            // 
+            // lblStrength_RB
+            // 
+            this.lblStrength_RB.AutoSize = true;
+            this.lblStrength_RB.Location = new System.Drawing.Point(119, 151);
+            this.lblStrength_RB.Name = "lblStrength_RB";
+            this.lblStrength_RB.Size = new System.Drawing.Size(16, 17);
+            this.lblStrength_RB.TabIndex = 82;
+            this.lblStrength_RB.Text = "0";
             // 
             // txtWisdom
             // 
@@ -2223,6 +2078,16 @@
             this.txtWisdom.TabIndex = 104;
             this.txtWisdom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(153, 0);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(51, 34);
+            this.label56.TabIndex = 91;
+            this.label56.Tag = "";
+            this.label56.Text = "Saving\r\nThrow\r\n";
+            // 
             // txtStrength
             // 
             this.txtStrength.Location = new System.Drawing.Point(48, 149);
@@ -2231,29 +2096,14 @@
             this.txtStrength.TabIndex = 103;
             this.txtStrength.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtIntelligence
+            // label23
             // 
-            this.txtIntelligence.Location = new System.Drawing.Point(47, 121);
-            this.txtIntelligence.Name = "txtIntelligence";
-            this.txtIntelligence.Size = new System.Drawing.Size(55, 22);
-            this.txtIntelligence.TabIndex = 102;
-            this.txtIntelligence.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtDexterity
-            // 
-            this.txtDexterity.Location = new System.Drawing.Point(47, 93);
-            this.txtDexterity.Name = "txtDexterity";
-            this.txtDexterity.Size = new System.Drawing.Size(55, 22);
-            this.txtDexterity.TabIndex = 101;
-            this.txtDexterity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtConstitution
-            // 
-            this.txtConstitution.Location = new System.Drawing.Point(47, 65);
-            this.txtConstitution.Name = "txtConstitution";
-            this.txtConstitution.Size = new System.Drawing.Size(55, 22);
-            this.txtConstitution.TabIndex = 100;
-            this.txtConstitution.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(99, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(48, 34);
+            this.label23.TabIndex = 84;
+            this.label23.Text = "Racial\r\nBonus";
             // 
             // txtCharisma
             // 
@@ -2263,9 +2113,213 @@
             this.txtCharisma.TabIndex = 99;
             this.txtCharisma.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // txtIntelligence
+            // 
+            this.txtIntelligence.Location = new System.Drawing.Point(47, 121);
+            this.txtIntelligence.Name = "txtIntelligence";
+            this.txtIntelligence.Size = new System.Drawing.Size(55, 22);
+            this.txtIntelligence.TabIndex = 102;
+            this.txtIntelligence.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblWisdom_ST
+            // 
+            this.lblWisdom_ST.AutoSize = true;
+            this.lblWisdom_ST.Location = new System.Drawing.Point(171, 179);
+            this.lblWisdom_ST.Name = "lblWisdom_ST";
+            this.lblWisdom_ST.Size = new System.Drawing.Size(16, 17);
+            this.lblWisdom_ST.TabIndex = 98;
+            this.lblWisdom_ST.Text = "0";
+            // 
+            // lblDexterity
+            // 
+            this.lblDexterity.AutoSize = true;
+            this.lblDexterity.Location = new System.Drawing.Point(5, 95);
+            this.lblDexterity.Name = "lblDexterity";
+            this.lblDexterity.Size = new System.Drawing.Size(36, 17);
+            this.lblDexterity.TabIndex = 68;
+            this.lblDexterity.Text = "DEX";
+            // 
+            // lblStrength
+            // 
+            this.lblStrength.AutoSize = true;
+            this.lblStrength.Location = new System.Drawing.Point(5, 151);
+            this.lblStrength.Name = "lblStrength";
+            this.lblStrength.Size = new System.Drawing.Size(36, 17);
+            this.lblStrength.TabIndex = 70;
+            this.lblStrength.Text = "STR";
+            // 
+            // lblStrength_ST
+            // 
+            this.lblStrength_ST.AutoSize = true;
+            this.lblStrength_ST.Location = new System.Drawing.Point(171, 151);
+            this.lblStrength_ST.Name = "lblStrength_ST";
+            this.lblStrength_ST.Size = new System.Drawing.Size(16, 17);
+            this.lblStrength_ST.TabIndex = 97;
+            this.lblStrength_ST.Text = "0";
+            // 
+            // txtDexterity
+            // 
+            this.txtDexterity.Location = new System.Drawing.Point(47, 93);
+            this.txtDexterity.Name = "txtDexterity";
+            this.txtDexterity.Size = new System.Drawing.Size(55, 22);
+            this.txtDexterity.TabIndex = 101;
+            this.txtDexterity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblConstitution
+            // 
+            this.lblConstitution.AutoSize = true;
+            this.lblConstitution.Location = new System.Drawing.Point(3, 67);
+            this.lblConstitution.Name = "lblConstitution";
+            this.lblConstitution.Size = new System.Drawing.Size(38, 17);
+            this.lblConstitution.TabIndex = 69;
+            this.lblConstitution.Text = "CON";
+            // 
+            // lblIntelligence
+            // 
+            this.lblIntelligence.AutoSize = true;
+            this.lblIntelligence.Location = new System.Drawing.Point(11, 123);
+            this.lblIntelligence.Name = "lblIntelligence";
+            this.lblIntelligence.Size = new System.Drawing.Size(30, 17);
+            this.lblIntelligence.TabIndex = 65;
+            this.lblIntelligence.Text = "INT";
+            // 
+            // lblIntelligence_ST
+            // 
+            this.lblIntelligence_ST.AutoSize = true;
+            this.lblIntelligence_ST.Location = new System.Drawing.Point(171, 123);
+            this.lblIntelligence_ST.Name = "lblIntelligence_ST";
+            this.lblIntelligence_ST.Size = new System.Drawing.Size(16, 17);
+            this.lblIntelligence_ST.TabIndex = 96;
+            this.lblIntelligence_ST.Text = "0";
+            // 
+            // txtConstitution
+            // 
+            this.txtConstitution.Location = new System.Drawing.Point(47, 65);
+            this.txtConstitution.Name = "txtConstitution";
+            this.txtConstitution.Size = new System.Drawing.Size(55, 22);
+            this.txtConstitution.TabIndex = 100;
+            this.txtConstitution.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblDexterity_ST
+            // 
+            this.lblDexterity_ST.AutoSize = true;
+            this.lblDexterity_ST.Location = new System.Drawing.Point(171, 95);
+            this.lblDexterity_ST.Name = "lblDexterity_ST";
+            this.lblDexterity_ST.Size = new System.Drawing.Size(16, 17);
+            this.lblDexterity_ST.TabIndex = 95;
+            this.lblDexterity_ST.Text = "0";
+            // 
+            // lblConstitution_ST
+            // 
+            this.lblConstitution_ST.AutoSize = true;
+            this.lblConstitution_ST.Location = new System.Drawing.Point(171, 67);
+            this.lblConstitution_ST.Name = "lblConstitution_ST";
+            this.lblConstitution_ST.Size = new System.Drawing.Size(16, 17);
+            this.lblConstitution_ST.TabIndex = 94;
+            this.lblConstitution_ST.Text = "0";
+            // 
+            // lblCharisma
+            // 
+            this.lblCharisma.AutoSize = true;
+            this.lblCharisma.Location = new System.Drawing.Point(5, 39);
+            this.lblCharisma.Name = "lblCharisma";
+            this.lblCharisma.Size = new System.Drawing.Size(36, 17);
+            this.lblCharisma.TabIndex = 62;
+            this.lblCharisma.Text = "CHA";
+            // 
+            // lblCharisma_ST
+            // 
+            this.lblCharisma_ST.AutoSize = true;
+            this.lblCharisma_ST.Location = new System.Drawing.Point(171, 39);
+            this.lblCharisma_ST.Name = "lblCharisma_ST";
+            this.lblCharisma_ST.Size = new System.Drawing.Size(16, 17);
+            this.lblCharisma_ST.TabIndex = 93;
+            this.lblCharisma_ST.Text = "0";
+            // 
+            // lblWisdom
+            // 
+            this.lblWisdom.AutoSize = true;
+            this.lblWisdom.Location = new System.Drawing.Point(8, 179);
+            this.lblWisdom.Name = "lblWisdom";
+            this.lblWisdom.Size = new System.Drawing.Size(33, 17);
+            this.lblWisdom.TabIndex = 71;
+            this.lblWisdom.Text = "WIS";
+            // 
+            // lblWisdom_RB
+            // 
+            this.lblWisdom_RB.AutoSize = true;
+            this.lblWisdom_RB.Location = new System.Drawing.Point(119, 179);
+            this.lblWisdom_RB.Name = "lblWisdom_RB";
+            this.lblWisdom_RB.Size = new System.Drawing.Size(16, 17);
+            this.lblWisdom_RB.TabIndex = 83;
+            this.lblWisdom_RB.Text = "0";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(108, 151);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(16, 17);
+            this.label15.TabIndex = 76;
+            this.label15.Text = "+";
+            // 
+            // lblCharisma_RB
+            // 
+            this.lblCharisma_RB.AutoSize = true;
+            this.lblCharisma_RB.Location = new System.Drawing.Point(119, 39);
+            this.lblCharisma_RB.Name = "lblCharisma_RB";
+            this.lblCharisma_RB.Size = new System.Drawing.Size(16, 17);
+            this.lblCharisma_RB.TabIndex = 78;
+            this.lblCharisma_RB.Text = "0";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(108, 123);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(16, 17);
+            this.label12.TabIndex = 75;
+            this.label12.Text = "+";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(108, 179);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(16, 17);
+            this.label14.TabIndex = 77;
+            this.label14.Text = "+";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(108, 95);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(16, 17);
+            this.label13.TabIndex = 74;
+            this.label13.Text = "+";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(108, 67);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(16, 17);
+            this.label11.TabIndex = 73;
+            this.label11.Text = "+";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(108, 39);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(16, 17);
+            this.label10.TabIndex = 72;
+            this.label10.Text = "+";
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(425, 970);
+            this.button1.Location = new System.Drawing.Point(557, 974);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(126, 26);
             this.button1.TabIndex = 89;
@@ -2273,79 +2327,16 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(132, 41);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(16, 17);
-            this.label18.TabIndex = 86;
-            this.label18.Text = "0";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(132, 58);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(16, 17);
-            this.label17.TabIndex = 87;
-            this.label17.Text = "0";
-            // 
-            // txtInvestigation
-            // 
-            this.txtInvestigation.Location = new System.Drawing.Point(119, 227);
-            this.txtInvestigation.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
-            this.txtInvestigation.Name = "txtInvestigation";
-            this.txtInvestigation.Size = new System.Drawing.Size(55, 22);
-            this.txtInvestigation.TabIndex = 124;
-            this.txtInvestigation.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtAcrobatics
-            // 
-            this.txtAcrobatics.Location = new System.Drawing.Point(119, 3);
-            this.txtAcrobatics.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
-            this.txtAcrobatics.Name = "txtAcrobatics";
-            this.txtAcrobatics.Size = new System.Drawing.Size(55, 22);
-            this.txtAcrobatics.TabIndex = 123;
-            this.txtAcrobatics.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(15, 232);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(87, 17);
-            this.label19.TabIndex = 122;
-            this.label19.Text = "Investigation";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(21, 8);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(74, 17);
-            this.label20.TabIndex = 121;
-            this.label20.Text = "Acrobatics";
-            // 
             // CharacterSheetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(693, 1004);
+            this.ClientSize = new System.Drawing.Size(693, 1010);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.tabControl2);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.btnSaveAndClose);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -2360,21 +2351,23 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSurvival)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtInvestigation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAcrobatics)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStealth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSleightOfHand)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtReligion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPersuasion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAnimalHandling)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPerformance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtArcana)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPerception)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAthletics)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNature)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDeception)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMedicine)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHistory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIntimidation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtInsight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtHistory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDeception)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAthletics)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtArcana)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAnimalHandling)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFeats)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
             this.tabControl1.ResumeLayout(false);
@@ -2395,28 +2388,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAttack)).EndInit();
             this.tabSpellbook.ResumeLayout(false);
             this.tabSpellbook.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSpells)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level1_Current)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level6_Current)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level8_Max)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level1_Max)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level5_Max)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level3_Max)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level6_Max)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level5_Current)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level9_Max)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level8_Current)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level2_Current)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level7_Max)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level3_Current)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level9_Current)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level2_Max)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level4_Current)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level4_Max)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level2_Max)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSpells)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level2_Current)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level5_Current)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level5_Max)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level1_Max)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level8_Max)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level8_Current)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level6_Current)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level6_Max)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level9_Max)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level9_Current)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level7_Current)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSpellSlot_Level7_Max)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtHitDiceMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHitDiceCurrent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHPtemp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSpeed)).EndInit();
@@ -2430,12 +2422,10 @@
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtWisdom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStrength)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCharisma)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIntelligence)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDexterity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtConstitution)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCharisma)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtInvestigation)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAcrobatics)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2454,7 +2444,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.CheckBox chkNPC;
         private System.Windows.Forms.CheckBox chkInspiration;
-        private System.Windows.Forms.Button btnSaveAndClose;
         private System.Windows.Forms.Button btnAddClass;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbClass;
@@ -2548,7 +2537,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.NumericUpDown txtExperience;
         private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.NumericUpDown txtHitDiceMax;
         private System.Windows.Forms.NumericUpDown txtHitDiceCurrent;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label52;
@@ -2631,11 +2619,12 @@
         private System.Windows.Forms.NumericUpDown txtGold;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label lblSpellCastingAbility;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lblSpellAttackBonus;
+        private System.Windows.Forms.Label lblSpellSaveDC;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.NumericUpDown txtInvestigation;
         private System.Windows.Forms.NumericUpDown txtAcrobatics;
+        private System.Windows.Forms.Label lblHitDiceMax;
     }
 }
