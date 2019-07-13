@@ -143,7 +143,7 @@ namespace DND.Views.Interfaces
 
         #region Spellbook
 
-        ComboBox SpellcastingAbility { get; set; }
+        string SpellcastingAbility { get; set; }
 
         DataGridView SpellsGridView { get; set; }
 
