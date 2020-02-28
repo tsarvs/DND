@@ -33,6 +33,13 @@ namespace DND.Controllers
             _madeChanges = false;
             _characterId = 0;
             _characterClassesToSave = new List<CHARACTER_CLASS>();
+
+            using (var db = new DragonDBModel())
+            {
+                _view.ClassListBox.DataSource =
+                    (from c in db.CLASS.ToList()
+                        select c).ToList();
+            }
         }
 
         #endregion
@@ -54,17 +61,19 @@ namespace DND.Controllers
             _view.CharacterClassListBox.SelectedItem = null;
 
             List<CLASS> characterClasses;
-
-            if (_characterClassesToSave == null)
-            {
+            
                 characterClasses = new List<CLASS>();
-            }
-            else
-            {
-                characterClasses =
-                    (from cc in loadedCharacterClasses
-                        select cc.CLASS).ToList();
-            }
+        
+                foreach (var characterClass in _characterClassesToSave)
+                {
+                    var classToAdd =
+                        (from c in _view.ClassListBox.Items.Cast<CLASS>().ToList()
+                            where (c.cl_id == characterClass.cc_clid)
+                            select c).First();
+
+                    characterClasses.Add(classToAdd);
+                }
+            
             
             UpdateListsContents(characterClasses);
         }

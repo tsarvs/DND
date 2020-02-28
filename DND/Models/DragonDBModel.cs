@@ -13,34 +13,27 @@ namespace DND.Models
         }
 
         public virtual DbSet<ABILITY> ABILITY { get; set; }
-        public virtual DbSet<BACKGROUND> BACKGROUND { get; set; }
         public virtual DbSet<CAMPAIGN> CAMPAIGN { get; set; }
         public virtual DbSet<CAMPAIGN_PLAYER_CHARACTERS> CAMPAIGN_PLAYER_CHARACTERS { get; set; }
         public virtual DbSet<CHARACTER> CHARACTER { get; set; }
         public virtual DbSet<CHARACTER_ATTACK> CHARACTER_ATTACK { get; set; }
         public virtual DbSet<CHARACTER_BACKGROUND> CHARACTER_BACKGROUND { get; set; }
         public virtual DbSet<CHARACTER_CLASS> CHARACTER_CLASS { get; set; }
-        public virtual DbSet<CHARACTER_INVENTORY> CHARACTER_INVENTORY { get; set; }
         public virtual DbSet<CHARACTER_JOURNAL> CHARACTER_JOURNAL { get; set; }
         public virtual DbSet<CLASS> CLASS { get; set; }
-        public virtual DbSet<EFFECT> EFFECT { get; set; }
-        public virtual DbSet<EFFECT_PROCEDURE> EFFECT_PROCEDURE { get; set; }
         public virtual DbSet<ENCOUNTER> ENCOUNTER { get; set; }
         public virtual DbSet<EPISODE> EPISODE { get; set; }
         public virtual DbSet<EVENT_OCCURRED> EVENT_OCCURRED { get; set; }
         public virtual DbSet<EVENT_TYPE> EVENT_TYPE { get; set; }
         public virtual DbSet<FEATS> FEATS { get; set; }
         public virtual DbSet<ITEM> ITEM { get; set; }
-        public virtual DbSet<ITEM_EFFECT> ITEM_EFFECT { get; set; }
         public virtual DbSet<LOCATION> LOCATION { get; set; }
         public virtual DbSet<PROFICIENCY> PROFICIENCY { get; set; }
         public virtual DbSet<QUEST> QUEST { get; set; }
         public virtual DbSet<QUESTLINE> QUESTLINE { get; set; }
         public virtual DbSet<RACE> RACE { get; set; }
-        public virtual DbSet<RACE_SKILL> RACE_SKILL { get; set; }
         public virtual DbSet<SKILL> SKILL { get; set; }
         public virtual DbSet<SPELLS> SPELLS { get; set; }
-        public virtual DbSet<SPELLS_EFFECT> SPELLS_EFFECT { get; set; }
         public virtual DbSet<SPELLS_SLOTS> SPELLS_SLOTS { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -54,35 +47,6 @@ namespace DND.Models
                 .HasMany(e => e.RACE)
                 .WithOptional(e => e.ABILITY)
                 .HasForeignKey(e => e.r_aid);
-
-            modelBuilder.Entity<BACKGROUND>()
-                .Property(e => e.b_desc)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<BACKGROUND>()
-                .HasMany(e => e.CAMPAIGN)
-                .WithMany(e => e.BACKGROUND)
-                .Map(m => m.ToTable("CAMPAIGN_BACKGROUND").MapLeftKey("cmpb_bid").MapRightKey("cmpb_cmpid"));
-
-            modelBuilder.Entity<BACKGROUND>()
-                .HasMany(e => e.LOCATION)
-                .WithMany(e => e.BACKGROUND)
-                .Map(m => m.ToTable("LOCATION_BACKGROUND").MapLeftKey("lb_bid").MapRightKey("lb_lid"));
-
-            modelBuilder.Entity<BACKGROUND>()
-                .HasMany(e => e.QUEST)
-                .WithMany(e => e.BACKGROUND)
-                .Map(m => m.ToTable("QUEST_BACKGROUND").MapLeftKey("qb_bid").MapRightKey("qb_qid"));
-
-            modelBuilder.Entity<BACKGROUND>()
-                .HasMany(e => e.QUESTLINE)
-                .WithMany(e => e.BACKGROUND)
-                .Map(m => m.ToTable("QUESTLINE_BACKGROUND").MapLeftKey("qlb_bid").MapRightKey("qlb_qlid"));
-
-            modelBuilder.Entity<BACKGROUND>()
-                .HasMany(e => e.RACE)
-                .WithMany(e => e.BACKGROUND)
-                .Map(m => m.ToTable("RACE_BACKGROUND").MapLeftKey("rb_bid").MapRightKey("rb_rid"));
 
             modelBuilder.Entity<CAMPAIGN>()
                 .Property(e => e.cmp_name)
@@ -233,36 +197,6 @@ namespace DND.Models
                 .HasForeignKey(e => e.cc_clid)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<EFFECT>()
-                .Property(e => e.ef_name)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<EFFECT>()
-                .Property(e => e.ef_desc)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<EFFECT>()
-                .HasMany(e => e.EFFECT_PROCEDURE)
-                .WithRequired(e => e.EFFECT)
-                .HasForeignKey(e => e.efp_efid)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<EFFECT>()
-                .HasMany(e => e.ITEM_EFFECT)
-                .WithRequired(e => e.EFFECT)
-                .HasForeignKey(e => e.if_efid)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<EFFECT>()
-                .HasMany(e => e.SPELLS_EFFECT)
-                .WithRequired(e => e.EFFECT)
-                .HasForeignKey(e => e.sef_efid)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<EFFECT_PROCEDURE>()
-                .Property(e => e.efp_procedure)
-                .IsUnicode(false);
-
             modelBuilder.Entity<ENCOUNTER>()
                 .Property(e => e.e_desc)
                 .IsUnicode(false);
@@ -369,12 +303,6 @@ namespace DND.Models
                 .HasMany(e => e.CHARACTER)
                 .WithOptional(e => e.RACE)
                 .HasForeignKey(e => e.c_rid);
-
-            modelBuilder.Entity<RACE>()
-                .HasMany(e => e.RACE_SKILL)
-                .WithRequired(e => e.RACE)
-                .HasForeignKey(e => e.rs_rid)
-                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<SKILL>()
                 .HasMany(e => e.CHARACTER)

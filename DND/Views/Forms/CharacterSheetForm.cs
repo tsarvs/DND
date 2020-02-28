@@ -130,8 +130,8 @@ namespace DND.Views.Forms
 
         public int HitDiceMax
         {
-            get { return (int)this.txtHitDiceMax.Value; }
-            set { this.txtHitDiceMax.Value = value; }
+            get { return Convert.ToInt32(this.lblHitDiceMax.Text); }
+            set { this.lblHitDiceMax.Text = value.ToString(); }
         }
 
         #endregion
@@ -378,7 +378,11 @@ namespace DND.Views.Forms
 
         #region Spellbook
 
-        public ComboBox SpellcastingAbility { get; set; }
+        public string SpellcastingAbility
+        {
+            get { return this.lblSpellCastingAbility.Text; }
+            set { this.lblSpellCastingAbility.Text = value; }
+        }
 
         public DataGridView SpellsGridView
         {
@@ -392,9 +396,17 @@ namespace DND.Views.Forms
             set { this.txtSpellDescription.Text = value; }
         }
 
-        public int SpellSaveDC {  get; set; }
+        public int SpellSaveDC
+        {
+            get { return Convert.ToInt32(this.lblSpellSaveDC.Text);}
+            set { this.lblSpellSaveDC.Text = value.ToString(); }
+        }
 
-        public int SpellAttackBonus { get; set; }
+        public int SpellAttackBonus
+        {
+            get { return Convert.ToInt32(this.lblSpellAttackBonus.Text); }
+            set { this.lblSpellAttackBonus.Text = value.ToString(); }
+        }
 
         public int SpellSlots_Level1_Current
         {
@@ -670,13 +682,6 @@ namespace DND.Views.Forms
 
             _controller.InitializeData(_characterId);
         }
-
-        private void btnSaveAndClose_Click(object sender, EventArgs e)
-        {
-            _controller.SaveCharacter();
-
-            this.Close();
-        }
         
         private void dgvFeats_SelectionChanged(object sender, EventArgs e)
         {
@@ -691,6 +696,8 @@ namespace DND.Views.Forms
         private void cmbClass_SelectedIndexChanged(object sender, EventArgs e)
         {
             _controller.UpdateLevel();
+            _controller.UpdateHitDice();
+            _controller.UpdateSpellStats();
         }
 
         private void btnAddClass_Click(object sender, EventArgs e)
@@ -794,6 +801,31 @@ namespace DND.Views.Forms
         }
 
         #endregion
-        
+
+        private void txtProficiencyBonus_ValueChanged(object sender, EventArgs e)
+        {
+            _controller.UpdateSpellStats();
+        }
+
+        private void txtCharisma_ValueChanged(object sender, EventArgs e)
+        {
+            _controller.UpdateCharisma();
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            _controller.UpdateName();
+        }
+
+        private void cmbAlignment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _controller.UpdateAlignment();
+        }
+
+        private void cmbRace_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _controller.UpdateRace();
+        }
+            
     }
 }

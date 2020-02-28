@@ -12,7 +12,7 @@ namespace DND.Views.Interfaces
         int NumberOfDice { get; set; }
         int Bonus { get; set; }
         int Result { get; set; }
-        String DiceID { get; set;}
+        string DiceID { get; set;}
 
         void SetController(DiceRollerController controller);
     }

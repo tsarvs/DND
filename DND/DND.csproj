@@ -35,11 +35,9 @@
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -71,35 +69,28 @@
     <Compile Include="Controllers\NewFeatController.cs" />
     <Compile Include="Controllers\SpellbookManagerController.cs" />
     <Compile Include="Models\ABILITY.cs" />
-    <Compile Include="Models\BACKGROUND.cs" />
     <Compile Include="Models\CAMPAIGN.cs" />
     <Compile Include="Models\CAMPAIGN_PLAYER_CHARACTERS.cs" />
     <Compile Include="Models\CHARACTER.cs" />
     <Compile Include="Models\CHARACTER_ATTACK.cs" />
     <Compile Include="Models\CHARACTER_BACKGROUND.cs" />
     <Compile Include="Models\CHARACTER_CLASS.cs" />
-    <Compile Include="Models\CHARACTER_INVENTORY.cs" />
     <Compile Include="Models\CHARACTER_JOURNAL.cs" />
     <Compile Include="Models\CLASS.cs" />
     <Compile Include="Models\DragonDBModel.cs" />
-    <Compile Include="Models\EFFECT.cs" />
-    <Compile Include="Models\EFFECT_PROCEDURE.cs" />
     <Compile Include="Models\ENCOUNTER.cs" />
     <Compile Include="Models\EPISODE.cs" />
     <Compile Include="Models\EVENT_OCCURRED.cs" />
     <Compile Include="Models\EVENT_TYPE.cs" />
     <Compile Include="Models\FEATS.cs" />
     <Compile Include="Models\ITEM.cs" />
-    <Compile Include="Models\ITEM_EFFECT.cs" />
     <Compile Include="Models\LOCATION.cs" />
     <Compile Include="Models\PROFICIENCY.cs" />
     <Compile Include="Models\QUEST.cs" />
     <Compile Include="Models\QUESTLINE.cs" />
     <Compile Include="Models\RACE.cs" />
-    <Compile Include="Models\RACE_SKILL.cs" />
     <Compile Include="Models\SKILL.cs" />
     <Compile Include="Models\SPELLS.cs" />
-    <Compile Include="Models\SPELLS_EFFECT.cs" />
     <Compile Include="Models\SPELLS_SLOTS.cs" />
     <Compile Include="Views\Enums\FormMode.cs" />
     <Compile Include="Controllers\LoadCampaignController.cs" />

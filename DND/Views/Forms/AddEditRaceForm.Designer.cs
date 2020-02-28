@@ -69,19 +69,17 @@
             // cmbRaceSelector
             // 
             this.cmbRaceSelector.FormattingEnabled = true;
-            this.cmbRaceSelector.Location = new System.Drawing.Point(16, 15);
-            this.cmbRaceSelector.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbRaceSelector.Location = new System.Drawing.Point(12, 12);
             this.cmbRaceSelector.Name = "cmbRaceSelector";
-            this.cmbRaceSelector.Size = new System.Drawing.Size(597, 24);
+            this.cmbRaceSelector.Size = new System.Drawing.Size(449, 21);
             this.cmbRaceSelector.TabIndex = 0;
             this.cmbRaceSelector.SelectedIndexChanged += new System.EventHandler(this.cmbRaceSelector_SelectedIndexChanged);
             // 
             // btnAddRace
             // 
-            this.btnAddRace.Location = new System.Drawing.Point(407, 48);
-            this.btnAddRace.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddRace.Location = new System.Drawing.Point(305, 39);
             this.btnAddRace.Name = "btnAddRace";
-            this.btnAddRace.Size = new System.Drawing.Size(100, 28);
+            this.btnAddRace.Size = new System.Drawing.Size(75, 23);
             this.btnAddRace.TabIndex = 1;
             this.btnAddRace.Text = "Add Race";
             this.btnAddRace.UseVisualStyleBackColor = true;
@@ -89,10 +87,9 @@
             // 
             // btnDeleteRace
             // 
-            this.btnDeleteRace.Location = new System.Drawing.Point(515, 48);
-            this.btnDeleteRace.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDeleteRace.Location = new System.Drawing.Point(386, 39);
             this.btnDeleteRace.Name = "btnDeleteRace";
-            this.btnDeleteRace.Size = new System.Drawing.Size(100, 28);
+            this.btnDeleteRace.Size = new System.Drawing.Size(75, 23);
             this.btnDeleteRace.TabIndex = 2;
             this.btnDeleteRace.Text = "Delete Race";
             this.btnDeleteRace.UseVisualStyleBackColor = true;
@@ -100,155 +97,138 @@
             // lblRaceName
             // 
             this.lblRaceName.AutoSize = true;
-            this.lblRaceName.Location = new System.Drawing.Point(16, 86);
-            this.lblRaceName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRaceName.Location = new System.Drawing.Point(12, 70);
             this.lblRaceName.Name = "lblRaceName";
-            this.lblRaceName.Size = new System.Drawing.Size(45, 17);
+            this.lblRaceName.Size = new System.Drawing.Size(36, 13);
             this.lblRaceName.TabIndex = 3;
             this.lblRaceName.Text = "Race:";
             // 
             // txtRaceName
             // 
-            this.txtRaceName.Location = new System.Drawing.Point(16, 106);
-            this.txtRaceName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRaceName.Location = new System.Drawing.Point(12, 86);
             this.txtRaceName.Name = "txtRaceName";
-            this.txtRaceName.Size = new System.Drawing.Size(241, 22);
+            this.txtRaceName.Size = new System.Drawing.Size(182, 20);
             this.txtRaceName.TabIndex = 4;
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(8, 309);
-            this.txtDescription.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDescription.Location = new System.Drawing.Point(6, 251);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(249, 123);
+            this.txtDescription.Size = new System.Drawing.Size(188, 101);
             this.txtDescription.TabIndex = 6;
             // 
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(8, 289);
-            this.lblDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDescription.Location = new System.Drawing.Point(6, 235);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(83, 17);
+            this.lblDescription.Size = new System.Drawing.Size(63, 13);
             this.lblDescription.TabIndex = 5;
             this.lblDescription.Text = "Description:";
             // 
             // lblAbilities
             // 
             this.lblAbilities.AutoSize = true;
-            this.lblAbilities.Location = new System.Drawing.Point(4, 0);
-            this.lblAbilities.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAbilities.Location = new System.Drawing.Point(3, 0);
             this.lblAbilities.Name = "lblAbilities";
-            this.lblAbilities.Size = new System.Drawing.Size(113, 17);
+            this.lblAbilities.Size = new System.Drawing.Size(84, 13);
             this.lblAbilities.TabIndex = 7;
             this.lblAbilities.Text = "Abilitiy Modifiers:";
             // 
             // txtSTR
             // 
-            this.txtSTR.Location = new System.Drawing.Point(8, 43);
-            this.txtSTR.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSTR.Location = new System.Drawing.Point(6, 35);
             this.txtSTR.Name = "txtSTR";
-            this.txtSTR.Size = new System.Drawing.Size(51, 22);
+            this.txtSTR.Size = new System.Drawing.Size(38, 20);
             this.txtSTR.TabIndex = 8;
             // 
             // txtCHA
             // 
-            this.txtCHA.Location = new System.Drawing.Point(125, 98);
-            this.txtCHA.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCHA.Location = new System.Drawing.Point(94, 80);
             this.txtCHA.Name = "txtCHA";
-            this.txtCHA.Size = new System.Drawing.Size(51, 22);
+            this.txtCHA.Size = new System.Drawing.Size(38, 20);
             this.txtCHA.TabIndex = 9;
             // 
             // txtWIS
             // 
-            this.txtWIS.Location = new System.Drawing.Point(67, 98);
-            this.txtWIS.Margin = new System.Windows.Forms.Padding(4);
+            this.txtWIS.Location = new System.Drawing.Point(50, 80);
             this.txtWIS.Name = "txtWIS";
-            this.txtWIS.Size = new System.Drawing.Size(51, 22);
+            this.txtWIS.Size = new System.Drawing.Size(38, 20);
             this.txtWIS.TabIndex = 10;
             // 
             // txtINT
             // 
-            this.txtINT.Location = new System.Drawing.Point(8, 98);
-            this.txtINT.Margin = new System.Windows.Forms.Padding(4);
+            this.txtINT.Location = new System.Drawing.Point(6, 80);
             this.txtINT.Name = "txtINT";
-            this.txtINT.Size = new System.Drawing.Size(51, 22);
+            this.txtINT.Size = new System.Drawing.Size(38, 20);
             this.txtINT.TabIndex = 11;
             // 
             // txtCON
             // 
-            this.txtCON.Location = new System.Drawing.Point(125, 43);
-            this.txtCON.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCON.Location = new System.Drawing.Point(94, 35);
             this.txtCON.Name = "txtCON";
-            this.txtCON.Size = new System.Drawing.Size(51, 22);
+            this.txtCON.Size = new System.Drawing.Size(38, 20);
             this.txtCON.TabIndex = 12;
             // 
             // txtDEX
             // 
-            this.txtDEX.Location = new System.Drawing.Point(67, 43);
-            this.txtDEX.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDEX.Location = new System.Drawing.Point(50, 35);
             this.txtDEX.Name = "txtDEX";
-            this.txtDEX.Size = new System.Drawing.Size(51, 22);
+            this.txtDEX.Size = new System.Drawing.Size(38, 20);
             this.txtDEX.TabIndex = 13;
             // 
             // lblSTR
             // 
             this.lblSTR.AutoSize = true;
-            this.lblSTR.Location = new System.Drawing.Point(4, 25);
-            this.lblSTR.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSTR.Location = new System.Drawing.Point(3, 20);
             this.lblSTR.Name = "lblSTR";
-            this.lblSTR.Size = new System.Drawing.Size(36, 17);
+            this.lblSTR.Size = new System.Drawing.Size(29, 13);
             this.lblSTR.TabIndex = 14;
             this.lblSTR.Text = "STR";
             // 
             // lblDEX
             // 
             this.lblDEX.AutoSize = true;
-            this.lblDEX.Location = new System.Drawing.Point(63, 25);
-            this.lblDEX.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDEX.Location = new System.Drawing.Point(47, 20);
             this.lblDEX.Name = "lblDEX";
-            this.lblDEX.Size = new System.Drawing.Size(36, 17);
+            this.lblDEX.Size = new System.Drawing.Size(29, 13);
             this.lblDEX.TabIndex = 15;
             this.lblDEX.Text = "DEX";
             // 
             // lblCON
             // 
             this.lblCON.AutoSize = true;
-            this.lblCON.Location = new System.Drawing.Point(121, 25);
-            this.lblCON.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCON.Location = new System.Drawing.Point(91, 20);
             this.lblCON.Name = "lblCON";
-            this.lblCON.Size = new System.Drawing.Size(38, 17);
+            this.lblCON.Size = new System.Drawing.Size(30, 13);
             this.lblCON.TabIndex = 16;
             this.lblCON.Text = "CON";
             // 
             // lblINT
             // 
             this.lblINT.AutoSize = true;
-            this.lblINT.Location = new System.Drawing.Point(4, 79);
-            this.lblINT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblINT.Location = new System.Drawing.Point(3, 64);
             this.lblINT.Name = "lblINT";
-            this.lblINT.Size = new System.Drawing.Size(30, 17);
+            this.lblINT.Size = new System.Drawing.Size(25, 13);
             this.lblINT.TabIndex = 17;
             this.lblINT.Text = "INT";
             // 
             // lblWIS
             // 
             this.lblWIS.AutoSize = true;
-            this.lblWIS.Location = new System.Drawing.Point(67, 79);
-            this.lblWIS.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWIS.Location = new System.Drawing.Point(50, 64);
             this.lblWIS.Name = "lblWIS";
-            this.lblWIS.Size = new System.Drawing.Size(33, 17);
+            this.lblWIS.Size = new System.Drawing.Size(28, 13);
             this.lblWIS.TabIndex = 18;
             this.lblWIS.Text = "WIS";
             // 
             // lblCHA
             // 
             this.lblCHA.AutoSize = true;
-            this.lblCHA.Location = new System.Drawing.Point(125, 79);
-            this.lblCHA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCHA.Location = new System.Drawing.Point(94, 64);
             this.lblCHA.Name = "lblCHA";
-            this.lblCHA.Size = new System.Drawing.Size(36, 17);
+            this.lblCHA.Size = new System.Drawing.Size(29, 13);
             this.lblCHA.TabIndex = 19;
             this.lblCHA.Text = "CHA";
             // 
@@ -267,40 +247,36 @@
             this.panel1.Controls.Add(this.lblDEX);
             this.panel1.Controls.Add(this.txtCON);
             this.panel1.Controls.Add(this.txtDEX);
-            this.panel1.Location = new System.Drawing.Point(16, 150);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(12, 122);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(232, 135);
+            this.panel1.Size = new System.Drawing.Size(174, 110);
             this.panel1.TabIndex = 20;
             // 
             // dgvFeats
             // 
             this.dgvFeats.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFeats.Location = new System.Drawing.Point(15, 20);
-            this.dgvFeats.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvFeats.Location = new System.Drawing.Point(11, 16);
             this.dgvFeats.Name = "dgvFeats";
             this.dgvFeats.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvFeats.Size = new System.Drawing.Size(320, 196);
+            this.dgvFeats.Size = new System.Drawing.Size(240, 159);
             this.dgvFeats.TabIndex = 21;
             // 
             // lblFeats
             // 
             this.lblFeats.AutoSize = true;
-            this.lblFeats.Location = new System.Drawing.Point(11, 2);
-            this.lblFeats.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFeats.Location = new System.Drawing.Point(8, 2);
             this.lblFeats.Name = "lblFeats";
-            this.lblFeats.Size = new System.Drawing.Size(47, 17);
+            this.lblFeats.Size = new System.Drawing.Size(36, 13);
             this.lblFeats.TabIndex = 22;
             this.lblFeats.Text = "Feats:";
             // 
             // txtFeatDescription
             // 
-            this.txtFeatDescription.Location = new System.Drawing.Point(15, 223);
-            this.txtFeatDescription.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFeatDescription.Location = new System.Drawing.Point(11, 181);
             this.txtFeatDescription.Multiline = true;
             this.txtFeatDescription.Name = "txtFeatDescription";
             this.txtFeatDescription.ReadOnly = true;
-            this.txtFeatDescription.Size = new System.Drawing.Size(319, 88);
+            this.txtFeatDescription.Size = new System.Drawing.Size(240, 72);
             this.txtFeatDescription.TabIndex = 23;
             // 
             // panel2
@@ -309,37 +285,34 @@
             this.panel2.Controls.Add(this.txtFeatDescription);
             this.panel2.Controls.Add(this.lblFeats);
             this.panel2.Controls.Add(this.dgvFeats);
-            this.panel2.Location = new System.Drawing.Point(267, 86);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(200, 70);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(348, 353);
+            this.panel2.Size = new System.Drawing.Size(261, 287);
             this.panel2.TabIndex = 24;
             // 
             // btnAddFeat
             // 
-            this.btnAddFeat.Location = new System.Drawing.Point(257, 319);
-            this.btnAddFeat.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddFeat.Location = new System.Drawing.Point(193, 259);
             this.btnAddFeat.Name = "btnAddFeat";
-            this.btnAddFeat.Size = new System.Drawing.Size(77, 28);
+            this.btnAddFeat.Size = new System.Drawing.Size(58, 23);
             this.btnAddFeat.TabIndex = 24;
             this.btnAddFeat.Text = "Add Feat";
             this.btnAddFeat.UseVisualStyleBackColor = true;
             // 
             // btnSaveClose
             // 
-            this.btnSaveClose.Location = new System.Drawing.Point(467, 447);
-            this.btnSaveClose.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSaveClose.Location = new System.Drawing.Point(350, 363);
             this.btnSaveClose.Name = "btnSaveClose";
-            this.btnSaveClose.Size = new System.Drawing.Size(148, 28);
+            this.btnSaveClose.Size = new System.Drawing.Size(111, 23);
             this.btnSaveClose.TabIndex = 25;
             this.btnSaveClose.Text = "Save and Close";
             this.btnSaveClose.UseVisualStyleBackColor = true;
             // 
             // AddEditRaceForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(637, 485);
+            this.ClientSize = new System.Drawing.Size(478, 394);
             this.Controls.Add(this.btnSaveClose);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -350,7 +323,6 @@
             this.Controls.Add(this.btnDeleteRace);
             this.Controls.Add(this.btnAddRace);
             this.Controls.Add(this.cmbRaceSelector);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddEditRaceForm";
             this.Text = "AddEditRaceForm";
             this.Load += new System.EventHandler(this.AddEditRaceForm_Load);

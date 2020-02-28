@@ -90,5 +90,10 @@ namespace DND.Views.Forms
         {
             _controller.UpdateRaceControls();
         }
+
+        private void btnAddRace_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

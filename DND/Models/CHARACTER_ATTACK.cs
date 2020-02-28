@@ -10,6 +10,7 @@ namespace DND.Models
     {
         [Key]
         [Column(Order = 0)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int a_id { get; set; }
 
         [Key]
