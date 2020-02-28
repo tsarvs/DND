@@ -13,8 +13,6 @@ namespace DND.Models
         public RACE()
         {
             CHARACTER = new HashSet<CHARACTER>();
-            RACE_SKILL = new HashSet<RACE_SKILL>();
-            BACKGROUND = new HashSet<BACKGROUND>();
         }
 
         [Key]
@@ -31,11 +29,5 @@ namespace DND.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHARACTER> CHARACTER { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RACE_SKILL> RACE_SKILL { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BACKGROUND> BACKGROUND { get; set; }
     }
 }

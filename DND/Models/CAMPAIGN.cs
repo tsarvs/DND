@@ -14,7 +14,6 @@ namespace DND.Models
         {
             EPISODE = new HashSet<EPISODE>();
             QUESTLINE = new HashSet<QUESTLINE>();
-            BACKGROUND = new HashSet<BACKGROUND>();
             CHARACTER = new HashSet<CHARACTER>();
         }
 
@@ -39,9 +38,6 @@ namespace DND.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<QUESTLINE> QUESTLINE { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BACKGROUND> BACKGROUND { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHARACTER> CHARACTER { get; set; }

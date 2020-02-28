@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[CHARACTER_ATTACK]
 (
-	[a_id] INT IDENTITY(1,1) NOT NULL , 
+	[a_id] INT NOT NULL , 
     [a_cid] INT NOT NULL,  
     [a_name] VARCHAR(250) NULL,
     [a_attackability] VARCHAR(25) NULL,

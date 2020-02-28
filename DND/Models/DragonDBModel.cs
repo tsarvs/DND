@@ -45,8 +45,8 @@ namespace DND.Models
 
             modelBuilder.Entity<ABILITY>()
                 .HasMany(e => e.RACE)
-                .WithMany(e => e.ABILITY)
-                .Map(m => m.ToTable("RACE_ABILITY").MapLeftKey("ra_aid").MapRightKey("ra_rid"));
+                .WithOptional(e => e.ABILITY)
+                .HasForeignKey(e => e.r_aid);
 
             modelBuilder.Entity<CAMPAIGN>()
                 .Property(e => e.cmp_name)

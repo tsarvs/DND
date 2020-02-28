@@ -15,6 +15,7 @@ namespace DND.Models
 
         [Key]
         [Column(Order = 1)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int cb_id { get; set; }
 
         [StringLength(100)]

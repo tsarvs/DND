@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using DND.Models;
 using DND.Views.Enums;
@@ -359,6 +360,7 @@ namespace DND.Controllers
             _loadedCharacter.c_experience = loadedCharacter.c_experience;
             _loadedCharacter.c_gold = loadedCharacter.c_gold;
             _loadedCharacter.c_proficiencybonus = loadedCharacter.c_proficiencybonus;
+            _loadedCharacter.c_sid = loadedCharacter.SKILL.s_id;
 
             _loadedCharacter.ABILITY = loadedCharacter.ABILITY;
             _loadedCharacter.CHARACTER_ATTACK = loadedCharacter.CHARACTER_ATTACK;
@@ -369,7 +371,9 @@ namespace DND.Controllers
             _loadedCharacter.ITEM = loadedCharacter.ITEM;
             _loadedCharacter.PROFICIENCY = loadedCharacter.PROFICIENCY;
             _loadedCharacter.RACE = loadedCharacter.RACE;
+
             _loadedCharacter.SKILL = loadedCharacter.SKILL;
+
             _loadedCharacter.SPELLS = loadedCharacter.SPELLS;
             _loadedCharacter.SPELLS_SLOTS = loadedCharacter.SPELLS_SLOTS;
             _loadedCharacter.SPELLS_SLOTS1 = loadedCharacter.SPELLS_SLOTS1;
@@ -441,16 +445,6 @@ namespace DND.Controllers
             _loadedCharacter.c_experience = _view.Experience;
             _loadedCharacter.c_gold = _view.Gold;
             _loadedCharacter.c_proficiencybonus = _view.ProficiencyBonus;
-
-            //_loadedCharacter.CHARACTER_ATTACK = _view.AttackGridView;
-            //_loadedCharacter.CHARACTER_BACKGROUND = loadedCharacter.CHARACTER_BACKGROUND;
-            //_loadedCharacter.CHARACTER_JOURNAL = loadedCharacter.CHARACTER_JOURNAL;
-            //_loadedCharacter.CHARACTER_CLASS = loadedCharacter.CHARACTER_CLASS;
-            //_loadedCharacter.FEATS = loadedCharacter.FEATS;
-            //_loadedCharacter.ITEM = loadedCharacter.ITEM;
-            //_loadedCharacter.PROFICIENCY = loadedCharacter.PROFICIENCY;
-            //_loadedCharacter.RACE = loadedCharacter.RACE;
-            //_loadedCharacter.SPELLS = loadedCharacter.SPELLS;
         }
 
         private void RefreshControls()
@@ -541,6 +535,43 @@ namespace DND.Controllers
             //background
             RefreshBackgroundDataSource();
             
+        }
+
+        internal void UpdateRace()
+        {
+            //race selected value
+            if (!(_view.RaceComboBox.SelectedIndex <= 0))
+            {
+                RACE newRace;
+
+                var raceId = (int)_view.RaceComboBox.SelectedValue;
+
+                using (var db = new DragonDBModel())
+                {
+                    newRace =
+                        (from r in db.RACE.ToList()
+                         where (r.r_id == raceId)
+                         select r).FirstOrDefault();
+                }
+
+                _loadedCharacter.c_rid = raceId;
+                _loadedCharacter.RACE = newRace;
+            }
+        }
+
+        public void UpdateAlignment()
+        {
+            _loadedCharacter.c_alignment = _view.Alignment;
+        }
+
+        public void UpdateName()
+        {
+            _loadedCharacter.c_name = _view.CharacterName;
+        }
+
+        public void UpdateCharisma()
+        {
+            _loadedCharacter.ABILITY.a_CHA = _view.CHA;
         }
 
         public void SaveCharacter()
@@ -811,43 +842,277 @@ namespace DND.Controllers
 
             using (var db = new DragonDBModel())
             {
-                var character =
-                    (from c in db.CHARACTER.ToList()
-                     where (c.c_id == _characterId)
-                     select c).First();
+                var character = db.CHARACTER.Find(_loadedCharacter.c_id);
 
-                character.c_name = _loadedCharacter.c_name;
-                character.c_alignment = _loadedCharacter.c_alignment;
-                character.c_rid = _loadedCharacter.c_rid;
-                character.c_aid = _loadedCharacter.c_aid;
-                character.c_experience = _loadedCharacter.c_experience;
-                character.c_isNPC = _loadedCharacter.c_isNPC;
-                character.c_armorclass = _loadedCharacter.c_armorclass;
-                character.c_speed = _loadedCharacter.c_speed;
-                character.c_initiative = _loadedCharacter.c_initiative;
-                character.c_inspiration = _loadedCharacter.c_inspiration;
-                character.c_hpcurrent = _loadedCharacter.c_hpcurrent;
-                character.c_hpmax = _loadedCharacter.c_hpmax;
-                character.c_hptemp = _loadedCharacter.c_hptemp;
-                character.c_gold = _loadedCharacter.c_gold;
-                character.c_proficiencybonus = _loadedCharacter.c_proficiencybonus;
+                if (character != null)
+                {
+                    
+                    // Update parent
+                    db.Entry(character).CurrentValues.SetValues(_loadedCharacter);
 
-                //character.SPELLS = _loadedCharacter.SPELLS;
-                //character.SPELLS_SLOTS = _loadedCharacter.SPELLS_SLOTS;
-                //character.SPELLS_SLOTS1 = _loadedCharacter.SPELLS_SLOTS1;
-                //character.FEATS = _loadedCharacter.FEATS;
-                //character.ABILITY = _loadedCharacter.ABILITY;
-                //character.SKILL = _loadedCharacter.SKILL;
-                //character.ITEM = _loadedCharacter.ITEM;
-                //character.RACE = _loadedCharacter.RACE;
-                //character.CHARACTER_CLASS = _loadedCharacter.CHARACTER_CLASS;
-                //character.PROFICIENCY = _loadedCharacter.PROFICIENCY;
-                //character.CHARACTER_BACKGROUND = _loadedCharacter.CHARACTER_BACKGROUND;
+                    db.Entry(character.ABILITY).CurrentValues.SetValues(_loadedCharacter.ABILITY);
 
-                //character.CHARACTER_ATTACK = _loadedCharacter.CHARACTER_ATTACK;
+                    db.Entry(character.SKILL).CurrentValues.SetValues(_loadedCharacter.SKILL);
 
-                db.SaveChanges();
-                
+
+                    #region Character Classes
+                    // Delete character classes from db that are not in the loaded character
+                    foreach (var dbCharacterClass in character.CHARACTER_CLASS.ToList())
+                    {
+                        if (!_loadedCharacter.CHARACTER_CLASS.Any(x => x.cc_cid == dbCharacterClass.cc_cid && x.cc_clid == dbCharacterClass.cc_clid))
+                            db.CHARACTER_CLASS.Remove(dbCharacterClass);
+                    }
+
+                    //Update and Insert new character classes
+                    foreach (var loadedCharacterClass in _loadedCharacter.CHARACTER_CLASS)
+                    {
+                        var existingCharacterClass = character.CHARACTER_CLASS.Where(x => x.cc_clid == loadedCharacterClass.cc_clid && x.cc_cid == _loadedCharacter.c_id).SingleOrDefault();
+
+                        if (existingCharacterClass != null)
+                        {
+                            // Update character class
+                            db.Entry(existingCharacterClass).CurrentValues.SetValues(loadedCharacterClass);
+                        }
+                        else
+                        {
+                            // Insert character class
+                            var newCharacterClass = new CHARACTER_CLASS
+                            {
+                                cc_cid = _loadedCharacter.c_id,
+                                cc_clid = loadedCharacterClass.cc_clid,
+                                cc_hitdice_current = loadedCharacterClass.cc_hitdice_current,
+                                cc_level = loadedCharacterClass.cc_level
+                            };
+
+                            character.CHARACTER_CLASS.Add(newCharacterClass);
+                        }
+                    }
+                    #endregion
+
+                    #region Items
+                    // Delete items from db that are not in the loaded character
+                    foreach (var dbItem in character.ITEM.ToList())
+                    {
+                        if (!_loadedCharacter.ITEM.Any(x => x.i_id == dbItem.i_id))
+                            db.ITEM.Remove(dbItem);
+                    }
+
+                    //Update and Insert loaded character item
+                    foreach (var loadedCharacterItem in _loadedCharacter.ITEM)
+                    {
+                        var existingCharacterItem = character.ITEM.Where(x => x.i_id == loadedCharacterItem.i_id && x.i_cid == _loadedCharacter.c_id).SingleOrDefault();
+
+                        if (existingCharacterItem != null)
+                        {
+                            // Update character class
+                            db.Entry(existingCharacterItem).CurrentValues.SetValues(loadedCharacterItem);
+                        }
+                        else
+                        {
+                            // Insert character class
+                            var newCharacterItem = new ITEM
+                            {
+                                i_cid = loadedCharacterItem.i_cid,
+                                i_name = loadedCharacterItem.i_name,
+                                i_quantity = loadedCharacterItem.i_quantity,
+                                i_weight = loadedCharacterItem.i_weight,
+                                i_description = loadedCharacterItem.i_description
+                            };
+
+                            character.ITEM.Add(newCharacterItem);
+                        }
+                    }
+                    #endregion
+
+                    #region Proficiencies
+                    // Delete proficiencies from db that are not in the loaded character
+                    foreach (var dbProficiency in character.PROFICIENCY.ToList())
+                    {
+                        if (!_loadedCharacter.PROFICIENCY.Any(x => x.p_id == dbProficiency.p_id))
+                            db.PROFICIENCY.Remove(dbProficiency);
+                    }
+
+                    //Update and Insert loaded character proficiencies
+                    foreach (var loadedCharacterProficiency in _loadedCharacter.PROFICIENCY)
+                    {
+                        var existingCharacterProficiency = character.PROFICIENCY.Where(x => x.p_id == loadedCharacterProficiency.p_id).SingleOrDefault();
+
+                        if (existingCharacterProficiency != null)
+                        {
+                            // Update character class
+                            db.Entry(existingCharacterProficiency).CurrentValues.SetValues(loadedCharacterProficiency);
+                        }
+                        else
+                        {
+                            // Insert character class
+                            var newCharacterProficiency = new PROFICIENCY
+                            {
+                                p_id = loadedCharacterProficiency.p_id,
+                                p_name = loadedCharacterProficiency.p_name,
+                                p_type = loadedCharacterProficiency.p_type
+                            };
+
+                            character.PROFICIENCY.Add(newCharacterProficiency);
+                        }
+                    }
+                    #endregion
+
+                    #region Character Background
+                    // Delete lore from db that are not in the loaded character
+                    foreach (var dbBackground in character.CHARACTER_BACKGROUND.ToList())
+                    {
+                        if (!_loadedCharacter.CHARACTER_BACKGROUND.Any(x => x.cb_id == dbBackground.cb_id && x.cb_cid == dbBackground.cb_cid))
+                            db.CHARACTER_BACKGROUND.Remove(dbBackground);
+                    }
+
+                    //Update and Insert loaded character lore
+                    foreach (var loadedBackground in _loadedCharacter.CHARACTER_BACKGROUND)
+                    {
+                        var existingBackground = character.CHARACTER_BACKGROUND.Where(x => x.cb_id == loadedBackground.cb_id && x.cb_cid == loadedBackground.cb_cid).SingleOrDefault();
+
+                        if (existingBackground != null)
+                        {
+                            // Update character lore
+                            db.Entry(existingBackground).CurrentValues.SetValues(loadedBackground);
+                        }
+                        else
+                        {
+                            // Insert character lore
+                            var newBackground = new CHARACTER_BACKGROUND
+                            {
+                                cb_id = loadedBackground.cb_id,
+                                cb_cid = loadedBackground.cb_cid,
+                                cb_title = loadedBackground.cb_title,
+                                cb_description = loadedBackground.cb_description
+                            };
+
+                            character.CHARACTER_BACKGROUND.Add(newBackground);
+                        }
+                    }
+                    #endregion
+
+                    #region Feats
+                    // Delete feats from db that are not in the loaded character
+                    foreach (var dbFeats in character.FEATS.ToList())
+                    {
+                        if (!_loadedCharacter.FEATS.Any(x => x.f_id == dbFeats.f_id))
+                            db.FEATS.Remove(dbFeats);
+                    }
+
+                    //Update and Insert new feats
+                    foreach (var loadedFeat in _loadedCharacter.FEATS)
+                    {
+                        var existingFeats = character.FEATS.Where(x => x.f_id == loadedFeat.f_id).SingleOrDefault();
+
+                        if (existingFeats != null)
+                        {
+                            // Update feats
+                            db.Entry(existingFeats).CurrentValues.SetValues(loadedFeat);
+                        }
+                        else
+                        {
+                            // Insert feats
+                            var newFeat = new FEATS
+                            {
+                                f_id = loadedFeat.f_id,
+                                f_name = loadedFeat.f_name,
+                                f_description = loadedFeat.f_description,
+                                f_source = loadedFeat.f_source
+                            };
+
+                            character.FEATS.Add(newFeat);
+                        }
+                    }
+                    #endregion
+
+                    #region Attack
+                    foreach (var dbAttack in character.CHARACTER_ATTACK.ToList())
+                    {
+                        if (!_loadedCharacter.CHARACTER_ATTACK.Any(x => x.a_id == dbAttack.a_id))
+                            db.CHARACTER_ATTACK.Remove(dbAttack);
+                    }
+
+                    //Update and Insert loaded character item
+                    foreach (var loadedAttack in _loadedCharacter.CHARACTER_ATTACK)
+                    {
+                        var existingAttack = character.CHARACTER_ATTACK.Where(x => x.a_id == loadedAttack.a_id && x.a_cid == _loadedCharacter.c_id).SingleOrDefault();
+
+                        if (existingAttack != null)
+                        {
+                            // Update character class
+                            db.Entry(existingAttack).CurrentValues.SetValues(loadedAttack);
+                        }
+                        else
+                        {
+                            // Insert character class
+                            var newAttack = new CHARACTER_ATTACK
+                            {
+                                a_id = loadedAttack.a_id,
+                                a_cid = loadedAttack.a_cid,
+                                a_name = loadedAttack.a_name,
+                                a_range = loadedAttack.a_range,
+                                a_attackability = loadedAttack.a_attackability,
+                                a_attackbonus = loadedAttack.a_attackbonus,
+                                a_damage1 = loadedAttack.a_damage1,
+                                a_damage2 = loadedAttack.a_damage2,
+                                a_description = loadedAttack.a_description,
+                                a_isproficient = loadedAttack.a_isproficient
+                            };
+
+                            character.CHARACTER_ATTACK.Add(newAttack);
+                        }
+                    }
+                    #endregion
+
+                    #region Spells
+                    // Delete spells from db that are not in the loaded character
+                    foreach (var dbSpells in character.SPELLS.ToList())
+                    {
+                        if (!_loadedCharacter.SPELLS.Any(x => x.s_id == dbSpells.s_id))
+                            db.SPELLS.Remove(dbSpells);
+                    }
+
+                    //Update and Insert new spells
+                    foreach (var loadedSpell in _loadedCharacter.SPELLS)
+                    {
+                        var existingSpell = character.SPELLS.Where(x => x.s_id == loadedSpell.s_id).SingleOrDefault();
+
+                        if (existingSpell != null)
+                        {
+                            // Update spells
+                            db.Entry(existingSpell).CurrentValues.SetValues(loadedSpell);
+                        }
+                        else
+                        {
+                            // Insert spells
+                            var newSpell = new SPELLS
+                            {
+                                s_id = loadedSpell.s_id,
+                                s_name = loadedSpell.s_name,
+                                s_castingtime = loadedSpell.s_castingtime,
+                                s_component_m = loadedSpell.s_component_m,
+                                s_component_s = loadedSpell.s_component_s,
+                                s_component_v = loadedSpell.s_component_v,
+                                s_description = loadedSpell.s_description,
+                                s_durationminutes = loadedSpell.s_durationminutes,
+                                s_isconcentration = loadedSpell.s_isconcentration,
+                                s_level = loadedSpell.s_level,
+                                s_range = loadedSpell.s_range,
+                                s_school = loadedSpell.s_school,
+                                s_target = loadedSpell.s_target
+                            };
+
+                            character.SPELLS.Add(newSpell);
+                        }
+                    }
+                    #endregion
+
+                    db.Entry(character.SPELLS_SLOTS).CurrentValues.SetValues(_loadedCharacter.SPELLS_SLOTS);
+
+                    db.Entry(character.SPELLS_SLOTS1).CurrentValues.SetValues(_loadedCharacter.SPELLS_SLOTS1);
+
+                    db.SaveChanges();
+                }
             }
         }
 
@@ -859,8 +1124,8 @@ namespace DND.Controllers
             using (var db = new DragonDBModel())
             {
                 _loadedCharacter =
-                    (from c in db.CHARACTER.ToList()
-                        where c.c_id == _characterId
+                    (from c in db.CHARACTER.AsNoTracking().ToList()
+                     where c.c_id == _characterId
                         select c).First();
             }
         }

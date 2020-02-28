@@ -806,5 +806,26 @@ namespace DND.Views.Forms
         {
             _controller.UpdateSpellStats();
         }
+
+        private void txtCharisma_ValueChanged(object sender, EventArgs e)
+        {
+            _controller.UpdateCharisma();
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            _controller.UpdateName();
+        }
+
+        private void cmbAlignment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _controller.UpdateAlignment();
+        }
+
+        private void cmbRace_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _controller.UpdateRace();
+        }
+            
     }
 }
