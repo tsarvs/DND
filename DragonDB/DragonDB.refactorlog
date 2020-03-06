@@ -112,4 +112,11 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="s_castingtime" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="6c323d5f-f262-46a9-badc-efa67d42c870" ChangeDateTime="03/06/2020 05:41:19">
+    <Property Name="ElementName" Value="[dbo].[SPELLS].[s_durationminutes]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[SPELLS]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="s_duration" />
+  </Operation>
 </Operations>
